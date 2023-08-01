@@ -35,10 +35,8 @@ IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
 	{
 		co_await _socket.ConnectAsync(_serverHost, _serverPort);
 		RegisterRecvEvent(_socket, _recvBufSize);
-
 		cout << "Connected to server" << endl;
 		cout << "DataReader is being created..." << endl;
-
 	}
 	catch (const hresult_error& ex)
 	{
@@ -50,35 +48,35 @@ IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
 
 }
 
-bool ClientService::RegisterRecvEvent(StreamSocket& socket, uint8_t recvBufSize)
-{
-	const unsigned int maxLength = recvBufSize;
-
-	DataReader reader{ socket.InputStream() };
-	reader.InputStreamOptions(winrt::Windows::Storage::Streams::InputStreamOptions::Partial);
-	auto operation = reader.LoadAsync(maxLength);
-	operation.Completed([this, reader, maxLength](IAsyncOperation<uint32_t> const& operation, AsyncStatus status) {
-		// This code will be executed when the operation is completed
-		if (status == AsyncStatus::Completed) {
-
-			uint32_t bytesRead = operation.GetResults();
-			std::vector<uint8_t> recvBuffer(maxLength);
-			reader.ReadBytes(recvBuffer);
-
-			if (bytesRead > 0) {
-				// Process the received data
-				ProcessRecvEvent(recvBuffer.data(), bytesRead);
-				//_reader.ReadBytes()
-			}
-		}
-		else {
-			// Handle the error
-		}
-	});
-
-	return true;
-	
-}
+//bool ClientService::RegisterRecvEvent(StreamSocket& socket, uint8_t recvBufSize)
+//{
+//	const unsigned int maxLength = recvBufSize;
+//
+//	DataReader reader{ socket.InputStream() };
+//	reader.InputStreamOptions(winrt::Windows::Storage::Streams::InputStreamOptions::Partial);
+//	auto operation = reader.LoadAsync(maxLength);
+//	operation.Completed([this, reader, maxLength](IAsyncOperation<uint32_t> const& operation, AsyncStatus status) {
+//		 This code will be executed when the operation is completed
+//		if (status == AsyncStatus::Completed) {
+//
+//			uint32_t bytesRead = operation.GetResults();
+//			std::vector<uint8_t> recvBuffer(maxLength);
+//			reader.ReadBytes(recvBuffer);
+//
+//			if (bytesRead > 0) {
+//				 Process the received data
+//				ProcessRecvEvent(recvBuffer.data(), bytesRead);
+//				_reader.ReadBytes()
+//			}
+//		}
+//		else {
+//			 Handle the error
+//		}
+//	});
+//
+//	return true;
+//	
+//}
 
 IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint8_t recvBufSize)
 {
@@ -99,11 +97,11 @@ IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint8_t recvBufS
 			// The keyword 'auto' is used because the the method 'ReadBuffer' returns an 'IBuffer'
 			auto ibuffer = reader.ReadBuffer(bytesRead);
 			// Convert the 'IBuffer' to a 'std::vector<uint8_t>' using the helper function 'BufferToVector'
-			std::vector<uint8_t> recvVecBuffer(bytesRead);
-			BufferToVector(ibuffer, OUT recvVecBuffer);
+			_recvBuffer.reserve(bytesRead);
+			BufferToVector(ibuffer, OUT _recvBuffer);
 
 			// Process the received data
-			ProcessRecvEvent(recvVecBuffer.data(), recvVecBuffer.size());
+			ProcessRecvEvent(_recvBuffer.data(), _recvBuffer.size());
 		}
 	}
 	catch (winrt::hresult_error  const& ex)

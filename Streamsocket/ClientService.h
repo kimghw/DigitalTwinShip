@@ -49,9 +49,14 @@ private:
 	HostName _serverHost{ L"0.0.0.0" }; // Replace with the server IP address or hostname
 	hstring _serverPort{ L"0" };
 	
+
 	const unsigned int _recvBufSize = 1024;
 	const unsigned int _sendBufSize = 1024;
+
+	std::vector<uint8_t> _recvBuffer;
 	
+
+
 public:
 	ServerPacketHandler* _serverPacketHandler;
 
