@@ -46,7 +46,7 @@ IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
 		OutputDebugStringW(message.c_str());
 	}
 
-	_serverPacketHandler = 
+	
 
 }
 
