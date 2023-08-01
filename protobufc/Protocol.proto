@@ -1,0 +1,22 @@
+syntax = "proto3";
+package Protocol;
+
+message H_TEST
+{
+	string test = 1;
+}
+
+message S_TEST
+{
+	string test = 1;
+}
+
+message H_LOGIN
+{
+	string str = 1;
+}
+
+message S_LOGIN
+{
+	string str = 1;
+}

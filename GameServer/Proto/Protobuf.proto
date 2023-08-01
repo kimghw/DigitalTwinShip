@@ -1,0 +1,6 @@
+syntax = "proto3";
+package Protocol;
+
+message H_TEST{
+	uint32 Id = 1;
+}
