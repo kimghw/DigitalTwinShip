@@ -1,10 +1,12 @@
 #pragma once
 #include "Protocol.pb.h"
+#include "type.h"
+
 
 using PacketHandlerFunc = std::function<bool(PacketSessionRef&, BYTE*, int32)>;
 extern PacketHandlerFunc GPacketHandler[UINT16_MAX];
 
-enum : uint16
+enum : uint16_t
 {
 	PKT_S_TEST = 1000,
 	PKT_C_TEST = 1001,
@@ -29,7 +31,7 @@ public:
 		PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
 		return GPacketHandler[header->id](session, buffer, len);
 	}
-	static SendBufferRef MakeSendBuffer(Protocol::C_TEST& pkt) { return MakeSendBuffer(pkt, PKT_C_TEST); }
+	/*static SendBufferRef MakeSendBuffer(Protocol::C_TEST& pkt) { return MakeSendBuffer(pkt, PKT_C_TEST); }*/
 
 private:
 	template<typename PacketType, typename ProcessFunc>
@@ -42,19 +44,19 @@ private:
 		return func(session, pkt);
 	}
 
-	template<typename T>
-	static SendBufferRef MakeSendBuffer(T& pkt, uint16 pktId)
-	{
-		const uint16 dataSize = static_cast<uint16>(pkt.ByteSizeLong());
-		const uint16 packetSize = dataSize + sizeof(PacketHeader);
+	//template<typename T>
+	//static SendBufferRef MakeSendBuffer(T& pkt, uint16 pktId)
+	//{
+	//	const uint16 dataSize = static_cast<uint16>(pkt.ByteSizeLong());
+	//	const uint16 packetSize = dataSize + sizeof(PacketHeader);
 
-		SendBufferRef sendBuffer = GSendBufferManager->Open(packetSize);
-		PacketHeader* header = reinterpret_cast<PacketHeader*>(sendBuffer->Buffer());
-		header->size = packetSize;
-		header->id = pktId;
-		ASSERT_CRASH(pkt.SerializeToArray(&header[1], dataSize));
-		sendBuffer->Close(packetSize);
+	//	SendBufferRef sendBuffer = GSendBufferManager->Open(packetSize);
+	//	PacketHeader* header = reinterpret_cast<PacketHeader*>(sendBuffer->Buffer());
+	//	header->size = packetSize;
+	//	header->id = pktId;
+	//	ASSERT_CRASH(pkt.SerializeToArray(&header[1], dataSize));
+	//	sendBuffer->Close(packetSize);
 
-		return sendBuffer;
-	}
+	//	return sendBuffer;
+	//}
 };
