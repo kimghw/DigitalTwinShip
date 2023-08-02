@@ -31,13 +31,13 @@ public:
 	~ClientService();
 
 	IAsyncAction		 Start(HostName& serverHost, hstring& port);
-	IAsyncAction		 RegisterAsync(StreamSocket& socket, uint8_t recvBufSize);
-	bool			     RegisterRecvEvent(StreamSocket& socket, uint8_t recvBufSize);
-	bool			     ProcessRecvEvent(uint8_t* buffer, uint8_t recvBufSize);
+	IAsyncAction		 RegisterAsync(StreamSocket& socket, uint32_t recvBufSize);
+	//bool			     RegisterRecvEvent(StreamSocket& socket, uint8_t recvBufSize);
+	//bool			     OnReceivePacket(uint8_t* buffer, uint8_t recvBufSize);
 
-	bool				 RegisterSendEvent(StreamSocket& socket);
-	bool				 BufferToVector(IBuffer& buffer, OUT std::vector<uint8_t>& recvBuffer);
-
+	//bool				 RegisterSendEvent(StreamSocket& socket);
+	//bool				 BufferToVector(IBuffer& buffer, OUT std::vector<uint8_t>& recvBuffer);
+	bool	BufferToVector(IBuffer& buffer, OUT std::vector<uint8_t>& recvBuffer);
 private:
 	// Lock이 필요할거 같은데...
 	StreamSocket _socket;
@@ -50,8 +50,8 @@ private:
 	hstring _serverPort{ L"0" };
 	
 
-	const unsigned int _recvBufSize = 1024;
-	const unsigned int _sendBufSize = 1024;
+	const uint32_t _recvBufSize = 1024;
+	const uint32_t _sendBufSize = 1024;
 
 	std::vector<uint8_t> _recvBuffer;
 	
@@ -62,7 +62,11 @@ public:
 
 };
 
-
+struct PacketHeader
+{
+	uint32_t id;
+	uint32_t size;
+};
 
 //////////////////
 

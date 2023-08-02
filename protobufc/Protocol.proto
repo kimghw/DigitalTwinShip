@@ -1,22 +1,12 @@
 syntax = "proto3";
 package Protocol;
 
-message H_TEST
-{
-	string test = 1;
-}
-
 message S_TEST
 {
 	string test = 1;
 }
 
-message H_LOGIN
+message C_TEST
 {
-	string str = 1;
-}
-
-message S_LOGIN
-{
-	string str = 1;
+	string test = 1;
 }

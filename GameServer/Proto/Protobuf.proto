@@ -2,5 +2,13 @@ syntax = "proto3";
 package Protocol;
 
 message H_TEST{
-	uint32 Id = 1;
+	string test = 1;
+}
+
+message C_TEST{
+	string test = 1;
+}
+
+message S_TEST{
+	string test = 1;
 }

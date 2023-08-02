@@ -34,7 +34,7 @@ IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
 	try
 	{
 		co_await _socket.ConnectAsync(_serverHost, _serverPort);
-		RegisterRecvEvent(_socket, _recvBufSize);
+		RegisterAsync(_socket, _recvBufSize);
 		cout << "Connected to server" << endl;
 		cout << "DataReader is being created..." << endl;
 	}
@@ -78,9 +78,8 @@ IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
 //	
 //}
 
-IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint8_t recvBufSize)
+IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint32_t recvBufSize)
 {
-	const unsigned int maxLength = recvBufSize;
 	// Using the socket, Initialize the reader with the input stream of a 'StreamSocket'
 	DataReader reader{ socket.InputStream() };
 	reader.InputStreamOptions(winrt::Windows::Storage::Streams::InputStreamOptions::Partial);
@@ -88,10 +87,9 @@ IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint8_t recvBufS
 	try
 	{
 		// LoadAsyn  returns the number of bytes that have been read
-		uint32_t bytesRead = co_await reader.LoadAsync(maxLength);
+		uint32_t bytesRead = co_await reader.LoadAsync(recvBufSize);
 		if (bytesRead > 0)
 		{
-			
 			// DataReader does not provide a way to read the data as a byte array
 			// Read all the data as an 'IBuffer' from the DataReader's internal buffer
 			// The keyword 'auto' is used because the the method 'ReadBuffer' returns an 'IBuffer'
@@ -101,7 +99,8 @@ IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint8_t recvBufS
 			BufferToVector(ibuffer, OUT _recvBuffer);
 
 			// Process the received data
-			ProcessRecvEvent(_recvBuffer.data(), _recvBuffer.size());
+			// Call the ServerPacketHandler
+			ServerPacketHandler::OnReceivePacket(_recvBuffer.data(), _recvBuffer.size());
 		}
 	}
 	catch (winrt::hresult_error  const& ex)
@@ -125,8 +124,3 @@ bool ClientService::BufferToVector(IBuffer& buffer, OUT std::vector<uint8_t>& re
 }
 
 
-bool ClientService::ProcessRecvEvent(uint8_t* buffer, uint8_t recvBufSize)
-{
-
-	return true;
-}
