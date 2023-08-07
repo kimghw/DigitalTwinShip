@@ -100,13 +100,20 @@ IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint32_t recvBuf
 
 			// Process the received data
 			// Call the ServerPacketHandler
-			ServerPacketHandler::OnReceivePacket(_recvBuffer.data(), _recvBuffer.size());
+			ClientService::OnReceivePacket(_recvBuffer.data(), _recvBuffer.size());
 		}
 	}
 	catch (winrt::hresult_error  const& ex)
 	{
 		std::wcout << L"Error: " << ex.message().c_str() << std::endl;
 	}
+}
+
+
+bool ClientService::OnReceivePacket(uint8* buffer, uint8 recvBufSize)
+{
+	PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
+	ServerPacketHandler::HandlePacket(,)
 
 }
 

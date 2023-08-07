@@ -11,7 +11,7 @@
 #include <mutex>
 
 #include "ServerPacketHandler.h"
-
+#include "Type.h"
 
 using namespace winrt;
 using namespace Windows::Foundation;
@@ -33,7 +33,7 @@ public:
 	IAsyncAction		 Start(HostName& serverHost, hstring& port);
 	IAsyncAction		 RegisterAsync(StreamSocket& socket, uint32_t recvBufSize);
 	//bool			     RegisterRecvEvent(StreamSocket& socket, uint8_t recvBufSize);
-	//bool			     OnReceivePacket(uint8_t* buffer, uint8_t recvBufSize);
+	bool			     OnReceivePacket(uint8* buffer, uint8 recvBufSize);
 
 	//bool				 RegisterSendEvent(StreamSocket& socket);
 	//bool				 BufferToVector(IBuffer& buffer, OUT std::vector<uint8_t>& recvBuffer);

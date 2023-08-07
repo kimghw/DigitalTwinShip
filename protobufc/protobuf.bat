@@ -32,10 +32,9 @@ REM XCOPY /Y Struct.pb.cc "../../../Streamsocket"
 XCOPY /Y Protocol.pb.h "../Streamsocket"
 XCOPY /Y Protocol.pb.cc "../Streamsocket"
 XCOPY /Y ServerPacketHandler.h "../Streamsocket"
-
+PAUSE
 
 DEL /Q /F *.pb.h
 DEL /Q /F *.pb.cc
 DEL /Q /F *.h
 
-rem PAUSE

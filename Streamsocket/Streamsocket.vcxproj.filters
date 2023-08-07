@@ -24,9 +24,6 @@
     <ClCompile Include="ClientService.cpp">
       <Filter>Network</Filter>
     </ClCompile>
-    <ClCompile Include="ServerSession.cpp">
-      <Filter>Network</Filter>
-    </ClCompile>
     <ClCompile Include="Streamsocket.cpp">
       <Filter>Network</Filter>
     </ClCompile>
@@ -47,11 +44,11 @@
     <ClInclude Include="ServerPacketHandler.h">
       <Filter>Network</Filter>
     </ClInclude>
-    <ClInclude Include="ServerSession.h">
-      <Filter>Network</Filter>
-    </ClInclude>
     <ClInclude Include="Protocol.pb.h">
       <Filter>Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="type.h">
+      <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,5 +58,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+    <None Include="..\protobufc\Protocol.proto">
+      <Filter>Proto</Filter>
+    </None>
   </ItemGroup>
 </Project>

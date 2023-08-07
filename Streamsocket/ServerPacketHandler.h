@@ -2,19 +2,18 @@
 #include "Protocol.pb.h"
 #include "type.h"
 
-
-using PacketHandlerFunc = std::function<bool(PacketSessionRef&, BYTE*, int32)>;
+using PacketHandlerFunc = std::function<bool(ServiceRef&, BYTE*, int32)>;
 extern PacketHandlerFunc GPacketHandler[UINT16_MAX];
 
-enum : uint16_t
+enum : uint16
 {
 	PKT_S_TEST = 1000,
 	PKT_C_TEST = 1001,
 };
 
 // Custom Handlers
-bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len);
-bool Handle_S_TEST(PacketSessionRef& session, Protocol::S_TEST& pkt);
+bool Handle_INVALID(ServiceRef& session, BYTE* buffer, int32 len);
+bool Handle_S_TEST(ServiceRef& session, Protocol::S_TEST& pkt);
 
 class ServerPacketHandler
 {
@@ -23,19 +22,20 @@ public:
 	{
 		for (int32 i = 0; i < UINT16_MAX; i++)
 			GPacketHandler[i] = Handle_INVALID;
-		GPacketHandler[PKT_S_TEST] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<Protocol::S_TEST>(Handle_S_TEST, session, buffer, len); };
+
+		GPacketHandler[PKT_S_TEST] = [](ServiceRef& session, BYTE* buffer, int32 len) { return HandlePacket<Protocol::S_TEST>(Handle_S_TEST, session, buffer, len); };
 	}
 
-	static bool HandlePacket(PacketSessionRef& session, BYTE* buffer, int32 len)
+	static bool HandlePacket(ServiceRef& session, BYTE* buffer, int32 len)
 	{
 		PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
 		return GPacketHandler[header->id](session, buffer, len);
 	}
-	/*static SendBufferRef MakeSendBuffer(Protocol::C_TEST& pkt) { return MakeSendBuffer(pkt, PKT_C_TEST); }*/
+	//static SendBufferRef MakeSendBuffer(Protocol::C_TEST& pkt) { return MakeSendBuffer(pkt, PKT_C_TEST); }
 
 private:
 	template<typename PacketType, typename ProcessFunc>
-	static bool HandlePacket(ProcessFunc func, PacketSessionRef& session, BYTE* buffer, int32 len)
+	static bool HandlePacket(ProcessFunc func, ServiceRef& session, BYTE* buffer, int32 len)
 	{
 		PacketType pkt;
 		if (pkt.ParseFromArray(buffer + sizeof(PacketHeader), len - sizeof(PacketHeader)) == false)
