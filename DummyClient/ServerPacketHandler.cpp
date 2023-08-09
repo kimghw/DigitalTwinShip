@@ -11,5 +11,6 @@ bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len)
 
 bool Handle_S_TEST(PacketSessionRef& session, Protocol::S_TEST& pkt)
 {
+	std::cout << pkt.id() << " : " << pkt.player() << std::endl;
 	return true;
 }

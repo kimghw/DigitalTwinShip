@@ -1,4 +1,5 @@
 #include "ClientService.h"
+#include "Type.h"
 
 using namespace winrt;
 using namespace std;
@@ -34,6 +35,8 @@ IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
 	try
 	{
 		co_await _socket.ConnectAsync(_serverHost, _serverPort);
+
+
 		RegisterAsync(_socket, _recvBufSize);
 		cout << "Connected to server" << endl;
 		cout << "DataReader is being created..." << endl;
@@ -41,7 +44,8 @@ IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
 	catch (const hresult_error& ex)
 	{
 		winrt::hstring message = ex.message();
-		OutputDebugStringW(message.c_str());
+		std::wcerr << L"Error: " << ex.message().c_str() << L" (HRESULT: " << ex.code() << L")" << std::endl;
+		//OutputDebugStringW(message.c_str());
 	}
 
 	
@@ -96,11 +100,11 @@ IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint32_t recvBuf
 			auto ibuffer = reader.ReadBuffer(bytesRead);
 			// Convert the 'IBuffer' to a 'std::vector<uint8_t>' using the helper function 'BufferToVector'
 			_recvBuffer.reserve(bytesRead);
-			BufferToVector(ibuffer, OUT _recvBuffer);
-
+			ClientService::BufferToVector(ibuffer, OUT _recvBuffer);
+			uint32_t recvBufSize = static_cast<uint32_t>(_recvBuffer.size());
 			// Process the received data
 			// Call the ServerPacketHandler
-			ClientService::OnReceivePacket(_recvBuffer.data(), _recvBuffer.size());
+			ClientService::OnReceivePacket(_recvBuffer.data(), recvBufSize);
 		}
 	}
 	catch (winrt::hresult_error  const& ex)
@@ -110,18 +114,19 @@ IAsyncAction ClientService::RegisterAsync(StreamSocket& socket, uint32_t recvBuf
 }
 
 
-bool ClientService::OnReceivePacket(uint8* buffer, uint8 recvBufSize)
+bool ClientService::OnReceivePacket(uint8_t* buffer, uint32_t recvBufSize)
 {
 	PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
-	ServerPacketHandler::HandlePacket(,)
+	//ServerPacketHandler::HandlePacket(,)
 
+	return true;
 }
 
 // Buffer to vector helper function
 // This method casuse more resources to return the vector object.
 // It will cause lock racing condition if the buffer is a member of the class 
 // because the buffer is shared with other threads.
-bool ClientService::BufferToVector(IBuffer& buffer, OUT std::vector<uint8_t>& recvBuffer)
+bool ClientService::BufferToVector(IBuffer& buffer, OUT std::vector<BYTE>& recvBuffer)
 {
 	auto dataReader = DataReader::FromBuffer(buffer);
 	//std::vector<uint8_t> data(buffer.Length());

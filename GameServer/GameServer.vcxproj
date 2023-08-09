@@ -135,6 +135,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
       <AdditionalIncludeDirectories>F:\Miniproject\protobuf\GameServer\Proto;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -151,6 +152,7 @@
       <ConformanceMode>true</ConformanceMode>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -177,7 +179,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="GameSession.h" />
-    <ClInclude Include="GameSessionManager.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="ClientPacketHandler.h" />
     <ClInclude Include="Protocol.pb.h" />

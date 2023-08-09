@@ -33,11 +33,13 @@
 // @@protoc_insertion_point(includes)
 #include <google/protobuf/port_def.inc>
 #define PROTOBUF_INTERNAL_EXPORT_Protobuf_2eproto
-PROTOBUF_NAMESPACE_OPEN
+namespace google {
+    namespace protobuf {
 namespace internal {
 class AnyMetadata;
 }  // namespace internal
-PROTOBUF_NAMESPACE_CLOSE
+    }
+}
 
 // Internal implementation detail -- do not use these members.
 struct TableStruct_Protobuf_2eproto {

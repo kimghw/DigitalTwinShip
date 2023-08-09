@@ -181,20 +181,30 @@ class S_TEST final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTestFieldNumber = 1,
+    kPlayerFieldNumber = 2,
+    kIdFieldNumber = 1,
   };
-  // string test = 1;
-  void clear_test();
-  const std::string& test() const;
+  // string player = 2;
+  void clear_player();
+  const std::string& player() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_test(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_test();
-  PROTOBUF_NODISCARD std::string* release_test();
-  void set_allocated_test(std::string* test);
+  void set_player(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_player();
+  PROTOBUF_NODISCARD std::string* release_player();
+  void set_allocated_player(std::string* player);
   private:
-  const std::string& _internal_test() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_test(const std::string& value);
-  std::string* _internal_mutable_test();
+  const std::string& _internal_player() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_player(const std::string& value);
+  std::string* _internal_mutable_player();
+  public:
+
+  // int32 id = 1;
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:Protocol.S_TEST)
@@ -205,7 +215,8 @@ class S_TEST final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr test_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr player_;
+    int32_t id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -334,20 +345,30 @@ class C_TEST final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kTestFieldNumber = 1,
+    kPlayerFieldNumber = 2,
+    kIdFieldNumber = 1,
   };
-  // string test = 1;
-  void clear_test();
-  const std::string& test() const;
+  // string player = 2;
+  void clear_player();
+  const std::string& player() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_test(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_test();
-  PROTOBUF_NODISCARD std::string* release_test();
-  void set_allocated_test(std::string* test);
+  void set_player(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_player();
+  PROTOBUF_NODISCARD std::string* release_player();
+  void set_allocated_player(std::string* player);
   private:
-  const std::string& _internal_test() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_test(const std::string& value);
-  std::string* _internal_mutable_test();
+  const std::string& _internal_player() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_player(const std::string& value);
+  std::string* _internal_mutable_player();
+  public:
+
+  // int32 id = 1;
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
   public:
 
   // @@protoc_insertion_point(class_scope:Protocol.C_TEST)
@@ -358,7 +379,8 @@ class C_TEST final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr test_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr player_;
+    int32_t id_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -375,108 +397,148 @@ class C_TEST final :
 #endif  // __GNUC__
 // S_TEST
 
-// string test = 1;
-inline void S_TEST::clear_test() {
-  _impl_.test_.ClearToEmpty();
+// int32 id = 1;
+inline void S_TEST::clear_id() {
+  _impl_.id_ = 0;
 }
-inline const std::string& S_TEST::test() const {
-  // @@protoc_insertion_point(field_get:Protocol.S_TEST.test)
-  return _internal_test();
+inline int32_t S_TEST::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t S_TEST::id() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_TEST.id)
+  return _internal_id();
+}
+inline void S_TEST::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void S_TEST::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_TEST.id)
+}
+
+// string player = 2;
+inline void S_TEST::clear_player() {
+  _impl_.player_.ClearToEmpty();
+}
+inline const std::string& S_TEST::player() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_TEST.player)
+  return _internal_player();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void S_TEST::set_test(ArgT0&& arg0, ArgT... args) {
+void S_TEST::set_player(ArgT0&& arg0, ArgT... args) {
  
- _impl_.test_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.S_TEST.test)
+ _impl_.player_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.S_TEST.player)
 }
-inline std::string* S_TEST::mutable_test() {
-  std::string* _s = _internal_mutable_test();
-  // @@protoc_insertion_point(field_mutable:Protocol.S_TEST.test)
+inline std::string* S_TEST::mutable_player() {
+  std::string* _s = _internal_mutable_player();
+  // @@protoc_insertion_point(field_mutable:Protocol.S_TEST.player)
   return _s;
 }
-inline const std::string& S_TEST::_internal_test() const {
-  return _impl_.test_.Get();
+inline const std::string& S_TEST::_internal_player() const {
+  return _impl_.player_.Get();
 }
-inline void S_TEST::_internal_set_test(const std::string& value) {
+inline void S_TEST::_internal_set_player(const std::string& value) {
   
-  _impl_.test_.Set(value, GetArenaForAllocation());
+  _impl_.player_.Set(value, GetArenaForAllocation());
 }
-inline std::string* S_TEST::_internal_mutable_test() {
+inline std::string* S_TEST::_internal_mutable_player() {
   
-  return _impl_.test_.Mutable(GetArenaForAllocation());
+  return _impl_.player_.Mutable(GetArenaForAllocation());
 }
-inline std::string* S_TEST::release_test() {
-  // @@protoc_insertion_point(field_release:Protocol.S_TEST.test)
-  return _impl_.test_.Release();
+inline std::string* S_TEST::release_player() {
+  // @@protoc_insertion_point(field_release:Protocol.S_TEST.player)
+  return _impl_.player_.Release();
 }
-inline void S_TEST::set_allocated_test(std::string* test) {
-  if (test != nullptr) {
+inline void S_TEST::set_allocated_player(std::string* player) {
+  if (player != nullptr) {
     
   } else {
     
   }
-  _impl_.test_.SetAllocated(test, GetArenaForAllocation());
+  _impl_.player_.SetAllocated(player, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.test_.IsDefault()) {
-    _impl_.test_.Set("", GetArenaForAllocation());
+  if (_impl_.player_.IsDefault()) {
+    _impl_.player_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.S_TEST.test)
+  // @@protoc_insertion_point(field_set_allocated:Protocol.S_TEST.player)
 }
 
 // -------------------------------------------------------------------
 
 // C_TEST
 
-// string test = 1;
-inline void C_TEST::clear_test() {
-  _impl_.test_.ClearToEmpty();
+// int32 id = 1;
+inline void C_TEST::clear_id() {
+  _impl_.id_ = 0;
 }
-inline const std::string& C_TEST::test() const {
-  // @@protoc_insertion_point(field_get:Protocol.C_TEST.test)
-  return _internal_test();
+inline int32_t C_TEST::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t C_TEST::id() const {
+  // @@protoc_insertion_point(field_get:Protocol.C_TEST.id)
+  return _internal_id();
+}
+inline void C_TEST::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void C_TEST::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:Protocol.C_TEST.id)
+}
+
+// string player = 2;
+inline void C_TEST::clear_player() {
+  _impl_.player_.ClearToEmpty();
+}
+inline const std::string& C_TEST::player() const {
+  // @@protoc_insertion_point(field_get:Protocol.C_TEST.player)
+  return _internal_player();
 }
 template <typename ArgT0, typename... ArgT>
 inline PROTOBUF_ALWAYS_INLINE
-void C_TEST::set_test(ArgT0&& arg0, ArgT... args) {
+void C_TEST::set_player(ArgT0&& arg0, ArgT... args) {
  
- _impl_.test_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.C_TEST.test)
+ _impl_.player_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.C_TEST.player)
 }
-inline std::string* C_TEST::mutable_test() {
-  std::string* _s = _internal_mutable_test();
-  // @@protoc_insertion_point(field_mutable:Protocol.C_TEST.test)
+inline std::string* C_TEST::mutable_player() {
+  std::string* _s = _internal_mutable_player();
+  // @@protoc_insertion_point(field_mutable:Protocol.C_TEST.player)
   return _s;
 }
-inline const std::string& C_TEST::_internal_test() const {
-  return _impl_.test_.Get();
+inline const std::string& C_TEST::_internal_player() const {
+  return _impl_.player_.Get();
 }
-inline void C_TEST::_internal_set_test(const std::string& value) {
+inline void C_TEST::_internal_set_player(const std::string& value) {
   
-  _impl_.test_.Set(value, GetArenaForAllocation());
+  _impl_.player_.Set(value, GetArenaForAllocation());
 }
-inline std::string* C_TEST::_internal_mutable_test() {
+inline std::string* C_TEST::_internal_mutable_player() {
   
-  return _impl_.test_.Mutable(GetArenaForAllocation());
+  return _impl_.player_.Mutable(GetArenaForAllocation());
 }
-inline std::string* C_TEST::release_test() {
-  // @@protoc_insertion_point(field_release:Protocol.C_TEST.test)
-  return _impl_.test_.Release();
+inline std::string* C_TEST::release_player() {
+  // @@protoc_insertion_point(field_release:Protocol.C_TEST.player)
+  return _impl_.player_.Release();
 }
-inline void C_TEST::set_allocated_test(std::string* test) {
-  if (test != nullptr) {
+inline void C_TEST::set_allocated_player(std::string* player) {
+  if (player != nullptr) {
     
   } else {
     
   }
-  _impl_.test_.SetAllocated(test, GetArenaForAllocation());
+  _impl_.player_.SetAllocated(player, GetArenaForAllocation());
 #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.test_.IsDefault()) {
-    _impl_.test_.Set("", GetArenaForAllocation());
+  if (_impl_.player_.IsDefault()) {
+    _impl_.player_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.C_TEST.test)
+  // @@protoc_insertion_point(field_set_allocated:Protocol.C_TEST.player)
 }
 
 #ifdef __GNUC__

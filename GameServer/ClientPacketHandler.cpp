@@ -10,25 +10,14 @@ bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len)
 	return false;
 }
 
-bool Handle_H_TEST(PacketSessionRef& session, Protocol::H_TEST& pkt)
+
+bool Handle_C_TEST(PacketSessionRef& session, Protocol::C_TEST& pkt)
 {
-	
 	return true;
 }
 
 bool Handle_S_TEST(PacketSessionRef& session, Protocol::S_TEST& pkt)
 {
-	cout << " H_LOGIN is  coming" << endl;
-	return true;
-}
-
-bool Handle_H_LOGIN(PacketSessionRef& session, Protocol::H_LOGIN& pkt)
-{
-	
-	return true;
-}
-
-bool Handle_S_LOGIN(PacketSessionRef& session, Protocol::S_LOGIN& pkt)
-{
+	cout << " S_LOGIN is  coming" << endl;
 	return true;
 }

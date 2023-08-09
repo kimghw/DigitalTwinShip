@@ -23,7 +23,8 @@ namespace _pbi = _pb::internal;
 namespace Protocol {
 PROTOBUF_CONSTEXPR S_TEST::S_TEST(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.test_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.player_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct S_TESTDefaultTypeInternal {
   PROTOBUF_CONSTEXPR S_TESTDefaultTypeInternal()
@@ -36,7 +37,8 @@ struct S_TESTDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 S_TESTDefaultTypeInternal _S_TEST_default_instance_;
 PROTOBUF_CONSTEXPR C_TEST::C_TEST(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.test_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.player_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.id_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct C_TESTDefaultTypeInternal {
   PROTOBUF_CONSTEXPR C_TESTDefaultTypeInternal()
@@ -59,18 +61,20 @@ const uint32_t TableStruct_Protocol_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_TEST, _impl_.test_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_TEST, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_TEST, _impl_.player_),
   ~0u,  // no _has_bits_
   PROTOBUF_FIELD_OFFSET(::Protocol::C_TEST, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::C_TEST, _impl_.test_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::C_TEST, _impl_.id_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::C_TEST, _impl_.player_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::Protocol::S_TEST)},
-  { 7, -1, -1, sizeof(::Protocol::C_TEST)},
+  { 8, -1, -1, sizeof(::Protocol::C_TEST)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
@@ -79,13 +83,13 @@ static const ::_pb::Message* const file_default_instances[] = {
 };
 
 const char descriptor_table_protodef_Protocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016Protocol.proto\022\010Protocol\"\026\n\006S_TEST\022\014\n\004"
-  "test\030\001 \001(\t\"\026\n\006C_TEST\022\014\n\004test\030\001 \001(\tb\006prot"
-  "o3"
+  "\n\016Protocol.proto\022\010Protocol\"$\n\006S_TEST\022\n\n\002"
+  "id\030\001 \001(\005\022\016\n\006player\030\002 \001(\t\"$\n\006C_TEST\022\n\n\002id"
+  "\030\001 \001(\005\022\016\n\006player\030\002 \001(\tb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_Protocol_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_Protocol_2eproto = {
-    false, false, 82, descriptor_table_protodef_Protocol_2eproto,
+    false, false, 110, descriptor_table_protodef_Protocol_2eproto,
     "Protocol.proto",
     &descriptor_table_Protocol_2eproto_once, nullptr, 0, 2,
     schemas, file_default_instances, TableStruct_Protocol_2eproto::offsets,
@@ -116,18 +120,20 @@ S_TEST::S_TEST(const S_TEST& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   S_TEST* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.test_){}
+      decltype(_impl_.player_){}
+    , decltype(_impl_.id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.test_.InitDefault();
+  _impl_.player_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.test_.Set("", GetArenaForAllocation());
+    _impl_.player_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_test().empty()) {
-    _this->_impl_.test_.Set(from._internal_test(), 
+  if (!from._internal_player().empty()) {
+    _this->_impl_.player_.Set(from._internal_player(), 
       _this->GetArenaForAllocation());
   }
+  _this->_impl_.id_ = from._impl_.id_;
   // @@protoc_insertion_point(copy_constructor:Protocol.S_TEST)
 }
 
@@ -136,12 +142,13 @@ inline void S_TEST::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.test_){}
+      decltype(_impl_.player_){}
+    , decltype(_impl_.id_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.test_.InitDefault();
+  _impl_.player_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.test_.Set("", GetArenaForAllocation());
+    _impl_.player_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -156,7 +163,7 @@ S_TEST::~S_TEST() {
 
 inline void S_TEST::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.test_.Destroy();
+  _impl_.player_.Destroy();
 }
 
 void S_TEST::SetCachedSize(int size) const {
@@ -169,7 +176,8 @@ void S_TEST::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.test_.ClearToEmpty();
+  _impl_.player_.ClearToEmpty();
+  _impl_.id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -179,13 +187,21 @@ const char* S_TEST::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string test = 1;
+      // int32 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_test();
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string player = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_player();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_TEST.test"));
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_TEST.player"));
         } else
           goto handle_unusual;
         continue;
@@ -218,14 +234,20 @@ uint8_t* S_TEST::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string test = 1;
-  if (!this->_internal_test().empty()) {
+  // int32 id = 1;
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // string player = 2;
+  if (!this->_internal_player().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_test().data(), static_cast<int>(this->_internal_test().length()),
+      this->_internal_player().data(), static_cast<int>(this->_internal_player().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.S_TEST.test");
+      "Protocol.S_TEST.player");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_test(), target);
+        2, this->_internal_player(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -244,11 +266,16 @@ size_t S_TEST::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string test = 1;
-  if (!this->_internal_test().empty()) {
+  // string player = 2;
+  if (!this->_internal_player().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_test());
+        this->_internal_player());
+  }
+
+  // int32 id = 1;
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -269,8 +296,11 @@ void S_TEST::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_test().empty()) {
-    _this->_internal_set_test(from._internal_test());
+  if (!from._internal_player().empty()) {
+    _this->_internal_set_player(from._internal_player());
+  }
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -292,9 +322,10 @@ void S_TEST::InternalSwap(S_TEST* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.test_, lhs_arena,
-      &other->_impl_.test_, rhs_arena
+      &_impl_.player_, lhs_arena,
+      &other->_impl_.player_, rhs_arena
   );
+  swap(_impl_.id_, other->_impl_.id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata S_TEST::GetMetadata() const {
@@ -319,18 +350,20 @@ C_TEST::C_TEST(const C_TEST& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   C_TEST* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.test_){}
+      decltype(_impl_.player_){}
+    , decltype(_impl_.id_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.test_.InitDefault();
+  _impl_.player_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.test_.Set("", GetArenaForAllocation());
+    _impl_.player_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_test().empty()) {
-    _this->_impl_.test_.Set(from._internal_test(), 
+  if (!from._internal_player().empty()) {
+    _this->_impl_.player_.Set(from._internal_player(), 
       _this->GetArenaForAllocation());
   }
+  _this->_impl_.id_ = from._impl_.id_;
   // @@protoc_insertion_point(copy_constructor:Protocol.C_TEST)
 }
 
@@ -339,12 +372,13 @@ inline void C_TEST::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.test_){}
+      decltype(_impl_.player_){}
+    , decltype(_impl_.id_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.test_.InitDefault();
+  _impl_.player_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.test_.Set("", GetArenaForAllocation());
+    _impl_.player_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
@@ -359,7 +393,7 @@ C_TEST::~C_TEST() {
 
 inline void C_TEST::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.test_.Destroy();
+  _impl_.player_.Destroy();
 }
 
 void C_TEST::SetCachedSize(int size) const {
@@ -372,7 +406,8 @@ void C_TEST::Clear() {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.test_.ClearToEmpty();
+  _impl_.player_.ClearToEmpty();
+  _impl_.id_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -382,13 +417,21 @@ const char* C_TEST::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string test = 1;
+      // int32 id = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_test();
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string player = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_player();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.C_TEST.test"));
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.C_TEST.player"));
         } else
           goto handle_unusual;
         continue;
@@ -421,14 +464,20 @@ uint8_t* C_TEST::_InternalSerialize(
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string test = 1;
-  if (!this->_internal_test().empty()) {
+  // int32 id = 1;
+  if (this->_internal_id() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+  }
+
+  // string player = 2;
+  if (!this->_internal_player().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_test().data(), static_cast<int>(this->_internal_test().length()),
+      this->_internal_player().data(), static_cast<int>(this->_internal_player().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.C_TEST.test");
+      "Protocol.C_TEST.player");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_test(), target);
+        2, this->_internal_player(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
@@ -447,11 +496,16 @@ size_t C_TEST::ByteSizeLong() const {
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string test = 1;
-  if (!this->_internal_test().empty()) {
+  // string player = 2;
+  if (!this->_internal_player().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_test());
+        this->_internal_player());
+  }
+
+  // int32 id = 1;
+  if (this->_internal_id() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -472,8 +526,11 @@ void C_TEST::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_test().empty()) {
-    _this->_internal_set_test(from._internal_test());
+  if (!from._internal_player().empty()) {
+    _this->_internal_set_player(from._internal_player());
+  }
+  if (from._internal_id() != 0) {
+    _this->_internal_set_id(from._internal_id());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
@@ -495,9 +552,10 @@ void C_TEST::InternalSwap(C_TEST* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.test_, lhs_arena,
-      &other->_impl_.test_, rhs_arena
+      &_impl_.player_, lhs_arena,
+      &other->_impl_.player_, rhs_arena
   );
+  swap(_impl_.id_, other->_impl_.id_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata C_TEST::GetMetadata() const {

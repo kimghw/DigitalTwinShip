@@ -35,9 +35,6 @@
     <ClInclude Include="pch.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="GameSessionManager.h">
-      <Filter>Main</Filter>
-    </ClInclude>
     <ClInclude Include="GameSession.h">
       <Filter>Main</Filter>
     </ClInclude>

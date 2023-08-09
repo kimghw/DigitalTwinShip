@@ -2,6 +2,7 @@
 #include <cstdint>
 #include <memory>
 #include "ClientService.h"
+#include <stdint.h>
 
 
 using BYTE = unsigned char;

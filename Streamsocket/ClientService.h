@@ -10,14 +10,17 @@
 #include <thread>
 #include <mutex>
 
-#include "ServerPacketHandler.h"
 #include "Type.h"
+#include <stdint.h>
+
 
 using namespace winrt;
 using namespace Windows::Foundation;
 using namespace Windows::Networking;
 using namespace Windows::Networking::Sockets;
 using namespace Windows::Storage::Streams;
+
+
 
 class ClientService
 {
@@ -33,21 +36,26 @@ public:
 	IAsyncAction		 Start(HostName& serverHost, hstring& port);
 	IAsyncAction		 RegisterAsync(StreamSocket& socket, uint32_t recvBufSize);
 	//bool			     RegisterRecvEvent(StreamSocket& socket, uint8_t recvBufSize);
-	bool			     OnReceivePacket(uint8* buffer, uint8 recvBufSize);
+	bool			     OnReceivePacket(uint8_t* buffer, uint32_t recvBufSize);
 
 	//bool				 RegisterSendEvent(StreamSocket& socket);
 	//bool				 BufferToVector(IBuffer& buffer, OUT std::vector<uint8_t>& recvBuffer);
-	bool	BufferToVector(IBuffer& buffer, OUT std::vector<uint8_t>& recvBuffer);
+	bool	BufferToVector(IBuffer& buffer, OUT std::vector<BYTE>& recvBuffer);
+
+
+	StreamSocket& GetSocket() { return _socket; }
+	uint32_t GetRecvBufferSize() { return _recvBufSize; }
+
 private:
 	// Lock이 필요할거 같은데...
 	StreamSocket _socket;
 	std::mutex _lock;
+
 	//BYTE* _sendbuffer;
 	//BYTE* _recvbuffer;
 
-
-	HostName _serverHost{ L"0.0.0.0" }; // Replace with the server IP address or hostname
-	hstring _serverPort{ L"0" };
+	HostName _serverHost{ L"127.0.0.1" }; // Replace with the server IP address or hostname
+	hstring _serverPort{ L"7777" };
 	
 
 	const uint32_t _recvBufSize = 1024;
@@ -55,11 +63,6 @@ private:
 
 	std::vector<uint8_t> _recvBuffer;
 	
-
-
-public:
-	ServerPacketHandler* _serverPacketHandler;
-
 };
 
 struct PacketHeader
@@ -67,6 +70,7 @@ struct PacketHeader
 	uint32_t id;
 	uint32_t size;
 };
+
 
 //////////////////
 

@@ -67,15 +67,16 @@ int main()
 
 
 
-	Protocol::H_LOGIN logPkg;
-	logPkg.set_str("Hello, I am Hololens2");
-	auto sendBuffer = ServerPacketHandler::MakeSendBuffer(logPkg);
+	//Protocol::H_LOGIN logPkg;
+	//logPkg.set_str("Hello, I am Hololens2");
+	//auto sendBuffer = ServerPacketHandler::MakeSendBuffer(logPkg);
 
+	Protocol::C_TEST testPkg;
+	
 
 	while (true)
 	{
-		service->Broadcast(sendBuffer);
-		cout << logPkg.str() << endl;
+
 
 		this_thread::sleep_for(0.1s);
 		

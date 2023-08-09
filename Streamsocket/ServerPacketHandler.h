@@ -1,6 +1,7 @@
 #pragma once
 #include "Protocol.pb.h"
 #include "type.h"
+#include "ServerPacketHandler.h"
 
 using PacketHandlerFunc = std::function<bool(ServiceRef&, BYTE*, int32)>;
 extern PacketHandlerFunc GPacketHandler[UINT16_MAX];
@@ -10,6 +11,7 @@ enum : uint16
 	PKT_S_TEST = 1000,
 	PKT_C_TEST = 1001,
 };
+
 
 // Custom Handlers
 bool Handle_INVALID(ServiceRef& session, BYTE* buffer, int32 len);

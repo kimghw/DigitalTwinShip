@@ -3,12 +3,12 @@ package Protocol;
 
 message S_TEST
 {
-	uint64_t id = 1;
+	int32 id = 1;
 	string player = 2;
 }
 
 message C_TEST
 {
-	uint64_t id = 1;
+	int32 id = 1;
 	string player = 2;
 }
