@@ -1,7 +1,9 @@
 #pragma once
 #include <winrt/Windows.Foundation.h>
+
 #include <winrt/Windows.Networking.h>
 #include <winrt/Windows.Networking.Sockets.h>
+#include <winrt/Windows.Storage.Streams.h>
 #include "Protocol.pb.h" // This is the generated protobuf header
 #include <functional>
 
