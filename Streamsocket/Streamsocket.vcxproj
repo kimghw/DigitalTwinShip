@@ -130,16 +130,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="ClientService.cpp" />
     <ClCompile Include="Protocol.pb.cc" />
     <ClCompile Include="ServerPacketHandler.cpp" />
+    <ClCompile Include="Session.cpp" />
     <ClCompile Include="Streamsocket.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="ClientService.h" />
     <ClInclude Include="Protocol.pb.h" />
     <ClInclude Include="resource.h" />
     <ClInclude Include="ServerPacketHandler.h" />
+    <ClInclude Include="Session.h" />
     <ClInclude Include="type.h" />
   </ItemGroup>
   <ItemGroup>

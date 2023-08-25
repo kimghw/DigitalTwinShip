@@ -15,6 +15,7 @@ ClientService::~ClientService()
 
 }
 
+// 1. 비동기로, StreamSocket을 생성하고, 서버에 연결한다.
 IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
 {
 
@@ -34,6 +35,7 @@ IAsyncAction ClientService::Start(HostName& serverHost, hstring& serverPort)
     // ServerConnect
 	try
 	{
+
 		co_await _socket.ConnectAsync(_serverHost, _serverPort);
 
 
