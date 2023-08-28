@@ -12,3 +12,57 @@ message C_TEST
 	int32 id = 1;
 	string player = 2;
 }
+
+// Motor
+message Motor_phase_data{
+	float motor_current = 1;
+	float motor_analog  = 2;
+	float motor_digital = 3;
+}
+
+message C_SHIP_MotorData
+{
+  float motor_speed = 1;
+  float motor_torque = 2;
+  float motor_power = 3;
+  float motor_voltage = 4;
+  float motor_temp = 5;
+  repeated Motor_phase_motor phase_data = 6;
+}
+
+// Inverter
+message Inv_phase_data{
+  float inverter_current = 1;
+  float inverter_analog = 2;
+  float inverter_digital = 3;
+}
+message C_SHIP_InvData {
+  float inverter_output_frequency = 1;
+  float inverter_frequency_reference = 2;
+  float inverter_dc_link_voltage = 3;
+  float inverter_unit_temperature1 = 4;
+  float inverter_unit_temperature2 = 5;
+  float inverter_torque_reference = 6;
+  float inverter_torque = 7;
+  float inverter_power = 8;
+  float inverter_output_voltage = 9;
+  float inverter_speed_sensor1 = 10;
+  float inverter_speed_sensor2 = 11;
+  string inverter_status = 12;
+  string inverter_alarm_code = 13;
+
+  repeated Inv_phase_data phase_data = 14;
+}
+
+// Battery
+message C_SHIP_BatteryCell {
+  float voltage = 1;
+  float current = 2;
+  float temperature = 3;
+  float analog1 = 4;
+  string status = 5;
+  float soc = 6;
+}
+message BatteryData {
+  repeated C_SHIP_BatteryCell cells = 1;
+}
