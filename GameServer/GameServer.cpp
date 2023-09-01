@@ -9,16 +9,20 @@
 #include <tchar.h>
 
 
+
+
 int main()
 {
-
+	
+	
+	serverConf conf; JsonToConf::Init("config.json", conf);
 	ClientPacketHandler::Init();
 
 	ServerServiceRef service = MakeShared<ServerService>(
-		NetAddress(L"127.0.0.1", 7777),
+		NetAddress(conf.ip, conf.port),
 		MakeShared<IocpCore>(),
 		MakeShared<GameSession>, // TODO : SessionManager 등
-		100);
+		conf.maxSessionCount);
 
 	ASSERT_CRASH(service->Start());
 
@@ -36,8 +40,8 @@ int main()
 
 	while (true)
 	{
-		
-		this_thread::sleep_for(250ms);
+		cout << "Server is running..." << endl;
+		this_thread::sleep_for(25ms);
 	}
 
 	GThreadManager->Join();

@@ -30,6 +30,7 @@
     <ClCompile Include="Protocol.pb.cc">
       <Filter>Proto</Filter>
     </ClCompile>
+    <ClCompile Include="JsonToConf.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -44,6 +45,7 @@
     <ClInclude Include="Protocol.pb.h">
       <Filter>Proto</Filter>
     </ClInclude>
+    <ClInclude Include="JsonToConf.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\protobufc\protobuf.bat">
@@ -52,5 +54,7 @@
     <None Include="..\protobufc\Protocol.proto">
       <Filter>Proto</Filter>
     </None>
+    <None Include="packages.config" />
+    <None Include="config.json" />
   </ItemGroup>
 </Project>

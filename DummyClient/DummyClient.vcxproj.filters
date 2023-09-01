@@ -45,5 +45,6 @@
     <None Include="..\protobufc\Protocol.proto">
       <Filter>Proto</Filter>
     </None>
+    <None Include="packages.config" />
   </ItemGroup>
 </Project>

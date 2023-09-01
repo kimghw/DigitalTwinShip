@@ -33,6 +33,7 @@ message C_SHIP_MotorData
 // Inverter
 message Inv_phase_data{
   float inverter_current = 1;
+  // ¿¹ºñ
   float inverter_analog = 2;
   float inverter_digital = 3;
 }
@@ -48,8 +49,8 @@ message C_SHIP_InvData {
   float inverter_output_voltage = 9;
   float inverter_speed_sensor1 = 10;
   float inverter_speed_sensor2 = 11;
-  string inverter_status = 12;
-  string inverter_alarm_code = 13;
+  int32 inverter_status = 12;
+  int32 inverter_alarm_code = 13;
 
   repeated Inv_phase_data phase_data = 14;
 }
@@ -60,9 +61,46 @@ message C_SHIP_BatteryCell {
   float current = 2;
   float temperature = 3;
   float analog1 = 4;
-  string status = 5;
+  // bit flag
+  int32 status = 5;
   float soc = 6;
 }
 message BatteryData {
   repeated C_SHIP_BatteryCell cells = 1;
+}
+
+message C_BMS {
+  float charger_input_voltage = 1;
+  float charger_input_current = 2;
+  float bms_output_voltage = 3;
+  float bms_output_current = 4;
+  float bms_temperature1 = 5;
+  float bms_temperature2 = 6;
+  // big flag
+  string bms_status = 7;
+  string bms_alarm_code = 8;
+}
+
+message C_Navigation {
+ float steering_wheel_angle = 1;
+  float rudder_angle = 2;
+  float telegraph_angle = 3;
+  int64 system_time = 4;
+  float vessel_heading = 5;
+  float latitude = 6;
+  float longitude = 7;
+  float vessel_speed = 8;
+  // 1000 bytes ?????
+  bool AIS = 9;
+  float wind_speed = 10;
+  float wind_direction = 11;
+  float air_temperature = 12;
+  float humidity = 13;
+  float actual_pressure = 14;
+  float vessel_roll = 15;
+  float vessel_heave = 16;
+  float vessel_pitch = 17;
+  // bit flag
+  string vessel_status = 18;
+  string vessel_alarm = 19;
 }
