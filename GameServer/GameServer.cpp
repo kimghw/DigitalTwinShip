@@ -15,7 +15,7 @@ int main()
 {
 	
 	
-	serverConf conf; JsonToConf::Init("config.json", conf);
+	serverConf conf; JsonToConf::Init("serverconfig.json", conf);
 	ClientPacketHandler::Init();
 
 	ServerServiceRef service = MakeShared<ServerService>(

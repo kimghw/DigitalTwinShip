@@ -10,6 +10,9 @@
     <Filter Include="Proto">
       <UniqueIdentifier>{d04805bd-bd63-44de-8a49-0c3d4ebce843}</UniqueIdentifier>
     </Filter>
+    <Filter Include="jsonfile">
+      <UniqueIdentifier>{83a74e26-12f4-441b-aaa0-705250b94c7b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameServer.cpp">
@@ -30,7 +33,9 @@
     <ClCompile Include="Protocol.pb.cc">
       <Filter>Proto</Filter>
     </ClCompile>
-    <ClCompile Include="JsonToConf.cpp" />
+    <ClCompile Include="JsonToConf.cpp">
+      <Filter>Main</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -45,7 +50,9 @@
     <ClInclude Include="Protocol.pb.h">
       <Filter>Proto</Filter>
     </ClInclude>
-    <ClInclude Include="JsonToConf.h" />
+    <ClInclude Include="JsonToConf.h">
+      <Filter>Main</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\protobufc\protobuf.bat">
@@ -55,6 +62,8 @@
       <Filter>Proto</Filter>
     </None>
     <None Include="packages.config" />
-    <None Include="config.json" />
+    <None Include="config.json">
+      <Filter>jsonfile</Filter>
+    </None>
   </ItemGroup>
 </Project>
