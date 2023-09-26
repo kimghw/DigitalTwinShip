@@ -5,7 +5,6 @@ struct serverConf
 	std::wstring ip;
 	std::uint32_t port;
 	std::uint32_t maxSessionCount;
-
 	std::string dsn;
 	std::string username;
 	std::string password;
@@ -22,9 +21,23 @@ public:
 	static void Init(string jsonFileName, serverConf& conf)
 	{
 		std::ifstream inputfile(jsonFileName);
+		if (!inputfile.is_open())
+			throw std::runtime_error("Failed to open the Json file");
+
 		nlohmann::json jconfig;
 
-		inputfile >> jconfig;
+		try
+		{
+			inputfile >> jconfig;
+		}
+		catch (const std::exception& e)
+		{
+			std::cerr<<"runtime error : " << e.what()<<std::endl;
+		}
+		
+
+
+
 		conf.ip = stringToWString(jconfig["SERVER_IP"]);
 		conf.port = (int32)jconfig["SERVER_PORT"];
 		conf.maxSessionCount = (int32)jconfig["SERVER_MAXSESSIONCOUNT"];

@@ -39,9 +39,6 @@
     <ClCompile Include="JsonToConf.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Ordb.cpp">
-      <Filter>ORDB</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -58,9 +55,6 @@
     </ClInclude>
     <ClInclude Include="JsonToConf.h">
       <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="Ordb.h">
-      <Filter>ORDB</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

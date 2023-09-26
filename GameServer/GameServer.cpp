@@ -7,15 +7,35 @@
 #include "BufferWriter.h"
 #include "ClientPacketHandler.h"
 #include <tchar.h>
-
-
+#include "DBConnectionPool.h"
 
 
 int main()
 {
+	serverConf conf; 
+	JsonToConf::Init("serverconfig.json", conf);
+
+	//TODO : DBConnectionPool 초기화
+	ASSERT_CRASH(GDBConnectionPool->Connect(1, L"Driver={ODBC Driver 18 for SQL Server};Server=tcp:krdigitaltwindbserver.database.windows.net,1433;Database=digitaltwindb;Uid=digitaltwin;Pwd=ship0909$;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"));
+
+	// Create Table
+
+	{
+		auto query = L"DROP TABLE IF EXISTS [dbo].[Gold];"
+			L"CREATE TABLE [dbo].[Gold]"
+			L"("
+			L"[id] INT NOT NULL PRIMARY KEY IDENTITY,"
+			L"[gold] INT NULL"
+			L");";
+	}
+
+
 	
+
+
+
 	
-	serverConf conf; JsonToConf::Init("serverconfig.json", conf);
+
 	ClientPacketHandler::Init();
 
 	ServerServiceRef service = MakeShared<ServerService>(
@@ -23,6 +43,7 @@ int main()
 		MakeShared<IocpCore>(),
 		MakeShared<GameSession>, // TODO : SessionManager 등
 		conf.maxSessionCount);
+	
 
 	ASSERT_CRASH(service->Start());
 
