@@ -62,6 +62,9 @@ DBConnection* DBConnectionPool::Pop()
 
 	DBConnection* connection = _connections.back();
 	_connections.pop_back();
+
+	return connection;
+	
 }
 
 void DBConnectionPool::Push(DBConnection* connection)
