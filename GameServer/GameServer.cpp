@@ -21,7 +21,8 @@ int main()
 
 	{
 		auto query = L"DROP TABLE IF EXISTS [dbo].[Gold];"
-			L"CREATE TABLE [dbo].[Gold] ("
+			L"CREATE TABLE [dbo].[Gold] "
+			L"("
 			L"    [id] INT NOT NULL PRIMARY KEY IDENTITY,"
 			L"    [gold] INT NULL"
 			L");";
@@ -32,7 +33,7 @@ int main()
 	}
 
 	// Add Data
-	for (size_t i = 0; i < 3; i++)
+	for (size_t i = 0; i < 100; i++)
 	{
 		DBConnection* dbConn = GDBConnectionPool->Pop();
 

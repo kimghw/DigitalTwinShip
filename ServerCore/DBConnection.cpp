@@ -1,6 +1,9 @@
 #include "pch.h"
 #include "DBConnection.h"
 
+
+
+
 bool DBConnection::Connect(SQLHENV henv, const WCHAR* connectionString)
 {
 	// Connection to the database with both the environment and the connection handle.
@@ -132,6 +135,56 @@ bool DBConnection::BindParam(SQLUSMALLINT paramIndex, SQLSMALLINT cType, SQLSMAL
 
 	return true;
 }
+// C데이터형식 식별자 : SQL_C_TINYINT, SQL 형식 : SQL_TINYINT
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int8* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int16* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int32* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int64* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, float* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, double* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, bool* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, BYTE* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, WCHAR** string, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
+
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, TIMESTAMP_STRUCT* value, SQLLEN* index)
+{
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+}
 
 bool DBConnection::BindCol(SQLUSMALLINT columnIndex, SQLSMALLINT cType, SQLULEN len, SQLPOINTER value, SQLLEN* index)
 {
@@ -142,6 +195,56 @@ bool DBConnection::BindCol(SQLUSMALLINT columnIndex, SQLSMALLINT cType, SQLULEN 
 		return false;
 	}
 	return true;
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, int8* value, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, int16* value, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, int32* value, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, int64* value, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, float* value, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, double* value, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, bool* value, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, BYTE* value, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, WCHAR** string, SQLLEN* index)
+{
+
+}
+
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex, TIMESTAMP_STRUCT* value, SQLLEN* index)
+{
 
 }
 
