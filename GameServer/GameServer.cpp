@@ -24,7 +24,9 @@ int main()
 			L"CREATE TABLE [dbo].[Gold] "
 			L"("
 			L"    [id] INT NOT NULL PRIMARY KEY IDENTITY,"
-			L"    [gold] INT NULL"
+			L"    [gold] INT NULL,"
+			L"    [name] NVARCHAR(50) NULL,"
+			L"	  [createDate] DATETIME NULL"
 			L");";
 
 		DBConnection* dbConn = GDBConnectionPool->Pop();
@@ -44,11 +46,23 @@ int main()
 		int32 gold = 1000;
 		SQLLEN len = 0;
 
+		WCHAR name[100] = L"Geohwa";
+		SQLLEN nameLen = 0;
+
+		TIMESTAMP_STRUCT ts = { };
+		ts.year = 2023;
+		ts.month = 10;
+		ts.day = 12;
+		SQLLEN tsLen = 0;	
+
 		// 바인딩
-		ASSERT_CRASH(dbConn->BindParam(1, SQL_C_LONG, SQL_INTEGER, sizeof(gold), &gold, &len));
+		ASSERT_CRASH(dbConn->BindParam(1, &gold, &len));
+		ASSERT_CRASH(dbConn->BindParam(2, name, &nameLen));
+		ASSERT_CRASH(dbConn->BindParam(3, &ts, &tsLen));
 
 		// 쿼리 실행
-		ASSERT_CRASH(dbConn->Execute(L"INSERT INTO [dbo].[Gold] ([gold]) VALUES (?)"));
+		auto query = L"INSERT INTO [dbo].[Gold] ([gold], [name], [createDate]) VALUES (?,?,?)";
+		ASSERT_CRASH(dbConn->Execute(query));
 		GDBConnectionPool->Push(dbConn);
 	}
 
@@ -61,26 +75,37 @@ int main()
 		int32 gold = 1000;
 		SQLLEN len = 0;
 		// 바인딩
-		ASSERT_CRASH(dbConn->BindParam(1, SQL_C_LONG, SQL_INTEGER, sizeof(gold), &gold, &len));
+		ASSERT_CRASH(dbConn->BindParam(1, &gold, &len));
 
 
 		int32 outId = 0;
-		SQLLEN outIdLen = 0;
-		ASSERT_CRASH(dbConn->BindCol(1, SQL_C_LONG, sizeof(outId), &outId, &outIdLen));
+		SQLLEN outIdLen = 0; 
+		ASSERT_CRASH(dbConn->BindCol(1, &outId, &outIdLen));
 
 
 		int32 outGold = 0;
 		SQLLEN outGoldLen = 0;
-		ASSERT_CRASH(dbConn->BindCol(2, SQL_C_LONG, sizeof(outGold), &outGold, &outGoldLen));
+		ASSERT_CRASH(dbConn->BindCol(2, &outGold, &outGoldLen));    
+
+		WCHAR outName[100];
+		SQLLEN outNameLen = 0;
+		ASSERT_CRASH(dbConn->BindCol(3, outName, 100*sizeof(WCHAR), &outNameLen));
+
+		cout<< 100 * sizeof(WCHAR) << endl;
+		
+		TIMESTAMP_STRUCT   outDate = { };
+		SQLLEN outDateLen = 0;
+		ASSERT_CRASH(dbConn->BindCol(4, &outDate, &outDateLen));
 
 		// 쿼리 실행
 		// 데이터를 여러개 반환할 수도 있음
-		ASSERT_CRASH(dbConn->Execute(L"SELECT id, gold FROM [dbo].[Gold] WHERE gold = (?)"));
+		ASSERT_CRASH(dbConn->Execute(L"SELECT id, gold, name, createDate FROM [dbo].[Gold] WHERE gold = (?)"));
 
 
 		while (dbConn->Fetch())
 		{
-			cout << "id : " << outId << " gold : " << outGold << endl;
+			wcout << "id : " << outId << " gold : " << outGold << "Name:" << outName << endl;
+			cout << "Date : " << outDate.year << "-" << outDate.month << "-" << outDate.day << endl;
 		}
 		GDBConnectionPool->Push(dbConn);
 	}
@@ -93,7 +118,6 @@ int main()
 		MakeShared<GameSession>, // TODO : SessionManager 등
 		conf.maxSessionCount);
 	
-
 	ASSERT_CRASH(service->Start());
 
 	for (int32 i = 0; i < 5; i++)
@@ -106,7 +130,6 @@ int main()
 				}				
 			});
 	}	
-
 
 	while (true)
 	{
