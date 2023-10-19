@@ -140,41 +140,42 @@ bool DBConnection::BindParam(SQLUSMALLINT paramIndex, SQLSMALLINT cType, SQLSMAL
 // C데이터형식 식별자 : SQL_C_TINYINT, SQL 형식 : SQL_TINYINT
 bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int8* value, SQLLEN* index)
 {
-	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(int8), value, index);
+	
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, static_cast<int32>(3), value, index);
 }
 
 bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int16* value, SQLLEN* index)
 {
-	return BindParam(paramIndex, SQL_C_SHORT, SQL_SMALLINT, size32(int16), value, index);
+	return BindParam(paramIndex, SQL_C_SHORT, SQL_SMALLINT, static_cast<int32>(5), value, index);
 }
 
 bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int32* value, SQLLEN* index)
 {
-	return BindParam(paramIndex, SQL_C_LONG, SQL_INTEGER, size32(int32), value, index);
+	return BindParam(paramIndex, SQL_C_LONG, SQL_INTEGER, static_cast<int32>(10), value, index);
 }
 
 bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int64* value, SQLLEN* index)
 {
-	return BindParam(paramIndex, SQL_C_SBIGINT, SQL_BIGINT, size32(int64), value, index);
+	return BindParam(paramIndex, SQL_C_SBIGINT, SQL_BIGINT, static_cast<int32>(19), value, index);
 }
 
 bool DBConnection::BindParam(SQLUSMALLINT paramIndex, float* value, SQLLEN* index)
 {
-	return BindParam(paramIndex, SQL_C_FLOAT, SQL_REAL, SQLCOLUSIZEZERO, value, index);
+	return BindParam(paramIndex, SQL_C_FLOAT, SQL_REAL, static_cast<int32>(15), value, index);
 }
 
 bool DBConnection::BindParam(SQLUSMALLINT paramIndex, double* value, SQLLEN* index)
 {
-	return BindParam(paramIndex, SQL_C_DOUBLE, SQL_DOUBLE, SQLCOLUSIZEZERO, value, index);
+	return BindParam(paramIndex, SQL_C_DOUBLE, SQL_DOUBLE, static_cast<int32>(15), value, index);
 }
 
 bool DBConnection::BindParam(SQLUSMALLINT paramIndex, bool* value, SQLLEN* index)
 {
-	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, size32(bool), value, index);
+	return BindParam(paramIndex, SQL_C_TINYINT, SQL_TINYINT, static_cast<int32>(3), value, index);
 }
 
 // image, etc.,
-bool DBConnection::BindParam(SQLUSMALLINT paramIndex, BYTE* bin, int32 size, SQLLEN* index)
+bool DBConnection::BindParam(SQLUSMALLINT paramIndex, int32 size, BYTE* bin,  SQLLEN* index)
 {
 	// 빈 배열의 경우
 	// 1. SQLLEN indptr = SQL_NULL_DATA; 로 설정
@@ -266,16 +267,16 @@ bool DBConnection::BindCol(SQLUSMALLINT columnIndex, int64* value, SQLLEN* index
 	return DBConnection::BindCol(columnIndex, SQL_C_SBIGINT, size32(int64), value, index);
 }
 
-bool DBConnection::BindCol(SQLUSMALLINT columnIndex, BYTE* bin, int32 size, SQLLEN* index)
+//  BYTE
+bool DBConnection::BindCol(SQLUSMALLINT columnIndex,  BYTE* bin, int32 size, SQLLEN* index)
 {
 	if (bin == nullptr)
 		return BindCol(columnIndex, SQL_C_BINARY, SQLBUFFLENZERO, nullptr, index);
 	else
-		SQLULEN size = static_cast<SQLULEN>(sizeof(BYTE));
-
-	return BindCol(columnIndex, SQL_C_BINARY, size, (SQLPOINTER)bin, index);
+		return BindCol(columnIndex, SQL_C_BINARY, size, (SQLPOINTER)bin, index);
 }   
 
+// WCHAR 
 bool DBConnection::BindCol(SQLUSMALLINT columnIndex, WCHAR* string, int32 size, SQLLEN* index)
 {
 

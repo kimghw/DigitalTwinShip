@@ -36,7 +36,7 @@ public:
 	bool BindParam(SQLUSMALLINT paramIndex, int16* value, SQLLEN* index);	 // int16
 	bool BindParam(SQLUSMALLINT paramIndex, int32* value, SQLLEN* index);	 // int32
 	bool BindParam(SQLUSMALLINT paramIndex, int64* value, SQLLEN* index);	 // int64
-	bool BindParam(SQLUSMALLINT paramIndex, BYTE* bin, int32 size, SQLLEN* index);		 // BYTE
+	bool BindParam(SQLUSMALLINT paramIndex, int32 size, BYTE* bin,  SQLLEN* index);		 // BYTE
 	bool BindParam(SQLUSMALLINT paramIndex, WCHAR* string, SQLLEN* index);	 // WCHAR
 	bool BindParam(SQLUSMALLINT paramIndex, TIMESTAMP_STRUCT* value, SQLLEN* index);	 // TIMESTAMP
 
@@ -47,7 +47,7 @@ public:
 	bool BindCol(SQLUSMALLINT columnIndex, int16* value, SQLLEN* index);	 // int16
 	bool BindCol(SQLUSMALLINT columnIndex, int32* value, SQLLEN* index);	 // int32
 	bool BindCol(SQLUSMALLINT columnIndex, int64* value, SQLLEN* index);	 // int64
-	bool BindCol(SQLUSMALLINT columnIndex, BYTE* value, int32 size, SQLLEN* index);		 // BYTE
+	bool BindCol(SQLUSMALLINT columnIndex,  BYTE* value, int32 size, SQLLEN* index);		 // BYTE
 	bool BindCol(SQLUSMALLINT columnIndex, WCHAR* string, int32 size, SQLLEN* index);	 // WCHAR
 	bool BindCol(SQLUSMALLINT columnIndex, TIMESTAMP_STRUCT* value, SQLLEN* index);	 // TIMESTAMP
 
