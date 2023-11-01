@@ -71,6 +71,7 @@ bool DBConnection::Execute(const WCHAR* query)
 		if (ret == SQL_SUCCESS || ret == SQL_SUCCESS_WITH_INFO)
 			return true;
 
+	
 		HandleError(ret);
 		return false;
 

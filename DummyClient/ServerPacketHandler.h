@@ -8,6 +8,7 @@ enum : uint16
 {
 	PKT_S_TEST = 1000,
 	PKT_C_TEST = 1001,
+	PKT_C_MAIN = 1002,
 };
 
 // Custom Handlers
@@ -30,6 +31,7 @@ public:
 		return GPacketHandler[header->id](session, buffer, len);
 	}
 	static SendBufferRef MakeSendBuffer(Protocol::C_TEST& pkt) { return MakeSendBuffer(pkt, PKT_C_TEST); }
+	static SendBufferRef MakeSendBuffer(Protocol::C_MAIN& pkt) { return MakeSendBuffer(pkt, PKT_C_MAIN); }
 
 private:
 	template<typename PacketType, typename ProcessFunc>

@@ -1,9 +1,5 @@
 #pragma once
 #include "Protocol.pb.h"
-#include "DBConnection.h"
-#include "DBConnectionPool.h"
-#include "DBBind.h"
-#include <nlohmann/json.hpp>
 
 using PacketHandlerFunc = std::function<bool(PacketSessionRef&, BYTE*, int32)>;
 extern PacketHandlerFunc GPacketHandler[UINT16_MAX];
@@ -42,12 +38,9 @@ private:
 	template<typename PacketType, typename ProcessFunc>
 	static bool HandlePacket(ProcessFunc func, PacketSessionRef& session, BYTE* buffer, int32 len)
 	{
-		
 		PacketType pkt;
-
-		BYTE* p = buffer + sizeof(PacketHeader);
-		int32 size = len - sizeof(PacketHeader);
-		pkt.ParseFromArray(p, size);
+		if (pkt.ParseFromArray(buffer + sizeof(PacketHeader), len - sizeof(PacketHeader)) == false)
+			return false;
 
 		return func(session, pkt);
 	}
@@ -67,15 +60,4 @@ private:
 
 		return sendBuffer;
 	}
-};
-
-struct KeyValuepair
-{
-	nlohmann::json::value_t type = nlohmann::json::value_t::null;
-
-	std::string keyValue = "";
-	int32 int_value = 0;
-	float fl_value = 0.f;
-	std::string pvalue = "";
-	std::wstring pwvalue = L"";
 };

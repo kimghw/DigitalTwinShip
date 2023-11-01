@@ -40,6 +40,7 @@ public:
 	bool BindParam(SQLUSMALLINT paramIndex, WCHAR* string, SQLLEN* index);	 // WCHAR
 	bool BindParam(SQLUSMALLINT paramIndex, TIMESTAMP_STRUCT* value, SQLLEN* index);	 // TIMESTAMP
 
+	
 	bool BindCol(SQLUSMALLINT columnIndex, float* value, SQLLEN* index);	 // float
 	bool BindCol(SQLUSMALLINT columnIndex, double* value, SQLLEN* index);	 // double
 	bool BindCol(SQLUSMALLINT columnIndex, bool* value, SQLLEN* index);		 // bool

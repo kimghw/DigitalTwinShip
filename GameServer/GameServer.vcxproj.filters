@@ -10,11 +10,11 @@
     <Filter Include="Proto">
       <UniqueIdentifier>{d04805bd-bd63-44de-8a49-0c3d4ebce843}</UniqueIdentifier>
     </Filter>
-    <Filter Include="jsonfile">
-      <UniqueIdentifier>{83a74e26-12f4-441b-aaa0-705250b94c7b}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ORDB">
       <UniqueIdentifier>{c7bcc4e6-477b-492a-94c9-f3ac1774614b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ExternalFiles">
+      <UniqueIdentifier>{83a74e26-12f4-441b-aaa0-705250b94c7b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -66,7 +66,12 @@
     </None>
     <None Include="packages.config" />
     <None Include="serverconfig.json">
-      <Filter>jsonfile</Filter>
+      <Filter>ExternalFiles</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Xml Include="ShipDB.xml">
+      <Filter>ExternalFiles</Filter>
+    </Xml>
   </ItemGroup>
 </Project>

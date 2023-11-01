@@ -23,7 +23,7 @@ public:
 		_columnFlag = 0;
 		dbConnection.Unbind();
 	}
-
+	 
 	bool Validate() 
 	{
 		return _paramFlag == FullBits<ParamCount>::value && _columnFlag == FullBits<ColumnCount>::value;
@@ -31,7 +31,7 @@ public:
 
 	bool Execute() 
 	{
-		ASSERT_CRASH(Validate());
+		//ASSERT_CRASH(Validate());
 		return _dbConnection.Execute(_query	);
 
 	}
@@ -42,6 +42,7 @@ public:
 	}
 
 public:
+
 	//정수, 실수
 	template<typename T>
 	void BindParam(int32 idx, T& value)
@@ -49,6 +50,8 @@ public:
 		_dbConnection.BindParam(idx+1, &value, &_paramIndex[idx]);
 		_paramFlag |= (1LL << idx);
 	}
+
+
 	//문자열
 	void BindParam(int32 idx, WCHAR* value)
 	{

@@ -18,7 +18,11 @@ XCOPY /Y Protocol.pb.h "../GameServer"
 XCOPY /Y Protocol.pb.cc "../GameServer"
 XCOPY /Y ClientPacketHandler.h "../GameServer"
 
-PAUSE
+XCOPY /Y Protocol.pb.h "./test"
+XCOPY /Y Protocol.pb.cc "./test"
+XCOPY /Y ClientPacketHandler.h "./test"
+
+
 REM XCOPY /Y Enum.pb.h "../../../DummyClient"
 REM XCOPY /Y Enum.pb.cc "../../../DummyClient"
 REM XCOPY /Y Struct.pb.h "../../../DummyClient"
@@ -34,7 +38,7 @@ REM XCOPY /Y Struct.pb.cc "../../../Streamsocket"
 XCOPY /Y Protocol.pb.h "../Streamsocket"
 XCOPY /Y Protocol.pb.cc "../Streamsocket"
 REM XCOPY /Y ServerPacketHandler.h "../Streamsocket"
-PAUSE
+
 
 DEL /Q /F *.pb.h
 DEL /Q /F *.pb.cc

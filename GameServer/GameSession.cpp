@@ -4,6 +4,7 @@
 #include "ClientPacketHandler.h"
 
 
+
 void GameSession::OnConnected()
 {
 	GSessionManager.Add(static_pointer_cast<GameSession>(shared_from_this()));
@@ -17,11 +18,12 @@ void GameSession::OnConnected()
 
 	while (true)
 	{
-		std::this_thread::sleep_for(std::chrono::milliseconds(1000));
+		std::this_thread::sleep_for(std::chrono::milliseconds(1));
 		//std::this_thread::sleep_for(std::chrono::milliseconds(1000));
 		std::cout << "Send size : "<< sizeof(sendBuffer) << std::endl;
 		this->Send(sendBuffer);
 		cout << "Send S_TEST : Successful" << endl;
+		break;
 	}
 }
 
@@ -32,9 +34,15 @@ void GameSession::OnDisconnected()
 
 void GameSession::OnRecvPacket(BYTE* buffer, int32 len)
 {
-	// 여기서 패킷 핸들러를 호출해 주어야 합니다.
+	// 세션을 가지고 와서 처리기를 호출 합니다.
+	PacketHeader* packetHeader = reinterpret_cast<PacketHeader*>(buffer);
+	cout << " data is comming :"<< packetHeader->id << endl;
+
+	PacketSessionRef session = GetPacketSessionRef();
+	ClientPacketHandler::HandlePacket(session, buffer, len);
 }
 
 void GameSession::OnSend(int32 len)
 {
+
 }

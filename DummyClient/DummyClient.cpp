@@ -4,6 +4,7 @@
 #include "Session.h"
 #include "BufferReader.h"
 #include "ServerPacketHandler.h"
+#include "nlohmann/json.hpp"
 
 class ServerSession : public PacketSession
 {
@@ -45,14 +46,14 @@ int main()
 	ServerPacketHandler::Init();
 
 	ClientServiceRef service = MakeShared<ClientService>(
-		NetAddress(L"20.200.230.157", 7777),
+		NetAddress(L"20.200.230.157", 8000),
 		MakeShared<IocpCore>(),
 		MakeShared<ServerSession>, // TODO : SessionManager 등
-		1);
+		3);
 
 	ASSERT_CRASH(service->Start());
 
-	for (int32 i = 0; i < 2; i++)
+	for (int32 i = 0; i < 5; i++)
 	{
 		GThreadManager->Launch([=]()
 			{
@@ -71,15 +72,38 @@ int main()
 	//logPkg.set_str("Hello, I am Hololens2");
 	//auto sendBuffer = ServerPacketHandler::MakeSendBuffer(logPkg);
 
-	Protocol::C_TEST testPkg;
-	
+	Protocol::C_MAIN mainJson;
+	nlohmann::json j;
+	//nlohmann::json j = nlohmann::json::array();
+
+	//j.push_back({ "Motor", 1.0f });
+	//j.push_back({ "Motor_torque", 2.0f });
+	//j.push_back({ "Motor_temp", 3.0f });
+	//j.push_back({ "Inverter_output_frequency", 4.0f });
+	//j.push_back({ "System_time", "job" });
+
+	//j["SHIP_NUMBER"] = 7777;
+	j["Motor"] = 1.0f;
+	j["Motor_torque"] = 2.0f;
+	j["Motor_temp"] = 3.0f;
+	j["Inverter_output_frequency"] = 4.0f;
+	j["System_time"] = "job";
+
+	cout << j << endl;
+
+
+	mainJson.set_data(j.dump());
+	int size = mainJson.ByteSizeLong();
+	cout << size << endl;
+	//SessionRef session = service->CreateSession();
+
 
 	while (true)
-	{
-
-
-		this_thread::sleep_for(0.1s);
-		
+	{	
+		auto sendBuffer = ServerPacketHandler::MakeSendBuffer(mainJson);
+		service->Broadcast(sendBuffer);
+		//service->Broadcast(sendBuffer);
+		this_thread::sleep_for(1s);
 	}
 
 

@@ -191,6 +191,9 @@
     <None Include="packages.config" />
     <None Include="serverconfig.json" />
   </ItemGroup>
+  <ItemGroup>
+    <Xml Include="ShipDB.xml" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
     <Import Project="..\packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets" Condition="Exists('..\packages\nlohmann.json.3.11.2\build\native\nlohmann.json.targets')" />
