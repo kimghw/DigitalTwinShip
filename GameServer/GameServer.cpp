@@ -17,46 +17,6 @@ int main()
 	serverConf conf; JsonToConf::Init("serverconfig.json", conf);
 	DB::Init();
 
-	//TODO : DBConnectionPool 초기화
-	//ASSERT_CRASH(GDBConnectionPool->Connect(1, L"Driver={ODBC Driver 18 for SQL Server};Server=tcp:krdigitaltwindbserver.database.windows.net,1433;Database=digitaltwindb;Uid=digitaltwin;Pwd=ship0909$;Encrypt=yes;TrustServerCertificate=no;Connection Timeout=30;"));
-
-	// Create Table
-
-	//{
-	//	auto query = L"DROP TABLE IF EXISTS [dbo].[test3];"
-	//		L"CREATE TABLE [dbo].[test3] "
-	//		L"("
-	//		L"     [SHIP_NUMBER] INT NOT NULL PRIMARY KEY IDENTITY,"
-	//		L"     [Motor] FLOAT NULL,"
-	//		L"     [Motor_torque] FLOAT NULL,"
-	//		L"     [Motor_temp] FLOAT NULL,"
-	//		L"     [Inverter_output_frequency] FLOAT NULL"
-	//		L");";
-
-	//	DBConnection* dbConn = GDBConnectionPool->Pop();
-	//	ASSERT_CRASH(dbConn->Execute(query));
-	//	GDBConnectionPool->Push(dbConn);
-	//}
-
-	//// Add Data
-	//for (size_t i = 0; i < 100; i++)
-	//{
-	//	DBConnection* dbConn = GDBConnectionPool->Pop();
-	//	auto query = L"INSERT INTO [dbo].[test] ([gold], [name], [createDate]) VALUES (?,?,?)";
-	//	DBBind<3, 0> dbBind(*dbConn, query);
-	//	
-	//	int32 gold = 100;
-	//	WCHAR name[100] = L"Geohwa";
-	//	TIMESTAMP_STRUCT ts = { 2021, 10, 12, };
-
-	//	dbBind.BindParam(0, gold);
-	//	dbBind.BindParam(1, name);
-	//	dbBind.BindParam(2, ts);
-
-	//	ASSERT_CRASH(dbBind.Execute());
-	//	
-	//	//// 기존 바인딩된 정보 날리기
-	//	//dbConn->Unbind(); 
 
 	//	//// 바인딩할 파라미터
 	//	//int32 gold = 1000;

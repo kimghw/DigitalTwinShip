@@ -69,13 +69,3 @@ private:
 	}
 };
 
-struct KeyValuepair
-{
-	nlohmann::json::value_t type = nlohmann::json::value_t::null;
-
-	std::string keyValue = "";
-	int32 int_value = 0;
-	float fl_value = 0.f;
-	std::string pvalue = "";
-	std::wstring pwvalue = L"";
-};

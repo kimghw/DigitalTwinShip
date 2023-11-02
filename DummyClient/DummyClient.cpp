@@ -46,10 +46,10 @@ int main()
 	ServerPacketHandler::Init();
 
 	ClientServiceRef service = MakeShared<ClientService>(
-		NetAddress(L"20.200.230.157", 8000),
+		NetAddress(L"127.0.0.1", 8000),
 		MakeShared<IocpCore>(),
 		MakeShared<ServerSession>, // TODO : SessionManager 등
-		3);
+		1);
 
 	ASSERT_CRASH(service->Start());
 
@@ -83,11 +83,26 @@ int main()
 	//j.push_back({ "System_time", "job" });
 
 	//j["SHIP_NUMBER"] = 7777;
-	j["Motor"] = 1.0f;
-	j["Motor_torque"] = 2.0f;
-	j["Motor_temp"] = 3.0f;
-	j["Inverter_output_frequency"] = 4.0f;
-	j["System_time"] = "job";
+	j["01_INV_PHASE_A_CURRENT"] = 1;
+	j["02_INV_PHASE_B_CURRENT"] = 1;
+	j["03_INV_PHASE_C_CURRENT"] = 1;
+	j["04_INV_POST_FAULT"] = 32.0f;
+	j["05_INV_RUN_FAULT"] = 32.0f;
+	j["06_INV_GATE_DRIVER_BOARD_TEMP"] = 1;
+	j["07_INV_MODULE_A_TEMP"] = 1;
+	j["08_INV_MODULE_B_TEMP"] = 1;
+	j["09_INV_MODULE_C_TEMP"] = 1;
+	j["10_INV_POWER"] = 1;
+	j["11_INV_OUTPUT_VOLTAGE"] = 1;
+	j["12_MT_RPM"] = 1;
+	j["13_MT_TORQUE"] = 1;
+	j["14_MT_TEMP"] = 1;
+	j["15_Wind_speed"] = 1;
+	j["16_Wind_direction"] = 1;
+	j["17_latitude"] = "Hello";
+	j["18_longtitude"] = "Hello";
+	j["19_System-time"] = "Hello....";
+
 
 	cout << j << endl;
 
