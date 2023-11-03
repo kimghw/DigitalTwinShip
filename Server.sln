@@ -8,6 +8,9 @@ EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DummyClient", "DummyClient\DummyClient.vcxproj", "{BB44AE35-8484-4283-B63B-CEAC19CB6242}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ServerCore", "ServerCore\ServerCore.vcxproj", "{CAC2B122-7251-4759-8D77-04CD547B7348}"
+	ProjectSection(ProjectDependencies) = postProject
+		{F03FE732-3473-4BBD-94B1-D4916C3B4A15} = {F03FE732-3473-4BBD-94B1-D4916C3B4A15}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Streamsocket", "Streamsocket\Streamsocket.vcxproj", "{BD6F2CAA-2CDB-45A4-84A0-ED28D56C294E}"
 EndProject

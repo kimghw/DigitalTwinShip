@@ -21,11 +21,11 @@ public:
 
 	virtual void OnRecvPacket(BYTE* buffer, int32 len) override
 	{
-		PacketSessionRef session = GetPacketSessionRef();
+		//PacketSessionRef session = GetPacketSessionRef();
 
 		//First, check what kind of packet is comming
 		// and then, call the function that handles the packet
-		ServerPacketHandler::HandlePacket(session, buffer, len);
+		//ServerPacketHandler::HandlePacket(session, buffer, len);
 
 
 	}
@@ -46,10 +46,10 @@ int main()
 	ServerPacketHandler::Init();
 
 	ClientServiceRef service = MakeShared<ClientService>(
-		NetAddress(L"127.0.0.1", 8000),
+		NetAddress(L"127.0.0.1", 6340),
 		MakeShared<IocpCore>(),
 		MakeShared<ServerSession>, // TODO : SessionManager 등
-		1);
+		3);
 
 	ASSERT_CRASH(service->Start());
 
@@ -101,24 +101,31 @@ int main()
 	j["16_Wind_direction"] = 1;
 	j["17_latitude"] = "Hello";
 	j["18_longtitude"] = "Hello";
-	j["19_System-time"] = "Hello....";
+	j["19_System-time"] = "Hello....very good";
 
 
 	cout << j << endl;
+	std::string json_string = j.dump();
 
 
-	mainJson.set_data(j.dump());
-	int size = mainJson.ByteSizeLong();
-	cout << size << endl;
-	//SessionRef session = service->CreateSession();
 
+
+
+	//mainJson.set_data(j.dump());
+	//int size = mainJson.ByteSizeLong();
+	//cout << size << endl;
+    const char* ptrJson = json_string.c_str();
+	cout << ptrJson << endl;
 
 	while (true)
 	{	
-		auto sendBuffer = ServerPacketHandler::MakeSendBuffer(mainJson);
+		//auto sendBuffer = ServerPacketHandler::MakeSendBuffer(mainJson);
+		
+		auto sendBuffer = ServerPacketHandler::MakeSendBuffer(ptrJson);
 		service->Broadcast(sendBuffer);
-		//service->Broadcast(sendBuffer);
-		this_thread::sleep_for(1s);
+		this_thread::sleep_for(0.1s);
+
+
 	}
 
 

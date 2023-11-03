@@ -62,8 +62,39 @@ struct C_MAINDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 C_MAINDefaultTypeInternal _C_MAIN_default_instance_;
+PROTOBUF_CONSTEXPR S_MAIN::S_MAIN(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.latitude_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.longtitude_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.inv_phase_a_current_)*/0
+  , /*decltype(_impl_.inv_phase_b_current_)*/0
+  , /*decltype(_impl_.inv_phase_c_current_)*/0
+  , /*decltype(_impl_.inv_post_fault_)*/0
+  , /*decltype(_impl_.inv_run_fault_)*/0
+  , /*decltype(_impl_.inv_gate_driver_board_temp_)*/0
+  , /*decltype(_impl_.inv_module_a_temp_)*/0
+  , /*decltype(_impl_.inv_module_b_temp_)*/0
+  , /*decltype(_impl_.inv_module_c_temp_)*/0
+  , /*decltype(_impl_.inv_power_)*/0
+  , /*decltype(_impl_.inv_output_voltage_)*/0
+  , /*decltype(_impl_.mt_rpm_)*/0
+  , /*decltype(_impl_.mt_torque_)*/0
+  , /*decltype(_impl_.mt_temp_)*/0
+  , /*decltype(_impl_.wind_speed_)*/0
+  , /*decltype(_impl_.wind_direction_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct S_MAINDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR S_MAINDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~S_MAINDefaultTypeInternal() {}
+  union {
+    S_MAIN _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 S_MAINDefaultTypeInternal _S_MAIN_default_instance_;
 }  // namespace Protocol
-static ::_pb::Metadata file_level_metadata_Protocol_2eproto[3];
+static ::_pb::Metadata file_level_metadata_Protocol_2eproto[4];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_Protocol_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_Protocol_2eproto = nullptr;
 
@@ -91,30 +122,68 @@ const uint32_t TableStruct_Protocol_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
   PROTOBUF_FIELD_OFFSET(::Protocol::C_MAIN, _impl_.data_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_phase_a_current_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_phase_b_current_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_phase_c_current_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_post_fault_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_run_fault_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_gate_driver_board_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_module_a_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_module_b_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_module_c_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_power_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_output_voltage_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.mt_rpm_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.mt_torque_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.mt_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.wind_speed_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.wind_direction_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.latitude_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.longtitude_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.system_time_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   { 0, -1, -1, sizeof(::Protocol::S_TEST)},
   { 8, -1, -1, sizeof(::Protocol::C_TEST)},
   { 16, -1, -1, sizeof(::Protocol::C_MAIN)},
+  { 23, -1, -1, sizeof(::Protocol::S_MAIN)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
   &::Protocol::_S_TEST_default_instance_._instance,
   &::Protocol::_C_TEST_default_instance_._instance,
   &::Protocol::_C_MAIN_default_instance_._instance,
+  &::Protocol::_S_MAIN_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_Protocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
   "\n\016Protocol.proto\022\010Protocol\"$\n\006S_TEST\022\n\n\002"
   "id\030\001 \001(\005\022\016\n\006player\030\002 \001(\t\"$\n\006C_TEST\022\n\n\002id"
   "\030\001 \001(\005\022\016\n\006player\030\002 \001(\t\"\026\n\006C_MAIN\022\014\n\004data"
-  "\030\001 \001(\tb\006proto3"
+  "\030\001 \001(\t\"\315\003\n\006S_MAIN\022\033\n\023INV_PHASE_A_CURRENT"
+  "\030\001 \001(\005\022\033\n\023INV_PHASE_B_CURRENT\030\002 \001(\005\022\033\n\023I"
+  "NV_PHASE_C_CURRENT\030\003 \001(\005\022\026\n\016INV_POST_FAU"
+  "LT\030\004 \001(\002\022\025\n\rINV_RUN_FAULT\030\005 \001(\002\022\"\n\032INV_G"
+  "ATE_DRIVER_BOARD_TEMP\030\006 \001(\005\022\031\n\021INV_MODUL"
+  "E_A_TEMP\030\007 \001(\005\022\031\n\021INV_MODULE_B_TEMP\030\010 \001("
+  "\005\022\031\n\021INV_MODULE_C_TEMP\030\t \001(\005\022\021\n\tINV_POWE"
+  "R\030\n \001(\005\022\032\n\022INV_OUTPUT_VOLTAGE\030\013 \001(\005\022\016\n\006M"
+  "T_RPM\030\014 \001(\005\022\021\n\tMT_TORQUE\030\r \001(\005\022\017\n\007MT_TEM"
+  "P\030\016 \001(\005\022\022\n\nWind_speed\030\017 \001(\005\022\026\n\016Wind_dire"
+  "ction\030\020 \001(\005\022\020\n\010latitude\030\021 \001(\t\022\022\n\nlongtit"
+  "ude\030\022 \001(\t\022\023\n\013System_time\030\023 \001(\tb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_Protocol_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_Protocol_2eproto = {
-    false, false, 134, descriptor_table_protodef_Protocol_2eproto,
+    false, false, 598, descriptor_table_protodef_Protocol_2eproto,
     "Protocol.proto",
-    &descriptor_table_Protocol_2eproto_once, nullptr, 0, 3,
+    &descriptor_table_Protocol_2eproto_once, nullptr, 0, 4,
     schemas, file_default_instances, TableStruct_Protocol_2eproto::offsets,
     file_level_metadata_Protocol_2eproto, file_level_enum_descriptors_Protocol_2eproto,
     file_level_service_descriptors_Protocol_2eproto,
@@ -790,6 +859,731 @@ void C_MAIN::InternalSwap(C_MAIN* other) {
       file_level_metadata_Protocol_2eproto[2]);
 }
 
+// ===================================================================
+
+class S_MAIN::_Internal {
+ public:
+};
+
+S_MAIN::S_MAIN(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:Protocol.S_MAIN)
+}
+S_MAIN::S_MAIN(const S_MAIN& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  S_MAIN* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.latitude_){}
+    , decltype(_impl_.longtitude_){}
+    , decltype(_impl_.system_time_){}
+    , decltype(_impl_.inv_phase_a_current_){}
+    , decltype(_impl_.inv_phase_b_current_){}
+    , decltype(_impl_.inv_phase_c_current_){}
+    , decltype(_impl_.inv_post_fault_){}
+    , decltype(_impl_.inv_run_fault_){}
+    , decltype(_impl_.inv_gate_driver_board_temp_){}
+    , decltype(_impl_.inv_module_a_temp_){}
+    , decltype(_impl_.inv_module_b_temp_){}
+    , decltype(_impl_.inv_module_c_temp_){}
+    , decltype(_impl_.inv_power_){}
+    , decltype(_impl_.inv_output_voltage_){}
+    , decltype(_impl_.mt_rpm_){}
+    , decltype(_impl_.mt_torque_){}
+    , decltype(_impl_.mt_temp_){}
+    , decltype(_impl_.wind_speed_){}
+    , decltype(_impl_.wind_direction_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.latitude_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.latitude_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_latitude().empty()) {
+    _this->_impl_.latitude_.Set(from._internal_latitude(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.longtitude_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.longtitude_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_longtitude().empty()) {
+    _this->_impl_.longtitude_.Set(from._internal_longtitude(), 
+      _this->GetArenaForAllocation());
+  }
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.inv_phase_a_current_, &from._impl_.inv_phase_a_current_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.wind_direction_) -
+    reinterpret_cast<char*>(&_impl_.inv_phase_a_current_)) + sizeof(_impl_.wind_direction_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.S_MAIN)
+}
+
+inline void S_MAIN::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.latitude_){}
+    , decltype(_impl_.longtitude_){}
+    , decltype(_impl_.system_time_){}
+    , decltype(_impl_.inv_phase_a_current_){0}
+    , decltype(_impl_.inv_phase_b_current_){0}
+    , decltype(_impl_.inv_phase_c_current_){0}
+    , decltype(_impl_.inv_post_fault_){0}
+    , decltype(_impl_.inv_run_fault_){0}
+    , decltype(_impl_.inv_gate_driver_board_temp_){0}
+    , decltype(_impl_.inv_module_a_temp_){0}
+    , decltype(_impl_.inv_module_b_temp_){0}
+    , decltype(_impl_.inv_module_c_temp_){0}
+    , decltype(_impl_.inv_power_){0}
+    , decltype(_impl_.inv_output_voltage_){0}
+    , decltype(_impl_.mt_rpm_){0}
+    , decltype(_impl_.mt_torque_){0}
+    , decltype(_impl_.mt_temp_){0}
+    , decltype(_impl_.wind_speed_){0}
+    , decltype(_impl_.wind_direction_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.latitude_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.latitude_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.longtitude_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.longtitude_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+S_MAIN::~S_MAIN() {
+  // @@protoc_insertion_point(destructor:Protocol.S_MAIN)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void S_MAIN::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.latitude_.Destroy();
+  _impl_.longtitude_.Destroy();
+  _impl_.system_time_.Destroy();
+}
+
+void S_MAIN::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void S_MAIN::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.S_MAIN)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.latitude_.ClearToEmpty();
+  _impl_.longtitude_.ClearToEmpty();
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.inv_phase_a_current_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.wind_direction_) -
+      reinterpret_cast<char*>(&_impl_.inv_phase_a_current_)) + sizeof(_impl_.wind_direction_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* S_MAIN::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 INV_PHASE_A_CURRENT = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.inv_phase_a_current_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_PHASE_B_CURRENT = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.inv_phase_b_current_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_PHASE_C_CURRENT = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.inv_phase_c_current_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // float INV_POST_FAULT = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.inv_post_fault_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // float INV_RUN_FAULT = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
+          _impl_.inv_run_fault_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.inv_gate_driver_board_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_MODULE_A_TEMP = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.inv_module_a_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_MODULE_B_TEMP = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.inv_module_b_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_MODULE_C_TEMP = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.inv_module_c_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_POWER = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.inv_power_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_OUTPUT_VOLTAGE = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.inv_output_voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 MT_RPM = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          _impl_.mt_rpm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 MT_TORQUE = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _impl_.mt_torque_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 MT_TEMP = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
+          _impl_.mt_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 Wind_speed = 15;
+      case 15:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
+          _impl_.wind_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 Wind_direction = 16;
+      case 16:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
+          _impl_.wind_direction_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string latitude = 17;
+      case 17:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
+          auto str = _internal_mutable_latitude();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_MAIN.latitude"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string longtitude = 18;
+      case 18:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
+          auto str = _internal_mutable_longtitude();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_MAIN.longtitude"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 19;
+      case 19:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_MAIN.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* S_MAIN::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.S_MAIN)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 INV_PHASE_A_CURRENT = 1;
+  if (this->_internal_inv_phase_a_current() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_inv_phase_a_current(), target);
+  }
+
+  // int32 INV_PHASE_B_CURRENT = 2;
+  if (this->_internal_inv_phase_b_current() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_inv_phase_b_current(), target);
+  }
+
+  // int32 INV_PHASE_C_CURRENT = 3;
+  if (this->_internal_inv_phase_c_current() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_inv_phase_c_current(), target);
+  }
+
+  // float INV_POST_FAULT = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_inv_post_fault = this->_internal_inv_post_fault();
+  uint32_t raw_inv_post_fault;
+  memcpy(&raw_inv_post_fault, &tmp_inv_post_fault, sizeof(tmp_inv_post_fault));
+  if (raw_inv_post_fault != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_inv_post_fault(), target);
+  }
+
+  // float INV_RUN_FAULT = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_inv_run_fault = this->_internal_inv_run_fault();
+  uint32_t raw_inv_run_fault;
+  memcpy(&raw_inv_run_fault, &tmp_inv_run_fault, sizeof(tmp_inv_run_fault));
+  if (raw_inv_run_fault != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_inv_run_fault(), target);
+  }
+
+  // int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
+  if (this->_internal_inv_gate_driver_board_temp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_inv_gate_driver_board_temp(), target);
+  }
+
+  // int32 INV_MODULE_A_TEMP = 7;
+  if (this->_internal_inv_module_a_temp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_inv_module_a_temp(), target);
+  }
+
+  // int32 INV_MODULE_B_TEMP = 8;
+  if (this->_internal_inv_module_b_temp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_inv_module_b_temp(), target);
+  }
+
+  // int32 INV_MODULE_C_TEMP = 9;
+  if (this->_internal_inv_module_c_temp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_inv_module_c_temp(), target);
+  }
+
+  // int32 INV_POWER = 10;
+  if (this->_internal_inv_power() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_inv_power(), target);
+  }
+
+  // int32 INV_OUTPUT_VOLTAGE = 11;
+  if (this->_internal_inv_output_voltage() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_inv_output_voltage(), target);
+  }
+
+  // int32 MT_RPM = 12;
+  if (this->_internal_mt_rpm() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_mt_rpm(), target);
+  }
+
+  // int32 MT_TORQUE = 13;
+  if (this->_internal_mt_torque() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_mt_torque(), target);
+  }
+
+  // int32 MT_TEMP = 14;
+  if (this->_internal_mt_temp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_mt_temp(), target);
+  }
+
+  // int32 Wind_speed = 15;
+  if (this->_internal_wind_speed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(15, this->_internal_wind_speed(), target);
+  }
+
+  // int32 Wind_direction = 16;
+  if (this->_internal_wind_direction() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(16, this->_internal_wind_direction(), target);
+  }
+
+  // string latitude = 17;
+  if (!this->_internal_latitude().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_latitude().data(), static_cast<int>(this->_internal_latitude().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.S_MAIN.latitude");
+    target = stream->WriteStringMaybeAliased(
+        17, this->_internal_latitude(), target);
+  }
+
+  // string longtitude = 18;
+  if (!this->_internal_longtitude().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_longtitude().data(), static_cast<int>(this->_internal_longtitude().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.S_MAIN.longtitude");
+    target = stream->WriteStringMaybeAliased(
+        18, this->_internal_longtitude(), target);
+  }
+
+  // string System_time = 19;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.S_MAIN.System_time");
+    target = stream->WriteStringMaybeAliased(
+        19, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.S_MAIN)
+  return target;
+}
+
+size_t S_MAIN::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.S_MAIN)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string latitude = 17;
+  if (!this->_internal_latitude().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_latitude());
+  }
+
+  // string longtitude = 18;
+  if (!this->_internal_longtitude().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_longtitude());
+  }
+
+  // string System_time = 19;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 2 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 INV_PHASE_A_CURRENT = 1;
+  if (this->_internal_inv_phase_a_current() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_phase_a_current());
+  }
+
+  // int32 INV_PHASE_B_CURRENT = 2;
+  if (this->_internal_inv_phase_b_current() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_phase_b_current());
+  }
+
+  // int32 INV_PHASE_C_CURRENT = 3;
+  if (this->_internal_inv_phase_c_current() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_phase_c_current());
+  }
+
+  // float INV_POST_FAULT = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_inv_post_fault = this->_internal_inv_post_fault();
+  uint32_t raw_inv_post_fault;
+  memcpy(&raw_inv_post_fault, &tmp_inv_post_fault, sizeof(tmp_inv_post_fault));
+  if (raw_inv_post_fault != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float INV_RUN_FAULT = 5;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_inv_run_fault = this->_internal_inv_run_fault();
+  uint32_t raw_inv_run_fault;
+  memcpy(&raw_inv_run_fault, &tmp_inv_run_fault, sizeof(tmp_inv_run_fault));
+  if (raw_inv_run_fault != 0) {
+    total_size += 1 + 4;
+  }
+
+  // int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
+  if (this->_internal_inv_gate_driver_board_temp() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_gate_driver_board_temp());
+  }
+
+  // int32 INV_MODULE_A_TEMP = 7;
+  if (this->_internal_inv_module_a_temp() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_module_a_temp());
+  }
+
+  // int32 INV_MODULE_B_TEMP = 8;
+  if (this->_internal_inv_module_b_temp() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_module_b_temp());
+  }
+
+  // int32 INV_MODULE_C_TEMP = 9;
+  if (this->_internal_inv_module_c_temp() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_module_c_temp());
+  }
+
+  // int32 INV_POWER = 10;
+  if (this->_internal_inv_power() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_power());
+  }
+
+  // int32 INV_OUTPUT_VOLTAGE = 11;
+  if (this->_internal_inv_output_voltage() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_output_voltage());
+  }
+
+  // int32 MT_RPM = 12;
+  if (this->_internal_mt_rpm() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_rpm());
+  }
+
+  // int32 MT_TORQUE = 13;
+  if (this->_internal_mt_torque() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_torque());
+  }
+
+  // int32 MT_TEMP = 14;
+  if (this->_internal_mt_temp() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_temp());
+  }
+
+  // int32 Wind_speed = 15;
+  if (this->_internal_wind_speed() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_wind_speed());
+  }
+
+  // int32 Wind_direction = 16;
+  if (this->_internal_wind_direction() != 0) {
+    total_size += 2 +
+      ::_pbi::WireFormatLite::Int32Size(
+        this->_internal_wind_direction());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData S_MAIN::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    S_MAIN::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*S_MAIN::GetClassData() const { return &_class_data_; }
+
+
+void S_MAIN::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<S_MAIN*>(&to_msg);
+  auto& from = static_cast<const S_MAIN&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.S_MAIN)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_latitude().empty()) {
+    _this->_internal_set_latitude(from._internal_latitude());
+  }
+  if (!from._internal_longtitude().empty()) {
+    _this->_internal_set_longtitude(from._internal_longtitude());
+  }
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_inv_phase_a_current() != 0) {
+    _this->_internal_set_inv_phase_a_current(from._internal_inv_phase_a_current());
+  }
+  if (from._internal_inv_phase_b_current() != 0) {
+    _this->_internal_set_inv_phase_b_current(from._internal_inv_phase_b_current());
+  }
+  if (from._internal_inv_phase_c_current() != 0) {
+    _this->_internal_set_inv_phase_c_current(from._internal_inv_phase_c_current());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_inv_post_fault = from._internal_inv_post_fault();
+  uint32_t raw_inv_post_fault;
+  memcpy(&raw_inv_post_fault, &tmp_inv_post_fault, sizeof(tmp_inv_post_fault));
+  if (raw_inv_post_fault != 0) {
+    _this->_internal_set_inv_post_fault(from._internal_inv_post_fault());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_inv_run_fault = from._internal_inv_run_fault();
+  uint32_t raw_inv_run_fault;
+  memcpy(&raw_inv_run_fault, &tmp_inv_run_fault, sizeof(tmp_inv_run_fault));
+  if (raw_inv_run_fault != 0) {
+    _this->_internal_set_inv_run_fault(from._internal_inv_run_fault());
+  }
+  if (from._internal_inv_gate_driver_board_temp() != 0) {
+    _this->_internal_set_inv_gate_driver_board_temp(from._internal_inv_gate_driver_board_temp());
+  }
+  if (from._internal_inv_module_a_temp() != 0) {
+    _this->_internal_set_inv_module_a_temp(from._internal_inv_module_a_temp());
+  }
+  if (from._internal_inv_module_b_temp() != 0) {
+    _this->_internal_set_inv_module_b_temp(from._internal_inv_module_b_temp());
+  }
+  if (from._internal_inv_module_c_temp() != 0) {
+    _this->_internal_set_inv_module_c_temp(from._internal_inv_module_c_temp());
+  }
+  if (from._internal_inv_power() != 0) {
+    _this->_internal_set_inv_power(from._internal_inv_power());
+  }
+  if (from._internal_inv_output_voltage() != 0) {
+    _this->_internal_set_inv_output_voltage(from._internal_inv_output_voltage());
+  }
+  if (from._internal_mt_rpm() != 0) {
+    _this->_internal_set_mt_rpm(from._internal_mt_rpm());
+  }
+  if (from._internal_mt_torque() != 0) {
+    _this->_internal_set_mt_torque(from._internal_mt_torque());
+  }
+  if (from._internal_mt_temp() != 0) {
+    _this->_internal_set_mt_temp(from._internal_mt_temp());
+  }
+  if (from._internal_wind_speed() != 0) {
+    _this->_internal_set_wind_speed(from._internal_wind_speed());
+  }
+  if (from._internal_wind_direction() != 0) {
+    _this->_internal_set_wind_direction(from._internal_wind_direction());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void S_MAIN::CopyFrom(const S_MAIN& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.S_MAIN)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool S_MAIN::IsInitialized() const {
+  return true;
+}
+
+void S_MAIN::InternalSwap(S_MAIN* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.latitude_, lhs_arena,
+      &other->_impl_.latitude_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.longtitude_, lhs_arena,
+      &other->_impl_.longtitude_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(S_MAIN, _impl_.wind_direction_)
+      + sizeof(S_MAIN::_impl_.wind_direction_)
+      - PROTOBUF_FIELD_OFFSET(S_MAIN, _impl_.inv_phase_a_current_)>(
+          reinterpret_cast<char*>(&_impl_.inv_phase_a_current_),
+          reinterpret_cast<char*>(&other->_impl_.inv_phase_a_current_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata S_MAIN::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
+      file_level_metadata_Protocol_2eproto[3]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace Protocol
 PROTOBUF_NAMESPACE_OPEN
@@ -804,6 +1598,10 @@ Arena::CreateMaybeMessage< ::Protocol::C_TEST >(Arena* arena) {
 template<> PROTOBUF_NOINLINE ::Protocol::C_MAIN*
 Arena::CreateMaybeMessage< ::Protocol::C_MAIN >(Arena* arena) {
   return Arena::CreateMessageInternal< ::Protocol::C_MAIN >(arena);
+}
+template<> PROTOBUF_NOINLINE ::Protocol::S_MAIN*
+Arena::CreateMaybeMessage< ::Protocol::S_MAIN >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::S_MAIN >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

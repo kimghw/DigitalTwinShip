@@ -37,6 +37,8 @@ void GameSession::OnRecvPacket(BYTE* buffer, int32 len)
 	// 세션을 가지고 와서 처리기를 호출 합니다.
 	PacketHeader* packetHeader = reinterpret_cast<PacketHeader*>(buffer);
 	cout << " data is comming :"<< packetHeader->id << endl;
+	std::string str(buffer, buffer + len);
+	cout << str << endl;
 
 	PacketSessionRef session = GetPacketSessionRef();
 	ClientPacketHandler::HandlePacket(session, buffer, len);

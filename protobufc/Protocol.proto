@@ -17,3 +17,27 @@ message C_MAIN
 {
 	string data = 1;
 }
+
+message S_MAIN
+{
+	int32 INV_PHASE_A_CURRENT = 1;
+	int32 INV_PHASE_B_CURRENT = 2;
+	int32 INV_PHASE_C_CURRENT = 3;
+	float INV_POST_FAULT = 4;
+	float INV_RUN_FAULT = 5;
+	int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
+	int32 INV_MODULE_A_TEMP = 7;
+	int32 INV_MODULE_B_TEMP = 8;
+	int32 INV_MODULE_C_TEMP = 9;
+	int32 INV_POWER = 10;
+	int32 INV_OUTPUT_VOLTAGE = 11;
+	int32 MT_RPM = 12;
+	int32 MT_TORQUE = 13;
+	int32 MT_TEMP = 14;
+	int32 Wind_speed = 15;
+	int32 Wind_direction = 16;
+	string latitude = 17;
+	string longtitude = 18;
+	string System_time = 19;
+
+}

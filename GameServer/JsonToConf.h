@@ -11,9 +11,6 @@ struct serverConf
 };
 
 
-
-
-
 class JsonToConf
 {
 public:
@@ -45,9 +42,6 @@ public:
 			std::cerr<<"runtime error : " << e.what()<<std::endl;
 		}
 		
-
-
-
 		conf.ip = stringToWString(jconfig["SERVER_IP"]);
 		conf.port = (int32)jconfig["SERVER_PORT"];
 		conf.maxSessionCount = (int32)jconfig["SERVER_MAXSESSIONCOUNT"];
@@ -56,9 +50,8 @@ public:
 		conf.username = jconfig["DB_USERNAME"];
 		conf.password = jconfig["DB_PASSWORD"];
 
-
 		inputfile.close();
 	}
 
-	
+	//static void jsonToPkt();
 };

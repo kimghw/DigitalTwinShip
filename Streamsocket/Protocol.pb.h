@@ -51,6 +51,9 @@ extern C_MAINDefaultTypeInternal _C_MAIN_default_instance_;
 class C_TEST;
 struct C_TESTDefaultTypeInternal;
 extern C_TESTDefaultTypeInternal _C_TEST_default_instance_;
+class S_MAIN;
+struct S_MAINDefaultTypeInternal;
+extern S_MAINDefaultTypeInternal _S_MAIN_default_instance_;
 class S_TEST;
 struct S_TESTDefaultTypeInternal;
 extern S_TESTDefaultTypeInternal _S_TEST_default_instance_;
@@ -58,6 +61,7 @@ extern S_TESTDefaultTypeInternal _S_TEST_default_instance_;
 PROTOBUF_NAMESPACE_OPEN
 template<> ::Protocol::C_MAIN* Arena::CreateMaybeMessage<::Protocol::C_MAIN>(Arena*);
 template<> ::Protocol::C_TEST* Arena::CreateMaybeMessage<::Protocol::C_TEST>(Arena*);
+template<> ::Protocol::S_MAIN* Arena::CreateMaybeMessage<::Protocol::S_MAIN>(Arena*);
 template<> ::Protocol::S_TEST* Arena::CreateMaybeMessage<::Protocol::S_TEST>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace Protocol {
@@ -543,6 +547,367 @@ class C_MAIN final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_Protocol_2eproto;
 };
+// -------------------------------------------------------------------
+
+class S_MAIN final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.S_MAIN) */ {
+ public:
+  inline S_MAIN() : S_MAIN(nullptr) {}
+  ~S_MAIN() override;
+  explicit PROTOBUF_CONSTEXPR S_MAIN(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  S_MAIN(const S_MAIN& from);
+  S_MAIN(S_MAIN&& from) noexcept
+    : S_MAIN() {
+    *this = ::std::move(from);
+  }
+
+  inline S_MAIN& operator=(const S_MAIN& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline S_MAIN& operator=(S_MAIN&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const S_MAIN& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const S_MAIN* internal_default_instance() {
+    return reinterpret_cast<const S_MAIN*>(
+               &_S_MAIN_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    3;
+
+  friend void swap(S_MAIN& a, S_MAIN& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(S_MAIN* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(S_MAIN* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  S_MAIN* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<S_MAIN>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const S_MAIN& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const S_MAIN& from) {
+    S_MAIN::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(S_MAIN* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "Protocol.S_MAIN";
+  }
+  protected:
+  explicit S_MAIN(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kLatitudeFieldNumber = 17,
+    kLongtitudeFieldNumber = 18,
+    kSystemTimeFieldNumber = 19,
+    kINVPHASEACURRENTFieldNumber = 1,
+    kINVPHASEBCURRENTFieldNumber = 2,
+    kINVPHASECCURRENTFieldNumber = 3,
+    kINVPOSTFAULTFieldNumber = 4,
+    kINVRUNFAULTFieldNumber = 5,
+    kINVGATEDRIVERBOARDTEMPFieldNumber = 6,
+    kINVMODULEATEMPFieldNumber = 7,
+    kINVMODULEBTEMPFieldNumber = 8,
+    kINVMODULECTEMPFieldNumber = 9,
+    kINVPOWERFieldNumber = 10,
+    kINVOUTPUTVOLTAGEFieldNumber = 11,
+    kMTRPMFieldNumber = 12,
+    kMTTORQUEFieldNumber = 13,
+    kMTTEMPFieldNumber = 14,
+    kWindSpeedFieldNumber = 15,
+    kWindDirectionFieldNumber = 16,
+  };
+  // string latitude = 17;
+  void clear_latitude();
+  const std::string& latitude() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_latitude(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_latitude();
+  PROTOBUF_NODISCARD std::string* release_latitude();
+  void set_allocated_latitude(std::string* latitude);
+  private:
+  const std::string& _internal_latitude() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_latitude(const std::string& value);
+  std::string* _internal_mutable_latitude();
+  public:
+
+  // string longtitude = 18;
+  void clear_longtitude();
+  const std::string& longtitude() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_longtitude(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_longtitude();
+  PROTOBUF_NODISCARD std::string* release_longtitude();
+  void set_allocated_longtitude(std::string* longtitude);
+  private:
+  const std::string& _internal_longtitude() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_longtitude(const std::string& value);
+  std::string* _internal_mutable_longtitude();
+  public:
+
+  // string System_time = 19;
+  void clear_system_time();
+  const std::string& system_time() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_system_time(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_system_time();
+  PROTOBUF_NODISCARD std::string* release_system_time();
+  void set_allocated_system_time(std::string* system_time);
+  private:
+  const std::string& _internal_system_time() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_system_time(const std::string& value);
+  std::string* _internal_mutable_system_time();
+  public:
+
+  // int32 INV_PHASE_A_CURRENT = 1;
+  void clear_inv_phase_a_current();
+  int32_t inv_phase_a_current() const;
+  void set_inv_phase_a_current(int32_t value);
+  private:
+  int32_t _internal_inv_phase_a_current() const;
+  void _internal_set_inv_phase_a_current(int32_t value);
+  public:
+
+  // int32 INV_PHASE_B_CURRENT = 2;
+  void clear_inv_phase_b_current();
+  int32_t inv_phase_b_current() const;
+  void set_inv_phase_b_current(int32_t value);
+  private:
+  int32_t _internal_inv_phase_b_current() const;
+  void _internal_set_inv_phase_b_current(int32_t value);
+  public:
+
+  // int32 INV_PHASE_C_CURRENT = 3;
+  void clear_inv_phase_c_current();
+  int32_t inv_phase_c_current() const;
+  void set_inv_phase_c_current(int32_t value);
+  private:
+  int32_t _internal_inv_phase_c_current() const;
+  void _internal_set_inv_phase_c_current(int32_t value);
+  public:
+
+  // float INV_POST_FAULT = 4;
+  void clear_inv_post_fault();
+  float inv_post_fault() const;
+  void set_inv_post_fault(float value);
+  private:
+  float _internal_inv_post_fault() const;
+  void _internal_set_inv_post_fault(float value);
+  public:
+
+  // float INV_RUN_FAULT = 5;
+  void clear_inv_run_fault();
+  float inv_run_fault() const;
+  void set_inv_run_fault(float value);
+  private:
+  float _internal_inv_run_fault() const;
+  void _internal_set_inv_run_fault(float value);
+  public:
+
+  // int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
+  void clear_inv_gate_driver_board_temp();
+  int32_t inv_gate_driver_board_temp() const;
+  void set_inv_gate_driver_board_temp(int32_t value);
+  private:
+  int32_t _internal_inv_gate_driver_board_temp() const;
+  void _internal_set_inv_gate_driver_board_temp(int32_t value);
+  public:
+
+  // int32 INV_MODULE_A_TEMP = 7;
+  void clear_inv_module_a_temp();
+  int32_t inv_module_a_temp() const;
+  void set_inv_module_a_temp(int32_t value);
+  private:
+  int32_t _internal_inv_module_a_temp() const;
+  void _internal_set_inv_module_a_temp(int32_t value);
+  public:
+
+  // int32 INV_MODULE_B_TEMP = 8;
+  void clear_inv_module_b_temp();
+  int32_t inv_module_b_temp() const;
+  void set_inv_module_b_temp(int32_t value);
+  private:
+  int32_t _internal_inv_module_b_temp() const;
+  void _internal_set_inv_module_b_temp(int32_t value);
+  public:
+
+  // int32 INV_MODULE_C_TEMP = 9;
+  void clear_inv_module_c_temp();
+  int32_t inv_module_c_temp() const;
+  void set_inv_module_c_temp(int32_t value);
+  private:
+  int32_t _internal_inv_module_c_temp() const;
+  void _internal_set_inv_module_c_temp(int32_t value);
+  public:
+
+  // int32 INV_POWER = 10;
+  void clear_inv_power();
+  int32_t inv_power() const;
+  void set_inv_power(int32_t value);
+  private:
+  int32_t _internal_inv_power() const;
+  void _internal_set_inv_power(int32_t value);
+  public:
+
+  // int32 INV_OUTPUT_VOLTAGE = 11;
+  void clear_inv_output_voltage();
+  int32_t inv_output_voltage() const;
+  void set_inv_output_voltage(int32_t value);
+  private:
+  int32_t _internal_inv_output_voltage() const;
+  void _internal_set_inv_output_voltage(int32_t value);
+  public:
+
+  // int32 MT_RPM = 12;
+  void clear_mt_rpm();
+  int32_t mt_rpm() const;
+  void set_mt_rpm(int32_t value);
+  private:
+  int32_t _internal_mt_rpm() const;
+  void _internal_set_mt_rpm(int32_t value);
+  public:
+
+  // int32 MT_TORQUE = 13;
+  void clear_mt_torque();
+  int32_t mt_torque() const;
+  void set_mt_torque(int32_t value);
+  private:
+  int32_t _internal_mt_torque() const;
+  void _internal_set_mt_torque(int32_t value);
+  public:
+
+  // int32 MT_TEMP = 14;
+  void clear_mt_temp();
+  int32_t mt_temp() const;
+  void set_mt_temp(int32_t value);
+  private:
+  int32_t _internal_mt_temp() const;
+  void _internal_set_mt_temp(int32_t value);
+  public:
+
+  // int32 Wind_speed = 15;
+  void clear_wind_speed();
+  int32_t wind_speed() const;
+  void set_wind_speed(int32_t value);
+  private:
+  int32_t _internal_wind_speed() const;
+  void _internal_set_wind_speed(int32_t value);
+  public:
+
+  // int32 Wind_direction = 16;
+  void clear_wind_direction();
+  int32_t wind_direction() const;
+  void set_wind_direction(int32_t value);
+  private:
+  int32_t _internal_wind_direction() const;
+  void _internal_set_wind_direction(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:Protocol.S_MAIN)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr latitude_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr longtitude_;
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
+    int32_t inv_phase_a_current_;
+    int32_t inv_phase_b_current_;
+    int32_t inv_phase_c_current_;
+    float inv_post_fault_;
+    float inv_run_fault_;
+    int32_t inv_gate_driver_board_temp_;
+    int32_t inv_module_a_temp_;
+    int32_t inv_module_b_temp_;
+    int32_t inv_module_c_temp_;
+    int32_t inv_power_;
+    int32_t inv_output_voltage_;
+    int32_t mt_rpm_;
+    int32_t mt_torque_;
+    int32_t mt_temp_;
+    int32_t wind_speed_;
+    int32_t wind_direction_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_Protocol_2eproto;
+};
 // ===================================================================
 
 
@@ -752,9 +1117,485 @@ inline void C_MAIN::set_allocated_data(std::string* data) {
   // @@protoc_insertion_point(field_set_allocated:Protocol.C_MAIN.data)
 }
 
+// -------------------------------------------------------------------
+
+// S_MAIN
+
+// int32 INV_PHASE_A_CURRENT = 1;
+inline void S_MAIN::clear_inv_phase_a_current() {
+  _impl_.inv_phase_a_current_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_phase_a_current() const {
+  return _impl_.inv_phase_a_current_;
+}
+inline int32_t S_MAIN::inv_phase_a_current() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_PHASE_A_CURRENT)
+  return _internal_inv_phase_a_current();
+}
+inline void S_MAIN::_internal_set_inv_phase_a_current(int32_t value) {
+  
+  _impl_.inv_phase_a_current_ = value;
+}
+inline void S_MAIN::set_inv_phase_a_current(int32_t value) {
+  _internal_set_inv_phase_a_current(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_PHASE_A_CURRENT)
+}
+
+// int32 INV_PHASE_B_CURRENT = 2;
+inline void S_MAIN::clear_inv_phase_b_current() {
+  _impl_.inv_phase_b_current_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_phase_b_current() const {
+  return _impl_.inv_phase_b_current_;
+}
+inline int32_t S_MAIN::inv_phase_b_current() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_PHASE_B_CURRENT)
+  return _internal_inv_phase_b_current();
+}
+inline void S_MAIN::_internal_set_inv_phase_b_current(int32_t value) {
+  
+  _impl_.inv_phase_b_current_ = value;
+}
+inline void S_MAIN::set_inv_phase_b_current(int32_t value) {
+  _internal_set_inv_phase_b_current(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_PHASE_B_CURRENT)
+}
+
+// int32 INV_PHASE_C_CURRENT = 3;
+inline void S_MAIN::clear_inv_phase_c_current() {
+  _impl_.inv_phase_c_current_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_phase_c_current() const {
+  return _impl_.inv_phase_c_current_;
+}
+inline int32_t S_MAIN::inv_phase_c_current() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_PHASE_C_CURRENT)
+  return _internal_inv_phase_c_current();
+}
+inline void S_MAIN::_internal_set_inv_phase_c_current(int32_t value) {
+  
+  _impl_.inv_phase_c_current_ = value;
+}
+inline void S_MAIN::set_inv_phase_c_current(int32_t value) {
+  _internal_set_inv_phase_c_current(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_PHASE_C_CURRENT)
+}
+
+// float INV_POST_FAULT = 4;
+inline void S_MAIN::clear_inv_post_fault() {
+  _impl_.inv_post_fault_ = 0;
+}
+inline float S_MAIN::_internal_inv_post_fault() const {
+  return _impl_.inv_post_fault_;
+}
+inline float S_MAIN::inv_post_fault() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_POST_FAULT)
+  return _internal_inv_post_fault();
+}
+inline void S_MAIN::_internal_set_inv_post_fault(float value) {
+  
+  _impl_.inv_post_fault_ = value;
+}
+inline void S_MAIN::set_inv_post_fault(float value) {
+  _internal_set_inv_post_fault(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_POST_FAULT)
+}
+
+// float INV_RUN_FAULT = 5;
+inline void S_MAIN::clear_inv_run_fault() {
+  _impl_.inv_run_fault_ = 0;
+}
+inline float S_MAIN::_internal_inv_run_fault() const {
+  return _impl_.inv_run_fault_;
+}
+inline float S_MAIN::inv_run_fault() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_RUN_FAULT)
+  return _internal_inv_run_fault();
+}
+inline void S_MAIN::_internal_set_inv_run_fault(float value) {
+  
+  _impl_.inv_run_fault_ = value;
+}
+inline void S_MAIN::set_inv_run_fault(float value) {
+  _internal_set_inv_run_fault(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_RUN_FAULT)
+}
+
+// int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
+inline void S_MAIN::clear_inv_gate_driver_board_temp() {
+  _impl_.inv_gate_driver_board_temp_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_gate_driver_board_temp() const {
+  return _impl_.inv_gate_driver_board_temp_;
+}
+inline int32_t S_MAIN::inv_gate_driver_board_temp() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_GATE_DRIVER_BOARD_TEMP)
+  return _internal_inv_gate_driver_board_temp();
+}
+inline void S_MAIN::_internal_set_inv_gate_driver_board_temp(int32_t value) {
+  
+  _impl_.inv_gate_driver_board_temp_ = value;
+}
+inline void S_MAIN::set_inv_gate_driver_board_temp(int32_t value) {
+  _internal_set_inv_gate_driver_board_temp(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_GATE_DRIVER_BOARD_TEMP)
+}
+
+// int32 INV_MODULE_A_TEMP = 7;
+inline void S_MAIN::clear_inv_module_a_temp() {
+  _impl_.inv_module_a_temp_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_module_a_temp() const {
+  return _impl_.inv_module_a_temp_;
+}
+inline int32_t S_MAIN::inv_module_a_temp() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_MODULE_A_TEMP)
+  return _internal_inv_module_a_temp();
+}
+inline void S_MAIN::_internal_set_inv_module_a_temp(int32_t value) {
+  
+  _impl_.inv_module_a_temp_ = value;
+}
+inline void S_MAIN::set_inv_module_a_temp(int32_t value) {
+  _internal_set_inv_module_a_temp(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_MODULE_A_TEMP)
+}
+
+// int32 INV_MODULE_B_TEMP = 8;
+inline void S_MAIN::clear_inv_module_b_temp() {
+  _impl_.inv_module_b_temp_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_module_b_temp() const {
+  return _impl_.inv_module_b_temp_;
+}
+inline int32_t S_MAIN::inv_module_b_temp() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_MODULE_B_TEMP)
+  return _internal_inv_module_b_temp();
+}
+inline void S_MAIN::_internal_set_inv_module_b_temp(int32_t value) {
+  
+  _impl_.inv_module_b_temp_ = value;
+}
+inline void S_MAIN::set_inv_module_b_temp(int32_t value) {
+  _internal_set_inv_module_b_temp(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_MODULE_B_TEMP)
+}
+
+// int32 INV_MODULE_C_TEMP = 9;
+inline void S_MAIN::clear_inv_module_c_temp() {
+  _impl_.inv_module_c_temp_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_module_c_temp() const {
+  return _impl_.inv_module_c_temp_;
+}
+inline int32_t S_MAIN::inv_module_c_temp() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_MODULE_C_TEMP)
+  return _internal_inv_module_c_temp();
+}
+inline void S_MAIN::_internal_set_inv_module_c_temp(int32_t value) {
+  
+  _impl_.inv_module_c_temp_ = value;
+}
+inline void S_MAIN::set_inv_module_c_temp(int32_t value) {
+  _internal_set_inv_module_c_temp(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_MODULE_C_TEMP)
+}
+
+// int32 INV_POWER = 10;
+inline void S_MAIN::clear_inv_power() {
+  _impl_.inv_power_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_power() const {
+  return _impl_.inv_power_;
+}
+inline int32_t S_MAIN::inv_power() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_POWER)
+  return _internal_inv_power();
+}
+inline void S_MAIN::_internal_set_inv_power(int32_t value) {
+  
+  _impl_.inv_power_ = value;
+}
+inline void S_MAIN::set_inv_power(int32_t value) {
+  _internal_set_inv_power(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_POWER)
+}
+
+// int32 INV_OUTPUT_VOLTAGE = 11;
+inline void S_MAIN::clear_inv_output_voltage() {
+  _impl_.inv_output_voltage_ = 0;
+}
+inline int32_t S_MAIN::_internal_inv_output_voltage() const {
+  return _impl_.inv_output_voltage_;
+}
+inline int32_t S_MAIN::inv_output_voltage() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.INV_OUTPUT_VOLTAGE)
+  return _internal_inv_output_voltage();
+}
+inline void S_MAIN::_internal_set_inv_output_voltage(int32_t value) {
+  
+  _impl_.inv_output_voltage_ = value;
+}
+inline void S_MAIN::set_inv_output_voltage(int32_t value) {
+  _internal_set_inv_output_voltage(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.INV_OUTPUT_VOLTAGE)
+}
+
+// int32 MT_RPM = 12;
+inline void S_MAIN::clear_mt_rpm() {
+  _impl_.mt_rpm_ = 0;
+}
+inline int32_t S_MAIN::_internal_mt_rpm() const {
+  return _impl_.mt_rpm_;
+}
+inline int32_t S_MAIN::mt_rpm() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.MT_RPM)
+  return _internal_mt_rpm();
+}
+inline void S_MAIN::_internal_set_mt_rpm(int32_t value) {
+  
+  _impl_.mt_rpm_ = value;
+}
+inline void S_MAIN::set_mt_rpm(int32_t value) {
+  _internal_set_mt_rpm(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.MT_RPM)
+}
+
+// int32 MT_TORQUE = 13;
+inline void S_MAIN::clear_mt_torque() {
+  _impl_.mt_torque_ = 0;
+}
+inline int32_t S_MAIN::_internal_mt_torque() const {
+  return _impl_.mt_torque_;
+}
+inline int32_t S_MAIN::mt_torque() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.MT_TORQUE)
+  return _internal_mt_torque();
+}
+inline void S_MAIN::_internal_set_mt_torque(int32_t value) {
+  
+  _impl_.mt_torque_ = value;
+}
+inline void S_MAIN::set_mt_torque(int32_t value) {
+  _internal_set_mt_torque(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.MT_TORQUE)
+}
+
+// int32 MT_TEMP = 14;
+inline void S_MAIN::clear_mt_temp() {
+  _impl_.mt_temp_ = 0;
+}
+inline int32_t S_MAIN::_internal_mt_temp() const {
+  return _impl_.mt_temp_;
+}
+inline int32_t S_MAIN::mt_temp() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.MT_TEMP)
+  return _internal_mt_temp();
+}
+inline void S_MAIN::_internal_set_mt_temp(int32_t value) {
+  
+  _impl_.mt_temp_ = value;
+}
+inline void S_MAIN::set_mt_temp(int32_t value) {
+  _internal_set_mt_temp(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.MT_TEMP)
+}
+
+// int32 Wind_speed = 15;
+inline void S_MAIN::clear_wind_speed() {
+  _impl_.wind_speed_ = 0;
+}
+inline int32_t S_MAIN::_internal_wind_speed() const {
+  return _impl_.wind_speed_;
+}
+inline int32_t S_MAIN::wind_speed() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.Wind_speed)
+  return _internal_wind_speed();
+}
+inline void S_MAIN::_internal_set_wind_speed(int32_t value) {
+  
+  _impl_.wind_speed_ = value;
+}
+inline void S_MAIN::set_wind_speed(int32_t value) {
+  _internal_set_wind_speed(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.Wind_speed)
+}
+
+// int32 Wind_direction = 16;
+inline void S_MAIN::clear_wind_direction() {
+  _impl_.wind_direction_ = 0;
+}
+inline int32_t S_MAIN::_internal_wind_direction() const {
+  return _impl_.wind_direction_;
+}
+inline int32_t S_MAIN::wind_direction() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.Wind_direction)
+  return _internal_wind_direction();
+}
+inline void S_MAIN::_internal_set_wind_direction(int32_t value) {
+  
+  _impl_.wind_direction_ = value;
+}
+inline void S_MAIN::set_wind_direction(int32_t value) {
+  _internal_set_wind_direction(value);
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.Wind_direction)
+}
+
+// string latitude = 17;
+inline void S_MAIN::clear_latitude() {
+  _impl_.latitude_.ClearToEmpty();
+}
+inline const std::string& S_MAIN::latitude() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.latitude)
+  return _internal_latitude();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void S_MAIN::set_latitude(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.latitude_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.latitude)
+}
+inline std::string* S_MAIN::mutable_latitude() {
+  std::string* _s = _internal_mutable_latitude();
+  // @@protoc_insertion_point(field_mutable:Protocol.S_MAIN.latitude)
+  return _s;
+}
+inline const std::string& S_MAIN::_internal_latitude() const {
+  return _impl_.latitude_.Get();
+}
+inline void S_MAIN::_internal_set_latitude(const std::string& value) {
+  
+  _impl_.latitude_.Set(value, GetArenaForAllocation());
+}
+inline std::string* S_MAIN::_internal_mutable_latitude() {
+  
+  return _impl_.latitude_.Mutable(GetArenaForAllocation());
+}
+inline std::string* S_MAIN::release_latitude() {
+  // @@protoc_insertion_point(field_release:Protocol.S_MAIN.latitude)
+  return _impl_.latitude_.Release();
+}
+inline void S_MAIN::set_allocated_latitude(std::string* latitude) {
+  if (latitude != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.latitude_.SetAllocated(latitude, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.latitude_.IsDefault()) {
+    _impl_.latitude_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Protocol.S_MAIN.latitude)
+}
+
+// string longtitude = 18;
+inline void S_MAIN::clear_longtitude() {
+  _impl_.longtitude_.ClearToEmpty();
+}
+inline const std::string& S_MAIN::longtitude() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.longtitude)
+  return _internal_longtitude();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void S_MAIN::set_longtitude(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.longtitude_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.longtitude)
+}
+inline std::string* S_MAIN::mutable_longtitude() {
+  std::string* _s = _internal_mutable_longtitude();
+  // @@protoc_insertion_point(field_mutable:Protocol.S_MAIN.longtitude)
+  return _s;
+}
+inline const std::string& S_MAIN::_internal_longtitude() const {
+  return _impl_.longtitude_.Get();
+}
+inline void S_MAIN::_internal_set_longtitude(const std::string& value) {
+  
+  _impl_.longtitude_.Set(value, GetArenaForAllocation());
+}
+inline std::string* S_MAIN::_internal_mutable_longtitude() {
+  
+  return _impl_.longtitude_.Mutable(GetArenaForAllocation());
+}
+inline std::string* S_MAIN::release_longtitude() {
+  // @@protoc_insertion_point(field_release:Protocol.S_MAIN.longtitude)
+  return _impl_.longtitude_.Release();
+}
+inline void S_MAIN::set_allocated_longtitude(std::string* longtitude) {
+  if (longtitude != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.longtitude_.SetAllocated(longtitude, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.longtitude_.IsDefault()) {
+    _impl_.longtitude_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Protocol.S_MAIN.longtitude)
+}
+
+// string System_time = 19;
+inline void S_MAIN::clear_system_time() {
+  _impl_.system_time_.ClearToEmpty();
+}
+inline const std::string& S_MAIN::system_time() const {
+  // @@protoc_insertion_point(field_get:Protocol.S_MAIN.System_time)
+  return _internal_system_time();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void S_MAIN::set_system_time(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:Protocol.S_MAIN.System_time)
+}
+inline std::string* S_MAIN::mutable_system_time() {
+  std::string* _s = _internal_mutable_system_time();
+  // @@protoc_insertion_point(field_mutable:Protocol.S_MAIN.System_time)
+  return _s;
+}
+inline const std::string& S_MAIN::_internal_system_time() const {
+  return _impl_.system_time_.Get();
+}
+inline void S_MAIN::_internal_set_system_time(const std::string& value) {
+  
+  _impl_.system_time_.Set(value, GetArenaForAllocation());
+}
+inline std::string* S_MAIN::_internal_mutable_system_time() {
+  
+  return _impl_.system_time_.Mutable(GetArenaForAllocation());
+}
+inline std::string* S_MAIN::release_system_time() {
+  // @@protoc_insertion_point(field_release:Protocol.S_MAIN.System_time)
+  return _impl_.system_time_.Release();
+}
+inline void S_MAIN::set_allocated_system_time(std::string* system_time) {
+  if (system_time != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.system_time_.SetAllocated(system_time, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.system_time_.IsDefault()) {
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:Protocol.S_MAIN.System_time)
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
 // -------------------------------------------------------------------
 
 // -------------------------------------------------------------------
