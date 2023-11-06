@@ -6,6 +6,8 @@
 
 using PacketHandlerFunc = std::function<bool(PacketSessionRef&, BYTE*, int32)>;
 extern PacketHandlerFunc GPacketHandler[UINT16_MAX];
+void replaceDegrees(std::string& coord);
+void addBackslashBeforeQuotes(OUT std::string& input);
 
 enum : uint16
 {
@@ -87,7 +89,7 @@ private:
 	static bool HandlePacket(ProcessFunc func, PacketSessionRef& session, BYTE* buffer, int32 len)
 	{
 	
-		return func(session, buffer + sizeof(PacketHeader), len);
+		return func(session, buffer + sizeof(PacketHeader), len - sizeof(PacketHeader));
 	}
 
 	//json
@@ -105,7 +107,7 @@ private:
 		ASSERT_CRASH(std::memcpy(reinterpret_cast<BYTE*>(&header[1]), json_string, dataSize));
 		sendBuffer->Close(packetSize);
 
-
+		std::cout << "recevied data in ClientPacketHandler 110lines" << endl;
 		return sendBuffer;
 	}
 };

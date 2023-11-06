@@ -311,6 +311,7 @@ PacketSession::~PacketSession()
 // [size(2)][id(2)][data....][size(2)][id(2)][data....]
 int32 PacketSession::OnRecv(BYTE* buffer, int32 len)
 {
+	std::cout << "recevived data_Session_314" << endl;
 	int32 processLen = 0;
 
 	while (true)
@@ -325,8 +326,8 @@ int32 PacketSession::OnRecv(BYTE* buffer, int32 len)
 		if (dataSize < header.size)
 			break;
 
-		// 패킷 조립 성공
-		OnRecvPacket(&buffer[processLen], header.size);
+		// The second factor should switch to header.size
+		OnRecvPacket(&buffer[processLen], dataSize);
 
 		processLen += header.size;
 	}

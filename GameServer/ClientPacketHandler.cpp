@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "ClientPacketHandler.h"
 #include <vector>
 #include <variant>
@@ -8,6 +8,8 @@
 
 
 PacketHandlerFunc GPacketHandler[UINT16_MAX];
+//void replaceDegrees(std::string& coord);
+//std::string addBackslashBeforeQuotes(const std::string& input);
 
 bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len)
 {
@@ -27,14 +29,14 @@ std::mutex cout_mutex;
 bool Handle_C_MAIN(PacketSessionRef& session, Protocol::C_MAIN& pkt)
 {
 	
-	    // json µ¥ÀÌÅÍ Ã³¸® ÇÏµµ·Ï ÇÏ°Ú½À´Ï´Ù. 
+	    // json ÂµÂ¥Ã€ÃŒÃ…Ã ÃƒÂ³Â¸Â® Ã‡ÃÂµÂµÂ·Ã Ã‡ÃÂ°ÃšÂ½Ã€Â´ÃÂ´Ã™. 
 		std::string str = pkt.data();
 		nlohmann::json j = nlohmann::json::parse(str);
 		Protocol::S_MAIN mainJson;
 
 		if (j.is_discarded())
 		{
-			std::cerr << "JSON ÆÄÀÏ ÀĞ±â ½ÇÆĞ\n";
+			std::cerr << "JSON Ã†Ã„Ã€Ã Ã€ÃÂ±Ã¢ Â½Ã‡Ã†Ã\n";
 			return false;
 		}
 
@@ -76,8 +78,8 @@ bool Handle_C_MAIN(PacketSessionRef& session, Protocol::C_MAIN& pkt)
 			DBConnection* dbConn = GDBConnectionPool->Pop();
 			DBBind<19,0> dbBind(*dbConn, query);
 
-			// json µ¥ÀÌÅÍ¸¦ º¯È¯ÇÏ±â À§ÇØ¼­ º¤ÅÍ¸¦ ¼±¾ğ
-			//dbconnection¿¡¼­ µé°í ÀÖÀ» °Å¾ß
+			// json ÂµÂ¥Ã€ÃŒÃ…ÃÂ¸Â¦ ÂºÂ¯ÃˆÂ¯Ã‡ÃÂ±Ã¢ Ã€Â§Ã‡Ã˜Â¼Â­ ÂºÂ¤Ã…ÃÂ¸Â¦ Â¼Â±Â¾Ã°
+			//dbconnectionÂ¿Â¡Â¼Â­ ÂµÃ©Â°Ã­ Ã€Ã–Ã€Â» Â°Ã…Â¾ÃŸ
 			struct KeyValuepair
 			{
 				nlohmann::json::value_t type = nlohmann::json::value_t::null;
@@ -92,15 +94,15 @@ bool Handle_C_MAIN(PacketSessionRef& session, Protocol::C_MAIN& pkt)
 			};
 			std::vector<KeyValuepair> jsonVec(jsonSize);
 
-			// °´Ã¼¿¡ ´ã±â
-			// µ¥ÀÌÅÍº£ÀÌ½º¿¡ º¸³»±â
-			// ´Ù¸¥ ¼¼¼Ç¿¡ º¸³»±â
+			// Â°Â´ÃƒÂ¼Â¿Â¡ Â´Ã£Â±Ã¢
+			// ÂµÂ¥Ã€ÃŒÃ…ÃÂºÂ£Ã€ÃŒÂ½ÂºÂ¿Â¡ ÂºÂ¸Â³Â»Â±Ã¢
+			// Â´Ã™Â¸Â¥ Â¼Â¼Â¼Ã‡Â¿Â¡ ÂºÂ¸Â³Â»Â±Ã¢
 
 			int32 count = 0;
 			for (auto it = j.begin(); it !=j.end(); ++it)
 			{
-				// µ¿ÀÏÇÑ ÇÔ¼ö ¹İº¹ÇØ¼­ È£ÃâÇÏÁö ¸»°Í
-				// switch¹® ¾È¿¡ µ¿ÀÏÇÑ º¯¼ö »ç¿ë Áö¾ç
+				// ÂµÂ¿Ã€ÃÃ‡Ã‘ Ã‡Ã”Â¼Ã¶ Â¹ÃÂºÂ¹Ã‡Ã˜Â¼Â­ ÃˆÂ£ÃƒÃ¢Ã‡ÃÃÃ¶ Â¸Â»Â°Ã
+				// switchÂ¹Â® Â¾ÃˆÂ¿Â¡ ÂµÂ¿Ã€ÃÃ‡Ã‘ ÂºÂ¯Â¼Ã¶ Â»Ã§Â¿Ã« ÃÃ¶Â¾Ã§
 				nlohmann::json::value_t jType = it.value().type();
 				switch (jType)
 					{
@@ -154,7 +156,7 @@ bool Handle_C_MAIN(PacketSessionRef& session, Protocol::C_MAIN& pkt)
 }
 
 bool is_time(const std::string& str) {
-	std::regex time_regex(R"(\d{2}:\d{2}:\d{2})");  // HH:mm:ss Çü½ÄÀÇ Á¤±Ô Ç¥Çö½Ä
+	std::regex time_regex(R"(\d{2}:\d{2}:\d{2})");  // HH:mm:ss Ã‡Ã¼Â½Ã„Ã€Ã‡ ÃÂ¤Â±Ã” Ã‡Â¥Ã‡Ã¶Â½Ã„
 	return std::regex_match(str, time_regex);
 }
 
@@ -165,27 +167,29 @@ bool Handle_S_MAIN(PacketSessionRef& session, Protocol::S_MAIN& pkt)
 
 bool Handle_Json(PacketSessionRef& session, BYTE* buffer, int32 len)
 {
-	std::string str(buffer, buffer + len);
-	//cout << str << endl;
+	std::lock_guard<std::mutex> lock(cout_mutex);
 
-	nlohmann::json j = nlohmann::json::parse(str);
+	std::string str(buffer, buffer + len );
 	
-
-	if (j.is_discarded())
+	
+	// SCV , JSON ìˆ˜ì •
+	str.insert(0, "[");
+	str.append("]");
+	replaceDegrees(OUT str);
+	addBackslashBeforeQuotes(OUT str);
+	
+	nlohmann::json jsonInput = nlohmann::json::parse(str);
+	if (jsonInput.is_discarded())
 	{
-		std::cerr << "JSON ÆÄÀÏ ÀĞ±â ½ÇÆĞ\n";
+		std::cerr << "JSON Ã†Ã„Ã€Ã Ã€ÃÂ±Ã¢ Â½Ã‡Ã†Ã\n";
 		return false;
 	}
 
+	std::cout << str << endl;
+
 	// the number of the the pair of key -value
-	int32 jsonSize = j.size();
+	int32 jsonSize = jsonInput.size();
 
-	Protocol::S_MAIN S_pkt;
-
-	S_pkt.set_inv_phase_a_current(j["01_INV_PHASE_A_CURRENT"].get<int32>());
-
-
-	std::lock_guard<std::mutex> lock(cout_mutex);
 	{
 		//auto query = L"INSERT INTO [dbo].[ship_test] ([Motor], [Motor_torque], [Motor_temp], [Inverter_output_frequency], [System_time]) VALUES (?,?,?,?,?)";
 		auto query = L"INSERT INTO [dbo].[ship_test_ver1]"
@@ -213,10 +217,12 @@ bool Handle_Json(PacketSessionRef& session, BYTE* buffer, int32 len)
 			L" VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		DBConnection* dbConn = GDBConnectionPool->Pop();
+		// ì´ê±´ ìˆ«ì ë„£ì–´ì¤˜ì•¼í•´
+		// ì¤‘ìš”, ê¹Œë¨¹ì§€ë§ˆ
 		DBBind<19, 0> dbBind(*dbConn, query);
 
-		// json µ¥ÀÌÅÍ¸¦ º¯È¯ÇÏ±â À§ÇØ¼­ º¤ÅÍ¸¦ ¼±¾ğ
-		//dbconnection¿¡¼­ µé°í ÀÖÀ» °Å¾ß
+		// json ÂµÂ¥Ã€ÃŒÃ…ÃÂ¸Â¦ ÂºÂ¯ÃˆÂ¯Ã‡ÃÂ±Ã¢ Ã€Â§Ã‡Ã˜Â¼Â­ ÂºÂ¤Ã…ÃÂ¸Â¦ Â¼Â±Â¾Ã°
+		//dbconnectionÂ¿Â¡Â¼Â­ ÂµÃ©Â°Ã­ Ã€Ã–Ã€Â» Â°Ã…Â¾ÃŸ
 		struct KeyValuepair
 		{
 			nlohmann::json::value_t type = nlohmann::json::value_t::null;
@@ -231,57 +237,59 @@ bool Handle_Json(PacketSessionRef& session, BYTE* buffer, int32 len)
 		};
 		std::vector<KeyValuepair> jsonVec(jsonSize);
 
-		// °´Ã¼¿¡ ´ã±â
-		// µ¥ÀÌÅÍº£ÀÌ½º¿¡ º¸³»±â
-		// ´Ù¸¥ ¼¼¼Ç¿¡ º¸³»±â
 
 		int32 count = 0;
-		for (auto it = j.begin(); it != j.end(); ++it)
+		// Change to the tree structure
+		for (const auto& j : jsonInput)
 		{
-			// µ¿ÀÏÇÑ ÇÔ¼ö ¹İº¹ÇØ¼­ È£ÃâÇÏÁö ¸»°Í
-			// switch¹® ¾È¿¡ µ¿ÀÏÇÑ º¯¼ö »ç¿ë Áö¾ç
-			nlohmann::json::value_t jType = it.value().type();
-			switch (jType)
+			for (auto it = j.begin(); it != j.end(); ++it)
 			{
-			case nlohmann::json::value_t::number_integer:
-			{
-				jsonVec[count].type = nlohmann::json::value_t::number_integer;
-				jsonVec[count].int32_value = it.value().get<int32>();
 
-				dbBind.BindParam(count, jsonVec[count].int32_value);
-				break;
-			}
-			case nlohmann::json::value_t::number_unsigned:
-			{
-				jsonVec[count].type = nlohmann::json::value_t::number_unsigned;
-				jsonVec[count].int32_value = it.value().get<int32>();
+				nlohmann::json::value_t jType = it.value().type();
+				switch (jType)
+				{
+				case nlohmann::json::value_t::number_integer:
+				{
+					jsonVec[count].type = nlohmann::json::value_t::number_integer;
+					jsonVec[count].int32_value = it.value().get<int32>();
 
-				dbBind.BindParam(count, jsonVec[count].int32_value);
-				break;
-			}
-			case nlohmann::json::value_t::number_float:
-			{
-				jsonVec[count].type = nlohmann::json::value_t::number_float;
-				jsonVec[count].fl_value = static_cast<float>(it.value());
+					dbBind.BindParam(count, jsonVec[count].int32_value);
+					break;
+				}
+				case nlohmann::json::value_t::number_unsigned:
+				{
+					jsonVec[count].type = nlohmann::json::value_t::number_unsigned;
+					jsonVec[count].int32_value = it.value().get<int32>();
 
-				dbBind.BindParam(count, jsonVec[count].fl_value);
-				break;
-			}
-			case nlohmann::json::value_t::string:
-			{
-				jsonVec[count].type = nlohmann::json::value_t::string;
-				jsonVec[count].pValue = it.value().get<std::string>();
-				const CHAR* str = jsonVec[count].pValue.c_str();
+					dbBind.BindParam(count, jsonVec[count].int32_value);
+					break;
+				}
+				case nlohmann::json::value_t::number_float:
+				{
+					jsonVec[count].type = nlohmann::json::value_t::number_float;
+					jsonVec[count].fl_value = static_cast<float>(it.value());
 
-				jsonVec[count].wValue = JsonToConf::stringToWString(str);
-				dbBind.BindParam(count, const_cast<WCHAR*>(jsonVec[count].wValue.c_str()));
-				break;
-			}
+					dbBind.BindParam(count, jsonVec[count].fl_value);
+					break;
+				}
+				case nlohmann::json::value_t::string:
+				{
+					jsonVec[count].type = nlohmann::json::value_t::string;
+					jsonVec[count].pValue = it.value().get<std::string>();
+					const CHAR* str = jsonVec[count].pValue.c_str();
 
-			}
-			count++;
+					jsonVec[count].wValue = JsonToConf::stringToWString(str);
+					dbBind.BindParam(count, const_cast<WCHAR*>(jsonVec[count].wValue.c_str()));
+					break;
+				}
 
-		};
+				}
+				count++;
+
+			};
+
+		}
+
 
 
 		ASSERT_CRASH(dbBind.Execute());
@@ -291,3 +299,40 @@ bool Handle_Json(PacketSessionRef& session, BYTE* buffer, int32 len)
 	return true;
 }
 
+void replaceDegrees(std::string& coord) {
+	// Replace degree symbol with 'd'
+	std::string degree_utf8 = "Â¡Ã†"; // UTF-8 ì¸ì½”ë”©ëœ ë„ ê¸°í˜¸
+	size_t pos = coord.find(degree_utf8);
+	while (pos != std::string::npos) {
+		coord.replace(pos, degree_utf8.length(), "d");
+		pos = coord.find(degree_utf8, pos + 1);
+	}
+
+	// Replace minute symbol (') with 'm'
+	pos = coord.find("'");
+	while (pos != std::string::npos) {
+		coord.replace(pos, 1, "m");
+		pos = coord.find("'", pos + 1);
+	}
+
+	// ì—¬ê¸°ì„œ ì´ˆ ê¸°í˜¸(")ë¥¼ êµì²´í•˜ëŠ” ì½”ë“œê°€ ì£¼ì„ ì²˜ë¦¬ë˜ì–´ ìˆìŠµë‹ˆë‹¤.
+	// í•„ìš”í•˜ë‹¤ë©´ ì£¼ì„ì„ í•´ì œí•˜ê³  ì•„ë˜ì™€ ê°™ì´ ìˆ˜ì •í•  ìˆ˜ ìˆìŠµë‹ˆë‹¤.
+	// Replace second symbol (") with 's'
+	//pos = coord.find("\"");
+	//while (pos != std::string::npos) {
+	//	coord.replace(pos, 1, "s");
+	//	pos = coord.find("\"", pos + 1);
+	//}
+}
+void addBackslashBeforeQuotes(OUT std::string& input) {
+	std::string output;
+	for (char c : input) {
+		if (c == '"') {
+			output += "\"";
+		}
+		else {
+			output += c;
+		}
+	}
+	input.swap(output); // ìŠ¤ì™‘ í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•˜ì—¬ inputì„ ìˆ˜ì •í•©ë‹ˆë‹¤.
+}

@@ -53,7 +53,7 @@ int main()
 
 	ASSERT_CRASH(service->Start());
 
-	for (int32 i = 0; i < 5; i++)
+	for (int32 i = 0; i < 3; i++)
 	{
 		GThreadManager->Launch([=]()
 			{
@@ -108,24 +108,21 @@ int main()
 	std::string json_string = j.dump();
 
 
-
-
+	string test_string = R"({"INV_POST_FAULT":0},{"INV_RUN_FAULT":0},{"INV_GATE_DRIVER_BOARD_TEMP":0},{"INV_MODULE_A_TEMP":0},{"INV_MODULE_B_TEMP":0},{"INV_MODULE_C_TEMP":0},{"INV_PHASE_A_CURRENT":0},{"INV_PHASE_B_CURRENT":0},{"INV_PHASE_C_CURRENT":0},{"MT_TORQUE":0},{"MT_RPM":0},{"MT_TEMP":0},{"Wind_speed":5},{"Wind_direction":1650},{"INV_OUTPUT_VOLTAGE":0},{"INV_POWER":0},{"latitude":"35d22m7.302N"},{"longitude":"129d15m15.636E"},{"System - time":"15:33 : 13"})";
 
 	//mainJson.set_data(j.dump());
 	//int size = mainJson.ByteSizeLong();
 	//cout << size << endl;
     const char* ptrJson = json_string.c_str();
-	cout << ptrJson << endl;
+	cout << test_string << endl;
 
 	while (true)
 	{	
 		//auto sendBuffer = ServerPacketHandler::MakeSendBuffer(mainJson);
 		
-		auto sendBuffer = ServerPacketHandler::MakeSendBuffer(ptrJson);
+		auto sendBuffer = ServerPacketHandler::MakeSendBuffer(test_string.c_str());
 		service->Broadcast(sendBuffer);
 		this_thread::sleep_for(0.1s);
-
-
 	}
 
 
