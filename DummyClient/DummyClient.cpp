@@ -49,7 +49,7 @@ int main()
 		NetAddress(L"127.0.0.1", 6340),
 		MakeShared<IocpCore>(),
 		MakeShared<ServerSession>, // TODO : SessionManager 등
-		3);
+		1);
 
 	ASSERT_CRASH(service->Start());
 
@@ -108,7 +108,7 @@ int main()
 	std::string json_string = j.dump();
 
 
-	string test_string = R"({"INV_POST_FAULT":0},{"INV_RUN_FAULT":0},{"INV_GATE_DRIVER_BOARD_TEMP":0},{"INV_MODULE_A_TEMP":0},{"INV_MODULE_B_TEMP":0},{"INV_MODULE_C_TEMP":0},{"INV_PHASE_A_CURRENT":0},{"INV_PHASE_B_CURRENT":0},{"INV_PHASE_C_CURRENT":0},{"MT_TORQUE":0},{"MT_RPM":0},{"MT_TEMP":0},{"Wind_speed":5},{"Wind_direction":1650},{"INV_OUTPUT_VOLTAGE":0},{"INV_POWER":0},{"latitude":"35d22m7.302N"},{"longitude":"129d15m15.636E"},{"System - time":"15:33 : 13"})";
+	string test_string = R"({"INV_POST_FAULT":100},{"INV_RUN_FAULT":1000},{"INV_GATE_DRIVER_BOARD_TEMP":1000},{"INV_MODULE_A_TEMP":1000},{"INV_MODULE_B_TEMP":1000},{"INV_MODULE_C_TEMP":1000},{"INV_PHASE_A_CURRENT":100},{"INV_PHASE_B_CURRENT":10},{"INV_PHASE_C_CURRENT":10},{"MT_TORQUE":10},{"MT_RPM":10},{"MT_TEMP":10},{"Wind_speed":5},{"Wind_direction":1650},{"INV_OUTPUT_VOLTAGE":10},{"INV_POWER":10},{"latitude":"35d22m7.302N"},{"longitude":"129d15m15s636E"},{"System_time":"15:33:13"})";
 
 	//mainJson.set_data(j.dump());
 	//int size = mainJson.ByteSizeLong();

@@ -18,6 +18,10 @@ message C_MAIN
 	string data = 1;
 }
 
+
+
+
+
 message S_MAIN
 {
 	int32 INV_PHASE_A_CURRENT = 1;
@@ -39,5 +43,4 @@ message S_MAIN
 	string latitude = 17;
 	string longtitude = 18;
 	string System_time = 19;
-
 }

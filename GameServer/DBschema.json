@@ -1,0 +1,135 @@
+{
+  "database": "YourDatabaseName",
+  "tables": [
+    {
+      "table_name": "ship_test_ver2",
+      "columns": [
+        {
+          "name": "SHIP_NUMBER",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "INV_PHASE_A_CURRENT",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_PHASE_B_CURRENT",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_PHASE_C_CURRENT",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_POST_FAULT",
+          "type": "FLOAT",
+          "nullable": true
+        },
+        {
+          "name": "INV_RUN_FAULT",
+          "type": "FLOAT",
+          "nullable": true
+        },
+        {
+          "name": "INV_GATE_DRIVER_BOARD_TEMP",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_MODULE_A_TEMP",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_MODULE_B_TEMP",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_MODULE_C_TEMP",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_POWER",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_OUTPUT_VOLTAGE",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "MT_RPM",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "MT_TORQUE",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "MT_TEMP",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "Wind_speed",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "Wind_direction",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "latitude",
+          "type": "NVARCHAR",
+          "size": 50,
+          "nullable": true
+        },
+        {
+          "name": "longitude",
+          "type": "NVARCHAR",
+          "size": 50,
+          "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 50,
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "another_table_ver2",
+      "columns": [
+        {
+          "name": "SHIP_NUMBER1",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "INV_PHASE_A_CURRENT",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_PHASE_B_CURRENT",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    }
+  ]
+}

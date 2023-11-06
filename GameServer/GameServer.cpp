@@ -42,7 +42,7 @@ int main()
 	while (true)
 	{
 		wcout << "Server is running..." << endl;
-		this_thread::sleep_for(1s);
+		this_thread::sleep_for(10s);
 	}
 
 	GThreadManager->Join();

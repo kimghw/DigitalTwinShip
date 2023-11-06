@@ -3,6 +3,8 @@
 #include "DBConnectionPool.h"
 #include "DBBind.h"
 
+#include "JsonpacketHandler.h"
+
 
 using PacketHandlerFunc = std::function<bool(PacketSessionRef&, BYTE*, int32)>;
 extern PacketHandlerFunc GPacketHandler[UINT16_MAX];

@@ -132,9 +132,6 @@
     <ClInclude Include="XmlParser.h">
       <Filter>XML</Filter>
     </ClInclude>
-    <ClInclude Include="DB.h">
-      <Filter>DB</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="CorePch.cpp">
@@ -217,9 +214,6 @@
     </ClCompile>
     <ClCompile Include="XmlParser.cpp">
       <Filter>XML</Filter>
-    </ClCompile>
-    <ClCompile Include="DB.cpp">
-      <Filter>DB</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
