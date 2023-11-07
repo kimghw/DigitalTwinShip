@@ -39,7 +39,7 @@ bool SendJsonToDb(nlohmann::json& jsonInput)
 {
 	//SP 방법 검토
 	//동적 쿼리
-	auto query = L"INSERT INTO [dbo].[ship_test_ver1]"
+	auto query = L"INSERT INTO [dbo].[ship_test_ver2]"
 		L"("
 		L"[INV_PHASE_A_CURRENT],"
 		L"[INV_PHASE_B_CURRENT],"
@@ -119,27 +119,23 @@ bool SendJsonToDb(nlohmann::json& jsonInput)
 
 	string latitude = jsonInput["latitude"].get<string>();
 	wstring wlatitude = stringToWString(latitude);
-	const WCHAR* pwlatitude = const_cast<WCHAR*>(wlatitude.c_str());
-	int32 wlatitude_size = wlatitude.length() * sizeof(WCHAR);
-	dbBind.BindParam(count++, pwlatitude, wlatitude_size);
+	WCHAR* pwlatitude = const_cast<WCHAR*>(wlatitude.c_str());
+	dbBind.BindParam(count++, pwlatitude);
 
 	
 	string longtitude = jsonInput["longitude"].get<string>();
 	wstring wlongtitude = stringToWString(longtitude);
-	const WCHAR* pwlongtitude = const_cast<WCHAR*>(wlongtitude.c_str());
-	int32 wlongtitude_size = wlongtitude.length()*sizeof(WCHAR);
-	dbBind.BindParam(count++, pwlongtitude, wlongtitude_size);
+	WCHAR* pwlongtitude = const_cast<WCHAR*>(wlongtitude.c_str());
+	dbBind.BindParam(count++, pwlongtitude);
 
 	string System_time = jsonInput["System_time"].get<string>();
 	wstring wSystem_time = stringToWString(System_time);
-	const WCHAR* pwSystem_time = const_cast<WCHAR*>(wSystem_time.c_str());
-	int32 wSystem_time_size = wSystem_time.length()*sizeof(WCHAR);
-	dbBind.BindParam(count++, pwSystem_time, wSystem_time_size);
+	WCHAR* pwSystem_time = const_cast<WCHAR*>(wSystem_time.c_str());
+	dbBind.BindParam(count++, pwSystem_time);
 
 	ASSERT_CRASH(dbBind.Execute());
 	GDBConnectionPool->Push(dbConn);
 
-	std::wcout << wlongtitude << endl;
 	return true;
 }
 
@@ -147,7 +143,7 @@ bool SendJsonToDb(nlohmann::json& jsonInput)
 void replaceDegrees(std::string& coord) 
 {
 	// Replace degree symbol with 'd'
-	std::string degree_utf8 = "¡Æ"; // UTF-8 인코딩된 도 기호
+	std::string degree_utf8 = "¡Æ";
 	size_t pos = coord.find(degree_utf8);
 	while (pos != std::string::npos) {
 		coord.replace(pos, degree_utf8.length(), "d");
@@ -161,14 +157,7 @@ void replaceDegrees(std::string& coord)
 		pos = coord.find("'", pos + 1);
 	}
 
-	// 여기서 초 기호(")를 교체하는 코드가 주석 처리되어 있습니다.
-	// 필요하다면 주석을 해제하고 아래와 같이 수정할 수 있습니다.
-	// Replace second symbol (") with 's'
-	//pos = coord.find("\"");
-	//while (pos != std::string::npos) {
-	//	coord.replace(pos, 1, "s");
-	//	pos = coord.find("\"", pos + 1);
-	//}
+
 }
 void addBackslashBeforeQuotes(OUT std::string& input) 
 {

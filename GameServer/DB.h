@@ -70,7 +70,7 @@ public:
 				}
 
 			}
-			createQuery.pop_back(); // 마지막 쉼표 제거
+			createQuery.pop_back();
 			createQuery += ");";
 			std::wstring wcreateQuery = JsonToConf::stringToWString(createQuery);
 
@@ -86,41 +86,41 @@ public:
 		GDBConnectionPool->Push(dbConn);
 	}
 
-	static void CheckTable()
-	{
-		{
-			auto query = L"DROP TABLE IF EXISTS [dbo].[ship_test_ver1];"
-				L"CREATE TABLE [dbo].[ship_test_ver1] "
-				L"("
-				L"     [SHIP_NUMBER] INT NOT NULL PRIMARY KEY IDENTITY(1,1),"
-				L"     [INV_PHASE_A_CURRENT] NULL,"
-				L"     [INV_PHASE_B_CURRENT] INT NULL ,"
-				L"     [INV_PHASE_C_CURRENT] INT NULL,"
-				L"     [INV_POST_FAULT] float NULL,"
-				L"     [INV_RUN_FAULT] float NULL,"
-				L"     [INV_GATE_DRIVER_BOARD_TEMP] INT NULL,"
-				L"     [INV_MODULE_A_TEMP] INT NULL,"
-				L"     [INV_MODULE_B_TEMP] INT NULL,"
-				L"     [INV_MODULE_C_TEMP] INT NULL,"
-				L"     [INV_POWER] INT NULL,"
-				L"     [INV_OUTPUT_VOLTAGE] INT NULL,"
-				L"     [MT_RPM] INT NULL,"
-				L"     [MT_TORQUE] INT NULL,"
-				L"     [MT_TEMP] INT NULL,"
-				L"     [Wind_speed] INT NULL,"
-				L"     [Wind_direction] INT NULL,"
-				L"     [latitude] NVARCHAR(100) NULL,"
-				L"     [longitude] NVARCHAR(100) NULL,"
-				L"     [System_time] NVARCHAR(100) NULL,"
-				L");";
+	//static void CheckTable()
+	//{
+	//	{
+	//		auto query = L"DROP TABLE IF EXISTS [dbo].[ship_test_ver1];"
+	//			L"CREATE TABLE [dbo].[ship_test_ver1] "
+	//			L"("
+	//			L"     [SHIP_NUMBER] INT NOT NULL PRIMARY KEY IDENTITY(1,1),"
+	//			L"     [INV_PHASE_A_CURRENT] INT NULL,"
+	//			L"     [INV_PHASE_B_CURRENT] INT NULL ,"
+	//			L"     [INV_PHASE_C_CURRENT] INT NULL,"
+	//			L"     [INV_POST_FAULT] float NULL,"
+	//			L"     [INV_RUN_FAULT] float NULL,"
+	//			L"     [INV_GATE_DRIVER_BOARD_TEMP] INT NULL,"
+	//			L"     [INV_MODULE_A_TEMP] INT NULL,"
+	//			L"     [INV_MODULE_B_TEMP] INT NULL,"
+	//			L"     [INV_MODULE_C_TEMP] INT NULL,"
+	//			L"     [INV_POWER] INT NULL,"
+	//			L"     [INV_OUTPUT_VOLTAGE] INT NULL,"
+	//			L"     [MT_RPM] INT NULL,"
+	//			L"     [MT_TORQUE] INT NULL,"
+	//			L"     [MT_TEMP] INT NULL,"
+	//			L"     [Wind_speed] INT NULL,"
+	//			L"     [Wind_direction] INT NULL,"
+	//			L"     [latitude] NVARCHAR(100) NULL,"
+	//			L"     [longitude] NVARCHAR(100) NULL,"
+	//			L"     [System_time] NVARCHAR(100) NULL,"
+	//			L");";
 
-		
-			DBConnection* dbConn = GDBConnectionPool->Pop();
-			dbConn->Execute(query);
-			GDBConnectionPool->Push(dbConn);
-			
-		}
-	}
+	//	
+	//		DBConnection* dbConn = GDBConnectionPool->Pop();
+	//		dbConn->Execute(query);
+	//		GDBConnectionPool->Push(dbConn);
+	//		
+	//	}
+	//}
 
 	
 

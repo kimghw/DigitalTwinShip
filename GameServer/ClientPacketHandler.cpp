@@ -156,7 +156,7 @@ bool Handle_C_MAIN(PacketSessionRef& session, Protocol::C_MAIN& pkt)
 }
 
 bool is_time(const std::string& str) {
-	std::regex time_regex(R"(\d{2}:\d{2}:\d{2})");  // HH:mm:ss Çü½ÄÀÇ Á¤±Ô Ç¥Çö½Ä
+	std::regex time_regex(R"(\d{2}:\d{2}:\d{2})"); 
 	return std::regex_match(str, time_regex);
 }
 
