@@ -48,6 +48,7 @@
     <ClCompile Include="DB.cpp">
       <Filter>DataBase</Filter>
     </ClCompile>
+    <ClCompile Include="JsonPacketHandler_test.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -71,6 +72,7 @@
     <ClInclude Include="DB.h">
       <Filter>DataBase</Filter>
     </ClInclude>
+    <ClInclude Include="JsonPacketHandler_test.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\protobufc\protobuf.bat">
@@ -85,6 +87,9 @@
     </None>
     <None Include="DBschema.json">
       <Filter>ExternalFiles</Filter>
+    </None>
+    <None Include="Source.bat">
+      <Filter>DataBase</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

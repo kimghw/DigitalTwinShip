@@ -329,7 +329,8 @@ int32 PacketSession::OnRecv(BYTE* buffer, int32 len)
 		// The second factor should switch to header.size
 		OnRecvPacket(&buffer[processLen], dataSize);
 
-		processLen += header.size;
+		processLen += dataSize;
+		//processLen += header.size;
 	}
 
 	return processLen;

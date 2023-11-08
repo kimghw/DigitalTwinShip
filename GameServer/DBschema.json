@@ -2,10 +2,453 @@
   "database": "YourDatabaseName",
   "tables": [
     {
-      "table_name": "ship_test_ver2",
+      "table_name": "Battery",
       "columns": [
         {
-          "name": "SHIP_NUMBER",
+          "name": "BatteryPK",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "BAT_BPU_NEGATIVE_CONTACTOR",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_BPU_POSITIVE_CONTACTOR",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_BPU_PRE_CONTACTOR",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PROTECTION_A",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PROTECTION_B",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "Battery_Pack",
+      "columns": [
+        {
+          "name": "Battery_Pack",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "BAT_PACK_CURRENT",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_SOC",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_VOLTAGE",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_MAX_TEMP",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_MAX_TEMP_SBMS_INDEX",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_MIN_TEMP",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_MIN_TEMP_SBMS_INDEX",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_MAX_CELL_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_MAX_CELL_VOL_SBMS_INDEX",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_MIN_CELL_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_PACK_MIN_CELL_VOL_SBMS_INDEX",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "BAT_MODULE_0",
+      "columns": [
+        {
+          "name": "BatteryMd_0",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "BAT_MODULE_CELL0_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL1_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL2_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL3_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL4_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL5_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL6_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL7_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL8_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL9_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL10_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE_CELL11_VOL",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "BAT_MODULE_1",
+      "columns": [
+        {
+          "name": "BatteryMd_1",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "BAT_MODULE1_CELL0_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL1_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL2_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL3_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL4_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL5_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL6_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL7_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL8_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL9_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL10_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE1_CELL11_VOL",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "BAT_MODULE_2",
+      "columns": [
+        {
+          "name": "BatteryMd_2",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "BAT_MODULE2_CELL0_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL1_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL2_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL3_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL4_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL5_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL6_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL7_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL8_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL9_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL10_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE2_CELL11_VOL",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "BAT_MODULE_3",
+      "columns": [
+        {
+          "name": "BatteryMd_3",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "BAT_MODULE3_CELL0_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE3_CELL1_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE3_CELL2_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE3_CELL8_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE3_CELL10_VOL",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "BAT_MODULE3_CELL11_VOL",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "Environment",
+      "columns": [
+        {
+          "name": "Env",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "Wind_speed",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "Wind_direction",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "AIS",
+      "columns": [
+        {
+          "name": "AIS_PK",
+          "type": "INT",
+          "nullable": true,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "latitude",
+          "type": "NVARCHAR",
+          "size" : 100,
+          "nullable": true
+        },
+        {
+          "name": "longitude",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "System_Time",
+      "columns": [
+        {
+          "name": "Times",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "MOTOR",
+      "columns": [
+        {
+          "name": "MOTOR_",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "MT_RPM",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "MT_TORQUE",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "MT_TEMP",
+          "type": "INT",
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "INVERTER",
+      "columns": [
+        {
+          "name": "INT",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -27,12 +470,7 @@
         },
         {
           "name": "INV_POST_FAULT",
-          "type": "FLOAT",
-          "nullable": true
-        },
-        {
-          "name": "INV_RUN_FAULT",
-          "type": "FLOAT",
+          "type": "INT",
           "nullable": true
         },
         {
@@ -42,6 +480,11 @@
         },
         {
           "name": "INV_MODULE_A_TEMP",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "INV_RUN_FAULT",
           "type": "INT",
           "nullable": true
         },
@@ -62,70 +505,6 @@
         },
         {
           "name": "INV_OUTPUT_VOLTAGE",
-          "type": "INT",
-          "nullable": true
-        },
-        {
-          "name": "MT_RPM",
-          "type": "INT",
-          "nullable": true
-        },
-        {
-          "name": "MT_TORQUE",
-          "type": "INT",
-          "nullable": true
-        },
-        {
-          "name": "MT_TEMP",
-          "type": "INT",
-          "nullable": true
-        },
-        {
-          "name": "Wind_speed",
-          "type": "INT",
-          "nullable": true
-        },
-        {
-          "name": "Wind_direction",
-          "type": "INT",
-          "nullable": true
-        },
-        {
-          "name": "latitude",
-          "type": "NVARCHAR",
-          "size": 50,
-          "nullable": true
-        },
-        {
-          "name": "longitude",
-          "type": "NVARCHAR",
-          "size": 50,
-          "nullable": true
-        },
-        {
-          "name": "System_time",
-          "type": "NVARCHAR",
-          "size": 50,
-          "nullable": true
-        }
-      ]
-    },
-    {
-      "table_name": "another_table_ver2",
-      "columns": [
-        {
-          "name": "SHIP_NUMBER1",
-          "type": "INT",
-          "nullable": false,
-          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
-        },
-        {
-          "name": "INV_PHASE_A_CURRENT",
-          "type": "INT",
-          "nullable": true
-        },
-        {
-          "name": "INV_PHASE_B_CURRENT",
           "type": "INT",
           "nullable": true
         }

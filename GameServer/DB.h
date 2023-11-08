@@ -73,7 +73,7 @@ public:
 			createQuery.pop_back();
 			createQuery += ");";
 			std::wstring wcreateQuery = JsonToConf::stringToWString(createQuery);
-
+			std::cout << createQuery << endl;
 			CheckAndMakeTable(wcreateQuery.c_str());
 			//createTableQueries.push_back(wcreateQuer);
 		}
@@ -84,6 +84,7 @@ public:
 		DBConnection* dbConn = GDBConnectionPool->Pop();
 		dbConn->Execute(wcreateQuery);
 		GDBConnectionPool->Push(dbConn);
+		cout << "success for Execute" << endl;
 	}
 
 	//static void CheckTable()

@@ -6,10 +6,10 @@
 #include <regex>
 #include "Protocol.pb.h"
 #include "DBConnection.h"
+#include "JsonPacketHandler.h"
 
 
 PacketHandlerFunc GPacketHandler[UINT16_MAX];
-
 
 bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len)
 {
@@ -174,8 +174,8 @@ bool Handle_Json(PacketSessionRef& session, BYTE* buffer, int32 len)
 
 	MakeJsonString(OUT str);
 	bool result = StringToJson(str, OUT jsonInput);
-	bool dbresult = SendJsonToDb(jsonInput);
-
+	//Send_ship_test_ver2_ToDb(jsonInput);
+	Send_Battery_ToDb(jsonInput);
 
 	return true;
 }

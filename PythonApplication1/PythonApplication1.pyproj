@@ -2,16 +2,15 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>7fda1f6f-fc72-427f-91c9-44f70f409e91</ProjectGuid>
+    <ProjectGuid>8cb6ec04-9066-4c16-be1b-aaa6d22b8f78</ProjectGuid>
     <ProjectHome>.</ProjectHome>
-    <StartupFile>PacketGenerator.py</StartupFile>
+    <StartupFile>PythonApplication1.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
     <OutputPath>.</OutputPath>
-    <Name>PacketGenerator</Name>
-    <RootNamespace>PacketGenerator</RootNamespace>
-    <InterpreterId>MSBuild|env|$(MSBuildProjectFullPath)</InterpreterId>
+    <Name>PythonApplication1</Name>
+    <RootNamespace>PythonApplication1</RootNamespace>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
     <DebugSymbols>true</DebugSymbols>
@@ -22,36 +21,16 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="PacketGenerator.py" />
-    <Compile Include="ProtoParser.py">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="test.py">
-      <SubType>Code</SubType>
-    </Compile>
+    <Compile Include="PythonApplication1.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Templates\template_common_header.cpp" />
+    <Content Include="Templates\template_JsonPacketHandler.cpp" />
+    <Content Include="Templates\template_JsonPacketHandler.h" />
+    <Content Include="template_JsonPacketHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Templates\Common_header_cpp.txt" />
-    <Content Include="Templates\Common_header_h.txt" />
-    <Content Include="Templates\JsonPacketHandler_test.cpp" />
-    <Content Include="Templates\JsonPacketHandler_test.h" />
-    <Content Include="Templates\PacketHandler.h">
-      <SubType>Code</SubType>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <Interpreter Include="env\">
-      <Id>env</Id>
-      <Version>0.0</Version>
-      <Description>env (Python 3.12 (64-bit))</Description>
-      <InterpreterPath>Scripts\python.exe</InterpreterPath>
-      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
-      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
-      <Architecture>X64</Architecture>
-    </Interpreter>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.targets" />
   <!-- Uncomment the CoreCompile target to enable the Build command in
