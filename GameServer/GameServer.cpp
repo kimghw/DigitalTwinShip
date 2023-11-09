@@ -9,13 +9,13 @@
 #include <tchar.h>
 #include "DBConnectionPool.h"
 #include "DBBind.h"
-#include "DB.h"
+#include "MakeTableQuery.h"
 
 
 int main()
 {
-	serverConf conf; JsonToConf::Init("serverconfig.json", conf);
-	DB::Init();
+	serverConf conf; JsonToConf::Init("ServerConfig.json", conf);
+	MakeTableQuery::Init();
 
 
  	ClientPacketHandler::Init();
@@ -28,7 +28,7 @@ int main()
 	
 	ASSERT_CRASH(service->Start());
 
-	for (int32 i = 0; i < 2; i++)
+	for (int32 i = 0; i < 5; i++)
 	{
 		GThreadManager->Launch([=]()
 			{
@@ -43,6 +43,8 @@ int main()
 	{
 		wcout << "Server is running..." << endl;
 		this_thread::sleep_for(10s);
+
+
 	}
 
 	GThreadManager->Join();

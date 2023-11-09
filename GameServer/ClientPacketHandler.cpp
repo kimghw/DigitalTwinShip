@@ -172,10 +172,37 @@ bool Handle_Json(PacketSessionRef& session, BYTE* buffer, int32 len)
 	nlohmann::json jsonInput;
 	std::string str(buffer, buffer + len);
 
+	
 	MakeJsonString(OUT str);
+	//cout << str << endl;
+
 	bool result = StringToJson(str, OUT jsonInput);
+	if (result == false)
+		return false;
+
 	//Send_ship_test_ver2_ToDb(jsonInput);
 	Send_Battery_ToDb(jsonInput);
+	//cout << "Battery" << endl;
+	Send_Battery_Pack_ToDb(jsonInput);
+	//cout << "Send_Battery_Pack_ToDb" << endl;
+	Send_BAT_MODULE_0_ToDb(jsonInput);
+	//cout << "Send_BAT_MODULE_0_ToDb" << endl;
+	Send_BAT_MODULE_1_ToDb(jsonInput);
+	//cout << "Send_BAT_MODULE_1_ToDb" << endl;
+	Send_BAT_MODULE_2_ToDb(jsonInput);
+	//cout << "Send_BAT_MODULE_2_ToDb" << endl;
+	Send_BAT_MODULE_3_ToDb(jsonInput);
+	//cout << "Send_BAT_MODULE_3_ToDb" << endl;
+	Send_Environment_ToDb(jsonInput);
+	//cout << "Send_Environment_ToDb" << endl;
+	Send_AIS_ToDb(jsonInput);
+	//cout << "Send_AIS_ToDb" << endl;
+	Send_System_Time_ToDb(jsonInput);
+	//cout << "Send_System_Time_ToDb" << endl;
+	Send_MOTOR_ToDb(jsonInput);
+	//cout << "Send_MOTOR_ToDb" << endl;
+	Send_INVERTER_ToDb(jsonInput);
+	//cout << "Send_INVERTER_ToDb" << endl;
 
 	return true;
 }

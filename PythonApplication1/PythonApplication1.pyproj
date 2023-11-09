@@ -24,10 +24,10 @@
     <Compile Include="PythonApplication1.py" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Templates\Common_header_cpp.txt" />
+    <Content Include="Templates\Common_header_h.txt" />
     <Content Include="Templates\template_common_header.cpp" />
     <Content Include="Templates\template_JsonPacketHandler.cpp" />
-    <Content Include="Templates\template_JsonPacketHandler.h" />
-    <Content Include="template_JsonPacketHandler.h" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />

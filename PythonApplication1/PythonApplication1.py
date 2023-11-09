@@ -18,14 +18,14 @@ env = Environment(loader=FileSystemLoader('.'))
 combined_rendered_functions = ""
 
 # 공통 헤더 템플릿을 읽고 렌더링합니다.
-common_header_template = env.get_template('template_common_header.cpp')
+common_header_template = env.get_template('./templates/template_common_header.cpp')
 common_header_rendered = common_header_template.render()
 
 # 렌더링된 공통 헤더를 추가합니다.
 combined_rendered_functions += common_header_rendered + "\n\n"
 
 # 함수 템플릿을 읽습니다.
-template = env.get_template('template_JsonPacketHandler.cpp')
+template = env.get_template('./templates/template_JsonPacketHandler.cpp')
 
 # 모든 테이블에 대한 함수를 생성하고 combined_rendered_functions에 추가합니다.
 for table in data['tables']:

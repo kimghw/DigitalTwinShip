@@ -34,6 +34,12 @@
           "name": "BAT_PROTECTION_B",
           "type": "INT",
           "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
         }
       ]
     },
@@ -99,6 +105,12 @@
         {
           "name": "BAT_PACK_MIN_CELL_VOL_SBMS_INDEX",
           "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
           "nullable": true
         }
       ]
@@ -171,6 +183,12 @@
           "name": "BAT_MODULE_CELL11_VOL",
           "type": "INT",
           "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
         }
       ]
     },
@@ -241,6 +259,12 @@
         {
           "name": "BAT_MODULE1_CELL11_VOL",
           "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
           "nullable": true
         }
       ]
@@ -313,6 +337,12 @@
           "name": "BAT_MODULE2_CELL11_VOL",
           "type": "INT",
           "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
         }
       ]
     },
@@ -375,6 +405,12 @@
           "name": "Wind_direction",
           "type": "INT",
           "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
         }
       ]
     },
@@ -390,11 +426,17 @@
         {
           "name": "latitude",
           "type": "NVARCHAR",
-          "size" : 100,
+          "size": 100,
           "nullable": true
         },
         {
           "name": "longitude",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
+        },
+        {
+          "name": "System_time",
           "type": "NVARCHAR",
           "size": 100,
           "nullable": true
@@ -440,6 +482,12 @@
         {
           "name": "MT_TEMP",
           "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
           "nullable": true
         }
       ]
@@ -506,6 +554,12 @@
         {
           "name": "INV_OUTPUT_VOLTAGE",
           "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
           "nullable": true
         }
       ]

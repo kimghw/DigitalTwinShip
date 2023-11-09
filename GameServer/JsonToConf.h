@@ -29,7 +29,9 @@ public:
 	{
 		std::ifstream inputfile(jsonFileName);
 		if (!inputfile.is_open())
+		{
 			throw std::runtime_error("Failed to open the Json file");
+		}
 
 		nlohmann::json jconfig;
 

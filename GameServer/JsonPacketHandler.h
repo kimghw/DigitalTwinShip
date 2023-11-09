@@ -32,16 +32,46 @@ inline void MakeJsonString(std::string& str)
 	str.insert(0, "{");
 	str.append("}");
 	replaceDegrees(OUT str);
-	addBackslashBeforeQuotes(OUT str);
-
+	//addBackslashBeforeQuotes(OUT str);
+	//std::cout << str << endl;
 }
 
 inline bool StringToJson(std::string& str, nlohmann::json& jsonInput)
 {
-	jsonInput = nlohmann::json::parse(str);
-	if (jsonInput.is_discarded())
-	{
-		std::cerr << "JSON ÆÄÀÏ ÀÐ±â ½ÇÆÐ\n";
+	//jsonInput = nlohmann::json::parse(str);
+	//if (jsonInput.is_discarded())
+	//{
+	//	std::cerr << "JSON Parsing ERROR\n";
+	//	return false;
+	//}
+
+	try {
+		jsonInput = nlohmann::json::parse(str);
+		// JSON 파싱 후의 로직 처리
+	}
+	catch (const nlohmann::json::parse_error& e) {
+		// JSON 파싱 예외 처리
+		std::cerr << "JSON parsing error: " << e.what() << ", exception id: " << e.id << std::endl;
+		return false;
+	}
+	catch (const nlohmann::json::type_error& e) {
+		// 타입 관련 예외 처리
+		std::cerr << "Type error: " << e.what() << ", exception id: " << e.id << std::endl;
+		return false;
+	}
+	catch (const nlohmann::json::out_of_range& e) {
+		// 범위를 벗어난 접근 예외 처리
+		std::cerr << "Out of range error: " << e.what() << ", exception id: " << e.id << std::endl;
+		return false;
+	}
+	catch (const nlohmann::json::other_error& e) {
+		// 그 외의 모든 JSON 관련 예외 처리
+		std::cerr << "Other error: " << e.what() << ", exception id: " << e.id << std::endl;
+		return false;
+	}
+	catch (...) {
+		// 기타 모든 예외 처리
+		std::cerr << "An unknown error occurred" << std::endl;
 		return false;
 	}
 

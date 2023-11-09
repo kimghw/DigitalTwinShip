@@ -45,7 +45,7 @@
     <ClCompile Include="JsonPacketHandler.cpp">
       <Filter>PacketHandler</Filter>
     </ClCompile>
-    <ClCompile Include="DB.cpp">
+    <ClCompile Include="MakeTableQuery.cpp">
       <Filter>DataBase</Filter>
     </ClCompile>
     <ClCompile Include="JsonPacketHandler_test.cpp" />
@@ -69,7 +69,7 @@
     <ClInclude Include="JsonPacketHandler.h">
       <Filter>PacketHandler</Filter>
     </ClInclude>
-    <ClInclude Include="DB.h">
+    <ClInclude Include="MakeTableQuery.h">
       <Filter>DataBase</Filter>
     </ClInclude>
     <ClInclude Include="JsonPacketHandler_test.h" />

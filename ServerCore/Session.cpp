@@ -61,6 +61,7 @@ HANDLE Session::GetHandle()
 
 void Session::Dispatch(IocpEvent* iocpEvent, int32 numOfBytes)
 {
+	cout << numOfBytes << "session.64line" << endl;
 	switch (iocpEvent->eventType)
 	{
 	case EventType::Connect:
@@ -71,6 +72,7 @@ void Session::Dispatch(IocpEvent* iocpEvent, int32 numOfBytes)
 		break;
 	case EventType::Recv:
 		ProcessRecv(numOfBytes);
+		
 		break;
 	case EventType::Send:
 		ProcessSend(numOfBytes);
