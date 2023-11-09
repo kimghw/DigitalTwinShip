@@ -194,10 +194,9 @@
   <ItemGroup>
     <None Include="..\protobufc\protobuf.bat" />
     <None Include="..\protobufc\Protocol.proto" />
-    <None Include="DBschema.json" />
+    <None Include="DbSchema.json" />
     <None Include="packages.config" />
-    <None Include="serverconfig.json" />
-    <None Include="Source.bat" />
+    <None Include="ServerConfig.json" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="ShipDB.xml" />

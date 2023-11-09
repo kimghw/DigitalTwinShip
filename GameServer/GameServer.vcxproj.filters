@@ -82,14 +82,11 @@
       <Filter>Proto</Filter>
     </None>
     <None Include="packages.config" />
-    <None Include="serverconfig.json">
+    <None Include="ServerConfig.json">
       <Filter>ExternalFiles</Filter>
     </None>
-    <None Include="DBschema.json">
+    <None Include="DbSchema.json">
       <Filter>ExternalFiles</Filter>
-    </None>
-    <None Include="Source.bat">
-      <Filter>DataBase</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>

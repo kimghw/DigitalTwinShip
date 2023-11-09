@@ -16,16 +16,17 @@ env = Environment(loader=FileSystemLoader('.'))
 
 # 공통 헤더와 각 테이블 함수를 담을 문자열을 초기화합니다.
 combined_rendered_functions = ""
+Protocol_function = ""
 
 # 공통 헤더 템플릿을 읽고 렌더링합니다.
 common_header_template = env.get_template('./templates/template_common_header.cpp')
 common_header_rendered = common_header_template.render()
-
 # 렌더링된 공통 헤더를 추가합니다.
 combined_rendered_functions += common_header_rendered + "\n\n"
 
 # 함수 템플릿을 읽습니다.
 template = env.get_template('./templates/template_JsonPacketHandler.cpp')
+Protocol_template = env.get_template('./templates/template_Protocol.proto')
 
 # 모든 테이블에 대한 함수를 생성하고 combined_rendered_functions에 추가합니다.
 for table in data['tables']:
@@ -36,9 +37,25 @@ for table in data['tables']:
     )
     combined_rendered_functions += rendered_function + "\n\n"
 
-# 마지막으로 모든 렌더링된 함수를 하나의 파일에 저장합니다.
+
+rendered_protocol = Protocol_template.render(
+    tables = data['tables'],
+    table_name=table['table_name'],
+    columns=table['columns']
+) 
+Protocol_function += rendered_protocol + "\n\n"
+    
+
+# (JsonPacketHandler.cppp) 마지막으로 모든 렌더링된 함수를 하나의 파일에 저장합니다.
 filename = "JsonPacketHandler.cpp"
 filepath = os.path.join("../GameServer", filename)
 with open(filepath, 'w', encoding='utf-8') as file:
     file.write(combined_rendered_functions)
+    print(f"Saved: {filepath}")
+
+# (Protocol.proto) 마지막으로 모든 렌더링된 함수를 하나의 파일에 저장합니다.
+filename = "Protocol.proto" 
+filepath = os.path.join(".", filename)
+with open(filepath, 'w', encoding='utf-8') as file:
+    file.write(Protocol_function)
     print(f"Saved: {filepath}")

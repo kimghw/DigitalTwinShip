@@ -2,7 +2,7 @@
 #include "pch.h"
 #include "JsonPacketHandler.h"
 
-void Send_Battery_ToDb(nlohmann::json& jsonInput)
+﻿void Send_Battery_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[Battery]"
     L"("
@@ -18,7 +18,6 @@ void Send_Battery_ToDb(nlohmann::json& jsonInput)
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <6,0> dbBind(*dbConn, query);
     int32 count = 0;
-    
     
     // 1. BAT_BPU_NEGATIVE_CONTACTOR to Database
     //     Table name : Battery, Column name : BAT_BPU_NEGATIVE_CONTACTOR, Type : INT
@@ -39,9 +38,7 @@ void Send_Battery_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_BPU_NEGATIVE_CONTACTOR);
     }
-    
-    
-    // 2. BAT_BPU_POSITIVE_CONTACTOR to Database
+    // 1. BAT_BPU_POSITIVE_CONTACTOR to Database
     //     Table name : Battery, Column name : BAT_BPU_POSITIVE_CONTACTOR, Type : INT
     int32 BAT_BPU_POSITIVE_CONTACTOR = 0;
     try {
@@ -60,9 +57,7 @@ void Send_Battery_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_BPU_POSITIVE_CONTACTOR);
     }
-    
-    
-    // 3. BAT_BPU_PRE_CONTACTOR to Database
+    // 1. BAT_BPU_PRE_CONTACTOR to Database
     //     Table name : Battery, Column name : BAT_BPU_PRE_CONTACTOR, Type : INT
     int32 BAT_BPU_PRE_CONTACTOR = 0;
     try {
@@ -81,9 +76,7 @@ void Send_Battery_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_BPU_PRE_CONTACTOR);
     }
-    
-    
-    // 4. BAT_PROTECTION_A to Database
+    // 1. BAT_PROTECTION_A to Database
     //     Table name : Battery, Column name : BAT_PROTECTION_A, Type : INT
     int32 BAT_PROTECTION_A = 0;
     try {
@@ -102,9 +95,7 @@ void Send_Battery_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PROTECTION_A);
     }
-    
-    
-    // 5. BAT_PROTECTION_B to Database
+    // 1. BAT_PROTECTION_B to Database
     //     Table name : Battery, Column name : BAT_PROTECTION_B, Type : INT
     int32 BAT_PROTECTION_B = 0;
     try {
@@ -123,9 +114,7 @@ void Send_Battery_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PROTECTION_B);
     }
-    
-    
-    // 6. System_time to Database
+    // 1. System_time to Database
     //     Table name : Battery, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -147,15 +136,13 @@ void Send_Battery_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
+﻿void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[Battery_Pack]"
     L"("
@@ -178,7 +165,6 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
     DBBind <12,0> dbBind(*dbConn, query);
     int32 count = 0;
     
-    
     // 1. BAT_PACK_CURRENT to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_CURRENT, Type : INT
     int32 BAT_PACK_CURRENT = 0;
@@ -198,9 +184,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_CURRENT);
     }
-    
-    
-    // 2. BAT_PACK_SOC to Database
+    // 1. BAT_PACK_SOC to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_SOC, Type : INT
     int32 BAT_PACK_SOC = 0;
     try {
@@ -219,9 +203,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_SOC);
     }
-    
-    
-    // 3. BAT_PACK_VOLTAGE to Database
+    // 1. BAT_PACK_VOLTAGE to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_VOLTAGE, Type : INT
     int32 BAT_PACK_VOLTAGE = 0;
     try {
@@ -240,9 +222,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_VOLTAGE);
     }
-    
-    
-    // 4. BAT_PACK_MAX_TEMP to Database
+    // 1. BAT_PACK_MAX_TEMP to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MAX_TEMP, Type : INT
     int32 BAT_PACK_MAX_TEMP = 0;
     try {
@@ -261,9 +241,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MAX_TEMP);
     }
-    
-    
-    // 5. BAT_PACK_MAX_TEMP_SBMS_INDEX to Database
+    // 1. BAT_PACK_MAX_TEMP_SBMS_INDEX to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MAX_TEMP_SBMS_INDEX, Type : INT
     int32 BAT_PACK_MAX_TEMP_SBMS_INDEX = 0;
     try {
@@ -282,9 +260,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MAX_TEMP_SBMS_INDEX);
     }
-    
-    
-    // 6. BAT_PACK_MIN_TEMP to Database
+    // 1. BAT_PACK_MIN_TEMP to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MIN_TEMP, Type : INT
     int32 BAT_PACK_MIN_TEMP = 0;
     try {
@@ -303,9 +279,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MIN_TEMP);
     }
-    
-    
-    // 7. BAT_PACK_MIN_TEMP_SBMS_INDEX to Database
+    // 1. BAT_PACK_MIN_TEMP_SBMS_INDEX to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MIN_TEMP_SBMS_INDEX, Type : INT
     int32 BAT_PACK_MIN_TEMP_SBMS_INDEX = 0;
     try {
@@ -324,9 +298,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MIN_TEMP_SBMS_INDEX);
     }
-    
-    
-    // 8. BAT_PACK_MAX_CELL_VOL to Database
+    // 1. BAT_PACK_MAX_CELL_VOL to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MAX_CELL_VOL, Type : INT
     int32 BAT_PACK_MAX_CELL_VOL = 0;
     try {
@@ -345,9 +317,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MAX_CELL_VOL);
     }
-    
-    
-    // 9. BAT_PACK_MAX_CELL_VOL_SBMS_INDEX to Database
+    // 1. BAT_PACK_MAX_CELL_VOL_SBMS_INDEX to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MAX_CELL_VOL_SBMS_INDEX, Type : INT
     int32 BAT_PACK_MAX_CELL_VOL_SBMS_INDEX = 0;
     try {
@@ -366,9 +336,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MAX_CELL_VOL_SBMS_INDEX);
     }
-    
-    
-    // 10. BAT_PACK_MIN_CELL_VOL to Database
+    // 1. BAT_PACK_MIN_CELL_VOL to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MIN_CELL_VOL, Type : INT
     int32 BAT_PACK_MIN_CELL_VOL = 0;
     try {
@@ -387,9 +355,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MIN_CELL_VOL);
     }
-    
-    
-    // 11. BAT_PACK_MIN_CELL_VOL_SBMS_INDEX to Database
+    // 1. BAT_PACK_MIN_CELL_VOL_SBMS_INDEX to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MIN_CELL_VOL_SBMS_INDEX, Type : INT
     int32 BAT_PACK_MIN_CELL_VOL_SBMS_INDEX = 0;
     try {
@@ -408,9 +374,7 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MIN_CELL_VOL_SBMS_INDEX);
     }
-    
-    
-    // 12. System_time to Database
+    // 1. System_time to Database
     //     Table name : Battery_Pack, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -432,15 +396,13 @@ void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
+﻿void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[BAT_MODULE_0]"
     L"("
@@ -464,7 +426,6 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
     DBBind <13,0> dbBind(*dbConn, query);
     int32 count = 0;
     
-    
     // 1. BAT_MODULE_CELL0_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL0_VOL, Type : INT
     int32 BAT_MODULE_CELL0_VOL = 0;
@@ -484,9 +445,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL0_VOL);
     }
-    
-    
-    // 2. BAT_MODULE_CELL1_VOL to Database
+    // 1. BAT_MODULE_CELL1_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL1_VOL, Type : INT
     int32 BAT_MODULE_CELL1_VOL = 0;
     try {
@@ -505,9 +464,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL1_VOL);
     }
-    
-    
-    // 3. BAT_MODULE_CELL2_VOL to Database
+    // 1. BAT_MODULE_CELL2_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL2_VOL, Type : INT
     int32 BAT_MODULE_CELL2_VOL = 0;
     try {
@@ -526,9 +483,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL2_VOL);
     }
-    
-    
-    // 4. BAT_MODULE_CELL3_VOL to Database
+    // 1. BAT_MODULE_CELL3_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL3_VOL, Type : INT
     int32 BAT_MODULE_CELL3_VOL = 0;
     try {
@@ -547,9 +502,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL3_VOL);
     }
-    
-    
-    // 5. BAT_MODULE_CELL4_VOL to Database
+    // 1. BAT_MODULE_CELL4_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL4_VOL, Type : INT
     int32 BAT_MODULE_CELL4_VOL = 0;
     try {
@@ -568,9 +521,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL4_VOL);
     }
-    
-    
-    // 6. BAT_MODULE_CELL5_VOL to Database
+    // 1. BAT_MODULE_CELL5_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL5_VOL, Type : INT
     int32 BAT_MODULE_CELL5_VOL = 0;
     try {
@@ -589,9 +540,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL5_VOL);
     }
-    
-    
-    // 7. BAT_MODULE_CELL6_VOL to Database
+    // 1. BAT_MODULE_CELL6_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL6_VOL, Type : INT
     int32 BAT_MODULE_CELL6_VOL = 0;
     try {
@@ -610,9 +559,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL6_VOL);
     }
-    
-    
-    // 8. BAT_MODULE_CELL7_VOL to Database
+    // 1. BAT_MODULE_CELL7_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL7_VOL, Type : INT
     int32 BAT_MODULE_CELL7_VOL = 0;
     try {
@@ -631,9 +578,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL7_VOL);
     }
-    
-    
-    // 9. BAT_MODULE_CELL8_VOL to Database
+    // 1. BAT_MODULE_CELL8_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL8_VOL, Type : INT
     int32 BAT_MODULE_CELL8_VOL = 0;
     try {
@@ -652,9 +597,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL8_VOL);
     }
-    
-    
-    // 10. BAT_MODULE_CELL9_VOL to Database
+    // 1. BAT_MODULE_CELL9_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL9_VOL, Type : INT
     int32 BAT_MODULE_CELL9_VOL = 0;
     try {
@@ -673,9 +616,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL9_VOL);
     }
-    
-    
-    // 11. BAT_MODULE_CELL10_VOL to Database
+    // 1. BAT_MODULE_CELL10_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL10_VOL, Type : INT
     int32 BAT_MODULE_CELL10_VOL = 0;
     try {
@@ -694,9 +635,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL10_VOL);
     }
-    
-    
-    // 12. BAT_MODULE_CELL11_VOL to Database
+    // 1. BAT_MODULE_CELL11_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL11_VOL, Type : INT
     int32 BAT_MODULE_CELL11_VOL = 0;
     try {
@@ -715,9 +654,7 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL11_VOL);
     }
-    
-    
-    // 13. System_time to Database
+    // 1. System_time to Database
     //     Table name : BAT_MODULE_0, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -739,15 +676,13 @@ void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
+﻿void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[BAT_MODULE_1]"
     L"("
@@ -771,7 +706,6 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
     DBBind <13,0> dbBind(*dbConn, query);
     int32 count = 0;
     
-    
     // 1. BAT_MODULE1_CELL0_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL0_VOL, Type : INT
     int32 BAT_MODULE1_CELL0_VOL = 0;
@@ -791,9 +725,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL0_VOL);
     }
-    
-    
-    // 2. BAT_MODULE1_CELL1_VOL to Database
+    // 1. BAT_MODULE1_CELL1_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL1_VOL, Type : INT
     int32 BAT_MODULE1_CELL1_VOL = 0;
     try {
@@ -812,9 +744,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL1_VOL);
     }
-    
-    
-    // 3. BAT_MODULE1_CELL2_VOL to Database
+    // 1. BAT_MODULE1_CELL2_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL2_VOL, Type : INT
     int32 BAT_MODULE1_CELL2_VOL = 0;
     try {
@@ -833,9 +763,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL2_VOL);
     }
-    
-    
-    // 4. BAT_MODULE1_CELL3_VOL to Database
+    // 1. BAT_MODULE1_CELL3_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL3_VOL, Type : INT
     int32 BAT_MODULE1_CELL3_VOL = 0;
     try {
@@ -854,9 +782,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL3_VOL);
     }
-    
-    
-    // 5. BAT_MODULE1_CELL4_VOL to Database
+    // 1. BAT_MODULE1_CELL4_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL4_VOL, Type : INT
     int32 BAT_MODULE1_CELL4_VOL = 0;
     try {
@@ -875,9 +801,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL4_VOL);
     }
-    
-    
-    // 6. BAT_MODULE1_CELL5_VOL to Database
+    // 1. BAT_MODULE1_CELL5_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL5_VOL, Type : INT
     int32 BAT_MODULE1_CELL5_VOL = 0;
     try {
@@ -896,9 +820,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL5_VOL);
     }
-    
-    
-    // 7. BAT_MODULE1_CELL6_VOL to Database
+    // 1. BAT_MODULE1_CELL6_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL6_VOL, Type : INT
     int32 BAT_MODULE1_CELL6_VOL = 0;
     try {
@@ -917,9 +839,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL6_VOL);
     }
-    
-    
-    // 8. BAT_MODULE1_CELL7_VOL to Database
+    // 1. BAT_MODULE1_CELL7_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL7_VOL, Type : INT
     int32 BAT_MODULE1_CELL7_VOL = 0;
     try {
@@ -938,9 +858,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL7_VOL);
     }
-    
-    
-    // 9. BAT_MODULE1_CELL8_VOL to Database
+    // 1. BAT_MODULE1_CELL8_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL8_VOL, Type : INT
     int32 BAT_MODULE1_CELL8_VOL = 0;
     try {
@@ -959,9 +877,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL8_VOL);
     }
-    
-    
-    // 10. BAT_MODULE1_CELL9_VOL to Database
+    // 1. BAT_MODULE1_CELL9_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL9_VOL, Type : INT
     int32 BAT_MODULE1_CELL9_VOL = 0;
     try {
@@ -980,9 +896,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL9_VOL);
     }
-    
-    
-    // 11. BAT_MODULE1_CELL10_VOL to Database
+    // 1. BAT_MODULE1_CELL10_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL10_VOL, Type : INT
     int32 BAT_MODULE1_CELL10_VOL = 0;
     try {
@@ -1001,9 +915,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL10_VOL);
     }
-    
-    
-    // 12. BAT_MODULE1_CELL11_VOL to Database
+    // 1. BAT_MODULE1_CELL11_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL11_VOL, Type : INT
     int32 BAT_MODULE1_CELL11_VOL = 0;
     try {
@@ -1022,9 +934,7 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL11_VOL);
     }
-    
-    
-    // 13. System_time to Database
+    // 1. System_time to Database
     //     Table name : BAT_MODULE_1, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1046,15 +956,13 @@ void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
+﻿void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[BAT_MODULE_2]"
     L"("
@@ -1078,7 +986,6 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
     DBBind <13,0> dbBind(*dbConn, query);
     int32 count = 0;
     
-    
     // 1. BAT_MODULE2_CELL0_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL0_VOL, Type : INT
     int32 BAT_MODULE2_CELL0_VOL = 0;
@@ -1098,9 +1005,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL0_VOL);
     }
-    
-    
-    // 2. BAT_MODULE2_CELL1_VOL to Database
+    // 1. BAT_MODULE2_CELL1_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL1_VOL, Type : INT
     int32 BAT_MODULE2_CELL1_VOL = 0;
     try {
@@ -1119,9 +1024,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL1_VOL);
     }
-    
-    
-    // 3. BAT_MODULE2_CELL2_VOL to Database
+    // 1. BAT_MODULE2_CELL2_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL2_VOL, Type : INT
     int32 BAT_MODULE2_CELL2_VOL = 0;
     try {
@@ -1140,9 +1043,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL2_VOL);
     }
-    
-    
-    // 4. BAT_MODULE2_CELL3_VOL to Database
+    // 1. BAT_MODULE2_CELL3_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL3_VOL, Type : INT
     int32 BAT_MODULE2_CELL3_VOL = 0;
     try {
@@ -1161,9 +1062,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL3_VOL);
     }
-    
-    
-    // 5. BAT_MODULE2_CELL4_VOL to Database
+    // 1. BAT_MODULE2_CELL4_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL4_VOL, Type : INT
     int32 BAT_MODULE2_CELL4_VOL = 0;
     try {
@@ -1182,9 +1081,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL4_VOL);
     }
-    
-    
-    // 6. BAT_MODULE2_CELL5_VOL to Database
+    // 1. BAT_MODULE2_CELL5_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL5_VOL, Type : INT
     int32 BAT_MODULE2_CELL5_VOL = 0;
     try {
@@ -1203,9 +1100,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL5_VOL);
     }
-    
-    
-    // 7. BAT_MODULE2_CELL6_VOL to Database
+    // 1. BAT_MODULE2_CELL6_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL6_VOL, Type : INT
     int32 BAT_MODULE2_CELL6_VOL = 0;
     try {
@@ -1224,9 +1119,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL6_VOL);
     }
-    
-    
-    // 8. BAT_MODULE2_CELL7_VOL to Database
+    // 1. BAT_MODULE2_CELL7_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL7_VOL, Type : INT
     int32 BAT_MODULE2_CELL7_VOL = 0;
     try {
@@ -1245,9 +1138,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL7_VOL);
     }
-    
-    
-    // 9. BAT_MODULE2_CELL8_VOL to Database
+    // 1. BAT_MODULE2_CELL8_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL8_VOL, Type : INT
     int32 BAT_MODULE2_CELL8_VOL = 0;
     try {
@@ -1266,9 +1157,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL8_VOL);
     }
-    
-    
-    // 10. BAT_MODULE2_CELL9_VOL to Database
+    // 1. BAT_MODULE2_CELL9_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL9_VOL, Type : INT
     int32 BAT_MODULE2_CELL9_VOL = 0;
     try {
@@ -1287,9 +1176,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL9_VOL);
     }
-    
-    
-    // 11. BAT_MODULE2_CELL10_VOL to Database
+    // 1. BAT_MODULE2_CELL10_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL10_VOL, Type : INT
     int32 BAT_MODULE2_CELL10_VOL = 0;
     try {
@@ -1308,9 +1195,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL10_VOL);
     }
-    
-    
-    // 12. BAT_MODULE2_CELL11_VOL to Database
+    // 1. BAT_MODULE2_CELL11_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL11_VOL, Type : INT
     int32 BAT_MODULE2_CELL11_VOL = 0;
     try {
@@ -1329,9 +1214,7 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL11_VOL);
     }
-    
-    
-    // 13. System_time to Database
+    // 1. System_time to Database
     //     Table name : BAT_MODULE_2, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1353,15 +1236,13 @@ void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
+﻿void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[BAT_MODULE_3]"
     L"("
@@ -1377,7 +1258,6 @@ void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <6,0> dbBind(*dbConn, query);
     int32 count = 0;
-    
     
     // 1. BAT_MODULE3_CELL0_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL0_VOL, Type : INT
@@ -1398,9 +1278,7 @@ void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL0_VOL);
     }
-    
-    
-    // 2. BAT_MODULE3_CELL1_VOL to Database
+    // 1. BAT_MODULE3_CELL1_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL1_VOL, Type : INT
     int32 BAT_MODULE3_CELL1_VOL = 0;
     try {
@@ -1419,9 +1297,7 @@ void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL1_VOL);
     }
-    
-    
-    // 3. BAT_MODULE3_CELL2_VOL to Database
+    // 1. BAT_MODULE3_CELL2_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL2_VOL, Type : INT
     int32 BAT_MODULE3_CELL2_VOL = 0;
     try {
@@ -1440,9 +1316,7 @@ void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL2_VOL);
     }
-    
-    
-    // 4. BAT_MODULE3_CELL8_VOL to Database
+    // 1. BAT_MODULE3_CELL8_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL8_VOL, Type : INT
     int32 BAT_MODULE3_CELL8_VOL = 0;
     try {
@@ -1461,9 +1335,7 @@ void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL8_VOL);
     }
-    
-    
-    // 5. BAT_MODULE3_CELL10_VOL to Database
+    // 1. BAT_MODULE3_CELL10_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL10_VOL, Type : INT
     int32 BAT_MODULE3_CELL10_VOL = 0;
     try {
@@ -1482,9 +1354,7 @@ void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL10_VOL);
     }
-    
-    
-    // 6. BAT_MODULE3_CELL11_VOL to Database
+    // 1. BAT_MODULE3_CELL11_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL11_VOL, Type : INT
     int32 BAT_MODULE3_CELL11_VOL = 0;
     try {
@@ -1503,15 +1373,13 @@ void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL11_VOL);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_Environment_ToDb(nlohmann::json& jsonInput)
+﻿void Send_Environment_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[Environment]"
     L"("
@@ -1524,7 +1392,6 @@ void Send_Environment_ToDb(nlohmann::json& jsonInput)
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <3,0> dbBind(*dbConn, query);
     int32 count = 0;
-    
     
     // 1. Wind_speed to Database
     //     Table name : Environment, Column name : Wind_speed, Type : INT
@@ -1545,9 +1412,7 @@ void Send_Environment_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,Wind_speed);
     }
-    
-    
-    // 2. Wind_direction to Database
+    // 1. Wind_direction to Database
     //     Table name : Environment, Column name : Wind_direction, Type : INT
     int32 Wind_direction = 0;
     try {
@@ -1566,9 +1431,7 @@ void Send_Environment_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,Wind_direction);
     }
-    
-    
-    // 3. System_time to Database
+    // 1. System_time to Database
     //     Table name : Environment, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1590,15 +1453,13 @@ void Send_Environment_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_AIS_ToDb(nlohmann::json& jsonInput)
+﻿void Send_AIS_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[AIS]"
     L"("
@@ -1611,7 +1472,6 @@ void Send_AIS_ToDb(nlohmann::json& jsonInput)
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <3,0> dbBind(*dbConn, query);
     int32 count = 0;
-    
     
     // 1. latitude to Database
     //     Table name : AIS, Column name : latitude, Type : NVARCHAR
@@ -1635,9 +1495,7 @@ void Send_AIS_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwlatitude);
     }
-    
-    
-    // 2. longitude to Database
+    // 1. longitude to Database
     //     Table name : AIS, Column name : longitude, Type : NVARCHAR
     std::wstring wlongitude = L"No input";
     WCHAR* pwlongitude = nullptr;
@@ -1659,9 +1517,7 @@ void Send_AIS_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwlongitude);
     }
-    
-    
-    // 3. System_time to Database
+    // 1. System_time to Database
     //     Table name : AIS, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1683,15 +1539,13 @@ void Send_AIS_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_System_Time_ToDb(nlohmann::json& jsonInput)
+﻿void Send_System_Time_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[System_Time]"
     L"("
@@ -1702,7 +1556,6 @@ void Send_System_Time_ToDb(nlohmann::json& jsonInput)
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <1,0> dbBind(*dbConn, query);
     int32 count = 0;
-    
     
     // 1. System_time to Database
     //     Table name : System_Time, Column name : System_time, Type : NVARCHAR
@@ -1726,15 +1579,13 @@ void Send_System_Time_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_MOTOR_ToDb(nlohmann::json& jsonInput)
+﻿void Send_MOTOR_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[MOTOR]"
     L"("
@@ -1748,7 +1599,6 @@ void Send_MOTOR_ToDb(nlohmann::json& jsonInput)
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <4,0> dbBind(*dbConn, query);
     int32 count = 0;
-    
     
     // 1. MT_RPM to Database
     //     Table name : MOTOR, Column name : MT_RPM, Type : INT
@@ -1769,9 +1619,7 @@ void Send_MOTOR_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,MT_RPM);
     }
-    
-    
-    // 2. MT_TORQUE to Database
+    // 1. MT_TORQUE to Database
     //     Table name : MOTOR, Column name : MT_TORQUE, Type : INT
     int32 MT_TORQUE = 0;
     try {
@@ -1790,9 +1638,7 @@ void Send_MOTOR_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,MT_TORQUE);
     }
-    
-    
-    // 3. MT_TEMP to Database
+    // 1. MT_TEMP to Database
     //     Table name : MOTOR, Column name : MT_TEMP, Type : INT
     int32 MT_TEMP = 0;
     try {
@@ -1811,9 +1657,7 @@ void Send_MOTOR_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,MT_TEMP);
     }
-    
-    
-    // 4. System_time to Database
+    // 1. System_time to Database
     //     Table name : MOTOR, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1835,15 +1679,13 @@ void Send_MOTOR_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
 
 
-void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
+﻿void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
 {
     auto query = L"INSERT INTO [dbo].[INVERTER]"
     L"("
@@ -1866,7 +1708,6 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
     DBBind <12,0> dbBind(*dbConn, query);
     int32 count = 0;
     
-    
     // 1. INV_PHASE_A_CURRENT to Database
     //     Table name : INVERTER, Column name : INV_PHASE_A_CURRENT, Type : INT
     int32 INV_PHASE_A_CURRENT = 0;
@@ -1886,9 +1727,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_PHASE_A_CURRENT);
     }
-    
-    
-    // 2. INV_PHASE_B_CURRENT to Database
+    // 1. INV_PHASE_B_CURRENT to Database
     //     Table name : INVERTER, Column name : INV_PHASE_B_CURRENT, Type : INT
     int32 INV_PHASE_B_CURRENT = 0;
     try {
@@ -1907,9 +1746,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_PHASE_B_CURRENT);
     }
-    
-    
-    // 3. INV_PHASE_C_CURRENT to Database
+    // 1. INV_PHASE_C_CURRENT to Database
     //     Table name : INVERTER, Column name : INV_PHASE_C_CURRENT, Type : INT
     int32 INV_PHASE_C_CURRENT = 0;
     try {
@@ -1928,9 +1765,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_PHASE_C_CURRENT);
     }
-    
-    
-    // 4. INV_POST_FAULT to Database
+    // 1. INV_POST_FAULT to Database
     //     Table name : INVERTER, Column name : INV_POST_FAULT, Type : INT
     int32 INV_POST_FAULT = 0;
     try {
@@ -1949,9 +1784,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_POST_FAULT);
     }
-    
-    
-    // 5. INV_GATE_DRIVER_BOARD_TEMP to Database
+    // 1. INV_GATE_DRIVER_BOARD_TEMP to Database
     //     Table name : INVERTER, Column name : INV_GATE_DRIVER_BOARD_TEMP, Type : INT
     int32 INV_GATE_DRIVER_BOARD_TEMP = 0;
     try {
@@ -1970,9 +1803,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_GATE_DRIVER_BOARD_TEMP);
     }
-    
-    
-    // 6. INV_MODULE_A_TEMP to Database
+    // 1. INV_MODULE_A_TEMP to Database
     //     Table name : INVERTER, Column name : INV_MODULE_A_TEMP, Type : INT
     int32 INV_MODULE_A_TEMP = 0;
     try {
@@ -1991,9 +1822,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_MODULE_A_TEMP);
     }
-    
-    
-    // 7. INV_RUN_FAULT to Database
+    // 1. INV_RUN_FAULT to Database
     //     Table name : INVERTER, Column name : INV_RUN_FAULT, Type : INT
     int32 INV_RUN_FAULT = 0;
     try {
@@ -2012,9 +1841,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_RUN_FAULT);
     }
-    
-    
-    // 8. INV_MODULE_B_TEMP to Database
+    // 1. INV_MODULE_B_TEMP to Database
     //     Table name : INVERTER, Column name : INV_MODULE_B_TEMP, Type : INT
     int32 INV_MODULE_B_TEMP = 0;
     try {
@@ -2033,9 +1860,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_MODULE_B_TEMP);
     }
-    
-    
-    // 9. INV_MODULE_C_TEMP to Database
+    // 1. INV_MODULE_C_TEMP to Database
     //     Table name : INVERTER, Column name : INV_MODULE_C_TEMP, Type : INT
     int32 INV_MODULE_C_TEMP = 0;
     try {
@@ -2054,9 +1879,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_MODULE_C_TEMP);
     }
-    
-    
-    // 10. INV_POWER to Database
+    // 1. INV_POWER to Database
     //     Table name : INVERTER, Column name : INV_POWER, Type : INT
     int32 INV_POWER = 0;
     try {
@@ -2075,9 +1898,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_POWER);
     }
-    
-    
-    // 11. INV_OUTPUT_VOLTAGE to Database
+    // 1. INV_OUTPUT_VOLTAGE to Database
     //     Table name : INVERTER, Column name : INV_OUTPUT_VOLTAGE, Type : INT
     int32 INV_OUTPUT_VOLTAGE = 0;
     try {
@@ -2096,9 +1917,7 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_OUTPUT_VOLTAGE);
     }
-    
-    
-    // 12. System_time to Database
+    // 1. System_time to Database
     //     Table name : INVERTER, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -2120,8 +1939,6 @@ void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwSystem_time);
     }
-    
-    
 
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);

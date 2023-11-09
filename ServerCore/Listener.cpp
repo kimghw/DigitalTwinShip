@@ -16,7 +16,6 @@ Listener::~Listener()
 	for (AcceptEvent* acceptEvent : _acceptEvents)
 	{
 		// TODO
-
 		xdelete(acceptEvent);
 	}
 }

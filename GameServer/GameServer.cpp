@@ -15,8 +15,9 @@
 int main()
 {
 	serverConf conf; JsonToConf::Init("ServerConfig.json", conf);
+	
 	MakeTableQuery::Init();
-
+cout << "S" << endl;
 
  	ClientPacketHandler::Init();
 

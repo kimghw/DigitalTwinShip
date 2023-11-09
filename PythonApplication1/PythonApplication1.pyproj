@@ -26,8 +26,10 @@
   <ItemGroup>
     <Content Include="Templates\Common_header_cpp.txt" />
     <Content Include="Templates\Common_header_h.txt" />
+    <Content Include="Templates\module1.cpp" />
     <Content Include="Templates\template_common_header.cpp" />
     <Content Include="Templates\template_JsonPacketHandler.cpp" />
+    <Content Include="Templates\template_Protocol.proto" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Templates\" />
