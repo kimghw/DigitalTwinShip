@@ -21,169 +21,511 @@ namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
 namespace Protocol {
-PROTOBUF_CONSTEXPR S_TEST::S_TEST(
+PROTOBUF_CONSTEXPR Battery::Battery(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.player_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.id_)*/0
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.batterypk_)*/0
+  , /*decltype(_impl_.bat_bpu_negative_contactor_)*/0
+  , /*decltype(_impl_.bat_bpu_positive_contactor_)*/0
+  , /*decltype(_impl_.bat_bpu_pre_contactor_)*/0
+  , /*decltype(_impl_.bat_protection_a_)*/0
+  , /*decltype(_impl_.bat_protection_b_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct S_TESTDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR S_TESTDefaultTypeInternal()
+struct BatteryDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BatteryDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~S_TESTDefaultTypeInternal() {}
+  ~BatteryDefaultTypeInternal() {}
   union {
-    S_TEST _instance;
+    Battery _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 S_TESTDefaultTypeInternal _S_TEST_default_instance_;
-PROTOBUF_CONSTEXPR C_TEST::C_TEST(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BatteryDefaultTypeInternal _Battery_default_instance_;
+PROTOBUF_CONSTEXPR Battery_Pack::Battery_Pack(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.player_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.id_)*/0
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.battery_pack_)*/0
+  , /*decltype(_impl_.bat_pack_current_)*/0
+  , /*decltype(_impl_.bat_pack_soc_)*/0
+  , /*decltype(_impl_.bat_pack_voltage_)*/0
+  , /*decltype(_impl_.bat_pack_max_temp_)*/0
+  , /*decltype(_impl_.bat_pack_max_temp_sbms_index_)*/0
+  , /*decltype(_impl_.bat_pack_min_temp_)*/0
+  , /*decltype(_impl_.bat_pack_min_temp_sbms_index_)*/0
+  , /*decltype(_impl_.bat_pack_max_cell_vol_)*/0
+  , /*decltype(_impl_.bat_pack_max_cell_vol_sbms_index_)*/0
+  , /*decltype(_impl_.bat_pack_min_cell_vol_)*/0
+  , /*decltype(_impl_.bat_pack_min_cell_vol_sbms_index_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct C_TESTDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR C_TESTDefaultTypeInternal()
+struct Battery_PackDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR Battery_PackDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~C_TESTDefaultTypeInternal() {}
+  ~Battery_PackDefaultTypeInternal() {}
   union {
-    C_TEST _instance;
+    Battery_Pack _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 C_TESTDefaultTypeInternal _C_TEST_default_instance_;
-PROTOBUF_CONSTEXPR C_MAIN::C_MAIN(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 Battery_PackDefaultTypeInternal _Battery_Pack_default_instance_;
+PROTOBUF_CONSTEXPR BAT_MODULE_0::BAT_MODULE_0(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.data_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.batterymd_0_)*/0
+  , /*decltype(_impl_.bat_module_cell0_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell1_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell2_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell3_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell4_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell5_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell6_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell7_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell8_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell9_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell10_vol_)*/0
+  , /*decltype(_impl_.bat_module_cell11_vol_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct C_MAINDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR C_MAINDefaultTypeInternal()
+struct BAT_MODULE_0DefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BAT_MODULE_0DefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~C_MAINDefaultTypeInternal() {}
+  ~BAT_MODULE_0DefaultTypeInternal() {}
   union {
-    C_MAIN _instance;
+    BAT_MODULE_0 _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 C_MAINDefaultTypeInternal _C_MAIN_default_instance_;
-PROTOBUF_CONSTEXPR S_MAIN::S_MAIN(
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BAT_MODULE_0DefaultTypeInternal _BAT_MODULE_0_default_instance_;
+PROTOBUF_CONSTEXPR BAT_MODULE_1::BAT_MODULE_1(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.batterymd_1_)*/0
+  , /*decltype(_impl_.bat_module1_cell0_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell1_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell2_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell3_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell4_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell5_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell6_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell7_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell8_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell9_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell10_vol_)*/0
+  , /*decltype(_impl_.bat_module1_cell11_vol_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct BAT_MODULE_1DefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BAT_MODULE_1DefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BAT_MODULE_1DefaultTypeInternal() {}
+  union {
+    BAT_MODULE_1 _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BAT_MODULE_1DefaultTypeInternal _BAT_MODULE_1_default_instance_;
+PROTOBUF_CONSTEXPR BAT_MODULE_2::BAT_MODULE_2(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.batterymd_2_)*/0
+  , /*decltype(_impl_.bat_module2_cell0_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell1_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell2_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell3_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell4_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell5_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell6_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell7_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell8_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell9_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell10_vol_)*/0
+  , /*decltype(_impl_.bat_module2_cell11_vol_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct BAT_MODULE_2DefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BAT_MODULE_2DefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BAT_MODULE_2DefaultTypeInternal() {}
+  union {
+    BAT_MODULE_2 _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BAT_MODULE_2DefaultTypeInternal _BAT_MODULE_2_default_instance_;
+PROTOBUF_CONSTEXPR BAT_MODULE_3::BAT_MODULE_3(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.batterymd_3_)*/0
+  , /*decltype(_impl_.bat_module3_cell0_vol_)*/0
+  , /*decltype(_impl_.bat_module3_cell1_vol_)*/0
+  , /*decltype(_impl_.bat_module3_cell2_vol_)*/0
+  , /*decltype(_impl_.bat_module3_cell8_vol_)*/0
+  , /*decltype(_impl_.bat_module3_cell10_vol_)*/0
+  , /*decltype(_impl_.bat_module3_cell11_vol_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct BAT_MODULE_3DefaultTypeInternal {
+  PROTOBUF_CONSTEXPR BAT_MODULE_3DefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~BAT_MODULE_3DefaultTypeInternal() {}
+  union {
+    BAT_MODULE_3 _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BAT_MODULE_3DefaultTypeInternal _BAT_MODULE_3_default_instance_;
+PROTOBUF_CONSTEXPR Environment::Environment(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.env_)*/0
+  , /*decltype(_impl_.wind_speed_)*/0
+  , /*decltype(_impl_.wind_direction_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct EnvironmentDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR EnvironmentDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~EnvironmentDefaultTypeInternal() {}
+  union {
+    Environment _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EnvironmentDefaultTypeInternal _Environment_default_instance_;
+PROTOBUF_CONSTEXPR AIS::AIS(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.latitude_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.longtitude_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.longitude_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.ais_pk_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct AISDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR AISDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~AISDefaultTypeInternal() {}
+  union {
+    AIS _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 AISDefaultTypeInternal _AIS_default_instance_;
+PROTOBUF_CONSTEXPR System_Time::System_Time(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.times_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct System_TimeDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR System_TimeDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~System_TimeDefaultTypeInternal() {}
+  union {
+    System_Time _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 System_TimeDefaultTypeInternal _System_Time_default_instance_;
+PROTOBUF_CONSTEXPR MOTOR::MOTOR(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.motor__)*/0
+  , /*decltype(_impl_.mt_rpm_)*/0
+  , /*decltype(_impl_.mt_torque_)*/0
+  , /*decltype(_impl_.mt_temp_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct MOTORDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR MOTORDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~MOTORDefaultTypeInternal() {}
+  union {
+    MOTOR _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 MOTORDefaultTypeInternal _MOTOR_default_instance_;
+PROTOBUF_CONSTEXPR INVERTER::INVERTER(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.int__)*/0
   , /*decltype(_impl_.inv_phase_a_current_)*/0
   , /*decltype(_impl_.inv_phase_b_current_)*/0
   , /*decltype(_impl_.inv_phase_c_current_)*/0
   , /*decltype(_impl_.inv_post_fault_)*/0
-  , /*decltype(_impl_.inv_run_fault_)*/0
   , /*decltype(_impl_.inv_gate_driver_board_temp_)*/0
   , /*decltype(_impl_.inv_module_a_temp_)*/0
+  , /*decltype(_impl_.inv_run_fault_)*/0
   , /*decltype(_impl_.inv_module_b_temp_)*/0
   , /*decltype(_impl_.inv_module_c_temp_)*/0
   , /*decltype(_impl_.inv_power_)*/0
   , /*decltype(_impl_.inv_output_voltage_)*/0
-  , /*decltype(_impl_.mt_rpm_)*/0
-  , /*decltype(_impl_.mt_torque_)*/0
-  , /*decltype(_impl_.mt_temp_)*/0
-  , /*decltype(_impl_.wind_speed_)*/0
-  , /*decltype(_impl_.wind_direction_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
-struct S_MAINDefaultTypeInternal {
-  PROTOBUF_CONSTEXPR S_MAINDefaultTypeInternal()
+struct INVERTERDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR INVERTERDefaultTypeInternal()
       : _instance(::_pbi::ConstantInitialized{}) {}
-  ~S_MAINDefaultTypeInternal() {}
+  ~INVERTERDefaultTypeInternal() {}
   union {
-    S_MAIN _instance;
+    INVERTER _instance;
   };
 };
-PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 S_MAINDefaultTypeInternal _S_MAIN_default_instance_;
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 INVERTERDefaultTypeInternal _INVERTER_default_instance_;
 }  // namespace Protocol
-static ::_pb::Metadata file_level_metadata_Protocol_2eproto[4];
+static ::_pb::Metadata file_level_metadata_Protocol_2eproto[11];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_Protocol_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_Protocol_2eproto = nullptr;
 
 const uint32_t TableStruct_Protocol_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_TEST, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_TEST, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_TEST, _impl_.player_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.batterypk_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_bpu_negative_contactor_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_bpu_positive_contactor_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_bpu_pre_contactor_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_protection_a_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_protection_b_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::C_TEST, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::C_TEST, _impl_.id_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::C_TEST, _impl_.player_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.battery_pack_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_current_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_soc_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_voltage_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_max_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_max_temp_sbms_index_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_min_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_min_temp_sbms_index_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_max_cell_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_max_cell_vol_sbms_index_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_min_cell_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_min_cell_vol_sbms_index_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::C_MAIN, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::C_MAIN, _impl_.data_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.batterymd_0_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell0_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell1_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell2_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell3_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell4_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell5_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell6_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell7_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell8_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell9_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell10_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell11_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_phase_a_current_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_phase_b_current_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_phase_c_current_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_post_fault_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_run_fault_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_gate_driver_board_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_module_a_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_module_b_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_module_c_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_power_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.inv_output_voltage_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.mt_rpm_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.mt_torque_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.mt_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.wind_speed_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.wind_direction_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.latitude_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.longtitude_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::S_MAIN, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.batterymd_1_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell0_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell1_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell2_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell3_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell4_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell5_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell6_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell7_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell8_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell9_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell10_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell11_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.system_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.batterymd_2_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell0_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell1_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell2_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell3_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell4_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell5_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell6_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell7_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell8_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell9_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell10_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell11_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.system_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.batterymd_3_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell0_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell1_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell2_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell8_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell10_vol_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell11_vol_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _impl_.env_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _impl_.wind_speed_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _impl_.wind_direction_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _impl_.system_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _impl_.ais_pk_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _impl_.latitude_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _impl_.longitude_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _impl_.system_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::Protocol::System_Time, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::Protocol::System_Time, _impl_.times_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::System_Time, _impl_.system_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.motor__),
+  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.mt_rpm_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.mt_torque_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.mt_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.system_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.int__),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_phase_a_current_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_phase_b_current_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_phase_c_current_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_post_fault_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_gate_driver_board_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_module_a_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_run_fault_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_module_b_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_module_c_temp_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_power_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_output_voltage_),
+  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.system_time_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::Protocol::S_TEST)},
-  { 8, -1, -1, sizeof(::Protocol::C_TEST)},
-  { 16, -1, -1, sizeof(::Protocol::C_MAIN)},
-  { 23, -1, -1, sizeof(::Protocol::S_MAIN)},
+  { 0, -1, -1, sizeof(::Protocol::Battery)},
+  { 13, -1, -1, sizeof(::Protocol::Battery_Pack)},
+  { 32, -1, -1, sizeof(::Protocol::BAT_MODULE_0)},
+  { 52, -1, -1, sizeof(::Protocol::BAT_MODULE_1)},
+  { 72, -1, -1, sizeof(::Protocol::BAT_MODULE_2)},
+  { 92, -1, -1, sizeof(::Protocol::BAT_MODULE_3)},
+  { 105, -1, -1, sizeof(::Protocol::Environment)},
+  { 115, -1, -1, sizeof(::Protocol::AIS)},
+  { 125, -1, -1, sizeof(::Protocol::System_Time)},
+  { 133, -1, -1, sizeof(::Protocol::MOTOR)},
+  { 144, -1, -1, sizeof(::Protocol::INVERTER)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::Protocol::_S_TEST_default_instance_._instance,
-  &::Protocol::_C_TEST_default_instance_._instance,
-  &::Protocol::_C_MAIN_default_instance_._instance,
-  &::Protocol::_S_MAIN_default_instance_._instance,
+  &::Protocol::_Battery_default_instance_._instance,
+  &::Protocol::_Battery_Pack_default_instance_._instance,
+  &::Protocol::_BAT_MODULE_0_default_instance_._instance,
+  &::Protocol::_BAT_MODULE_1_default_instance_._instance,
+  &::Protocol::_BAT_MODULE_2_default_instance_._instance,
+  &::Protocol::_BAT_MODULE_3_default_instance_._instance,
+  &::Protocol::_Environment_default_instance_._instance,
+  &::Protocol::_AIS_default_instance_._instance,
+  &::Protocol::_System_Time_default_instance_._instance,
+  &::Protocol::_MOTOR_default_instance_._instance,
+  &::Protocol::_INVERTER_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_Protocol_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\016Protocol.proto\022\010Protocol\"$\n\006S_TEST\022\n\n\002"
-  "id\030\001 \001(\005\022\016\n\006player\030\002 \001(\t\"$\n\006C_TEST\022\n\n\002id"
-  "\030\001 \001(\005\022\016\n\006player\030\002 \001(\t\"\026\n\006C_MAIN\022\014\n\004data"
-  "\030\001 \001(\t\"\315\003\n\006S_MAIN\022\033\n\023INV_PHASE_A_CURRENT"
-  "\030\001 \001(\005\022\033\n\023INV_PHASE_B_CURRENT\030\002 \001(\005\022\033\n\023I"
-  "NV_PHASE_C_CURRENT\030\003 \001(\005\022\026\n\016INV_POST_FAU"
-  "LT\030\004 \001(\002\022\025\n\rINV_RUN_FAULT\030\005 \001(\002\022\"\n\032INV_G"
-  "ATE_DRIVER_BOARD_TEMP\030\006 \001(\005\022\031\n\021INV_MODUL"
-  "E_A_TEMP\030\007 \001(\005\022\031\n\021INV_MODULE_B_TEMP\030\010 \001("
-  "\005\022\031\n\021INV_MODULE_C_TEMP\030\t \001(\005\022\021\n\tINV_POWE"
-  "R\030\n \001(\005\022\032\n\022INV_OUTPUT_VOLTAGE\030\013 \001(\005\022\016\n\006M"
-  "T_RPM\030\014 \001(\005\022\021\n\tMT_TORQUE\030\r \001(\005\022\017\n\007MT_TEM"
-  "P\030\016 \001(\005\022\022\n\nWind_speed\030\017 \001(\005\022\026\n\016Wind_dire"
-  "ction\030\020 \001(\005\022\020\n\010latitude\030\021 \001(\t\022\022\n\nlongtit"
-  "ude\030\022 \001(\t\022\023\n\013System_time\030\023 \001(\tb\006proto3"
+  "\n\016Protocol.proto\022\010Protocol\"\314\001\n\007Battery\022\021"
+  "\n\tBatteryPK\030\001 \001(\005\022\"\n\032BAT_BPU_NEGATIVE_CO"
+  "NTACTOR\030\002 \001(\005\022\"\n\032BAT_BPU_POSITIVE_CONTAC"
+  "TOR\030\003 \001(\005\022\035\n\025BAT_BPU_PRE_CONTACTOR\030\004 \001(\005"
+  "\022\030\n\020BAT_PROTECTION_A\030\005 \001(\005\022\030\n\020BAT_PROTEC"
+  "TION_B\030\006 \001(\005\022\023\n\013System_time\030\007 \001(\t\"\227\003\n\014Ba"
+  "ttery_Pack\022\024\n\014Battery_Pack\030\001 \001(\005\022\030\n\020BAT_"
+  "PACK_CURRENT\030\002 \001(\005\022\024\n\014BAT_PACK_SOC\030\003 \001(\005"
+  "\022\030\n\020BAT_PACK_VOLTAGE\030\004 \001(\005\022\031\n\021BAT_PACK_M"
+  "AX_TEMP\030\005 \001(\005\022$\n\034BAT_PACK_MAX_TEMP_SBMS_"
+  "INDEX\030\006 \001(\005\022\031\n\021BAT_PACK_MIN_TEMP\030\007 \001(\005\022$"
+  "\n\034BAT_PACK_MIN_TEMP_SBMS_INDEX\030\010 \001(\005\022\035\n\025"
+  "BAT_PACK_MAX_CELL_VOL\030\t \001(\005\022(\n BAT_PACK_"
+  "MAX_CELL_VOL_SBMS_INDEX\030\n \001(\005\022\035\n\025BAT_PAC"
+  "K_MIN_CELL_VOL\030\013 \001(\005\022(\n BAT_PACK_MIN_CEL"
+  "L_VOL_SBMS_INDEX\030\014 \001(\005\022\023\n\013System_time\030\r "
+  "\001(\t\"\242\003\n\014BAT_MODULE_0\022\023\n\013BatteryMd_0\030\001 \001("
+  "\005\022\034\n\024BAT_MODULE_CELL0_VOL\030\002 \001(\005\022\034\n\024BAT_M"
+  "ODULE_CELL1_VOL\030\003 \001(\005\022\034\n\024BAT_MODULE_CELL"
+  "2_VOL\030\004 \001(\005\022\034\n\024BAT_MODULE_CELL3_VOL\030\005 \001("
+  "\005\022\034\n\024BAT_MODULE_CELL4_VOL\030\006 \001(\005\022\034\n\024BAT_M"
+  "ODULE_CELL5_VOL\030\007 \001(\005\022\034\n\024BAT_MODULE_CELL"
+  "6_VOL\030\010 \001(\005\022\034\n\024BAT_MODULE_CELL7_VOL\030\t \001("
+  "\005\022\034\n\024BAT_MODULE_CELL8_VOL\030\n \001(\005\022\034\n\024BAT_M"
+  "ODULE_CELL9_VOL\030\013 \001(\005\022\035\n\025BAT_MODULE_CELL"
+  "10_VOL\030\014 \001(\005\022\035\n\025BAT_MODULE_CELL11_VOL\030\r "
+  "\001(\005\022\023\n\013System_time\030\016 \001(\t\"\256\003\n\014BAT_MODULE_"
+  "1\022\023\n\013BatteryMd_1\030\001 \001(\005\022\035\n\025BAT_MODULE1_CE"
+  "LL0_VOL\030\002 \001(\005\022\035\n\025BAT_MODULE1_CELL1_VOL\030\003"
+  " \001(\005\022\035\n\025BAT_MODULE1_CELL2_VOL\030\004 \001(\005\022\035\n\025B"
+  "AT_MODULE1_CELL3_VOL\030\005 \001(\005\022\035\n\025BAT_MODULE"
+  "1_CELL4_VOL\030\006 \001(\005\022\035\n\025BAT_MODULE1_CELL5_V"
+  "OL\030\007 \001(\005\022\035\n\025BAT_MODULE1_CELL6_VOL\030\010 \001(\005\022"
+  "\035\n\025BAT_MODULE1_CELL7_VOL\030\t \001(\005\022\035\n\025BAT_MO"
+  "DULE1_CELL8_VOL\030\n \001(\005\022\035\n\025BAT_MODULE1_CEL"
+  "L9_VOL\030\013 \001(\005\022\036\n\026BAT_MODULE1_CELL10_VOL\030\014"
+  " \001(\005\022\036\n\026BAT_MODULE1_CELL11_VOL\030\r \001(\005\022\023\n\013"
+  "System_time\030\016 \001(\t\"\256\003\n\014BAT_MODULE_2\022\023\n\013Ba"
+  "tteryMd_2\030\001 \001(\005\022\035\n\025BAT_MODULE2_CELL0_VOL"
+  "\030\002 \001(\005\022\035\n\025BAT_MODULE2_CELL1_VOL\030\003 \001(\005\022\035\n"
+  "\025BAT_MODULE2_CELL2_VOL\030\004 \001(\005\022\035\n\025BAT_MODU"
+  "LE2_CELL3_VOL\030\005 \001(\005\022\035\n\025BAT_MODULE2_CELL4"
+  "_VOL\030\006 \001(\005\022\035\n\025BAT_MODULE2_CELL5_VOL\030\007 \001("
+  "\005\022\035\n\025BAT_MODULE2_CELL6_VOL\030\010 \001(\005\022\035\n\025BAT_"
+  "MODULE2_CELL7_VOL\030\t \001(\005\022\035\n\025BAT_MODULE2_C"
+  "ELL8_VOL\030\n \001(\005\022\035\n\025BAT_MODULE2_CELL9_VOL\030"
+  "\013 \001(\005\022\036\n\026BAT_MODULE2_CELL10_VOL\030\014 \001(\005\022\036\n"
+  "\026BAT_MODULE2_CELL11_VOL\030\r \001(\005\022\023\n\013System_"
+  "time\030\016 \001(\t\"\337\001\n\014BAT_MODULE_3\022\023\n\013BatteryMd"
+  "_3\030\001 \001(\005\022\035\n\025BAT_MODULE3_CELL0_VOL\030\002 \001(\005\022"
+  "\035\n\025BAT_MODULE3_CELL1_VOL\030\003 \001(\005\022\035\n\025BAT_MO"
+  "DULE3_CELL2_VOL\030\004 \001(\005\022\035\n\025BAT_MODULE3_CEL"
+  "L8_VOL\030\005 \001(\005\022\036\n\026BAT_MODULE3_CELL10_VOL\030\006"
+  " \001(\005\022\036\n\026BAT_MODULE3_CELL11_VOL\030\007 \001(\005\"[\n\013"
+  "Environment\022\013\n\003Env\030\001 \001(\005\022\022\n\nWind_speed\030\002"
+  " \001(\005\022\026\n\016Wind_direction\030\003 \001(\005\022\023\n\013System_t"
+  "ime\030\004 \001(\t\"O\n\003AIS\022\016\n\006AIS_PK\030\001 \001(\005\022\020\n\010lati"
+  "tude\030\002 \001(\t\022\021\n\tlongitude\030\003 \001(\t\022\023\n\013System_"
+  "time\030\004 \001(\t\"1\n\013System_Time\022\r\n\005Times\030\001 \001(\005"
+  "\022\023\n\013System_time\030\002 \001(\t\"`\n\005MOTOR\022\016\n\006MOTOR_"
+  "\030\001 \001(\005\022\016\n\006MT_RPM\030\002 \001(\005\022\021\n\tMT_TORQUE\030\003 \001("
+  "\005\022\017\n\007MT_TEMP\030\004 \001(\005\022\023\n\013System_time\030\005 \001(\t\""
+  "\326\002\n\010INVERTER\022\013\n\003INT\030\001 \001(\005\022\033\n\023INV_PHASE_A"
+  "_CURRENT\030\002 \001(\005\022\033\n\023INV_PHASE_B_CURRENT\030\003 "
+  "\001(\005\022\033\n\023INV_PHASE_C_CURRENT\030\004 \001(\005\022\026\n\016INV_"
+  "POST_FAULT\030\005 \001(\005\022\"\n\032INV_GATE_DRIVER_BOAR"
+  "D_TEMP\030\006 \001(\005\022\031\n\021INV_MODULE_A_TEMP\030\007 \001(\005\022"
+  "\025\n\rINV_RUN_FAULT\030\010 \001(\005\022\031\n\021INV_MODULE_B_T"
+  "EMP\030\t \001(\005\022\031\n\021INV_MODULE_C_TEMP\030\n \001(\005\022\021\n\t"
+  "INV_POWER\030\013 \001(\005\022\032\n\022INV_OUTPUT_VOLTAGE\030\014 "
+  "\001(\005\022\023\n\013System_time\030\r \001(\tb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_Protocol_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_Protocol_2eproto = {
-    false, false, 598, descriptor_table_protodef_Protocol_2eproto,
+    false, false, 2832, descriptor_table_protodef_Protocol_2eproto,
     "Protocol.proto",
-    &descriptor_table_Protocol_2eproto_once, nullptr, 0, 4,
+    &descriptor_table_Protocol_2eproto_once, nullptr, 0, 11,
     schemas, file_default_instances, TableStruct_Protocol_2eproto::offsets,
     file_level_metadata_Protocol_2eproto, file_level_enum_descriptors_Protocol_2eproto,
     file_level_service_descriptors_Protocol_2eproto,
@@ -198,54 +540,66 @@ namespace Protocol {
 
 // ===================================================================
 
-class S_TEST::_Internal {
+class Battery::_Internal {
  public:
 };
 
-S_TEST::S_TEST(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Battery::Battery(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.S_TEST)
+  // @@protoc_insertion_point(arena_constructor:Protocol.Battery)
 }
-S_TEST::S_TEST(const S_TEST& from)
+Battery::Battery(const Battery& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  S_TEST* const _this = this; (void)_this;
+  Battery* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.player_){}
-    , decltype(_impl_.id_){}
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.batterypk_){}
+    , decltype(_impl_.bat_bpu_negative_contactor_){}
+    , decltype(_impl_.bat_bpu_positive_contactor_){}
+    , decltype(_impl_.bat_bpu_pre_contactor_){}
+    , decltype(_impl_.bat_protection_a_){}
+    , decltype(_impl_.bat_protection_b_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.player_.InitDefault();
+  _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.player_.Set("", GetArenaForAllocation());
+    _impl_.system_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_player().empty()) {
-    _this->_impl_.player_.Set(from._internal_player(), 
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.id_ = from._impl_.id_;
-  // @@protoc_insertion_point(copy_constructor:Protocol.S_TEST)
+  ::memcpy(&_impl_.batterypk_, &from._impl_.batterypk_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_protection_b_) -
+    reinterpret_cast<char*>(&_impl_.batterypk_)) + sizeof(_impl_.bat_protection_b_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.Battery)
 }
 
-inline void S_TEST::SharedCtor(
+inline void Battery::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.player_){}
-    , decltype(_impl_.id_){0}
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.batterypk_){0}
+    , decltype(_impl_.bat_bpu_negative_contactor_){0}
+    , decltype(_impl_.bat_bpu_positive_contactor_){0}
+    , decltype(_impl_.bat_bpu_pre_contactor_){0}
+    , decltype(_impl_.bat_protection_a_){0}
+    , decltype(_impl_.bat_protection_b_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.player_.InitDefault();
+  _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.player_.Set("", GetArenaForAllocation());
+    _impl_.system_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-S_TEST::~S_TEST() {
-  // @@protoc_insertion_point(destructor:Protocol.S_TEST)
+Battery::~Battery() {
+  // @@protoc_insertion_point(destructor:Protocol.Battery)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -253,47 +607,89 @@ S_TEST::~S_TEST() {
   SharedDtor();
 }
 
-inline void S_TEST::SharedDtor() {
+inline void Battery::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.player_.Destroy();
+  _impl_.system_time_.Destroy();
 }
 
-void S_TEST::SetCachedSize(int size) const {
+void Battery::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void S_TEST::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.S_TEST)
+void Battery::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.Battery)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.player_.ClearToEmpty();
-  _impl_.id_ = 0;
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.batterypk_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.bat_protection_b_) -
+      reinterpret_cast<char*>(&_impl_.batterypk_)) + sizeof(_impl_.bat_protection_b_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* S_TEST::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Battery::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 id = 1;
+      // int32 BatteryPK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.batterypk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string player = 2;
+      // int32 BAT_BPU_NEGATIVE_CONTACTOR = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_player();
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.bat_bpu_negative_contactor_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_BPU_POSITIVE_CONTACTOR = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.bat_bpu_positive_contactor_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_BPU_PRE_CONTACTOR = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.bat_bpu_pre_contactor_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PROTECTION_A = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.bat_protection_a_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PROTECTION_B = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.bat_protection_b_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 58)) {
+          auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_TEST.player"));
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.Battery.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -320,107 +716,182 @@ failure:
 #undef CHK_
 }
 
-uint8_t* S_TEST::_InternalSerialize(
+uint8_t* Battery::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.S_TEST)
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.Battery)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1;
-  if (this->_internal_id() != 0) {
+  // int32 BatteryPK = 1;
+  if (this->_internal_batterypk() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterypk(), target);
   }
 
-  // string player = 2;
-  if (!this->_internal_player().empty()) {
+  // int32 BAT_BPU_NEGATIVE_CONTACTOR = 2;
+  if (this->_internal_bat_bpu_negative_contactor() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_bat_bpu_negative_contactor(), target);
+  }
+
+  // int32 BAT_BPU_POSITIVE_CONTACTOR = 3;
+  if (this->_internal_bat_bpu_positive_contactor() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_bat_bpu_positive_contactor(), target);
+  }
+
+  // int32 BAT_BPU_PRE_CONTACTOR = 4;
+  if (this->_internal_bat_bpu_pre_contactor() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_bat_bpu_pre_contactor(), target);
+  }
+
+  // int32 BAT_PROTECTION_A = 5;
+  if (this->_internal_bat_protection_a() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_bat_protection_a(), target);
+  }
+
+  // int32 BAT_PROTECTION_B = 6;
+  if (this->_internal_bat_protection_b() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_bat_protection_b(), target);
+  }
+
+  // string System_time = 7;
+  if (!this->_internal_system_time().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_player().data(), static_cast<int>(this->_internal_player().length()),
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.S_TEST.player");
+      "Protocol.Battery.System_time");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_player(), target);
+        7, this->_internal_system_time(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.S_TEST)
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.Battery)
   return target;
 }
 
-size_t S_TEST::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.S_TEST)
+size_t Battery::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.Battery)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string player = 2;
-  if (!this->_internal_player().empty()) {
+  // string System_time = 7;
+  if (!this->_internal_system_time().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_player());
+        this->_internal_system_time());
   }
 
-  // int32 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+  // int32 BatteryPK = 1;
+  if (this->_internal_batterypk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterypk());
+  }
+
+  // int32 BAT_BPU_NEGATIVE_CONTACTOR = 2;
+  if (this->_internal_bat_bpu_negative_contactor() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_bpu_negative_contactor());
+  }
+
+  // int32 BAT_BPU_POSITIVE_CONTACTOR = 3;
+  if (this->_internal_bat_bpu_positive_contactor() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_bpu_positive_contactor());
+  }
+
+  // int32 BAT_BPU_PRE_CONTACTOR = 4;
+  if (this->_internal_bat_bpu_pre_contactor() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_bpu_pre_contactor());
+  }
+
+  // int32 BAT_PROTECTION_A = 5;
+  if (this->_internal_bat_protection_a() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_protection_a());
+  }
+
+  // int32 BAT_PROTECTION_B = 6;
+  if (this->_internal_bat_protection_b() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_protection_b());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData S_TEST::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Battery::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    S_TEST::MergeImpl
+    Battery::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*S_TEST::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Battery::GetClassData() const { return &_class_data_; }
 
 
-void S_TEST::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<S_TEST*>(&to_msg);
-  auto& from = static_cast<const S_TEST&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.S_TEST)
+void Battery::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Battery*>(&to_msg);
+  auto& from = static_cast<const Battery&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.Battery)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_player().empty()) {
-    _this->_internal_set_player(from._internal_player());
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
   }
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from._internal_batterypk() != 0) {
+    _this->_internal_set_batterypk(from._internal_batterypk());
+  }
+  if (from._internal_bat_bpu_negative_contactor() != 0) {
+    _this->_internal_set_bat_bpu_negative_contactor(from._internal_bat_bpu_negative_contactor());
+  }
+  if (from._internal_bat_bpu_positive_contactor() != 0) {
+    _this->_internal_set_bat_bpu_positive_contactor(from._internal_bat_bpu_positive_contactor());
+  }
+  if (from._internal_bat_bpu_pre_contactor() != 0) {
+    _this->_internal_set_bat_bpu_pre_contactor(from._internal_bat_bpu_pre_contactor());
+  }
+  if (from._internal_bat_protection_a() != 0) {
+    _this->_internal_set_bat_protection_a(from._internal_bat_protection_a());
+  }
+  if (from._internal_bat_protection_b() != 0) {
+    _this->_internal_set_bat_protection_b(from._internal_bat_protection_b());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void S_TEST::CopyFrom(const S_TEST& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.S_TEST)
+void Battery::CopyFrom(const Battery& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.Battery)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool S_TEST::IsInitialized() const {
+bool Battery::IsInitialized() const {
   return true;
 }
 
-void S_TEST::InternalSwap(S_TEST* other) {
+void Battery::InternalSwap(Battery* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.player_, lhs_arena,
-      &other->_impl_.player_, rhs_arena
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
   );
-  swap(_impl_.id_, other->_impl_.id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Battery, _impl_.bat_protection_b_)
+      + sizeof(Battery::_impl_.bat_protection_b_)
+      - PROTOBUF_FIELD_OFFSET(Battery, _impl_.batterypk_)>(
+          reinterpret_cast<char*>(&_impl_.batterypk_),
+          reinterpret_cast<char*>(&other->_impl_.batterypk_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata S_TEST::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Battery::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
       file_level_metadata_Protocol_2eproto[0]);
@@ -428,54 +899,78 @@ void S_TEST::InternalSwap(S_TEST* other) {
 
 // ===================================================================
 
-class C_TEST::_Internal {
+class Battery_Pack::_Internal {
  public:
 };
 
-C_TEST::C_TEST(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+Battery_Pack::Battery_Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.C_TEST)
+  // @@protoc_insertion_point(arena_constructor:Protocol.Battery_Pack)
 }
-C_TEST::C_TEST(const C_TEST& from)
+Battery_Pack::Battery_Pack(const Battery_Pack& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  C_TEST* const _this = this; (void)_this;
+  Battery_Pack* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.player_){}
-    , decltype(_impl_.id_){}
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.battery_pack_){}
+    , decltype(_impl_.bat_pack_current_){}
+    , decltype(_impl_.bat_pack_soc_){}
+    , decltype(_impl_.bat_pack_voltage_){}
+    , decltype(_impl_.bat_pack_max_temp_){}
+    , decltype(_impl_.bat_pack_max_temp_sbms_index_){}
+    , decltype(_impl_.bat_pack_min_temp_){}
+    , decltype(_impl_.bat_pack_min_temp_sbms_index_){}
+    , decltype(_impl_.bat_pack_max_cell_vol_){}
+    , decltype(_impl_.bat_pack_max_cell_vol_sbms_index_){}
+    , decltype(_impl_.bat_pack_min_cell_vol_){}
+    , decltype(_impl_.bat_pack_min_cell_vol_sbms_index_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.player_.InitDefault();
+  _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.player_.Set("", GetArenaForAllocation());
+    _impl_.system_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_player().empty()) {
-    _this->_impl_.player_.Set(from._internal_player(), 
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.id_ = from._impl_.id_;
-  // @@protoc_insertion_point(copy_constructor:Protocol.C_TEST)
+  ::memcpy(&_impl_.battery_pack_, &from._impl_.battery_pack_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_pack_min_cell_vol_sbms_index_) -
+    reinterpret_cast<char*>(&_impl_.battery_pack_)) + sizeof(_impl_.bat_pack_min_cell_vol_sbms_index_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.Battery_Pack)
 }
 
-inline void C_TEST::SharedCtor(
+inline void Battery_Pack::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.player_){}
-    , decltype(_impl_.id_){0}
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.battery_pack_){0}
+    , decltype(_impl_.bat_pack_current_){0}
+    , decltype(_impl_.bat_pack_soc_){0}
+    , decltype(_impl_.bat_pack_voltage_){0}
+    , decltype(_impl_.bat_pack_max_temp_){0}
+    , decltype(_impl_.bat_pack_max_temp_sbms_index_){0}
+    , decltype(_impl_.bat_pack_min_temp_){0}
+    , decltype(_impl_.bat_pack_min_temp_sbms_index_){0}
+    , decltype(_impl_.bat_pack_max_cell_vol_){0}
+    , decltype(_impl_.bat_pack_max_cell_vol_sbms_index_){0}
+    , decltype(_impl_.bat_pack_min_cell_vol_){0}
+    , decltype(_impl_.bat_pack_min_cell_vol_sbms_index_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.player_.InitDefault();
+  _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.player_.Set("", GetArenaForAllocation());
+    _impl_.system_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-C_TEST::~C_TEST() {
-  // @@protoc_insertion_point(destructor:Protocol.C_TEST)
+Battery_Pack::~Battery_Pack() {
+  // @@protoc_insertion_point(destructor:Protocol.Battery_Pack)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -483,47 +978,137 @@ C_TEST::~C_TEST() {
   SharedDtor();
 }
 
-inline void C_TEST::SharedDtor() {
+inline void Battery_Pack::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.player_.Destroy();
+  _impl_.system_time_.Destroy();
 }
 
-void C_TEST::SetCachedSize(int size) const {
+void Battery_Pack::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void C_TEST::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.C_TEST)
+void Battery_Pack::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.Battery_Pack)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.player_.ClearToEmpty();
-  _impl_.id_ = 0;
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.battery_pack_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.bat_pack_min_cell_vol_sbms_index_) -
+      reinterpret_cast<char*>(&_impl_.battery_pack_)) + sizeof(_impl_.bat_pack_min_cell_vol_sbms_index_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* C_TEST::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* Battery_Pack::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 id = 1;
+      // int32 Battery_Pack = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.id_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.battery_pack_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // string player = 2;
+      // int32 BAT_PACK_CURRENT = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_player();
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.bat_pack_current_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_SOC = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.bat_pack_soc_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_VOLTAGE = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.bat_pack_voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_MAX_TEMP = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.bat_pack_max_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_MAX_TEMP_SBMS_INDEX = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.bat_pack_max_temp_sbms_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_MIN_TEMP = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.bat_pack_min_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_MIN_TEMP_SBMS_INDEX = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.bat_pack_min_temp_sbms_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_MAX_CELL_VOL = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.bat_pack_max_cell_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_MAX_CELL_VOL_SBMS_INDEX = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.bat_pack_max_cell_vol_sbms_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_MIN_CELL_VOL = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.bat_pack_min_cell_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_PACK_MIN_CELL_VOL_SBMS_INDEX = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          _impl_.bat_pack_min_cell_vol_sbms_index_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
+          auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.C_TEST.player"));
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.Battery_Pack.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -550,107 +1135,266 @@ failure:
 #undef CHK_
 }
 
-uint8_t* C_TEST::_InternalSerialize(
+uint8_t* Battery_Pack::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.C_TEST)
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.Battery_Pack)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 id = 1;
-  if (this->_internal_id() != 0) {
+  // int32 Battery_Pack = 1;
+  if (this->_internal_battery_pack() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_id(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_battery_pack(), target);
   }
 
-  // string player = 2;
-  if (!this->_internal_player().empty()) {
+  // int32 BAT_PACK_CURRENT = 2;
+  if (this->_internal_bat_pack_current() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_bat_pack_current(), target);
+  }
+
+  // int32 BAT_PACK_SOC = 3;
+  if (this->_internal_bat_pack_soc() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_bat_pack_soc(), target);
+  }
+
+  // int32 BAT_PACK_VOLTAGE = 4;
+  if (this->_internal_bat_pack_voltage() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_bat_pack_voltage(), target);
+  }
+
+  // int32 BAT_PACK_MAX_TEMP = 5;
+  if (this->_internal_bat_pack_max_temp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_bat_pack_max_temp(), target);
+  }
+
+  // int32 BAT_PACK_MAX_TEMP_SBMS_INDEX = 6;
+  if (this->_internal_bat_pack_max_temp_sbms_index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_bat_pack_max_temp_sbms_index(), target);
+  }
+
+  // int32 BAT_PACK_MIN_TEMP = 7;
+  if (this->_internal_bat_pack_min_temp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_bat_pack_min_temp(), target);
+  }
+
+  // int32 BAT_PACK_MIN_TEMP_SBMS_INDEX = 8;
+  if (this->_internal_bat_pack_min_temp_sbms_index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_bat_pack_min_temp_sbms_index(), target);
+  }
+
+  // int32 BAT_PACK_MAX_CELL_VOL = 9;
+  if (this->_internal_bat_pack_max_cell_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_bat_pack_max_cell_vol(), target);
+  }
+
+  // int32 BAT_PACK_MAX_CELL_VOL_SBMS_INDEX = 10;
+  if (this->_internal_bat_pack_max_cell_vol_sbms_index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_bat_pack_max_cell_vol_sbms_index(), target);
+  }
+
+  // int32 BAT_PACK_MIN_CELL_VOL = 11;
+  if (this->_internal_bat_pack_min_cell_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_bat_pack_min_cell_vol(), target);
+  }
+
+  // int32 BAT_PACK_MIN_CELL_VOL_SBMS_INDEX = 12;
+  if (this->_internal_bat_pack_min_cell_vol_sbms_index() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_bat_pack_min_cell_vol_sbms_index(), target);
+  }
+
+  // string System_time = 13;
+  if (!this->_internal_system_time().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_player().data(), static_cast<int>(this->_internal_player().length()),
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.C_TEST.player");
+      "Protocol.Battery_Pack.System_time");
     target = stream->WriteStringMaybeAliased(
-        2, this->_internal_player(), target);
+        13, this->_internal_system_time(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.C_TEST)
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.Battery_Pack)
   return target;
 }
 
-size_t C_TEST::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.C_TEST)
+size_t Battery_Pack::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.Battery_Pack)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string player = 2;
-  if (!this->_internal_player().empty()) {
+  // string System_time = 13;
+  if (!this->_internal_system_time().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_player());
+        this->_internal_system_time());
   }
 
-  // int32 id = 1;
-  if (this->_internal_id() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_id());
+  // int32 Battery_Pack = 1;
+  if (this->_internal_battery_pack() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_battery_pack());
+  }
+
+  // int32 BAT_PACK_CURRENT = 2;
+  if (this->_internal_bat_pack_current() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_current());
+  }
+
+  // int32 BAT_PACK_SOC = 3;
+  if (this->_internal_bat_pack_soc() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_soc());
+  }
+
+  // int32 BAT_PACK_VOLTAGE = 4;
+  if (this->_internal_bat_pack_voltage() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_voltage());
+  }
+
+  // int32 BAT_PACK_MAX_TEMP = 5;
+  if (this->_internal_bat_pack_max_temp() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_max_temp());
+  }
+
+  // int32 BAT_PACK_MAX_TEMP_SBMS_INDEX = 6;
+  if (this->_internal_bat_pack_max_temp_sbms_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_max_temp_sbms_index());
+  }
+
+  // int32 BAT_PACK_MIN_TEMP = 7;
+  if (this->_internal_bat_pack_min_temp() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_min_temp());
+  }
+
+  // int32 BAT_PACK_MIN_TEMP_SBMS_INDEX = 8;
+  if (this->_internal_bat_pack_min_temp_sbms_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_min_temp_sbms_index());
+  }
+
+  // int32 BAT_PACK_MAX_CELL_VOL = 9;
+  if (this->_internal_bat_pack_max_cell_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_max_cell_vol());
+  }
+
+  // int32 BAT_PACK_MAX_CELL_VOL_SBMS_INDEX = 10;
+  if (this->_internal_bat_pack_max_cell_vol_sbms_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_max_cell_vol_sbms_index());
+  }
+
+  // int32 BAT_PACK_MIN_CELL_VOL = 11;
+  if (this->_internal_bat_pack_min_cell_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_min_cell_vol());
+  }
+
+  // int32 BAT_PACK_MIN_CELL_VOL_SBMS_INDEX = 12;
+  if (this->_internal_bat_pack_min_cell_vol_sbms_index() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_pack_min_cell_vol_sbms_index());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData C_TEST::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Battery_Pack::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    C_TEST::MergeImpl
+    Battery_Pack::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*C_TEST::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Battery_Pack::GetClassData() const { return &_class_data_; }
 
 
-void C_TEST::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<C_TEST*>(&to_msg);
-  auto& from = static_cast<const C_TEST&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.C_TEST)
+void Battery_Pack::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Battery_Pack*>(&to_msg);
+  auto& from = static_cast<const Battery_Pack&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.Battery_Pack)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_player().empty()) {
-    _this->_internal_set_player(from._internal_player());
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
   }
-  if (from._internal_id() != 0) {
-    _this->_internal_set_id(from._internal_id());
+  if (from._internal_battery_pack() != 0) {
+    _this->_internal_set_battery_pack(from._internal_battery_pack());
+  }
+  if (from._internal_bat_pack_current() != 0) {
+    _this->_internal_set_bat_pack_current(from._internal_bat_pack_current());
+  }
+  if (from._internal_bat_pack_soc() != 0) {
+    _this->_internal_set_bat_pack_soc(from._internal_bat_pack_soc());
+  }
+  if (from._internal_bat_pack_voltage() != 0) {
+    _this->_internal_set_bat_pack_voltage(from._internal_bat_pack_voltage());
+  }
+  if (from._internal_bat_pack_max_temp() != 0) {
+    _this->_internal_set_bat_pack_max_temp(from._internal_bat_pack_max_temp());
+  }
+  if (from._internal_bat_pack_max_temp_sbms_index() != 0) {
+    _this->_internal_set_bat_pack_max_temp_sbms_index(from._internal_bat_pack_max_temp_sbms_index());
+  }
+  if (from._internal_bat_pack_min_temp() != 0) {
+    _this->_internal_set_bat_pack_min_temp(from._internal_bat_pack_min_temp());
+  }
+  if (from._internal_bat_pack_min_temp_sbms_index() != 0) {
+    _this->_internal_set_bat_pack_min_temp_sbms_index(from._internal_bat_pack_min_temp_sbms_index());
+  }
+  if (from._internal_bat_pack_max_cell_vol() != 0) {
+    _this->_internal_set_bat_pack_max_cell_vol(from._internal_bat_pack_max_cell_vol());
+  }
+  if (from._internal_bat_pack_max_cell_vol_sbms_index() != 0) {
+    _this->_internal_set_bat_pack_max_cell_vol_sbms_index(from._internal_bat_pack_max_cell_vol_sbms_index());
+  }
+  if (from._internal_bat_pack_min_cell_vol() != 0) {
+    _this->_internal_set_bat_pack_min_cell_vol(from._internal_bat_pack_min_cell_vol());
+  }
+  if (from._internal_bat_pack_min_cell_vol_sbms_index() != 0) {
+    _this->_internal_set_bat_pack_min_cell_vol_sbms_index(from._internal_bat_pack_min_cell_vol_sbms_index());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void C_TEST::CopyFrom(const C_TEST& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.C_TEST)
+void Battery_Pack::CopyFrom(const Battery_Pack& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.Battery_Pack)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool C_TEST::IsInitialized() const {
+bool Battery_Pack::IsInitialized() const {
   return true;
 }
 
-void C_TEST::InternalSwap(C_TEST* other) {
+void Battery_Pack::InternalSwap(Battery_Pack* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.player_, lhs_arena,
-      &other->_impl_.player_, rhs_arena
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
   );
-  swap(_impl_.id_, other->_impl_.id_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Battery_Pack, _impl_.bat_pack_min_cell_vol_sbms_index_)
+      + sizeof(Battery_Pack::_impl_.bat_pack_min_cell_vol_sbms_index_)
+      - PROTOBUF_FIELD_OFFSET(Battery_Pack, _impl_.battery_pack_)>(
+          reinterpret_cast<char*>(&_impl_.battery_pack_),
+          reinterpret_cast<char*>(&other->_impl_.battery_pack_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata C_TEST::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata Battery_Pack::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
       file_level_metadata_Protocol_2eproto[1]);
@@ -658,51 +1402,80 @@ void C_TEST::InternalSwap(C_TEST* other) {
 
 // ===================================================================
 
-class C_MAIN::_Internal {
+class BAT_MODULE_0::_Internal {
  public:
 };
 
-C_MAIN::C_MAIN(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+BAT_MODULE_0::BAT_MODULE_0(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.C_MAIN)
+  // @@protoc_insertion_point(arena_constructor:Protocol.BAT_MODULE_0)
 }
-C_MAIN::C_MAIN(const C_MAIN& from)
+BAT_MODULE_0::BAT_MODULE_0(const BAT_MODULE_0& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  C_MAIN* const _this = this; (void)_this;
+  BAT_MODULE_0* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.data_){}
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.batterymd_0_){}
+    , decltype(_impl_.bat_module_cell0_vol_){}
+    , decltype(_impl_.bat_module_cell1_vol_){}
+    , decltype(_impl_.bat_module_cell2_vol_){}
+    , decltype(_impl_.bat_module_cell3_vol_){}
+    , decltype(_impl_.bat_module_cell4_vol_){}
+    , decltype(_impl_.bat_module_cell5_vol_){}
+    , decltype(_impl_.bat_module_cell6_vol_){}
+    , decltype(_impl_.bat_module_cell7_vol_){}
+    , decltype(_impl_.bat_module_cell8_vol_){}
+    , decltype(_impl_.bat_module_cell9_vol_){}
+    , decltype(_impl_.bat_module_cell10_vol_){}
+    , decltype(_impl_.bat_module_cell11_vol_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.data_.InitDefault();
+  _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.data_.Set("", GetArenaForAllocation());
+    _impl_.system_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_data().empty()) {
-    _this->_impl_.data_.Set(from._internal_data(), 
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  // @@protoc_insertion_point(copy_constructor:Protocol.C_MAIN)
+  ::memcpy(&_impl_.batterymd_0_, &from._impl_.batterymd_0_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_module_cell11_vol_) -
+    reinterpret_cast<char*>(&_impl_.batterymd_0_)) + sizeof(_impl_.bat_module_cell11_vol_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.BAT_MODULE_0)
 }
 
-inline void C_MAIN::SharedCtor(
+inline void BAT_MODULE_0::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.data_){}
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.batterymd_0_){0}
+    , decltype(_impl_.bat_module_cell0_vol_){0}
+    , decltype(_impl_.bat_module_cell1_vol_){0}
+    , decltype(_impl_.bat_module_cell2_vol_){0}
+    , decltype(_impl_.bat_module_cell3_vol_){0}
+    , decltype(_impl_.bat_module_cell4_vol_){0}
+    , decltype(_impl_.bat_module_cell5_vol_){0}
+    , decltype(_impl_.bat_module_cell6_vol_){0}
+    , decltype(_impl_.bat_module_cell7_vol_){0}
+    , decltype(_impl_.bat_module_cell8_vol_){0}
+    , decltype(_impl_.bat_module_cell9_vol_){0}
+    , decltype(_impl_.bat_module_cell10_vol_){0}
+    , decltype(_impl_.bat_module_cell11_vol_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.data_.InitDefault();
+  _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.data_.Set("", GetArenaForAllocation());
+    _impl_.system_time_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-C_MAIN::~C_MAIN() {
-  // @@protoc_insertion_point(destructor:Protocol.C_MAIN)
+BAT_MODULE_0::~BAT_MODULE_0() {
+  // @@protoc_insertion_point(destructor:Protocol.BAT_MODULE_0)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -710,38 +1483,145 @@ C_MAIN::~C_MAIN() {
   SharedDtor();
 }
 
-inline void C_MAIN::SharedDtor() {
+inline void BAT_MODULE_0::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.data_.Destroy();
+  _impl_.system_time_.Destroy();
 }
 
-void C_MAIN::SetCachedSize(int size) const {
+void BAT_MODULE_0::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void C_MAIN::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.C_MAIN)
+void BAT_MODULE_0::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.BAT_MODULE_0)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.data_.ClearToEmpty();
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.batterymd_0_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.bat_module_cell11_vol_) -
+      reinterpret_cast<char*>(&_impl_.batterymd_0_)) + sizeof(_impl_.bat_module_cell11_vol_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* C_MAIN::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* BAT_MODULE_0::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // string data = 1;
+      // int32 BatteryMd_0 = 1;
       case 1:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 10)) {
-          auto str = _internal_mutable_data();
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.batterymd_0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL0_VOL = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.bat_module_cell0_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL1_VOL = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.bat_module_cell1_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL2_VOL = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.bat_module_cell2_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL3_VOL = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.bat_module_cell3_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL4_VOL = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.bat_module_cell4_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL5_VOL = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.bat_module_cell5_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL6_VOL = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.bat_module_cell6_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL7_VOL = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.bat_module_cell7_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL8_VOL = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.bat_module_cell8_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL9_VOL = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.bat_module_cell9_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL10_VOL = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          _impl_.bat_module_cell10_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE_CELL11_VOL = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _impl_.bat_module_cell11_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+          auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.C_MAIN.data"));
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.BAT_MODULE_0.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -768,92 +1648,280 @@ failure:
 #undef CHK_
 }
 
-uint8_t* C_MAIN::_InternalSerialize(
+uint8_t* BAT_MODULE_0::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.C_MAIN)
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.BAT_MODULE_0)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // string data = 1;
-  if (!this->_internal_data().empty()) {
+  // int32 BatteryMd_0 = 1;
+  if (this->_internal_batterymd_0() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_0(), target);
+  }
+
+  // int32 BAT_MODULE_CELL0_VOL = 2;
+  if (this->_internal_bat_module_cell0_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_bat_module_cell0_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL1_VOL = 3;
+  if (this->_internal_bat_module_cell1_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_bat_module_cell1_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL2_VOL = 4;
+  if (this->_internal_bat_module_cell2_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_bat_module_cell2_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL3_VOL = 5;
+  if (this->_internal_bat_module_cell3_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_bat_module_cell3_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL4_VOL = 6;
+  if (this->_internal_bat_module_cell4_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_bat_module_cell4_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL5_VOL = 7;
+  if (this->_internal_bat_module_cell5_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_bat_module_cell5_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL6_VOL = 8;
+  if (this->_internal_bat_module_cell6_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_bat_module_cell6_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL7_VOL = 9;
+  if (this->_internal_bat_module_cell7_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_bat_module_cell7_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL8_VOL = 10;
+  if (this->_internal_bat_module_cell8_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_bat_module_cell8_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL9_VOL = 11;
+  if (this->_internal_bat_module_cell9_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_bat_module_cell9_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL10_VOL = 12;
+  if (this->_internal_bat_module_cell10_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_bat_module_cell10_vol(), target);
+  }
+
+  // int32 BAT_MODULE_CELL11_VOL = 13;
+  if (this->_internal_bat_module_cell11_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_bat_module_cell11_vol(), target);
+  }
+
+  // string System_time = 14;
+  if (!this->_internal_system_time().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_data().data(), static_cast<int>(this->_internal_data().length()),
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.C_MAIN.data");
+      "Protocol.BAT_MODULE_0.System_time");
     target = stream->WriteStringMaybeAliased(
-        1, this->_internal_data(), target);
+        14, this->_internal_system_time(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.C_MAIN)
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.BAT_MODULE_0)
   return target;
 }
 
-size_t C_MAIN::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.C_MAIN)
+size_t BAT_MODULE_0::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.BAT_MODULE_0)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string data = 1;
-  if (!this->_internal_data().empty()) {
+  // string System_time = 14;
+  if (!this->_internal_system_time().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_data());
+        this->_internal_system_time());
+  }
+
+  // int32 BatteryMd_0 = 1;
+  if (this->_internal_batterymd_0() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_0());
+  }
+
+  // int32 BAT_MODULE_CELL0_VOL = 2;
+  if (this->_internal_bat_module_cell0_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell0_vol());
+  }
+
+  // int32 BAT_MODULE_CELL1_VOL = 3;
+  if (this->_internal_bat_module_cell1_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell1_vol());
+  }
+
+  // int32 BAT_MODULE_CELL2_VOL = 4;
+  if (this->_internal_bat_module_cell2_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell2_vol());
+  }
+
+  // int32 BAT_MODULE_CELL3_VOL = 5;
+  if (this->_internal_bat_module_cell3_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell3_vol());
+  }
+
+  // int32 BAT_MODULE_CELL4_VOL = 6;
+  if (this->_internal_bat_module_cell4_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell4_vol());
+  }
+
+  // int32 BAT_MODULE_CELL5_VOL = 7;
+  if (this->_internal_bat_module_cell5_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell5_vol());
+  }
+
+  // int32 BAT_MODULE_CELL6_VOL = 8;
+  if (this->_internal_bat_module_cell6_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell6_vol());
+  }
+
+  // int32 BAT_MODULE_CELL7_VOL = 9;
+  if (this->_internal_bat_module_cell7_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell7_vol());
+  }
+
+  // int32 BAT_MODULE_CELL8_VOL = 10;
+  if (this->_internal_bat_module_cell8_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell8_vol());
+  }
+
+  // int32 BAT_MODULE_CELL9_VOL = 11;
+  if (this->_internal_bat_module_cell9_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell9_vol());
+  }
+
+  // int32 BAT_MODULE_CELL10_VOL = 12;
+  if (this->_internal_bat_module_cell10_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell10_vol());
+  }
+
+  // int32 BAT_MODULE_CELL11_VOL = 13;
+  if (this->_internal_bat_module_cell11_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module_cell11_vol());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData C_MAIN::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BAT_MODULE_0::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    C_MAIN::MergeImpl
+    BAT_MODULE_0::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*C_MAIN::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BAT_MODULE_0::GetClassData() const { return &_class_data_; }
 
 
-void C_MAIN::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<C_MAIN*>(&to_msg);
-  auto& from = static_cast<const C_MAIN&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.C_MAIN)
+void BAT_MODULE_0::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BAT_MODULE_0*>(&to_msg);
+  auto& from = static_cast<const BAT_MODULE_0&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.BAT_MODULE_0)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_data().empty()) {
-    _this->_internal_set_data(from._internal_data());
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_batterymd_0() != 0) {
+    _this->_internal_set_batterymd_0(from._internal_batterymd_0());
+  }
+  if (from._internal_bat_module_cell0_vol() != 0) {
+    _this->_internal_set_bat_module_cell0_vol(from._internal_bat_module_cell0_vol());
+  }
+  if (from._internal_bat_module_cell1_vol() != 0) {
+    _this->_internal_set_bat_module_cell1_vol(from._internal_bat_module_cell1_vol());
+  }
+  if (from._internal_bat_module_cell2_vol() != 0) {
+    _this->_internal_set_bat_module_cell2_vol(from._internal_bat_module_cell2_vol());
+  }
+  if (from._internal_bat_module_cell3_vol() != 0) {
+    _this->_internal_set_bat_module_cell3_vol(from._internal_bat_module_cell3_vol());
+  }
+  if (from._internal_bat_module_cell4_vol() != 0) {
+    _this->_internal_set_bat_module_cell4_vol(from._internal_bat_module_cell4_vol());
+  }
+  if (from._internal_bat_module_cell5_vol() != 0) {
+    _this->_internal_set_bat_module_cell5_vol(from._internal_bat_module_cell5_vol());
+  }
+  if (from._internal_bat_module_cell6_vol() != 0) {
+    _this->_internal_set_bat_module_cell6_vol(from._internal_bat_module_cell6_vol());
+  }
+  if (from._internal_bat_module_cell7_vol() != 0) {
+    _this->_internal_set_bat_module_cell7_vol(from._internal_bat_module_cell7_vol());
+  }
+  if (from._internal_bat_module_cell8_vol() != 0) {
+    _this->_internal_set_bat_module_cell8_vol(from._internal_bat_module_cell8_vol());
+  }
+  if (from._internal_bat_module_cell9_vol() != 0) {
+    _this->_internal_set_bat_module_cell9_vol(from._internal_bat_module_cell9_vol());
+  }
+  if (from._internal_bat_module_cell10_vol() != 0) {
+    _this->_internal_set_bat_module_cell10_vol(from._internal_bat_module_cell10_vol());
+  }
+  if (from._internal_bat_module_cell11_vol() != 0) {
+    _this->_internal_set_bat_module_cell11_vol(from._internal_bat_module_cell11_vol());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void C_MAIN::CopyFrom(const C_MAIN& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.C_MAIN)
+void BAT_MODULE_0::CopyFrom(const BAT_MODULE_0& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.BAT_MODULE_0)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool C_MAIN::IsInitialized() const {
+bool BAT_MODULE_0::IsInitialized() const {
   return true;
 }
 
-void C_MAIN::InternalSwap(C_MAIN* other) {
+void BAT_MODULE_0::InternalSwap(BAT_MODULE_0* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.data_, lhs_arena,
-      &other->_impl_.data_, rhs_arena
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
   );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BAT_MODULE_0, _impl_.bat_module_cell11_vol_)
+      + sizeof(BAT_MODULE_0::_impl_.bat_module_cell11_vol_)
+      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_0, _impl_.batterymd_0_)>(
+          reinterpret_cast<char*>(&_impl_.batterymd_0_),
+          reinterpret_cast<char*>(&other->_impl_.batterymd_0_));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata C_MAIN::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata BAT_MODULE_0::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
       file_level_metadata_Protocol_2eproto[2]);
@@ -861,39 +1929,1696 @@ void C_MAIN::InternalSwap(C_MAIN* other) {
 
 // ===================================================================
 
-class S_MAIN::_Internal {
+class BAT_MODULE_1::_Internal {
  public:
 };
 
-S_MAIN::S_MAIN(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+BAT_MODULE_1::BAT_MODULE_1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.S_MAIN)
+  // @@protoc_insertion_point(arena_constructor:Protocol.BAT_MODULE_1)
 }
-S_MAIN::S_MAIN(const S_MAIN& from)
+BAT_MODULE_1::BAT_MODULE_1(const BAT_MODULE_1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
-  S_MAIN* const _this = this; (void)_this;
+  BAT_MODULE_1* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.latitude_){}
-    , decltype(_impl_.longtitude_){}
-    , decltype(_impl_.system_time_){}
-    , decltype(_impl_.inv_phase_a_current_){}
-    , decltype(_impl_.inv_phase_b_current_){}
-    , decltype(_impl_.inv_phase_c_current_){}
-    , decltype(_impl_.inv_post_fault_){}
-    , decltype(_impl_.inv_run_fault_){}
-    , decltype(_impl_.inv_gate_driver_board_temp_){}
-    , decltype(_impl_.inv_module_a_temp_){}
-    , decltype(_impl_.inv_module_b_temp_){}
-    , decltype(_impl_.inv_module_c_temp_){}
-    , decltype(_impl_.inv_power_){}
-    , decltype(_impl_.inv_output_voltage_){}
-    , decltype(_impl_.mt_rpm_){}
-    , decltype(_impl_.mt_torque_){}
-    , decltype(_impl_.mt_temp_){}
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.batterymd_1_){}
+    , decltype(_impl_.bat_module1_cell0_vol_){}
+    , decltype(_impl_.bat_module1_cell1_vol_){}
+    , decltype(_impl_.bat_module1_cell2_vol_){}
+    , decltype(_impl_.bat_module1_cell3_vol_){}
+    , decltype(_impl_.bat_module1_cell4_vol_){}
+    , decltype(_impl_.bat_module1_cell5_vol_){}
+    , decltype(_impl_.bat_module1_cell6_vol_){}
+    , decltype(_impl_.bat_module1_cell7_vol_){}
+    , decltype(_impl_.bat_module1_cell8_vol_){}
+    , decltype(_impl_.bat_module1_cell9_vol_){}
+    , decltype(_impl_.bat_module1_cell10_vol_){}
+    , decltype(_impl_.bat_module1_cell11_vol_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.batterymd_1_, &from._impl_.batterymd_1_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_module1_cell11_vol_) -
+    reinterpret_cast<char*>(&_impl_.batterymd_1_)) + sizeof(_impl_.bat_module1_cell11_vol_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.BAT_MODULE_1)
+}
+
+inline void BAT_MODULE_1::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.batterymd_1_){0}
+    , decltype(_impl_.bat_module1_cell0_vol_){0}
+    , decltype(_impl_.bat_module1_cell1_vol_){0}
+    , decltype(_impl_.bat_module1_cell2_vol_){0}
+    , decltype(_impl_.bat_module1_cell3_vol_){0}
+    , decltype(_impl_.bat_module1_cell4_vol_){0}
+    , decltype(_impl_.bat_module1_cell5_vol_){0}
+    , decltype(_impl_.bat_module1_cell6_vol_){0}
+    , decltype(_impl_.bat_module1_cell7_vol_){0}
+    , decltype(_impl_.bat_module1_cell8_vol_){0}
+    , decltype(_impl_.bat_module1_cell9_vol_){0}
+    , decltype(_impl_.bat_module1_cell10_vol_){0}
+    , decltype(_impl_.bat_module1_cell11_vol_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+BAT_MODULE_1::~BAT_MODULE_1() {
+  // @@protoc_insertion_point(destructor:Protocol.BAT_MODULE_1)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BAT_MODULE_1::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.system_time_.Destroy();
+}
+
+void BAT_MODULE_1::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void BAT_MODULE_1::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.BAT_MODULE_1)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.batterymd_1_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.bat_module1_cell11_vol_) -
+      reinterpret_cast<char*>(&_impl_.batterymd_1_)) + sizeof(_impl_.bat_module1_cell11_vol_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BAT_MODULE_1::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 BatteryMd_1 = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.batterymd_1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL0_VOL = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.bat_module1_cell0_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL1_VOL = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.bat_module1_cell1_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL2_VOL = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.bat_module1_cell2_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL3_VOL = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.bat_module1_cell3_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL4_VOL = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.bat_module1_cell4_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL5_VOL = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.bat_module1_cell5_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL6_VOL = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.bat_module1_cell6_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL7_VOL = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.bat_module1_cell7_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL8_VOL = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.bat_module1_cell8_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL9_VOL = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.bat_module1_cell9_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL10_VOL = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          _impl_.bat_module1_cell10_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE1_CELL11_VOL = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _impl_.bat_module1_cell11_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.BAT_MODULE_1.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BAT_MODULE_1::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.BAT_MODULE_1)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 BatteryMd_1 = 1;
+  if (this->_internal_batterymd_1() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_1(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL0_VOL = 2;
+  if (this->_internal_bat_module1_cell0_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_bat_module1_cell0_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL1_VOL = 3;
+  if (this->_internal_bat_module1_cell1_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_bat_module1_cell1_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL2_VOL = 4;
+  if (this->_internal_bat_module1_cell2_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_bat_module1_cell2_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL3_VOL = 5;
+  if (this->_internal_bat_module1_cell3_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_bat_module1_cell3_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL4_VOL = 6;
+  if (this->_internal_bat_module1_cell4_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_bat_module1_cell4_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL5_VOL = 7;
+  if (this->_internal_bat_module1_cell5_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_bat_module1_cell5_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL6_VOL = 8;
+  if (this->_internal_bat_module1_cell6_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_bat_module1_cell6_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL7_VOL = 9;
+  if (this->_internal_bat_module1_cell7_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_bat_module1_cell7_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL8_VOL = 10;
+  if (this->_internal_bat_module1_cell8_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_bat_module1_cell8_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL9_VOL = 11;
+  if (this->_internal_bat_module1_cell9_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_bat_module1_cell9_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL10_VOL = 12;
+  if (this->_internal_bat_module1_cell10_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_bat_module1_cell10_vol(), target);
+  }
+
+  // int32 BAT_MODULE1_CELL11_VOL = 13;
+  if (this->_internal_bat_module1_cell11_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_bat_module1_cell11_vol(), target);
+  }
+
+  // string System_time = 14;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.BAT_MODULE_1.System_time");
+    target = stream->WriteStringMaybeAliased(
+        14, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.BAT_MODULE_1)
+  return target;
+}
+
+size_t BAT_MODULE_1::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.BAT_MODULE_1)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string System_time = 14;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 BatteryMd_1 = 1;
+  if (this->_internal_batterymd_1() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_1());
+  }
+
+  // int32 BAT_MODULE1_CELL0_VOL = 2;
+  if (this->_internal_bat_module1_cell0_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell0_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL1_VOL = 3;
+  if (this->_internal_bat_module1_cell1_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell1_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL2_VOL = 4;
+  if (this->_internal_bat_module1_cell2_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell2_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL3_VOL = 5;
+  if (this->_internal_bat_module1_cell3_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell3_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL4_VOL = 6;
+  if (this->_internal_bat_module1_cell4_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell4_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL5_VOL = 7;
+  if (this->_internal_bat_module1_cell5_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell5_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL6_VOL = 8;
+  if (this->_internal_bat_module1_cell6_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell6_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL7_VOL = 9;
+  if (this->_internal_bat_module1_cell7_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell7_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL8_VOL = 10;
+  if (this->_internal_bat_module1_cell8_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell8_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL9_VOL = 11;
+  if (this->_internal_bat_module1_cell9_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell9_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL10_VOL = 12;
+  if (this->_internal_bat_module1_cell10_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell10_vol());
+  }
+
+  // int32 BAT_MODULE1_CELL11_VOL = 13;
+  if (this->_internal_bat_module1_cell11_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module1_cell11_vol());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BAT_MODULE_1::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    BAT_MODULE_1::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BAT_MODULE_1::GetClassData() const { return &_class_data_; }
+
+
+void BAT_MODULE_1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BAT_MODULE_1*>(&to_msg);
+  auto& from = static_cast<const BAT_MODULE_1&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.BAT_MODULE_1)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_batterymd_1() != 0) {
+    _this->_internal_set_batterymd_1(from._internal_batterymd_1());
+  }
+  if (from._internal_bat_module1_cell0_vol() != 0) {
+    _this->_internal_set_bat_module1_cell0_vol(from._internal_bat_module1_cell0_vol());
+  }
+  if (from._internal_bat_module1_cell1_vol() != 0) {
+    _this->_internal_set_bat_module1_cell1_vol(from._internal_bat_module1_cell1_vol());
+  }
+  if (from._internal_bat_module1_cell2_vol() != 0) {
+    _this->_internal_set_bat_module1_cell2_vol(from._internal_bat_module1_cell2_vol());
+  }
+  if (from._internal_bat_module1_cell3_vol() != 0) {
+    _this->_internal_set_bat_module1_cell3_vol(from._internal_bat_module1_cell3_vol());
+  }
+  if (from._internal_bat_module1_cell4_vol() != 0) {
+    _this->_internal_set_bat_module1_cell4_vol(from._internal_bat_module1_cell4_vol());
+  }
+  if (from._internal_bat_module1_cell5_vol() != 0) {
+    _this->_internal_set_bat_module1_cell5_vol(from._internal_bat_module1_cell5_vol());
+  }
+  if (from._internal_bat_module1_cell6_vol() != 0) {
+    _this->_internal_set_bat_module1_cell6_vol(from._internal_bat_module1_cell6_vol());
+  }
+  if (from._internal_bat_module1_cell7_vol() != 0) {
+    _this->_internal_set_bat_module1_cell7_vol(from._internal_bat_module1_cell7_vol());
+  }
+  if (from._internal_bat_module1_cell8_vol() != 0) {
+    _this->_internal_set_bat_module1_cell8_vol(from._internal_bat_module1_cell8_vol());
+  }
+  if (from._internal_bat_module1_cell9_vol() != 0) {
+    _this->_internal_set_bat_module1_cell9_vol(from._internal_bat_module1_cell9_vol());
+  }
+  if (from._internal_bat_module1_cell10_vol() != 0) {
+    _this->_internal_set_bat_module1_cell10_vol(from._internal_bat_module1_cell10_vol());
+  }
+  if (from._internal_bat_module1_cell11_vol() != 0) {
+    _this->_internal_set_bat_module1_cell11_vol(from._internal_bat_module1_cell11_vol());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BAT_MODULE_1::CopyFrom(const BAT_MODULE_1& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.BAT_MODULE_1)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BAT_MODULE_1::IsInitialized() const {
+  return true;
+}
+
+void BAT_MODULE_1::InternalSwap(BAT_MODULE_1* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BAT_MODULE_1, _impl_.bat_module1_cell11_vol_)
+      + sizeof(BAT_MODULE_1::_impl_.bat_module1_cell11_vol_)
+      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_1, _impl_.batterymd_1_)>(
+          reinterpret_cast<char*>(&_impl_.batterymd_1_),
+          reinterpret_cast<char*>(&other->_impl_.batterymd_1_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BAT_MODULE_1::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
+      file_level_metadata_Protocol_2eproto[3]);
+}
+
+// ===================================================================
+
+class BAT_MODULE_2::_Internal {
+ public:
+};
+
+BAT_MODULE_2::BAT_MODULE_2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:Protocol.BAT_MODULE_2)
+}
+BAT_MODULE_2::BAT_MODULE_2(const BAT_MODULE_2& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BAT_MODULE_2* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.batterymd_2_){}
+    , decltype(_impl_.bat_module2_cell0_vol_){}
+    , decltype(_impl_.bat_module2_cell1_vol_){}
+    , decltype(_impl_.bat_module2_cell2_vol_){}
+    , decltype(_impl_.bat_module2_cell3_vol_){}
+    , decltype(_impl_.bat_module2_cell4_vol_){}
+    , decltype(_impl_.bat_module2_cell5_vol_){}
+    , decltype(_impl_.bat_module2_cell6_vol_){}
+    , decltype(_impl_.bat_module2_cell7_vol_){}
+    , decltype(_impl_.bat_module2_cell8_vol_){}
+    , decltype(_impl_.bat_module2_cell9_vol_){}
+    , decltype(_impl_.bat_module2_cell10_vol_){}
+    , decltype(_impl_.bat_module2_cell11_vol_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.batterymd_2_, &from._impl_.batterymd_2_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_module2_cell11_vol_) -
+    reinterpret_cast<char*>(&_impl_.batterymd_2_)) + sizeof(_impl_.bat_module2_cell11_vol_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.BAT_MODULE_2)
+}
+
+inline void BAT_MODULE_2::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.batterymd_2_){0}
+    , decltype(_impl_.bat_module2_cell0_vol_){0}
+    , decltype(_impl_.bat_module2_cell1_vol_){0}
+    , decltype(_impl_.bat_module2_cell2_vol_){0}
+    , decltype(_impl_.bat_module2_cell3_vol_){0}
+    , decltype(_impl_.bat_module2_cell4_vol_){0}
+    , decltype(_impl_.bat_module2_cell5_vol_){0}
+    , decltype(_impl_.bat_module2_cell6_vol_){0}
+    , decltype(_impl_.bat_module2_cell7_vol_){0}
+    , decltype(_impl_.bat_module2_cell8_vol_){0}
+    , decltype(_impl_.bat_module2_cell9_vol_){0}
+    , decltype(_impl_.bat_module2_cell10_vol_){0}
+    , decltype(_impl_.bat_module2_cell11_vol_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+BAT_MODULE_2::~BAT_MODULE_2() {
+  // @@protoc_insertion_point(destructor:Protocol.BAT_MODULE_2)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BAT_MODULE_2::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.system_time_.Destroy();
+}
+
+void BAT_MODULE_2::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void BAT_MODULE_2::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.BAT_MODULE_2)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.batterymd_2_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.bat_module2_cell11_vol_) -
+      reinterpret_cast<char*>(&_impl_.batterymd_2_)) + sizeof(_impl_.bat_module2_cell11_vol_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BAT_MODULE_2::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 BatteryMd_2 = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.batterymd_2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL0_VOL = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.bat_module2_cell0_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL1_VOL = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.bat_module2_cell1_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL2_VOL = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.bat_module2_cell2_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL3_VOL = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.bat_module2_cell3_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL4_VOL = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.bat_module2_cell4_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL5_VOL = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.bat_module2_cell5_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL6_VOL = 8;
+      case 8:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.bat_module2_cell6_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL7_VOL = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+          _impl_.bat_module2_cell7_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL8_VOL = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+          _impl_.bat_module2_cell8_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL9_VOL = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+          _impl_.bat_module2_cell9_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL10_VOL = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
+          _impl_.bat_module2_cell10_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE2_CELL11_VOL = 13;
+      case 13:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
+          _impl_.bat_module2_cell11_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 14;
+      case 14:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 114)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.BAT_MODULE_2.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BAT_MODULE_2::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.BAT_MODULE_2)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 BatteryMd_2 = 1;
+  if (this->_internal_batterymd_2() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_2(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL0_VOL = 2;
+  if (this->_internal_bat_module2_cell0_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_bat_module2_cell0_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL1_VOL = 3;
+  if (this->_internal_bat_module2_cell1_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_bat_module2_cell1_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL2_VOL = 4;
+  if (this->_internal_bat_module2_cell2_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_bat_module2_cell2_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL3_VOL = 5;
+  if (this->_internal_bat_module2_cell3_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_bat_module2_cell3_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL4_VOL = 6;
+  if (this->_internal_bat_module2_cell4_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_bat_module2_cell4_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL5_VOL = 7;
+  if (this->_internal_bat_module2_cell5_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_bat_module2_cell5_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL6_VOL = 8;
+  if (this->_internal_bat_module2_cell6_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_bat_module2_cell6_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL7_VOL = 9;
+  if (this->_internal_bat_module2_cell7_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_bat_module2_cell7_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL8_VOL = 10;
+  if (this->_internal_bat_module2_cell8_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_bat_module2_cell8_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL9_VOL = 11;
+  if (this->_internal_bat_module2_cell9_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_bat_module2_cell9_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL10_VOL = 12;
+  if (this->_internal_bat_module2_cell10_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_bat_module2_cell10_vol(), target);
+  }
+
+  // int32 BAT_MODULE2_CELL11_VOL = 13;
+  if (this->_internal_bat_module2_cell11_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_bat_module2_cell11_vol(), target);
+  }
+
+  // string System_time = 14;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.BAT_MODULE_2.System_time");
+    target = stream->WriteStringMaybeAliased(
+        14, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.BAT_MODULE_2)
+  return target;
+}
+
+size_t BAT_MODULE_2::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.BAT_MODULE_2)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string System_time = 14;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 BatteryMd_2 = 1;
+  if (this->_internal_batterymd_2() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_2());
+  }
+
+  // int32 BAT_MODULE2_CELL0_VOL = 2;
+  if (this->_internal_bat_module2_cell0_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell0_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL1_VOL = 3;
+  if (this->_internal_bat_module2_cell1_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell1_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL2_VOL = 4;
+  if (this->_internal_bat_module2_cell2_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell2_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL3_VOL = 5;
+  if (this->_internal_bat_module2_cell3_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell3_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL4_VOL = 6;
+  if (this->_internal_bat_module2_cell4_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell4_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL5_VOL = 7;
+  if (this->_internal_bat_module2_cell5_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell5_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL6_VOL = 8;
+  if (this->_internal_bat_module2_cell6_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell6_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL7_VOL = 9;
+  if (this->_internal_bat_module2_cell7_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell7_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL8_VOL = 10;
+  if (this->_internal_bat_module2_cell8_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell8_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL9_VOL = 11;
+  if (this->_internal_bat_module2_cell9_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell9_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL10_VOL = 12;
+  if (this->_internal_bat_module2_cell10_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell10_vol());
+  }
+
+  // int32 BAT_MODULE2_CELL11_VOL = 13;
+  if (this->_internal_bat_module2_cell11_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module2_cell11_vol());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BAT_MODULE_2::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    BAT_MODULE_2::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BAT_MODULE_2::GetClassData() const { return &_class_data_; }
+
+
+void BAT_MODULE_2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BAT_MODULE_2*>(&to_msg);
+  auto& from = static_cast<const BAT_MODULE_2&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.BAT_MODULE_2)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_batterymd_2() != 0) {
+    _this->_internal_set_batterymd_2(from._internal_batterymd_2());
+  }
+  if (from._internal_bat_module2_cell0_vol() != 0) {
+    _this->_internal_set_bat_module2_cell0_vol(from._internal_bat_module2_cell0_vol());
+  }
+  if (from._internal_bat_module2_cell1_vol() != 0) {
+    _this->_internal_set_bat_module2_cell1_vol(from._internal_bat_module2_cell1_vol());
+  }
+  if (from._internal_bat_module2_cell2_vol() != 0) {
+    _this->_internal_set_bat_module2_cell2_vol(from._internal_bat_module2_cell2_vol());
+  }
+  if (from._internal_bat_module2_cell3_vol() != 0) {
+    _this->_internal_set_bat_module2_cell3_vol(from._internal_bat_module2_cell3_vol());
+  }
+  if (from._internal_bat_module2_cell4_vol() != 0) {
+    _this->_internal_set_bat_module2_cell4_vol(from._internal_bat_module2_cell4_vol());
+  }
+  if (from._internal_bat_module2_cell5_vol() != 0) {
+    _this->_internal_set_bat_module2_cell5_vol(from._internal_bat_module2_cell5_vol());
+  }
+  if (from._internal_bat_module2_cell6_vol() != 0) {
+    _this->_internal_set_bat_module2_cell6_vol(from._internal_bat_module2_cell6_vol());
+  }
+  if (from._internal_bat_module2_cell7_vol() != 0) {
+    _this->_internal_set_bat_module2_cell7_vol(from._internal_bat_module2_cell7_vol());
+  }
+  if (from._internal_bat_module2_cell8_vol() != 0) {
+    _this->_internal_set_bat_module2_cell8_vol(from._internal_bat_module2_cell8_vol());
+  }
+  if (from._internal_bat_module2_cell9_vol() != 0) {
+    _this->_internal_set_bat_module2_cell9_vol(from._internal_bat_module2_cell9_vol());
+  }
+  if (from._internal_bat_module2_cell10_vol() != 0) {
+    _this->_internal_set_bat_module2_cell10_vol(from._internal_bat_module2_cell10_vol());
+  }
+  if (from._internal_bat_module2_cell11_vol() != 0) {
+    _this->_internal_set_bat_module2_cell11_vol(from._internal_bat_module2_cell11_vol());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BAT_MODULE_2::CopyFrom(const BAT_MODULE_2& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.BAT_MODULE_2)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BAT_MODULE_2::IsInitialized() const {
+  return true;
+}
+
+void BAT_MODULE_2::InternalSwap(BAT_MODULE_2* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BAT_MODULE_2, _impl_.bat_module2_cell11_vol_)
+      + sizeof(BAT_MODULE_2::_impl_.bat_module2_cell11_vol_)
+      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_2, _impl_.batterymd_2_)>(
+          reinterpret_cast<char*>(&_impl_.batterymd_2_),
+          reinterpret_cast<char*>(&other->_impl_.batterymd_2_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BAT_MODULE_2::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
+      file_level_metadata_Protocol_2eproto[4]);
+}
+
+// ===================================================================
+
+class BAT_MODULE_3::_Internal {
+ public:
+};
+
+BAT_MODULE_3::BAT_MODULE_3(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:Protocol.BAT_MODULE_3)
+}
+BAT_MODULE_3::BAT_MODULE_3(const BAT_MODULE_3& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  BAT_MODULE_3* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.batterymd_3_){}
+    , decltype(_impl_.bat_module3_cell0_vol_){}
+    , decltype(_impl_.bat_module3_cell1_vol_){}
+    , decltype(_impl_.bat_module3_cell2_vol_){}
+    , decltype(_impl_.bat_module3_cell8_vol_){}
+    , decltype(_impl_.bat_module3_cell10_vol_){}
+    , decltype(_impl_.bat_module3_cell11_vol_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  ::memcpy(&_impl_.batterymd_3_, &from._impl_.batterymd_3_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_module3_cell11_vol_) -
+    reinterpret_cast<char*>(&_impl_.batterymd_3_)) + sizeof(_impl_.bat_module3_cell11_vol_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.BAT_MODULE_3)
+}
+
+inline void BAT_MODULE_3::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.batterymd_3_){0}
+    , decltype(_impl_.bat_module3_cell0_vol_){0}
+    , decltype(_impl_.bat_module3_cell1_vol_){0}
+    , decltype(_impl_.bat_module3_cell2_vol_){0}
+    , decltype(_impl_.bat_module3_cell8_vol_){0}
+    , decltype(_impl_.bat_module3_cell10_vol_){0}
+    , decltype(_impl_.bat_module3_cell11_vol_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+}
+
+BAT_MODULE_3::~BAT_MODULE_3() {
+  // @@protoc_insertion_point(destructor:Protocol.BAT_MODULE_3)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void BAT_MODULE_3::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+}
+
+void BAT_MODULE_3::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void BAT_MODULE_3::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.BAT_MODULE_3)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  ::memset(&_impl_.batterymd_3_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.bat_module3_cell11_vol_) -
+      reinterpret_cast<char*>(&_impl_.batterymd_3_)) + sizeof(_impl_.bat_module3_cell11_vol_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* BAT_MODULE_3::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 BatteryMd_3 = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.batterymd_3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE3_CELL0_VOL = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.bat_module3_cell0_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE3_CELL1_VOL = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.bat_module3_cell1_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE3_CELL2_VOL = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.bat_module3_cell2_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE3_CELL8_VOL = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.bat_module3_cell8_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE3_CELL10_VOL = 6;
+      case 6:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 48)) {
+          _impl_.bat_module3_cell10_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 BAT_MODULE3_CELL11_VOL = 7;
+      case 7:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 56)) {
+          _impl_.bat_module3_cell11_vol_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* BAT_MODULE_3::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.BAT_MODULE_3)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 BatteryMd_3 = 1;
+  if (this->_internal_batterymd_3() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_3(), target);
+  }
+
+  // int32 BAT_MODULE3_CELL0_VOL = 2;
+  if (this->_internal_bat_module3_cell0_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_bat_module3_cell0_vol(), target);
+  }
+
+  // int32 BAT_MODULE3_CELL1_VOL = 3;
+  if (this->_internal_bat_module3_cell1_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_bat_module3_cell1_vol(), target);
+  }
+
+  // int32 BAT_MODULE3_CELL2_VOL = 4;
+  if (this->_internal_bat_module3_cell2_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_bat_module3_cell2_vol(), target);
+  }
+
+  // int32 BAT_MODULE3_CELL8_VOL = 5;
+  if (this->_internal_bat_module3_cell8_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_bat_module3_cell8_vol(), target);
+  }
+
+  // int32 BAT_MODULE3_CELL10_VOL = 6;
+  if (this->_internal_bat_module3_cell10_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(6, this->_internal_bat_module3_cell10_vol(), target);
+  }
+
+  // int32 BAT_MODULE3_CELL11_VOL = 7;
+  if (this->_internal_bat_module3_cell11_vol() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_bat_module3_cell11_vol(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.BAT_MODULE_3)
+  return target;
+}
+
+size_t BAT_MODULE_3::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.BAT_MODULE_3)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // int32 BatteryMd_3 = 1;
+  if (this->_internal_batterymd_3() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_3());
+  }
+
+  // int32 BAT_MODULE3_CELL0_VOL = 2;
+  if (this->_internal_bat_module3_cell0_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module3_cell0_vol());
+  }
+
+  // int32 BAT_MODULE3_CELL1_VOL = 3;
+  if (this->_internal_bat_module3_cell1_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module3_cell1_vol());
+  }
+
+  // int32 BAT_MODULE3_CELL2_VOL = 4;
+  if (this->_internal_bat_module3_cell2_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module3_cell2_vol());
+  }
+
+  // int32 BAT_MODULE3_CELL8_VOL = 5;
+  if (this->_internal_bat_module3_cell8_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module3_cell8_vol());
+  }
+
+  // int32 BAT_MODULE3_CELL10_VOL = 6;
+  if (this->_internal_bat_module3_cell10_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module3_cell10_vol());
+  }
+
+  // int32 BAT_MODULE3_CELL11_VOL = 7;
+  if (this->_internal_bat_module3_cell11_vol() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bat_module3_cell11_vol());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData BAT_MODULE_3::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    BAT_MODULE_3::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BAT_MODULE_3::GetClassData() const { return &_class_data_; }
+
+
+void BAT_MODULE_3::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<BAT_MODULE_3*>(&to_msg);
+  auto& from = static_cast<const BAT_MODULE_3&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.BAT_MODULE_3)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (from._internal_batterymd_3() != 0) {
+    _this->_internal_set_batterymd_3(from._internal_batterymd_3());
+  }
+  if (from._internal_bat_module3_cell0_vol() != 0) {
+    _this->_internal_set_bat_module3_cell0_vol(from._internal_bat_module3_cell0_vol());
+  }
+  if (from._internal_bat_module3_cell1_vol() != 0) {
+    _this->_internal_set_bat_module3_cell1_vol(from._internal_bat_module3_cell1_vol());
+  }
+  if (from._internal_bat_module3_cell2_vol() != 0) {
+    _this->_internal_set_bat_module3_cell2_vol(from._internal_bat_module3_cell2_vol());
+  }
+  if (from._internal_bat_module3_cell8_vol() != 0) {
+    _this->_internal_set_bat_module3_cell8_vol(from._internal_bat_module3_cell8_vol());
+  }
+  if (from._internal_bat_module3_cell10_vol() != 0) {
+    _this->_internal_set_bat_module3_cell10_vol(from._internal_bat_module3_cell10_vol());
+  }
+  if (from._internal_bat_module3_cell11_vol() != 0) {
+    _this->_internal_set_bat_module3_cell11_vol(from._internal_bat_module3_cell11_vol());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void BAT_MODULE_3::CopyFrom(const BAT_MODULE_3& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.BAT_MODULE_3)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool BAT_MODULE_3::IsInitialized() const {
+  return true;
+}
+
+void BAT_MODULE_3::InternalSwap(BAT_MODULE_3* other) {
+  using std::swap;
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(BAT_MODULE_3, _impl_.bat_module3_cell11_vol_)
+      + sizeof(BAT_MODULE_3::_impl_.bat_module3_cell11_vol_)
+      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_3, _impl_.batterymd_3_)>(
+          reinterpret_cast<char*>(&_impl_.batterymd_3_),
+          reinterpret_cast<char*>(&other->_impl_.batterymd_3_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata BAT_MODULE_3::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
+      file_level_metadata_Protocol_2eproto[5]);
+}
+
+// ===================================================================
+
+class Environment::_Internal {
+ public:
+};
+
+Environment::Environment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:Protocol.Environment)
+}
+Environment::Environment(const Environment& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Environment* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.env_){}
     , decltype(_impl_.wind_speed_){}
     , decltype(_impl_.wind_direction_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.env_, &from._impl_.env_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.wind_direction_) -
+    reinterpret_cast<char*>(&_impl_.env_)) + sizeof(_impl_.wind_direction_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.Environment)
+}
+
+inline void Environment::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.env_){0}
+    , decltype(_impl_.wind_speed_){0}
+    , decltype(_impl_.wind_direction_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Environment::~Environment() {
+  // @@protoc_insertion_point(destructor:Protocol.Environment)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Environment::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.system_time_.Destroy();
+}
+
+void Environment::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Environment::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.Environment)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.env_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.wind_direction_) -
+      reinterpret_cast<char*>(&_impl_.env_)) + sizeof(_impl_.wind_direction_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Environment::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 Env = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.env_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 Wind_speed = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.wind_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 Wind_direction = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.wind_direction_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.Environment.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Environment::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.Environment)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 Env = 1;
+  if (this->_internal_env() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_env(), target);
+  }
+
+  // int32 Wind_speed = 2;
+  if (this->_internal_wind_speed() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_wind_speed(), target);
+  }
+
+  // int32 Wind_direction = 3;
+  if (this->_internal_wind_direction() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_wind_direction(), target);
+  }
+
+  // string System_time = 4;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.Environment.System_time");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.Environment)
+  return target;
+}
+
+size_t Environment::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.Environment)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string System_time = 4;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 Env = 1;
+  if (this->_internal_env() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_env());
+  }
+
+  // int32 Wind_speed = 2;
+  if (this->_internal_wind_speed() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_wind_speed());
+  }
+
+  // int32 Wind_direction = 3;
+  if (this->_internal_wind_direction() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_wind_direction());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Environment::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Environment::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Environment::GetClassData() const { return &_class_data_; }
+
+
+void Environment::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Environment*>(&to_msg);
+  auto& from = static_cast<const Environment&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.Environment)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_env() != 0) {
+    _this->_internal_set_env(from._internal_env());
+  }
+  if (from._internal_wind_speed() != 0) {
+    _this->_internal_set_wind_speed(from._internal_wind_speed());
+  }
+  if (from._internal_wind_direction() != 0) {
+    _this->_internal_set_wind_direction(from._internal_wind_direction());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Environment::CopyFrom(const Environment& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.Environment)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Environment::IsInitialized() const {
+  return true;
+}
+
+void Environment::InternalSwap(Environment* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Environment, _impl_.wind_direction_)
+      + sizeof(Environment::_impl_.wind_direction_)
+      - PROTOBUF_FIELD_OFFSET(Environment, _impl_.env_)>(
+          reinterpret_cast<char*>(&_impl_.env_),
+          reinterpret_cast<char*>(&other->_impl_.env_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Environment::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
+      file_level_metadata_Protocol_2eproto[6]);
+}
+
+// ===================================================================
+
+class AIS::_Internal {
+ public:
+};
+
+AIS::AIS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:Protocol.AIS)
+}
+AIS::AIS(const AIS& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  AIS* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.latitude_){}
+    , decltype(_impl_.longitude_){}
+    , decltype(_impl_.system_time_){}
+    , decltype(_impl_.ais_pk_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -905,12 +3630,12 @@ S_MAIN::S_MAIN(const S_MAIN& from)
     _this->_impl_.latitude_.Set(from._internal_latitude(), 
       _this->GetArenaForAllocation());
   }
-  _impl_.longtitude_.InitDefault();
+  _impl_.longitude_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.longtitude_.Set("", GetArenaForAllocation());
+    _impl_.longitude_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_longtitude().empty()) {
-    _this->_impl_.longtitude_.Set(from._internal_longtitude(), 
+  if (!from._internal_longitude().empty()) {
+    _this->_impl_.longitude_.Set(from._internal_longitude(), 
       _this->GetArenaForAllocation());
   }
   _impl_.system_time_.InitDefault();
@@ -921,45 +3646,28 @@ S_MAIN::S_MAIN(const S_MAIN& from)
     _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.inv_phase_a_current_, &from._impl_.inv_phase_a_current_,
-    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.wind_direction_) -
-    reinterpret_cast<char*>(&_impl_.inv_phase_a_current_)) + sizeof(_impl_.wind_direction_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.S_MAIN)
+  _this->_impl_.ais_pk_ = from._impl_.ais_pk_;
+  // @@protoc_insertion_point(copy_constructor:Protocol.AIS)
 }
 
-inline void S_MAIN::SharedCtor(
+inline void AIS::SharedCtor(
     ::_pb::Arena* arena, bool is_message_owned) {
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.latitude_){}
-    , decltype(_impl_.longtitude_){}
+    , decltype(_impl_.longitude_){}
     , decltype(_impl_.system_time_){}
-    , decltype(_impl_.inv_phase_a_current_){0}
-    , decltype(_impl_.inv_phase_b_current_){0}
-    , decltype(_impl_.inv_phase_c_current_){0}
-    , decltype(_impl_.inv_post_fault_){0}
-    , decltype(_impl_.inv_run_fault_){0}
-    , decltype(_impl_.inv_gate_driver_board_temp_){0}
-    , decltype(_impl_.inv_module_a_temp_){0}
-    , decltype(_impl_.inv_module_b_temp_){0}
-    , decltype(_impl_.inv_module_c_temp_){0}
-    , decltype(_impl_.inv_power_){0}
-    , decltype(_impl_.inv_output_voltage_){0}
-    , decltype(_impl_.mt_rpm_){0}
-    , decltype(_impl_.mt_torque_){0}
-    , decltype(_impl_.mt_temp_){0}
-    , decltype(_impl_.wind_speed_){0}
-    , decltype(_impl_.wind_direction_){0}
+    , decltype(_impl_.ais_pk_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.latitude_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.latitude_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.longtitude_.InitDefault();
+  _impl_.longitude_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.longtitude_.Set("", GetArenaForAllocation());
+    _impl_.longitude_.Set("", GetArenaForAllocation());
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
@@ -967,8 +3675,8 @@ inline void S_MAIN::SharedCtor(
   #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
 }
 
-S_MAIN::~S_MAIN() {
-  // @@protoc_insertion_point(destructor:Protocol.S_MAIN)
+AIS::~AIS() {
+  // @@protoc_insertion_point(destructor:Protocol.AIS)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -976,75 +3684,938 @@ S_MAIN::~S_MAIN() {
   SharedDtor();
 }
 
-inline void S_MAIN::SharedDtor() {
+inline void AIS::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
   _impl_.latitude_.Destroy();
-  _impl_.longtitude_.Destroy();
+  _impl_.longitude_.Destroy();
   _impl_.system_time_.Destroy();
 }
 
-void S_MAIN::SetCachedSize(int size) const {
+void AIS::SetCachedSize(int size) const {
   _impl_._cached_size_.Set(size);
 }
 
-void S_MAIN::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.S_MAIN)
+void AIS::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.AIS)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.latitude_.ClearToEmpty();
-  _impl_.longtitude_.ClearToEmpty();
+  _impl_.longitude_.ClearToEmpty();
   _impl_.system_time_.ClearToEmpty();
-  ::memset(&_impl_.inv_phase_a_current_, 0, static_cast<size_t>(
-      reinterpret_cast<char*>(&_impl_.wind_direction_) -
-      reinterpret_cast<char*>(&_impl_.inv_phase_a_current_)) + sizeof(_impl_.wind_direction_));
+  _impl_.ais_pk_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
-const char* S_MAIN::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+const char* AIS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
 #define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
   while (!ctx->Done(&ptr)) {
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 INV_PHASE_A_CURRENT = 1;
+      // int32 AIS_PK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.ais_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string latitude = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_latitude();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.AIS.latitude"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string longitude = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_longitude();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.AIS.longitude"));
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.AIS.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* AIS::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.AIS)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 AIS_PK = 1;
+  if (this->_internal_ais_pk() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_ais_pk(), target);
+  }
+
+  // string latitude = 2;
+  if (!this->_internal_latitude().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_latitude().data(), static_cast<int>(this->_internal_latitude().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.AIS.latitude");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_latitude(), target);
+  }
+
+  // string longitude = 3;
+  if (!this->_internal_longitude().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_longitude().data(), static_cast<int>(this->_internal_longitude().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.AIS.longitude");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_longitude(), target);
+  }
+
+  // string System_time = 4;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.AIS.System_time");
+    target = stream->WriteStringMaybeAliased(
+        4, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.AIS)
+  return target;
+}
+
+size_t AIS::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.AIS)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string latitude = 2;
+  if (!this->_internal_latitude().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_latitude());
+  }
+
+  // string longitude = 3;
+  if (!this->_internal_longitude().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_longitude());
+  }
+
+  // string System_time = 4;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 AIS_PK = 1;
+  if (this->_internal_ais_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_ais_pk());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData AIS::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    AIS::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AIS::GetClassData() const { return &_class_data_; }
+
+
+void AIS::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<AIS*>(&to_msg);
+  auto& from = static_cast<const AIS&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.AIS)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_latitude().empty()) {
+    _this->_internal_set_latitude(from._internal_latitude());
+  }
+  if (!from._internal_longitude().empty()) {
+    _this->_internal_set_longitude(from._internal_longitude());
+  }
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_ais_pk() != 0) {
+    _this->_internal_set_ais_pk(from._internal_ais_pk());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void AIS::CopyFrom(const AIS& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.AIS)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool AIS::IsInitialized() const {
+  return true;
+}
+
+void AIS::InternalSwap(AIS* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.latitude_, lhs_arena,
+      &other->_impl_.latitude_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.longitude_, lhs_arena,
+      &other->_impl_.longitude_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  swap(_impl_.ais_pk_, other->_impl_.ais_pk_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata AIS::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
+      file_level_metadata_Protocol_2eproto[7]);
+}
+
+// ===================================================================
+
+class System_Time::_Internal {
+ public:
+};
+
+System_Time::System_Time(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:Protocol.System_Time)
+}
+System_Time::System_Time(const System_Time& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  System_Time* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.times_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  _this->_impl_.times_ = from._impl_.times_;
+  // @@protoc_insertion_point(copy_constructor:Protocol.System_Time)
+}
+
+inline void System_Time::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.times_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+System_Time::~System_Time() {
+  // @@protoc_insertion_point(destructor:Protocol.System_Time)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void System_Time::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.system_time_.Destroy();
+}
+
+void System_Time::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void System_Time::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.System_Time)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.system_time_.ClearToEmpty();
+  _impl_.times_ = 0;
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* System_Time::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 Times = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.times_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.System_Time.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* System_Time::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.System_Time)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 Times = 1;
+  if (this->_internal_times() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_times(), target);
+  }
+
+  // string System_time = 2;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.System_Time.System_time");
+    target = stream->WriteStringMaybeAliased(
+        2, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.System_Time)
+  return target;
+}
+
+size_t System_Time::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.System_Time)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string System_time = 2;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 Times = 1;
+  if (this->_internal_times() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_times());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData System_Time::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    System_Time::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*System_Time::GetClassData() const { return &_class_data_; }
+
+
+void System_Time::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<System_Time*>(&to_msg);
+  auto& from = static_cast<const System_Time&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.System_Time)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_times() != 0) {
+    _this->_internal_set_times(from._internal_times());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void System_Time::CopyFrom(const System_Time& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.System_Time)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool System_Time::IsInitialized() const {
+  return true;
+}
+
+void System_Time::InternalSwap(System_Time* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  swap(_impl_.times_, other->_impl_.times_);
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata System_Time::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
+      file_level_metadata_Protocol_2eproto[8]);
+}
+
+// ===================================================================
+
+class MOTOR::_Internal {
+ public:
+};
+
+MOTOR::MOTOR(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:Protocol.MOTOR)
+}
+MOTOR::MOTOR(const MOTOR& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  MOTOR* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.motor__){}
+    , decltype(_impl_.mt_rpm_){}
+    , decltype(_impl_.mt_torque_){}
+    , decltype(_impl_.mt_temp_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.motor__, &from._impl_.motor__,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.mt_temp_) -
+    reinterpret_cast<char*>(&_impl_.motor__)) + sizeof(_impl_.mt_temp_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.MOTOR)
+}
+
+inline void MOTOR::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.motor__){0}
+    , decltype(_impl_.mt_rpm_){0}
+    , decltype(_impl_.mt_torque_){0}
+    , decltype(_impl_.mt_temp_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+MOTOR::~MOTOR() {
+  // @@protoc_insertion_point(destructor:Protocol.MOTOR)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void MOTOR::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.system_time_.Destroy();
+}
+
+void MOTOR::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void MOTOR::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.MOTOR)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.motor__, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.mt_temp_) -
+      reinterpret_cast<char*>(&_impl_.motor__)) + sizeof(_impl_.mt_temp_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* MOTOR::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 MOTOR_ = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.motor__ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 MT_RPM = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.mt_rpm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 MT_TORQUE = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+          _impl_.mt_torque_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 MT_TEMP = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
+          _impl_.mt_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.MOTOR.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* MOTOR::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.MOTOR)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 MOTOR_ = 1;
+  if (this->_internal_motor_() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_motor_(), target);
+  }
+
+  // int32 MT_RPM = 2;
+  if (this->_internal_mt_rpm() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_mt_rpm(), target);
+  }
+
+  // int32 MT_TORQUE = 3;
+  if (this->_internal_mt_torque() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_mt_torque(), target);
+  }
+
+  // int32 MT_TEMP = 4;
+  if (this->_internal_mt_temp() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_mt_temp(), target);
+  }
+
+  // string System_time = 5;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "Protocol.MOTOR.System_time");
+    target = stream->WriteStringMaybeAliased(
+        5, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.MOTOR)
+  return target;
+}
+
+size_t MOTOR::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.MOTOR)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string System_time = 5;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 MOTOR_ = 1;
+  if (this->_internal_motor_() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_motor_());
+  }
+
+  // int32 MT_RPM = 2;
+  if (this->_internal_mt_rpm() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_rpm());
+  }
+
+  // int32 MT_TORQUE = 3;
+  if (this->_internal_mt_torque() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_torque());
+  }
+
+  // int32 MT_TEMP = 4;
+  if (this->_internal_mt_temp() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_temp());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData MOTOR::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    MOTOR::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*MOTOR::GetClassData() const { return &_class_data_; }
+
+
+void MOTOR::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<MOTOR*>(&to_msg);
+  auto& from = static_cast<const MOTOR&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.MOTOR)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_motor_() != 0) {
+    _this->_internal_set_motor_(from._internal_motor_());
+  }
+  if (from._internal_mt_rpm() != 0) {
+    _this->_internal_set_mt_rpm(from._internal_mt_rpm());
+  }
+  if (from._internal_mt_torque() != 0) {
+    _this->_internal_set_mt_torque(from._internal_mt_torque());
+  }
+  if (from._internal_mt_temp() != 0) {
+    _this->_internal_set_mt_temp(from._internal_mt_temp());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void MOTOR::CopyFrom(const MOTOR& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.MOTOR)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool MOTOR::IsInitialized() const {
+  return true;
+}
+
+void MOTOR::InternalSwap(MOTOR* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(MOTOR, _impl_.mt_temp_)
+      + sizeof(MOTOR::_impl_.mt_temp_)
+      - PROTOBUF_FIELD_OFFSET(MOTOR, _impl_.motor__)>(
+          reinterpret_cast<char*>(&_impl_.motor__),
+          reinterpret_cast<char*>(&other->_impl_.motor__));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata MOTOR::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
+      file_level_metadata_Protocol_2eproto[9]);
+}
+
+// ===================================================================
+
+class INVERTER::_Internal {
+ public:
+};
+
+INVERTER::INVERTER(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:Protocol.INVERTER)
+}
+INVERTER::INVERTER(const INVERTER& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  INVERTER* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.int__){}
+    , decltype(_impl_.inv_phase_a_current_){}
+    , decltype(_impl_.inv_phase_b_current_){}
+    , decltype(_impl_.inv_phase_c_current_){}
+    , decltype(_impl_.inv_post_fault_){}
+    , decltype(_impl_.inv_gate_driver_board_temp_){}
+    , decltype(_impl_.inv_module_a_temp_){}
+    , decltype(_impl_.inv_run_fault_){}
+    , decltype(_impl_.inv_module_b_temp_){}
+    , decltype(_impl_.inv_module_c_temp_){}
+    , decltype(_impl_.inv_power_){}
+    , decltype(_impl_.inv_output_voltage_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.int__, &from._impl_.int__,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.inv_output_voltage_) -
+    reinterpret_cast<char*>(&_impl_.int__)) + sizeof(_impl_.inv_output_voltage_));
+  // @@protoc_insertion_point(copy_constructor:Protocol.INVERTER)
+}
+
+inline void INVERTER::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.int__){0}
+    , decltype(_impl_.inv_phase_a_current_){0}
+    , decltype(_impl_.inv_phase_b_current_){0}
+    , decltype(_impl_.inv_phase_c_current_){0}
+    , decltype(_impl_.inv_post_fault_){0}
+    , decltype(_impl_.inv_gate_driver_board_temp_){0}
+    , decltype(_impl_.inv_module_a_temp_){0}
+    , decltype(_impl_.inv_run_fault_){0}
+    , decltype(_impl_.inv_module_b_temp_){0}
+    , decltype(_impl_.inv_module_c_temp_){0}
+    , decltype(_impl_.inv_power_){0}
+    , decltype(_impl_.inv_output_voltage_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+INVERTER::~INVERTER() {
+  // @@protoc_insertion_point(destructor:Protocol.INVERTER)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void INVERTER::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.system_time_.Destroy();
+}
+
+void INVERTER::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void INVERTER::Clear() {
+// @@protoc_insertion_point(message_clear_start:Protocol.INVERTER)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.int__, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.inv_output_voltage_) -
+      reinterpret_cast<char*>(&_impl_.int__)) + sizeof(_impl_.inv_output_voltage_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* INVERTER::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 INT = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.int__ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_PHASE_A_CURRENT = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
           _impl_.inv_phase_a_current_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 INV_PHASE_B_CURRENT = 2;
-      case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+      // int32 INV_PHASE_B_CURRENT = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
           _impl_.inv_phase_b_current_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 INV_PHASE_C_CURRENT = 3;
-      case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 24)) {
+      // int32 INV_PHASE_C_CURRENT = 4;
+      case 4:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 32)) {
           _impl_.inv_phase_c_current_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // float INV_POST_FAULT = 4;
-      case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
-          _impl_.inv_post_fault_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
-        } else
-          goto handle_unusual;
-        continue;
-      // float INV_RUN_FAULT = 5;
+      // int32 INV_POST_FAULT = 5;
       case 5:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 45)) {
-          _impl_.inv_run_fault_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
-          ptr += sizeof(float);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 40)) {
+          _impl_.inv_post_fault_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
@@ -1064,105 +4635,53 @@ const char* S_MAIN::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // int32 INV_MODULE_B_TEMP = 8;
+      // int32 INV_RUN_FAULT = 8;
       case 8:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 64)) {
+          _impl_.inv_run_fault_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 INV_MODULE_B_TEMP = 9;
+      case 9:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
           _impl_.inv_module_b_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 INV_MODULE_C_TEMP = 9;
-      case 9:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 72)) {
+      // int32 INV_MODULE_C_TEMP = 10;
+      case 10:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
           _impl_.inv_module_c_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 INV_POWER = 10;
-      case 10:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 80)) {
+      // int32 INV_POWER = 11;
+      case 11:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
           _impl_.inv_power_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 INV_OUTPUT_VOLTAGE = 11;
-      case 11:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 88)) {
+      // int32 INV_OUTPUT_VOLTAGE = 12;
+      case 12:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
           _impl_.inv_output_voltage_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
         continue;
-      // int32 MT_RPM = 12;
-      case 12:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 96)) {
-          _impl_.mt_rpm_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 MT_TORQUE = 13;
+      // string System_time = 13;
       case 13:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 104)) {
-          _impl_.mt_torque_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 MT_TEMP = 14;
-      case 14:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 112)) {
-          _impl_.mt_temp_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 Wind_speed = 15;
-      case 15:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 120)) {
-          _impl_.wind_speed_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // int32 Wind_direction = 16;
-      case 16:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 128)) {
-          _impl_.wind_direction_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
-          CHK_(ptr);
-        } else
-          goto handle_unusual;
-        continue;
-      // string latitude = 17;
-      case 17:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 138)) {
-          auto str = _internal_mutable_latitude();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_MAIN.latitude"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string longtitude = 18;
-      case 18:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 146)) {
-          auto str = _internal_mutable_longtitude();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_MAIN.longtitude"));
-        } else
-          goto handle_unusual;
-        continue;
-      // string System_time = 19;
-      case 19:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 154)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 106)) {
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.S_MAIN.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "Protocol.INVERTER.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -1189,48 +4708,40 @@ failure:
 #undef CHK_
 }
 
-uint8_t* S_MAIN::_InternalSerialize(
+uint8_t* INVERTER::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.S_MAIN)
+  // @@protoc_insertion_point(serialize_to_array_start:Protocol.INVERTER)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 INV_PHASE_A_CURRENT = 1;
+  // int32 INT = 1;
+  if (this->_internal_int_() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_int_(), target);
+  }
+
+  // int32 INV_PHASE_A_CURRENT = 2;
   if (this->_internal_inv_phase_a_current() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_inv_phase_a_current(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_inv_phase_a_current(), target);
   }
 
-  // int32 INV_PHASE_B_CURRENT = 2;
+  // int32 INV_PHASE_B_CURRENT = 3;
   if (this->_internal_inv_phase_b_current() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_inv_phase_b_current(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_inv_phase_b_current(), target);
   }
 
-  // int32 INV_PHASE_C_CURRENT = 3;
+  // int32 INV_PHASE_C_CURRENT = 4;
   if (this->_internal_inv_phase_c_current() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(3, this->_internal_inv_phase_c_current(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(4, this->_internal_inv_phase_c_current(), target);
   }
 
-  // float INV_POST_FAULT = 4;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_inv_post_fault = this->_internal_inv_post_fault();
-  uint32_t raw_inv_post_fault;
-  memcpy(&raw_inv_post_fault, &tmp_inv_post_fault, sizeof(tmp_inv_post_fault));
-  if (raw_inv_post_fault != 0) {
+  // int32 INV_POST_FAULT = 5;
+  if (this->_internal_inv_post_fault() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_inv_post_fault(), target);
-  }
-
-  // float INV_RUN_FAULT = 5;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_inv_run_fault = this->_internal_inv_run_fault();
-  uint32_t raw_inv_run_fault;
-  memcpy(&raw_inv_run_fault, &tmp_inv_run_fault, sizeof(tmp_inv_run_fault));
-  if (raw_inv_run_fault != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteFloatToArray(5, this->_internal_inv_run_fault(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(5, this->_internal_inv_post_fault(), target);
   }
 
   // int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
@@ -1245,158 +4756,92 @@ uint8_t* S_MAIN::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(7, this->_internal_inv_module_a_temp(), target);
   }
 
-  // int32 INV_MODULE_B_TEMP = 8;
+  // int32 INV_RUN_FAULT = 8;
+  if (this->_internal_inv_run_fault() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_inv_run_fault(), target);
+  }
+
+  // int32 INV_MODULE_B_TEMP = 9;
   if (this->_internal_inv_module_b_temp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(8, this->_internal_inv_module_b_temp(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_inv_module_b_temp(), target);
   }
 
-  // int32 INV_MODULE_C_TEMP = 9;
+  // int32 INV_MODULE_C_TEMP = 10;
   if (this->_internal_inv_module_c_temp() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(9, this->_internal_inv_module_c_temp(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_inv_module_c_temp(), target);
   }
 
-  // int32 INV_POWER = 10;
+  // int32 INV_POWER = 11;
   if (this->_internal_inv_power() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(10, this->_internal_inv_power(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_inv_power(), target);
   }
 
-  // int32 INV_OUTPUT_VOLTAGE = 11;
+  // int32 INV_OUTPUT_VOLTAGE = 12;
   if (this->_internal_inv_output_voltage() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(11, this->_internal_inv_output_voltage(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_inv_output_voltage(), target);
   }
 
-  // int32 MT_RPM = 12;
-  if (this->_internal_mt_rpm() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(12, this->_internal_mt_rpm(), target);
-  }
-
-  // int32 MT_TORQUE = 13;
-  if (this->_internal_mt_torque() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(13, this->_internal_mt_torque(), target);
-  }
-
-  // int32 MT_TEMP = 14;
-  if (this->_internal_mt_temp() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(14, this->_internal_mt_temp(), target);
-  }
-
-  // int32 Wind_speed = 15;
-  if (this->_internal_wind_speed() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(15, this->_internal_wind_speed(), target);
-  }
-
-  // int32 Wind_direction = 16;
-  if (this->_internal_wind_direction() != 0) {
-    target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(16, this->_internal_wind_direction(), target);
-  }
-
-  // string latitude = 17;
-  if (!this->_internal_latitude().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_latitude().data(), static_cast<int>(this->_internal_latitude().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.S_MAIN.latitude");
-    target = stream->WriteStringMaybeAliased(
-        17, this->_internal_latitude(), target);
-  }
-
-  // string longtitude = 18;
-  if (!this->_internal_longtitude().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_longtitude().data(), static_cast<int>(this->_internal_longtitude().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.S_MAIN.longtitude");
-    target = stream->WriteStringMaybeAliased(
-        18, this->_internal_longtitude(), target);
-  }
-
-  // string System_time = 19;
+  // string System_time = 13;
   if (!this->_internal_system_time().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.S_MAIN.System_time");
+      "Protocol.INVERTER.System_time");
     target = stream->WriteStringMaybeAliased(
-        19, this->_internal_system_time(), target);
+        13, this->_internal_system_time(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.S_MAIN)
+  // @@protoc_insertion_point(serialize_to_array_end:Protocol.INVERTER)
   return target;
 }
 
-size_t S_MAIN::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.S_MAIN)
+size_t INVERTER::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:Protocol.INVERTER)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string latitude = 17;
-  if (!this->_internal_latitude().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_latitude());
-  }
-
-  // string longtitude = 18;
-  if (!this->_internal_longtitude().empty()) {
-    total_size += 2 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_longtitude());
-  }
-
-  // string System_time = 19;
+  // string System_time = 13;
   if (!this->_internal_system_time().empty()) {
-    total_size += 2 +
+    total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
         this->_internal_system_time());
   }
 
-  // int32 INV_PHASE_A_CURRENT = 1;
+  // int32 INT = 1;
+  if (this->_internal_int_() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_int_());
+  }
+
+  // int32 INV_PHASE_A_CURRENT = 2;
   if (this->_internal_inv_phase_a_current() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_phase_a_current());
   }
 
-  // int32 INV_PHASE_B_CURRENT = 2;
+  // int32 INV_PHASE_B_CURRENT = 3;
   if (this->_internal_inv_phase_b_current() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_phase_b_current());
   }
 
-  // int32 INV_PHASE_C_CURRENT = 3;
+  // int32 INV_PHASE_C_CURRENT = 4;
   if (this->_internal_inv_phase_c_current() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_phase_c_current());
   }
 
-  // float INV_POST_FAULT = 4;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_inv_post_fault = this->_internal_inv_post_fault();
-  uint32_t raw_inv_post_fault;
-  memcpy(&raw_inv_post_fault, &tmp_inv_post_fault, sizeof(tmp_inv_post_fault));
-  if (raw_inv_post_fault != 0) {
-    total_size += 1 + 4;
-  }
-
-  // float INV_RUN_FAULT = 5;
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_inv_run_fault = this->_internal_inv_run_fault();
-  uint32_t raw_inv_run_fault;
-  memcpy(&raw_inv_run_fault, &tmp_inv_run_fault, sizeof(tmp_inv_run_fault));
-  if (raw_inv_run_fault != 0) {
-    total_size += 1 + 4;
+  // int32 INV_POST_FAULT = 5;
+  if (this->_internal_inv_post_fault() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_post_fault());
   }
 
   // int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
@@ -1409,79 +4854,54 @@ size_t S_MAIN::ByteSizeLong() const {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_module_a_temp());
   }
 
-  // int32 INV_MODULE_B_TEMP = 8;
+  // int32 INV_RUN_FAULT = 8;
+  if (this->_internal_inv_run_fault() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_run_fault());
+  }
+
+  // int32 INV_MODULE_B_TEMP = 9;
   if (this->_internal_inv_module_b_temp() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_module_b_temp());
   }
 
-  // int32 INV_MODULE_C_TEMP = 9;
+  // int32 INV_MODULE_C_TEMP = 10;
   if (this->_internal_inv_module_c_temp() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_module_c_temp());
   }
 
-  // int32 INV_POWER = 10;
+  // int32 INV_POWER = 11;
   if (this->_internal_inv_power() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_power());
   }
 
-  // int32 INV_OUTPUT_VOLTAGE = 11;
+  // int32 INV_OUTPUT_VOLTAGE = 12;
   if (this->_internal_inv_output_voltage() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_inv_output_voltage());
-  }
-
-  // int32 MT_RPM = 12;
-  if (this->_internal_mt_rpm() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_rpm());
-  }
-
-  // int32 MT_TORQUE = 13;
-  if (this->_internal_mt_torque() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_torque());
-  }
-
-  // int32 MT_TEMP = 14;
-  if (this->_internal_mt_temp() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_mt_temp());
-  }
-
-  // int32 Wind_speed = 15;
-  if (this->_internal_wind_speed() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_wind_speed());
-  }
-
-  // int32 Wind_direction = 16;
-  if (this->_internal_wind_direction() != 0) {
-    total_size += 2 +
-      ::_pbi::WireFormatLite::Int32Size(
-        this->_internal_wind_direction());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
 }
 
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData S_MAIN::_class_data_ = {
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData INVERTER::_class_data_ = {
     ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
-    S_MAIN::MergeImpl
+    INVERTER::MergeImpl
 };
-const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*S_MAIN::GetClassData() const { return &_class_data_; }
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*INVERTER::GetClassData() const { return &_class_data_; }
 
 
-void S_MAIN::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
-  auto* const _this = static_cast<S_MAIN*>(&to_msg);
-  auto& from = static_cast<const S_MAIN&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.S_MAIN)
+void INVERTER::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<INVERTER*>(&to_msg);
+  auto& from = static_cast<const INVERTER&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.INVERTER)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_latitude().empty()) {
-    _this->_internal_set_latitude(from._internal_latitude());
-  }
-  if (!from._internal_longtitude().empty()) {
-    _this->_internal_set_longtitude(from._internal_longtitude());
-  }
   if (!from._internal_system_time().empty()) {
     _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_int_() != 0) {
+    _this->_internal_set_int_(from._internal_int_());
   }
   if (from._internal_inv_phase_a_current() != 0) {
     _this->_internal_set_inv_phase_a_current(from._internal_inv_phase_a_current());
@@ -1492,25 +4912,17 @@ void S_MAIN::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
   if (from._internal_inv_phase_c_current() != 0) {
     _this->_internal_set_inv_phase_c_current(from._internal_inv_phase_c_current());
   }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_inv_post_fault = from._internal_inv_post_fault();
-  uint32_t raw_inv_post_fault;
-  memcpy(&raw_inv_post_fault, &tmp_inv_post_fault, sizeof(tmp_inv_post_fault));
-  if (raw_inv_post_fault != 0) {
+  if (from._internal_inv_post_fault() != 0) {
     _this->_internal_set_inv_post_fault(from._internal_inv_post_fault());
-  }
-  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
-  float tmp_inv_run_fault = from._internal_inv_run_fault();
-  uint32_t raw_inv_run_fault;
-  memcpy(&raw_inv_run_fault, &tmp_inv_run_fault, sizeof(tmp_inv_run_fault));
-  if (raw_inv_run_fault != 0) {
-    _this->_internal_set_inv_run_fault(from._internal_inv_run_fault());
   }
   if (from._internal_inv_gate_driver_board_temp() != 0) {
     _this->_internal_set_inv_gate_driver_board_temp(from._internal_inv_gate_driver_board_temp());
   }
   if (from._internal_inv_module_a_temp() != 0) {
     _this->_internal_set_inv_module_a_temp(from._internal_inv_module_a_temp());
+  }
+  if (from._internal_inv_run_fault() != 0) {
+    _this->_internal_set_inv_run_fault(from._internal_inv_run_fault());
   }
   if (from._internal_inv_module_b_temp() != 0) {
     _this->_internal_set_inv_module_b_temp(from._internal_inv_module_b_temp());
@@ -1524,84 +4936,89 @@ void S_MAIN::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBU
   if (from._internal_inv_output_voltage() != 0) {
     _this->_internal_set_inv_output_voltage(from._internal_inv_output_voltage());
   }
-  if (from._internal_mt_rpm() != 0) {
-    _this->_internal_set_mt_rpm(from._internal_mt_rpm());
-  }
-  if (from._internal_mt_torque() != 0) {
-    _this->_internal_set_mt_torque(from._internal_mt_torque());
-  }
-  if (from._internal_mt_temp() != 0) {
-    _this->_internal_set_mt_temp(from._internal_mt_temp());
-  }
-  if (from._internal_wind_speed() != 0) {
-    _this->_internal_set_wind_speed(from._internal_wind_speed());
-  }
-  if (from._internal_wind_direction() != 0) {
-    _this->_internal_set_wind_direction(from._internal_wind_direction());
-  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
-void S_MAIN::CopyFrom(const S_MAIN& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.S_MAIN)
+void INVERTER::CopyFrom(const INVERTER& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.INVERTER)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
 }
 
-bool S_MAIN::IsInitialized() const {
+bool INVERTER::IsInitialized() const {
   return true;
 }
 
-void S_MAIN::InternalSwap(S_MAIN* other) {
+void INVERTER::InternalSwap(INVERTER* other) {
   using std::swap;
   auto* lhs_arena = GetArenaForAllocation();
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.latitude_, lhs_arena,
-      &other->_impl_.latitude_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.longtitude_, lhs_arena,
-      &other->_impl_.longtitude_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.system_time_, lhs_arena,
       &other->_impl_.system_time_, rhs_arena
   );
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
-      PROTOBUF_FIELD_OFFSET(S_MAIN, _impl_.wind_direction_)
-      + sizeof(S_MAIN::_impl_.wind_direction_)
-      - PROTOBUF_FIELD_OFFSET(S_MAIN, _impl_.inv_phase_a_current_)>(
-          reinterpret_cast<char*>(&_impl_.inv_phase_a_current_),
-          reinterpret_cast<char*>(&other->_impl_.inv_phase_a_current_));
+      PROTOBUF_FIELD_OFFSET(INVERTER, _impl_.inv_output_voltage_)
+      + sizeof(INVERTER::_impl_.inv_output_voltage_)
+      - PROTOBUF_FIELD_OFFSET(INVERTER, _impl_.int__)>(
+          reinterpret_cast<char*>(&_impl_.int__),
+          reinterpret_cast<char*>(&other->_impl_.int__));
 }
 
-::PROTOBUF_NAMESPACE_ID::Metadata S_MAIN::GetMetadata() const {
+::PROTOBUF_NAMESPACE_ID::Metadata INVERTER::GetMetadata() const {
   return ::_pbi::AssignDescriptors(
       &descriptor_table_Protocol_2eproto_getter, &descriptor_table_Protocol_2eproto_once,
-      file_level_metadata_Protocol_2eproto[3]);
+      file_level_metadata_Protocol_2eproto[10]);
 }
 
 // @@protoc_insertion_point(namespace_scope)
 }  // namespace Protocol
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::Protocol::S_TEST*
-Arena::CreateMaybeMessage< ::Protocol::S_TEST >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::S_TEST >(arena);
+template<> PROTOBUF_NOINLINE ::Protocol::Battery*
+Arena::CreateMaybeMessage< ::Protocol::Battery >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::Battery >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::C_TEST*
-Arena::CreateMaybeMessage< ::Protocol::C_TEST >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::C_TEST >(arena);
+template<> PROTOBUF_NOINLINE ::Protocol::Battery_Pack*
+Arena::CreateMaybeMessage< ::Protocol::Battery_Pack >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::Battery_Pack >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::C_MAIN*
-Arena::CreateMaybeMessage< ::Protocol::C_MAIN >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::C_MAIN >(arena);
+template<> PROTOBUF_NOINLINE ::Protocol::BAT_MODULE_0*
+Arena::CreateMaybeMessage< ::Protocol::BAT_MODULE_0 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::BAT_MODULE_0 >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::S_MAIN*
-Arena::CreateMaybeMessage< ::Protocol::S_MAIN >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::S_MAIN >(arena);
+template<> PROTOBUF_NOINLINE ::Protocol::BAT_MODULE_1*
+Arena::CreateMaybeMessage< ::Protocol::BAT_MODULE_1 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::BAT_MODULE_1 >(arena);
+}
+template<> PROTOBUF_NOINLINE ::Protocol::BAT_MODULE_2*
+Arena::CreateMaybeMessage< ::Protocol::BAT_MODULE_2 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::BAT_MODULE_2 >(arena);
+}
+template<> PROTOBUF_NOINLINE ::Protocol::BAT_MODULE_3*
+Arena::CreateMaybeMessage< ::Protocol::BAT_MODULE_3 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::BAT_MODULE_3 >(arena);
+}
+template<> PROTOBUF_NOINLINE ::Protocol::Environment*
+Arena::CreateMaybeMessage< ::Protocol::Environment >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::Environment >(arena);
+}
+template<> PROTOBUF_NOINLINE ::Protocol::AIS*
+Arena::CreateMaybeMessage< ::Protocol::AIS >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::AIS >(arena);
+}
+template<> PROTOBUF_NOINLINE ::Protocol::System_Time*
+Arena::CreateMaybeMessage< ::Protocol::System_Time >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::System_Time >(arena);
+}
+template<> PROTOBUF_NOINLINE ::Protocol::MOTOR*
+Arena::CreateMaybeMessage< ::Protocol::MOTOR >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::MOTOR >(arena);
+}
+template<> PROTOBUF_NOINLINE ::Protocol::INVERTER*
+Arena::CreateMaybeMessage< ::Protocol::INVERTER >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::Protocol::INVERTER >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

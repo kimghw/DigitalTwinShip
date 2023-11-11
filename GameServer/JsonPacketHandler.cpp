@@ -1,10 +1,11 @@
-#pragma once
+﻿#pragma once
 #include "pch.h"
 #include "JsonPacketHandler.h"
 
-﻿void Send_Battery_ToDb(nlohmann::json& jsonInput)
+
+void EDT0001_Battery_0001_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[Battery]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[BAT_BPU_NEGATIVE_CONTACTOR],"
     L"[BAT_BPU_POSITIVE_CONTACTOR],"
@@ -18,8 +19,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <6,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. BAT_BPU_NEGATIVE_CONTACTOR to Database
+    // 01/06. BAT_BPU_NEGATIVE_CONTACTOR to Database
     //     Table name : Battery, Column name : BAT_BPU_NEGATIVE_CONTACTOR, Type : INT
     int32 BAT_BPU_NEGATIVE_CONTACTOR = 0;
     try {
@@ -38,7 +40,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_BPU_NEGATIVE_CONTACTOR);
     }
-    // 1. BAT_BPU_POSITIVE_CONTACTOR to Database
+    // 02/06. BAT_BPU_POSITIVE_CONTACTOR to Database
     //     Table name : Battery, Column name : BAT_BPU_POSITIVE_CONTACTOR, Type : INT
     int32 BAT_BPU_POSITIVE_CONTACTOR = 0;
     try {
@@ -57,7 +59,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_BPU_POSITIVE_CONTACTOR);
     }
-    // 1. BAT_BPU_PRE_CONTACTOR to Database
+    // 03/06. BAT_BPU_PRE_CONTACTOR to Database
     //     Table name : Battery, Column name : BAT_BPU_PRE_CONTACTOR, Type : INT
     int32 BAT_BPU_PRE_CONTACTOR = 0;
     try {
@@ -76,7 +78,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_BPU_PRE_CONTACTOR);
     }
-    // 1. BAT_PROTECTION_A to Database
+    // 04/06. BAT_PROTECTION_A to Database
     //     Table name : Battery, Column name : BAT_PROTECTION_A, Type : INT
     int32 BAT_PROTECTION_A = 0;
     try {
@@ -95,7 +97,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PROTECTION_A);
     }
-    // 1. BAT_PROTECTION_B to Database
+    // 05/06. BAT_PROTECTION_B to Database
     //     Table name : Battery, Column name : BAT_PROTECTION_B, Type : INT
     int32 BAT_PROTECTION_B = 0;
     try {
@@ -114,7 +116,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PROTECTION_B);
     }
-    // 1. System_time to Database
+    // 06/06. System_time to Database
     //     Table name : Battery, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -141,10 +143,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput)
+void EDT0001_Battery_Pack_0002_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[Battery_Pack]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[BAT_PACK_CURRENT],"
     L"[BAT_PACK_SOC],"
@@ -164,8 +165,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <12,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. BAT_PACK_CURRENT to Database
+    // 01/12. BAT_PACK_CURRENT to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_CURRENT, Type : INT
     int32 BAT_PACK_CURRENT = 0;
     try {
@@ -184,7 +186,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_CURRENT);
     }
-    // 1. BAT_PACK_SOC to Database
+    // 02/12. BAT_PACK_SOC to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_SOC, Type : INT
     int32 BAT_PACK_SOC = 0;
     try {
@@ -203,7 +205,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_SOC);
     }
-    // 1. BAT_PACK_VOLTAGE to Database
+    // 03/12. BAT_PACK_VOLTAGE to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_VOLTAGE, Type : INT
     int32 BAT_PACK_VOLTAGE = 0;
     try {
@@ -222,7 +224,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_VOLTAGE);
     }
-    // 1. BAT_PACK_MAX_TEMP to Database
+    // 04/12. BAT_PACK_MAX_TEMP to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MAX_TEMP, Type : INT
     int32 BAT_PACK_MAX_TEMP = 0;
     try {
@@ -241,7 +243,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MAX_TEMP);
     }
-    // 1. BAT_PACK_MAX_TEMP_SBMS_INDEX to Database
+    // 05/12. BAT_PACK_MAX_TEMP_SBMS_INDEX to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MAX_TEMP_SBMS_INDEX, Type : INT
     int32 BAT_PACK_MAX_TEMP_SBMS_INDEX = 0;
     try {
@@ -260,7 +262,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MAX_TEMP_SBMS_INDEX);
     }
-    // 1. BAT_PACK_MIN_TEMP to Database
+    // 06/12. BAT_PACK_MIN_TEMP to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MIN_TEMP, Type : INT
     int32 BAT_PACK_MIN_TEMP = 0;
     try {
@@ -279,7 +281,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MIN_TEMP);
     }
-    // 1. BAT_PACK_MIN_TEMP_SBMS_INDEX to Database
+    // 07/12. BAT_PACK_MIN_TEMP_SBMS_INDEX to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MIN_TEMP_SBMS_INDEX, Type : INT
     int32 BAT_PACK_MIN_TEMP_SBMS_INDEX = 0;
     try {
@@ -298,7 +300,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MIN_TEMP_SBMS_INDEX);
     }
-    // 1. BAT_PACK_MAX_CELL_VOL to Database
+    // 08/12. BAT_PACK_MAX_CELL_VOL to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MAX_CELL_VOL, Type : INT
     int32 BAT_PACK_MAX_CELL_VOL = 0;
     try {
@@ -317,7 +319,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MAX_CELL_VOL);
     }
-    // 1. BAT_PACK_MAX_CELL_VOL_SBMS_INDEX to Database
+    // 09/12. BAT_PACK_MAX_CELL_VOL_SBMS_INDEX to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MAX_CELL_VOL_SBMS_INDEX, Type : INT
     int32 BAT_PACK_MAX_CELL_VOL_SBMS_INDEX = 0;
     try {
@@ -336,7 +338,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MAX_CELL_VOL_SBMS_INDEX);
     }
-    // 1. BAT_PACK_MIN_CELL_VOL to Database
+    // 10/12. BAT_PACK_MIN_CELL_VOL to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MIN_CELL_VOL, Type : INT
     int32 BAT_PACK_MIN_CELL_VOL = 0;
     try {
@@ -355,7 +357,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MIN_CELL_VOL);
     }
-    // 1. BAT_PACK_MIN_CELL_VOL_SBMS_INDEX to Database
+    // 11/12. BAT_PACK_MIN_CELL_VOL_SBMS_INDEX to Database
     //     Table name : Battery_Pack, Column name : BAT_PACK_MIN_CELL_VOL_SBMS_INDEX, Type : INT
     int32 BAT_PACK_MIN_CELL_VOL_SBMS_INDEX = 0;
     try {
@@ -374,7 +376,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_PACK_MIN_CELL_VOL_SBMS_INDEX);
     }
-    // 1. System_time to Database
+    // 12/12. System_time to Database
     //     Table name : Battery_Pack, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -401,10 +403,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput)
+void EDT0001_BAT_MODULE_0_0003_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[BAT_MODULE_0]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[BAT_MODULE_CELL0_VOL],"
     L"[BAT_MODULE_CELL1_VOL],"
@@ -425,8 +426,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <13,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. BAT_MODULE_CELL0_VOL to Database
+    // 01/13. BAT_MODULE_CELL0_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL0_VOL, Type : INT
     int32 BAT_MODULE_CELL0_VOL = 0;
     try {
@@ -445,7 +447,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL0_VOL);
     }
-    // 1. BAT_MODULE_CELL1_VOL to Database
+    // 02/13. BAT_MODULE_CELL1_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL1_VOL, Type : INT
     int32 BAT_MODULE_CELL1_VOL = 0;
     try {
@@ -464,7 +466,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL1_VOL);
     }
-    // 1. BAT_MODULE_CELL2_VOL to Database
+    // 03/13. BAT_MODULE_CELL2_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL2_VOL, Type : INT
     int32 BAT_MODULE_CELL2_VOL = 0;
     try {
@@ -483,7 +485,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL2_VOL);
     }
-    // 1. BAT_MODULE_CELL3_VOL to Database
+    // 04/13. BAT_MODULE_CELL3_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL3_VOL, Type : INT
     int32 BAT_MODULE_CELL3_VOL = 0;
     try {
@@ -502,7 +504,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL3_VOL);
     }
-    // 1. BAT_MODULE_CELL4_VOL to Database
+    // 05/13. BAT_MODULE_CELL4_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL4_VOL, Type : INT
     int32 BAT_MODULE_CELL4_VOL = 0;
     try {
@@ -521,7 +523,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL4_VOL);
     }
-    // 1. BAT_MODULE_CELL5_VOL to Database
+    // 06/13. BAT_MODULE_CELL5_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL5_VOL, Type : INT
     int32 BAT_MODULE_CELL5_VOL = 0;
     try {
@@ -540,7 +542,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL5_VOL);
     }
-    // 1. BAT_MODULE_CELL6_VOL to Database
+    // 07/13. BAT_MODULE_CELL6_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL6_VOL, Type : INT
     int32 BAT_MODULE_CELL6_VOL = 0;
     try {
@@ -559,7 +561,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL6_VOL);
     }
-    // 1. BAT_MODULE_CELL7_VOL to Database
+    // 08/13. BAT_MODULE_CELL7_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL7_VOL, Type : INT
     int32 BAT_MODULE_CELL7_VOL = 0;
     try {
@@ -578,7 +580,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL7_VOL);
     }
-    // 1. BAT_MODULE_CELL8_VOL to Database
+    // 09/13. BAT_MODULE_CELL8_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL8_VOL, Type : INT
     int32 BAT_MODULE_CELL8_VOL = 0;
     try {
@@ -597,7 +599,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL8_VOL);
     }
-    // 1. BAT_MODULE_CELL9_VOL to Database
+    // 10/13. BAT_MODULE_CELL9_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL9_VOL, Type : INT
     int32 BAT_MODULE_CELL9_VOL = 0;
     try {
@@ -616,7 +618,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL9_VOL);
     }
-    // 1. BAT_MODULE_CELL10_VOL to Database
+    // 11/13. BAT_MODULE_CELL10_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL10_VOL, Type : INT
     int32 BAT_MODULE_CELL10_VOL = 0;
     try {
@@ -635,7 +637,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL10_VOL);
     }
-    // 1. BAT_MODULE_CELL11_VOL to Database
+    // 12/13. BAT_MODULE_CELL11_VOL to Database
     //     Table name : BAT_MODULE_0, Column name : BAT_MODULE_CELL11_VOL, Type : INT
     int32 BAT_MODULE_CELL11_VOL = 0;
     try {
@@ -654,7 +656,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE_CELL11_VOL);
     }
-    // 1. System_time to Database
+    // 13/13. System_time to Database
     //     Table name : BAT_MODULE_0, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -681,10 +683,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput)
+void EDT0001_BAT_MODULE_1_0004_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[BAT_MODULE_1]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[BAT_MODULE1_CELL0_VOL],"
     L"[BAT_MODULE1_CELL1_VOL],"
@@ -705,8 +706,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <13,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. BAT_MODULE1_CELL0_VOL to Database
+    // 01/13. BAT_MODULE1_CELL0_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL0_VOL, Type : INT
     int32 BAT_MODULE1_CELL0_VOL = 0;
     try {
@@ -725,7 +727,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL0_VOL);
     }
-    // 1. BAT_MODULE1_CELL1_VOL to Database
+    // 02/13. BAT_MODULE1_CELL1_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL1_VOL, Type : INT
     int32 BAT_MODULE1_CELL1_VOL = 0;
     try {
@@ -744,7 +746,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL1_VOL);
     }
-    // 1. BAT_MODULE1_CELL2_VOL to Database
+    // 03/13. BAT_MODULE1_CELL2_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL2_VOL, Type : INT
     int32 BAT_MODULE1_CELL2_VOL = 0;
     try {
@@ -763,7 +765,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL2_VOL);
     }
-    // 1. BAT_MODULE1_CELL3_VOL to Database
+    // 04/13. BAT_MODULE1_CELL3_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL3_VOL, Type : INT
     int32 BAT_MODULE1_CELL3_VOL = 0;
     try {
@@ -782,7 +784,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL3_VOL);
     }
-    // 1. BAT_MODULE1_CELL4_VOL to Database
+    // 05/13. BAT_MODULE1_CELL4_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL4_VOL, Type : INT
     int32 BAT_MODULE1_CELL4_VOL = 0;
     try {
@@ -801,7 +803,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL4_VOL);
     }
-    // 1. BAT_MODULE1_CELL5_VOL to Database
+    // 06/13. BAT_MODULE1_CELL5_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL5_VOL, Type : INT
     int32 BAT_MODULE1_CELL5_VOL = 0;
     try {
@@ -820,7 +822,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL5_VOL);
     }
-    // 1. BAT_MODULE1_CELL6_VOL to Database
+    // 07/13. BAT_MODULE1_CELL6_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL6_VOL, Type : INT
     int32 BAT_MODULE1_CELL6_VOL = 0;
     try {
@@ -839,7 +841,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL6_VOL);
     }
-    // 1. BAT_MODULE1_CELL7_VOL to Database
+    // 08/13. BAT_MODULE1_CELL7_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL7_VOL, Type : INT
     int32 BAT_MODULE1_CELL7_VOL = 0;
     try {
@@ -858,7 +860,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL7_VOL);
     }
-    // 1. BAT_MODULE1_CELL8_VOL to Database
+    // 09/13. BAT_MODULE1_CELL8_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL8_VOL, Type : INT
     int32 BAT_MODULE1_CELL8_VOL = 0;
     try {
@@ -877,7 +879,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL8_VOL);
     }
-    // 1. BAT_MODULE1_CELL9_VOL to Database
+    // 10/13. BAT_MODULE1_CELL9_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL9_VOL, Type : INT
     int32 BAT_MODULE1_CELL9_VOL = 0;
     try {
@@ -896,7 +898,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL9_VOL);
     }
-    // 1. BAT_MODULE1_CELL10_VOL to Database
+    // 11/13. BAT_MODULE1_CELL10_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL10_VOL, Type : INT
     int32 BAT_MODULE1_CELL10_VOL = 0;
     try {
@@ -915,7 +917,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL10_VOL);
     }
-    // 1. BAT_MODULE1_CELL11_VOL to Database
+    // 12/13. BAT_MODULE1_CELL11_VOL to Database
     //     Table name : BAT_MODULE_1, Column name : BAT_MODULE1_CELL11_VOL, Type : INT
     int32 BAT_MODULE1_CELL11_VOL = 0;
     try {
@@ -934,7 +936,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE1_CELL11_VOL);
     }
-    // 1. System_time to Database
+    // 13/13. System_time to Database
     //     Table name : BAT_MODULE_1, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -961,10 +963,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput)
+void EDT0001_BAT_MODULE_2_0005_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[BAT_MODULE_2]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[BAT_MODULE2_CELL0_VOL],"
     L"[BAT_MODULE2_CELL1_VOL],"
@@ -985,8 +986,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <13,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. BAT_MODULE2_CELL0_VOL to Database
+    // 01/13. BAT_MODULE2_CELL0_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL0_VOL, Type : INT
     int32 BAT_MODULE2_CELL0_VOL = 0;
     try {
@@ -1005,7 +1007,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL0_VOL);
     }
-    // 1. BAT_MODULE2_CELL1_VOL to Database
+    // 02/13. BAT_MODULE2_CELL1_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL1_VOL, Type : INT
     int32 BAT_MODULE2_CELL1_VOL = 0;
     try {
@@ -1024,7 +1026,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL1_VOL);
     }
-    // 1. BAT_MODULE2_CELL2_VOL to Database
+    // 03/13. BAT_MODULE2_CELL2_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL2_VOL, Type : INT
     int32 BAT_MODULE2_CELL2_VOL = 0;
     try {
@@ -1043,7 +1045,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL2_VOL);
     }
-    // 1. BAT_MODULE2_CELL3_VOL to Database
+    // 04/13. BAT_MODULE2_CELL3_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL3_VOL, Type : INT
     int32 BAT_MODULE2_CELL3_VOL = 0;
     try {
@@ -1062,7 +1064,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL3_VOL);
     }
-    // 1. BAT_MODULE2_CELL4_VOL to Database
+    // 05/13. BAT_MODULE2_CELL4_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL4_VOL, Type : INT
     int32 BAT_MODULE2_CELL4_VOL = 0;
     try {
@@ -1081,7 +1083,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL4_VOL);
     }
-    // 1. BAT_MODULE2_CELL5_VOL to Database
+    // 06/13. BAT_MODULE2_CELL5_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL5_VOL, Type : INT
     int32 BAT_MODULE2_CELL5_VOL = 0;
     try {
@@ -1100,7 +1102,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL5_VOL);
     }
-    // 1. BAT_MODULE2_CELL6_VOL to Database
+    // 07/13. BAT_MODULE2_CELL6_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL6_VOL, Type : INT
     int32 BAT_MODULE2_CELL6_VOL = 0;
     try {
@@ -1119,7 +1121,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL6_VOL);
     }
-    // 1. BAT_MODULE2_CELL7_VOL to Database
+    // 08/13. BAT_MODULE2_CELL7_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL7_VOL, Type : INT
     int32 BAT_MODULE2_CELL7_VOL = 0;
     try {
@@ -1138,7 +1140,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL7_VOL);
     }
-    // 1. BAT_MODULE2_CELL8_VOL to Database
+    // 09/13. BAT_MODULE2_CELL8_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL8_VOL, Type : INT
     int32 BAT_MODULE2_CELL8_VOL = 0;
     try {
@@ -1157,7 +1159,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL8_VOL);
     }
-    // 1. BAT_MODULE2_CELL9_VOL to Database
+    // 10/13. BAT_MODULE2_CELL9_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL9_VOL, Type : INT
     int32 BAT_MODULE2_CELL9_VOL = 0;
     try {
@@ -1176,7 +1178,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL9_VOL);
     }
-    // 1. BAT_MODULE2_CELL10_VOL to Database
+    // 11/13. BAT_MODULE2_CELL10_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL10_VOL, Type : INT
     int32 BAT_MODULE2_CELL10_VOL = 0;
     try {
@@ -1195,7 +1197,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL10_VOL);
     }
-    // 1. BAT_MODULE2_CELL11_VOL to Database
+    // 12/13. BAT_MODULE2_CELL11_VOL to Database
     //     Table name : BAT_MODULE_2, Column name : BAT_MODULE2_CELL11_VOL, Type : INT
     int32 BAT_MODULE2_CELL11_VOL = 0;
     try {
@@ -1214,7 +1216,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE2_CELL11_VOL);
     }
-    // 1. System_time to Database
+    // 13/13. System_time to Database
     //     Table name : BAT_MODULE_2, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1241,10 +1243,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput)
+void EDT0001_BAT_MODULE_3_0006_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[BAT_MODULE_3]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[BAT_MODULE3_CELL0_VOL],"
     L"[BAT_MODULE3_CELL1_VOL],"
@@ -1258,8 +1259,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <6,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. BAT_MODULE3_CELL0_VOL to Database
+    // 01/06. BAT_MODULE3_CELL0_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL0_VOL, Type : INT
     int32 BAT_MODULE3_CELL0_VOL = 0;
     try {
@@ -1278,7 +1280,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL0_VOL);
     }
-    // 1. BAT_MODULE3_CELL1_VOL to Database
+    // 02/06. BAT_MODULE3_CELL1_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL1_VOL, Type : INT
     int32 BAT_MODULE3_CELL1_VOL = 0;
     try {
@@ -1297,7 +1299,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL1_VOL);
     }
-    // 1. BAT_MODULE3_CELL2_VOL to Database
+    // 03/06. BAT_MODULE3_CELL2_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL2_VOL, Type : INT
     int32 BAT_MODULE3_CELL2_VOL = 0;
     try {
@@ -1316,7 +1318,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL2_VOL);
     }
-    // 1. BAT_MODULE3_CELL8_VOL to Database
+    // 04/06. BAT_MODULE3_CELL8_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL8_VOL, Type : INT
     int32 BAT_MODULE3_CELL8_VOL = 0;
     try {
@@ -1335,7 +1337,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL8_VOL);
     }
-    // 1. BAT_MODULE3_CELL10_VOL to Database
+    // 05/06. BAT_MODULE3_CELL10_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL10_VOL, Type : INT
     int32 BAT_MODULE3_CELL10_VOL = 0;
     try {
@@ -1354,7 +1356,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,BAT_MODULE3_CELL10_VOL);
     }
-    // 1. BAT_MODULE3_CELL11_VOL to Database
+    // 06/06. BAT_MODULE3_CELL11_VOL to Database
     //     Table name : BAT_MODULE_3, Column name : BAT_MODULE3_CELL11_VOL, Type : INT
     int32 BAT_MODULE3_CELL11_VOL = 0;
     try {
@@ -1378,10 +1380,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_Environment_ToDb(nlohmann::json& jsonInput)
+void EDT0001_Environment_0007_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[Environment]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[Wind_speed],"
     L"[Wind_direction],"
@@ -1392,8 +1393,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <3,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. Wind_speed to Database
+    // 01/03. Wind_speed to Database
     //     Table name : Environment, Column name : Wind_speed, Type : INT
     int32 Wind_speed = 0;
     try {
@@ -1412,7 +1414,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,Wind_speed);
     }
-    // 1. Wind_direction to Database
+    // 02/03. Wind_direction to Database
     //     Table name : Environment, Column name : Wind_direction, Type : INT
     int32 Wind_direction = 0;
     try {
@@ -1431,7 +1433,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,Wind_direction);
     }
-    // 1. System_time to Database
+    // 03/03. System_time to Database
     //     Table name : Environment, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1458,10 +1460,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_AIS_ToDb(nlohmann::json& jsonInput)
+void EDT0001_AIS_0008_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[AIS]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[latitude],"
     L"[longitude],"
@@ -1472,8 +1473,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <3,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. latitude to Database
+    // 01/03. latitude to Database
     //     Table name : AIS, Column name : latitude, Type : NVARCHAR
     std::wstring wlatitude = L"No input";
     WCHAR* pwlatitude = nullptr;
@@ -1495,7 +1497,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwlatitude);
     }
-    // 1. longitude to Database
+    // 02/03. longitude to Database
     //     Table name : AIS, Column name : longitude, Type : NVARCHAR
     std::wstring wlongitude = L"No input";
     WCHAR* pwlongitude = nullptr;
@@ -1517,7 +1519,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++, pwlongitude);
     }
-    // 1. System_time to Database
+    // 03/03. System_time to Database
     //     Table name : AIS, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1544,10 +1546,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_System_Time_ToDb(nlohmann::json& jsonInput)
+void EDT0001_System_Time_0009_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[System_Time]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[System_time]"
     L")"
@@ -1556,8 +1557,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <1,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. System_time to Database
+    // 01/01. System_time to Database
     //     Table name : System_Time, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1584,10 +1586,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_MOTOR_ToDb(nlohmann::json& jsonInput)
+void EDT0001_MOTOR_0010_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[MOTOR]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[MT_RPM],"
     L"[MT_TORQUE],"
@@ -1599,8 +1600,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <4,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. MT_RPM to Database
+    // 01/04. MT_RPM to Database
     //     Table name : MOTOR, Column name : MT_RPM, Type : INT
     int32 MT_RPM = 0;
     try {
@@ -1619,7 +1621,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,MT_RPM);
     }
-    // 1. MT_TORQUE to Database
+    // 02/04. MT_TORQUE to Database
     //     Table name : MOTOR, Column name : MT_TORQUE, Type : INT
     int32 MT_TORQUE = 0;
     try {
@@ -1638,7 +1640,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,MT_TORQUE);
     }
-    // 1. MT_TEMP to Database
+    // 03/04. MT_TEMP to Database
     //     Table name : MOTOR, Column name : MT_TEMP, Type : INT
     int32 MT_TEMP = 0;
     try {
@@ -1657,7 +1659,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,MT_TEMP);
     }
-    // 1. System_time to Database
+    // 04/04. System_time to Database
     //     Table name : MOTOR, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1684,10 +1686,9 @@
     GDBConnectionPool->Push(dbConn);
 }
 
-
-﻿void Send_INVERTER_ToDb(nlohmann::json& jsonInput)
+void EDT0001_INVERTER_0011_ToDb(nlohmann::json& jsonInput)
 {
-    auto query = L"INSERT INTO [dbo].[INVERTER]"
+    auto query = L"INSERT INTO [dbo].[]"
     L"("
     L"[INV_PHASE_A_CURRENT],"
     L"[INV_PHASE_B_CURRENT],"
@@ -1707,8 +1708,9 @@
     DBConnection* dbConn = GDBConnectionPool->Pop();
     DBBind <12,0> dbBind(*dbConn, query);
     int32 count = 0;
+
     
-    // 1. INV_PHASE_A_CURRENT to Database
+    // 01/12. INV_PHASE_A_CURRENT to Database
     //     Table name : INVERTER, Column name : INV_PHASE_A_CURRENT, Type : INT
     int32 INV_PHASE_A_CURRENT = 0;
     try {
@@ -1727,7 +1729,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_PHASE_A_CURRENT);
     }
-    // 1. INV_PHASE_B_CURRENT to Database
+    // 02/12. INV_PHASE_B_CURRENT to Database
     //     Table name : INVERTER, Column name : INV_PHASE_B_CURRENT, Type : INT
     int32 INV_PHASE_B_CURRENT = 0;
     try {
@@ -1746,7 +1748,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_PHASE_B_CURRENT);
     }
-    // 1. INV_PHASE_C_CURRENT to Database
+    // 03/12. INV_PHASE_C_CURRENT to Database
     //     Table name : INVERTER, Column name : INV_PHASE_C_CURRENT, Type : INT
     int32 INV_PHASE_C_CURRENT = 0;
     try {
@@ -1765,7 +1767,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_PHASE_C_CURRENT);
     }
-    // 1. INV_POST_FAULT to Database
+    // 04/12. INV_POST_FAULT to Database
     //     Table name : INVERTER, Column name : INV_POST_FAULT, Type : INT
     int32 INV_POST_FAULT = 0;
     try {
@@ -1784,7 +1786,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_POST_FAULT);
     }
-    // 1. INV_GATE_DRIVER_BOARD_TEMP to Database
+    // 05/12. INV_GATE_DRIVER_BOARD_TEMP to Database
     //     Table name : INVERTER, Column name : INV_GATE_DRIVER_BOARD_TEMP, Type : INT
     int32 INV_GATE_DRIVER_BOARD_TEMP = 0;
     try {
@@ -1803,7 +1805,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_GATE_DRIVER_BOARD_TEMP);
     }
-    // 1. INV_MODULE_A_TEMP to Database
+    // 06/12. INV_MODULE_A_TEMP to Database
     //     Table name : INVERTER, Column name : INV_MODULE_A_TEMP, Type : INT
     int32 INV_MODULE_A_TEMP = 0;
     try {
@@ -1822,7 +1824,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_MODULE_A_TEMP);
     }
-    // 1. INV_RUN_FAULT to Database
+    // 07/12. INV_RUN_FAULT to Database
     //     Table name : INVERTER, Column name : INV_RUN_FAULT, Type : INT
     int32 INV_RUN_FAULT = 0;
     try {
@@ -1841,7 +1843,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_RUN_FAULT);
     }
-    // 1. INV_MODULE_B_TEMP to Database
+    // 08/12. INV_MODULE_B_TEMP to Database
     //     Table name : INVERTER, Column name : INV_MODULE_B_TEMP, Type : INT
     int32 INV_MODULE_B_TEMP = 0;
     try {
@@ -1860,7 +1862,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_MODULE_B_TEMP);
     }
-    // 1. INV_MODULE_C_TEMP to Database
+    // 09/12. INV_MODULE_C_TEMP to Database
     //     Table name : INVERTER, Column name : INV_MODULE_C_TEMP, Type : INT
     int32 INV_MODULE_C_TEMP = 0;
     try {
@@ -1879,7 +1881,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_MODULE_C_TEMP);
     }
-    // 1. INV_POWER to Database
+    // 10/12. INV_POWER to Database
     //     Table name : INVERTER, Column name : INV_POWER, Type : INT
     int32 INV_POWER = 0;
     try {
@@ -1898,7 +1900,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_POWER);
     }
-    // 1. INV_OUTPUT_VOLTAGE to Database
+    // 11/12. INV_OUTPUT_VOLTAGE to Database
     //     Table name : INVERTER, Column name : INV_OUTPUT_VOLTAGE, Type : INT
     int32 INV_OUTPUT_VOLTAGE = 0;
     try {
@@ -1917,7 +1919,7 @@
         std::cerr << "Unexpected error: " << e.what() << '\n';
         dbBind.BindParam(count++,INV_OUTPUT_VOLTAGE);
     }
-    // 1. System_time to Database
+    // 12/12. System_time to Database
     //     Table name : INVERTER, Column name : System_time, Type : NVARCHAR
     std::wstring wSystem_time = L"No input";
     WCHAR* pwSystem_time = nullptr;
@@ -1943,5 +1945,3 @@
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-
-

@@ -29,23 +29,23 @@ public:
 
 		// json 파일 읽기
 		std::ifstream inputfile(schemaFileName);
-		cout << "S1" << endl;
+		//cout << "S1" << endl;
 		if (!inputfile.is_open())
 			throw std::runtime_error("Failed to open the Json file");
 
-		cout << "S2" << endl;
+		//cout << "S2" << endl;
 		try{ inputfile >> jconfig;}
 		catch (const std::exception& e){std::cerr << "runtime error : " << e.what() << std::endl;}
-		cout << "S3" << endl;
+		//cout << "S3" << endl;
 		MakeTableQueryFromJson(jconfig);
-		cout << "S4" << endl;
+		//cout << "S4" << endl;
 	}
 
 	static void MakeTableQueryFromJson(nlohmann::json jconfig)
 	{
 		for (const auto& table : jconfig["tables"])
 		{
-			cout << "S5" << endl;
+			//cout << "S5" << endl;
 			std::string createQuery = "DROP TABLE IF EXISTS " + table["table_name"].get<std::string>() + " ;";
 			createQuery += "CREATE TABLE " + table["table_name"].get<std::string>() + " (";
 			for (const auto& col : table["columns"])

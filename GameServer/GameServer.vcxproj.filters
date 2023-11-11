@@ -33,22 +33,21 @@
     <ClCompile Include="GameSessionManager.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Protocol.pb.cc">
-      <Filter>Proto</Filter>
-    </ClCompile>
     <ClCompile Include="JsonToConf.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="ClientPacketHandler.cpp">
       <Filter>PacketHandler</Filter>
     </ClCompile>
-    <ClCompile Include="JsonPacketHandler.cpp">
-      <Filter>PacketHandler</Filter>
-    </ClCompile>
     <ClCompile Include="MakeTableQuery.cpp">
       <Filter>DataBase</Filter>
     </ClCompile>
-    <ClCompile Include="JsonPacketHandler_test.cpp" />
+    <ClCompile Include="EDT0001.pb.cc">
+      <Filter>Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="EDT0001_PacketHandler.cpp">
+      <Filter>PacketHandler</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -57,30 +56,23 @@
     <ClInclude Include="GameSession.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Protocol.pb.h">
-      <Filter>Proto</Filter>
-    </ClInclude>
     <ClInclude Include="JsonToConf.h">
       <Filter>Main</Filter>
-    </ClInclude>
-    <ClInclude Include="ClientPacketHandler.h">
-      <Filter>PacketHandler</Filter>
-    </ClInclude>
-    <ClInclude Include="JsonPacketHandler.h">
-      <Filter>PacketHandler</Filter>
     </ClInclude>
     <ClInclude Include="MakeTableQuery.h">
       <Filter>DataBase</Filter>
     </ClInclude>
-    <ClInclude Include="JsonPacketHandler_test.h" />
+    <ClInclude Include="EDT0001.pb.h">
+      <Filter>Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="EDT0001_PacketHandler.h">
+      <Filter>PacketHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientPacketHandler.h">
+      <Filter>PacketHandler</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\protobufc\protobuf.bat">
-      <Filter>Proto</Filter>
-    </None>
-    <None Include="..\protobufc\Protocol.proto">
-      <Filter>Proto</Filter>
-    </None>
     <None Include="packages.config" />
     <None Include="ServerConfig.json">
       <Filter>ExternalFiles</Filter>
@@ -88,10 +80,11 @@
     <None Include="DbSchema.json">
       <Filter>ExternalFiles</Filter>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Xml Include="ShipDB.xml">
-      <Filter>ExternalFiles</Filter>
-    </Xml>
+    <None Include="..\Tools\Protobuf\EDT0001.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="..\Tools\Protobuf\Protocol.proto">
+      <Filter>Proto</Filter>
+    </None>
   </ItemGroup>
 </Project>

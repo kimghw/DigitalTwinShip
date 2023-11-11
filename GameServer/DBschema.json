@@ -1,5 +1,5 @@
 {
-  "database": "YourDatabaseName",
+  "Ship_num": "EDT0001",
   "tables": [
     {
       "table_name": "Battery",

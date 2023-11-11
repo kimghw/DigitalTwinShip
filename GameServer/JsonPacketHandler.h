@@ -9,18 +9,18 @@ inline void MakeJsonString(std::string& str);
 inline bool StringToJson(std::string& str, OUT nlohmann::json& jsonInput);
 std::wstring stringToWString(const std::string& str);
 
-void Send_Battery_ToDb(nlohmann::json& jsonInput);
-void Send_Battery_Pack_ToDb(nlohmann::json& jsonInput);
-void Send_BAT_MODULE_0_ToDb(nlohmann::json& jsonInput);
-void Send_BAT_MODULE_1_ToDb(nlohmann::json& jsonInput);
-void Send_BAT_MODULE_2_ToDb(nlohmann::json& jsonInput);
-void Send_BAT_MODULE_3_ToDb(nlohmann::json& jsonInput);
-void Send_Environment_ToDb(nlohmann::json& jsonInput);
-void Send_AIS_ToDb(nlohmann::json& jsonInput);
-void Send_System_Time_ToDb(nlohmann::json& jsonInput);
-void Send_MOTOR_ToDb(nlohmann::json& jsonInput);
-void Send_INVERTER_ToDb(nlohmann::json& jsonInput);
 
+void EDT0001_Battery_0001_ToDb(nlohmann::json& jsonInput);
+void EDT0001_Battery_Pack_0002_ToDb(nlohmann::json& jsonInput);
+void EDT0001_BAT_MODULE_0_0003_ToDb(nlohmann::json& jsonInput);
+void EDT0001_BAT_MODULE_1_0004_ToDb(nlohmann::json& jsonInput);
+void EDT0001_BAT_MODULE_2_0005_ToDb(nlohmann::json& jsonInput);
+void EDT0001_BAT_MODULE_3_0006_ToDb(nlohmann::json& jsonInput);
+void EDT0001_Environment_0007_ToDb(nlohmann::json& jsonInput);
+void EDT0001_AIS_0008_ToDb(nlohmann::json& jsonInput);
+void EDT0001_System_Time_0009_ToDb(nlohmann::json& jsonInput);
+void EDT0001_MOTOR_0010_ToDb(nlohmann::json& jsonInput);
+void EDT0001_INVERTER_0011_ToDb(nlohmann::json& jsonInput);
 
 inline void MakeJsonString(std::string& str)
 {
@@ -38,12 +38,6 @@ inline void MakeJsonString(std::string& str)
 
 inline bool StringToJson(std::string& str, nlohmann::json& jsonInput)
 {
-	//jsonInput = nlohmann::json::parse(str);
-	//if (jsonInput.is_discarded())
-	//{
-	//	std::cerr << "JSON Parsing ERROR\n";
-	//	return false;
-	//}
 
 	try {
 		jsonInput = nlohmann::json::parse(str);
@@ -77,8 +71,6 @@ inline bool StringToJson(std::string& str, nlohmann::json& jsonInput)
 
 	return true;
 }
-
-
 inline void replaceDegrees(std::string& coord)
 {
 	// Replace degree symbol with 'd'
@@ -109,9 +101,8 @@ inline void addBackslashBeforeQuotes(OUT std::string& input)
 			output += c;
 		}
 	}
-	input.swap(output); // 스왑 함수를 사용하여 input을 수정합니다.
+	input.swap(output);
 }
-
 inline std::wstring stringToWString(const std::string& str)
 {
 	int len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);

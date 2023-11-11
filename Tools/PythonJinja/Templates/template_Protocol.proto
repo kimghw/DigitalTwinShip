@@ -1,0 +1,19 @@
+syntax = "proto3";
+package Protocol;
+
+{% for table in tables %}
+message {{ table.table_name }}
+{
+{%- for column in table.columns %}
+    {%- if column.type == 'INT' %}
+    int32 {{ column.name }} = {{ loop.index }};
+    {%- elif column.type == 'FLOAT' %}
+    float {{ column.name }} = {{ loop.index }};
+    {%- elif column.type == 'DOUBLE' %}
+    double {{ column.name }} = {{ loop.index }};
+    {%- elif column.type == 'NVARCHAR' %}
+    string {{ column.name }} = {{ loop.index }};
+    {%- endif %}
+{%- endfor %}
+}
+{% endfor %}
