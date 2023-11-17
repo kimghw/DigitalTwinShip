@@ -1,4 +1,4 @@
-#include "pch.h"
+ï»¿#include "pch.h"
 #include "Session.h"
 #include "SocketUtils.h"
 #include "Service.h"
@@ -24,7 +24,7 @@ void Session::Send(SendBufferRef sendBuffer)
 
 	bool registerSend = false;
 
-	// ÇöÀç RegisterSend°¡ °É¸®Áö ¾ÊÀº »óÅÂ¶ó¸é, °É¾îÁØ´Ù
+	// Ã‡Ã¶Ã€Ã§ RegisterSendÂ°Â¡ Â°Ã‰Â¸Â®ÃÃ¶ Â¾ÃŠÃ€Âº Â»Ã³Ã…Ã‚Â¶Ã³Â¸Ã©, Â°Ã‰Â¾Ã®ÃÃ˜Â´Ã™
 	{
 		WRITE_LOCK;
 
@@ -61,7 +61,7 @@ HANDLE Session::GetHandle()
 
 void Session::Dispatch(IocpEvent* iocpEvent, int32 numOfBytes)
 {
-	cout << numOfBytes << "session.64line" << endl;
+	//cout << "The number of incomming data :" << numOfBytes << "session.64line" << endl;
 	switch (iocpEvent->eventType)
 	{
 	case EventType::Connect:
@@ -72,7 +72,7 @@ void Session::Dispatch(IocpEvent* iocpEvent, int32 numOfBytes)
 		break;
 	case EventType::Recv:
 		ProcessRecv(numOfBytes);
-		
+		//std::cout << numOfBytes << endl;
 		break;
 	case EventType::Send:
 		ProcessSend(numOfBytes);
@@ -93,7 +93,7 @@ bool Session::RegisterConnect()
 	if (SocketUtils::SetReuseAddress(_socket, true) == false)
 		return false;
 
-	if (SocketUtils::BindAnyAddress(_socket, 0/*³²´Â°Å*/) == false)
+	if (SocketUtils::BindAnyAddress(_socket, 0/*Â³Â²Â´Ã‚Â°Ã…*/) == false)
 		return false;
 
 	_connectEvent.Init();
@@ -165,7 +165,7 @@ void Session::RegisterSend()
 	_sendEvent.Init();
 	_sendEvent.owner = shared_from_this(); // ADD_REF
 
-	// º¸³¾ µ¥ÀÌÅÍ¸¦ sendEvent¿¡ µî·Ï
+	// ÂºÂ¸Â³Â¾ ÂµÂ¥Ã€ÃŒÃ…ÃÂ¸Â¦ sendEventÂ¿Â¡ ÂµÃ®Â·Ã
 	{
 		WRITE_LOCK;
 
@@ -175,14 +175,14 @@ void Session::RegisterSend()
 			SendBufferRef sendBuffer = _sendQueue.front();
 
 			writeSize += sendBuffer->WriteSize();
-			// TODO : ¿¹¿Ü Ã¼Å©
+			// TODO : Â¿Â¹Â¿Ãœ ÃƒÂ¼Ã…Â©
 
 			_sendQueue.pop();
 			_sendEvent.sendBuffers.push_back(sendBuffer);
 		}
 	}
 
-	// Scatter-Gather (Èğ¾îÁ® ÀÖ´Â µ¥ÀÌÅÍµéÀ» ¸ğ¾Æ¼­ ÇÑ ¹æ¿¡ º¸³½´Ù)
+	// Scatter-Gather (ÃˆÃ°Â¾Ã®ÃÂ® Ã€Ã–Â´Ã‚ ÂµÂ¥Ã€ÃŒÃ…ÃÂµÃ©Ã€Â» Â¸Ã°Â¾Ã†Â¼Â­ Ã‡Ã‘ Â¹Ã¦Â¿Â¡ ÂºÂ¸Â³Â½Â´Ã™)
 	Vector<WSABUF> wsaBufs;
 	wsaBufs.reserve(_sendEvent.sendBuffers.size());
 	for (SendBufferRef sendBuffer : _sendEvent.sendBuffers)
@@ -213,13 +213,13 @@ void Session::ProcessConnect()
 
 	_connected.store(true);
 
-	// ¼¼¼Ç µî·Ï
+	// Â¼Â¼Â¼Ã‡ ÂµÃ®Â·Ã
 	GetService()->AddSession(GetSessionRef());
 
-	// ÄÁÅÙÃ÷ ÄÚµå¿¡¼­ ÀçÁ¤ÀÇ
+	// Ã„ÃÃ…Ã™ÃƒÃ· Ã„ÃšÂµÃ¥Â¿Â¡Â¼Â­ Ã€Ã§ÃÂ¤Ã€Ã‡
 	OnConnected();
 
-	// ¼ö½Å µî·Ï
+	// Â¼Ã¶Â½Ã… ÂµÃ®Â·Ã
 	RegisterRecv();
 }
 
@@ -227,13 +227,30 @@ void Session::ProcessDisconnect()
 {
 	_disconnectEvent.owner = nullptr; // RELEASE_REF
 
-	OnDisconnected(); // ÄÁÅÙÃ÷ ÄÚµå¿¡¼­ ÀçÁ¤ÀÇ
+	OnDisconnected(); // Ã„ÃÃ…Ã™ÃƒÃ· Ã„ÃšÂµÃ¥Â¿Â¡Â¼Â­ Ã€Ã§ÃÂ¤Ã€Ã‡
 	GetService()->ReleaseSession(GetSessionRef());
 }
 
+// ë¬¸ì œìƒê¸¸ ì‹œ ë½ê±¸ë©´ ë ë“¯
 void Session::ProcessRecv(int32 numOfBytes)
 {
 	_recvEvent.owner = nullptr; // RELEASE_REF
+	static int32 receivedData = 0;
+	static BYTE* pinitBuffer = nullptr;
+	static int16 initHeaderSize = 0;
+	static bool accum = false;
+
+	char* header1 = reinterpret_cast<char*>(_recvBuffer.WritePos());
+	std::swap(*header1, *(header1 + 1));
+	std::swap(*(header1 + 2), *(header1 + 3));
+	PacketHeader* header = reinterpret_cast<PacketHeader*>(_recvBuffer.WritePos());
+
+	if (accum == false)
+	{
+		pinitBuffer = _recvBuffer.ReadPos();
+		initHeaderSize = header->size;
+		receivedData = 0;
+	}
 
 	if (numOfBytes == 0)
 	{
@@ -241,24 +258,47 @@ void Session::ProcessRecv(int32 numOfBytes)
 		return;
 	}
 
-	if (_recvBuffer.OnWrite(numOfBytes) == false)
+	if (numOfBytes == initHeaderSize)
+	{
+		receivedData = numOfBytes;
+	}
+	else if (numOfBytes < initHeaderSize && accum == false)
+	{
+		
+		if (true)
+		{
+
+		}
+		// first partial data comming
+		accum = true;
+		receivedData += numOfBytes;
+		RegisterRecv();
+		return;
+	}
+	else if (receivedData == initHeaderSize)
+	{
+		accum = false;
+		receivedData += numOfBytes;
+	}
+
+
+	if (_recvBuffer.OnWrite(receivedData) == false)
 	{
 		Disconnect(L"OnWrite Overflow");
 		return;
 	}
 
 	int32 dataSize = _recvBuffer.DataSize();
-	int32 processLen = OnRecv(_recvBuffer.ReadPos(), dataSize); // ÄÁÅÙÃ÷ ÄÚµå¿¡¼­ ÀçÁ¤ÀÇ
+	int32 processLen = OnRecv(_recvBuffer.ReadPos(), dataSize); // Ã„ÃÃ…Ã™ÃƒÃ· Ã„ÃšÂµÃ¥Â¿Â¡Â¼Â­ Ã€Ã§ÃÂ¤Ã€Ã‡
 	if (processLen < 0 || dataSize < processLen || _recvBuffer.OnRead(processLen) == false)
 	{
 		Disconnect(L"OnRead Overflow");
 		return;
 	}
-	
-	// Ä¿¼­ Á¤¸®
+
 	_recvBuffer.Clean();
 
-	// ¼ö½Å µî·Ï
+	// Â¼Ã¶Â½Ã… ÂµÃ®Â·Ã
 	RegisterRecv();
 }
 
@@ -273,7 +313,7 @@ void Session::ProcessSend(int32 numOfBytes)
 		return;
 	}
 
-	// ÄÁÅÙÃ÷ ÄÚµå¿¡¼­ ÀçÁ¤ÀÇ
+	// Ã„ÃÃ…Ã™ÃƒÃ· Ã„ÃšÂµÃ¥Â¿Â¡Â¼Â­ Ã€Ã§ÃÂ¤Ã€Ã‡
 	OnSend(numOfBytes);
 
 	WRITE_LOCK;
@@ -313,21 +353,21 @@ PacketSession::~PacketSession()
 // [size(2)][id(2)][data....][size(2)][id(2)][data....]
 int32 PacketSession::OnRecv(BYTE* buffer, int32 len)
 {
-	std::cout << "recevived data_Session_314" << endl;
+	//std::cout << "recevived data_Session_314" << endl;
 	int32 processLen = 0;
-
+	
 	while (true)
 	{
 		int32 dataSize = len - processLen;
-		// ÃÖ¼ÒÇÑ Çì´õ´Â ÆÄ½ÌÇÒ ¼ö ÀÖ¾î¾ß ÇÑ´Ù
+		// ÃƒÃ–Â¼Ã’Ã‡Ã‘ Ã‡Ã¬Â´ÃµÂ´Ã‚ Ã†Ã„Â½ÃŒÃ‡Ã’ Â¼Ã¶ Ã€Ã–Â¾Ã®Â¾ÃŸ Ã‡Ã‘Â´Ã™
 		if (dataSize < sizeof(PacketHeader))
 			break;
 
 		PacketHeader header = *(reinterpret_cast<PacketHeader*>(&buffer[processLen]));
-		// Çì´õ¿¡ ±â·ÏµÈ ÆĞÅ¶ Å©±â¸¦ ÆÄ½ÌÇÒ ¼ö ÀÖ¾î¾ß ÇÑ´Ù
+		// Ã‡Ã¬Â´ÃµÂ¿Â¡ Â±Ã¢Â·ÃÂµÃˆ Ã†ÃÃ…Â¶ Ã…Â©Â±Ã¢Â¸Â¦ Ã†Ã„Â½ÃŒÃ‡Ã’ Â¼Ã¶ Ã€Ã–Â¾Ã®Â¾ÃŸ Ã‡Ã‘Â´Ã™
 		if (dataSize < header.size)
 			break;
-
+		
 		// The second factor should switch to header.size
 		OnRecvPacket(&buffer[processLen], dataSize);
 
@@ -337,3 +377,4 @@ int32 PacketSession::OnRecv(BYTE* buffer, int32 len)
 
 	return processLen;
 }
+

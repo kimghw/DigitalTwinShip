@@ -6,9 +6,9 @@ extern PacketHandlerFunc GPacketHandler[UINT16_MAX];
 
 enum : uint16
 {
-	PKT_{{Ship_num}} = 1000,
+	PKT_{{Ship_num}} = 1001,
 {%- for table in tables%}
-	PKT_{{table['table_name']}} = {{'%04d'|format(loop.index+1000)}}{%- if not loop.last-%},{%- endif-%}
+	PKT_{{table['table_name']}} = {{'%04d'|format(loop.index+1001)}}{%- if not loop.last-%},{%- endif-%}
 {%- endfor %}
 };
 
@@ -29,7 +29,7 @@ public:
 			GPacketHandler[i] = Handle_INVALID;
 
 		//JSon
-		GPacketHandler[PKT_{{Ship_num}}] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return Handle_EDT0001(Handle_Json, session, buffer, len); };
+		GPacketHandler[PKT_{{Ship_num}}] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return Handle_EDT0001(session, buffer, len); };
 		
 {% for table in tables %}
 		GPacketHandler[PKT_{{table['table_name']}}] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<Protocol::{{table['table_name']}} >(Handle_{{table['table_name']}}, session, buffer, len); };
@@ -39,7 +39,7 @@ public:
 	static bool HandlePacket(PacketSessionRef& session, BYTE* buffer, int32 len)
 	{
 		PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
-		return GPacketHandler[header->id](session, buffer, len);
+		return GPacketHandler[header->id](session, buffer+sizeof(PacketHeader), len-sizeof(PacketHeader));
 	}
 
 	//Send

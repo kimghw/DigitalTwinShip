@@ -2,8 +2,6 @@
 // source: EDT0001.proto
 
 #include "EDT0001.pb.h"
-#include "pch.h"
-
 
 #include <algorithm>
 
@@ -886,7 +884,7 @@ void Battery::InternalSwap(Battery* other) {
       &_impl_.system_time_, lhs_arena,
       &other->_impl_.system_time_, rhs_arena
   );
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Battery, _impl_.bat_protection_b_)
       + sizeof(Battery::_impl_.bat_protection_b_)
       - PROTOBUF_FIELD_OFFSET(Battery, _impl_.batterypk_)>(

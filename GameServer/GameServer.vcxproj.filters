@@ -36,17 +36,17 @@
     <ClCompile Include="JsonToConf.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="ClientPacketHandler.cpp">
-      <Filter>PacketHandler</Filter>
-    </ClCompile>
     <ClCompile Include="MakeTableQuery.cpp">
       <Filter>DataBase</Filter>
     </ClCompile>
-    <ClCompile Include="EDT0001.pb.cc">
-      <Filter>Proto</Filter>
-    </ClCompile>
     <ClCompile Include="EDT0001_PacketHandler.cpp">
       <Filter>PacketHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientPacketHandler.cpp">
+      <Filter>PacketHandler</Filter>
+    </ClCompile>
+    <ClCompile Include="EDT0001.pb.cc">
+      <Filter>Proto</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -62,14 +62,14 @@
     <ClInclude Include="MakeTableQuery.h">
       <Filter>DataBase</Filter>
     </ClInclude>
-    <ClInclude Include="EDT0001.pb.h">
-      <Filter>Proto</Filter>
-    </ClInclude>
     <ClInclude Include="EDT0001_PacketHandler.h">
       <Filter>PacketHandler</Filter>
     </ClInclude>
     <ClInclude Include="ClientPacketHandler.h">
       <Filter>PacketHandler</Filter>
+    </ClInclude>
+    <ClInclude Include="EDT0001.pb.h">
+      <Filter>Proto</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

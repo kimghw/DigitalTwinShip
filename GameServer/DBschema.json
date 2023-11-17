@@ -420,7 +420,7 @@
         {
           "name": "AIS_PK",
           "type": "INT",
-          "nullable": true,
+          "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
         },
         {
@@ -464,7 +464,7 @@
       "table_name": "MOTOR",
       "columns": [
         {
-          "name": "MOTOR_",
+          "name": "MOTOR_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -496,7 +496,7 @@
       "table_name": "INVERTER",
       "columns": [
         {
-          "name": "INT",
+          "name": "INVERTER_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -553,6 +553,50 @@
         },
         {
           "name": "INV_OUTPUT_VOLTAGE",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "Network",
+      "columns": [
+        {
+          "name": "NetWork_PK",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "INV_PHASE_A_CURRENT",
+          "type": "INT",
+          "nullable": true
+        },
+        {
+          "name": "System_time",
+          "type": "NVARCHAR",
+          "size": 100,
+          "nullable": true
+        }
+      ]
+    },
+    {
+      "table_name": "SaveAsBYTEs",
+      "columns": [
+        {
+          "name": "SaveAsBYTEs_PK",
+          "type": "INT",
+          "nullable": false,
+          "primarykey": "PRIMARY KEY IDENTITY(1,1),"
+        },
+        {
+          "name": "BYTEs",
           "type": "INT",
           "nullable": true
         },

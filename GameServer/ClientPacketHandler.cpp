@@ -7,14 +7,45 @@
 #include "Protocol.pb.h"
 #include "DBConnection.h"
 #include "JsonPacketHandler.h"
-
+#include "EDT0001_PacketHandler.h"
+#include <chrono>
+#include <iostream>
 
 PacketHandlerFunc GPacketHandler[UINT16_MAX];
+
+bool Handle_PKT_TEST(PacketSessionRef& session, BYTE* buffer, int32 len)
+{
+	// 만약 스레드를 쓰고 나와 버린다면 이건 동적할당 + 스마트 포인터로 해야 겠네요.
+	EDT0001_PacketHandler pkt(buffer, len);
+
+	START_TIMER
+	pkt.Assign_JsonToPbALL(); 
+	END_TIMER("Assign_JsonToPbALL")
+
+	//pkt.Insert_AllPbToDb();
+	START_TIMER
+	std::thread dbThread(&EDT0001_PacketHandler::Insert_AllPbToDb, &pkt);
+	dbThread.detach();
+	END_TIMER("pkt.Insert_AllPbToDb()")
+
+	return false;
+}
 
 bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len)
 {
 	PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
 	// TODO : Log
+	return false;
+}
+
+bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len)
+{
+
+	// 만약 스레드를 쓰고 나와 버린다면 이건 동적할당 + 스마트 포인터로 해야 겠네요.
+	EDT0001_PacketHandler pkt(buffer, len);
+	pkt.Assign_JsonToPbALL();
+	pkt.Insert_AllPbToDb();
+
 	return false;
 }
 
@@ -150,47 +181,7 @@ bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len)
 //}
 
 
-bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len)
-{
-	//std::lock_guard<std::mutex> lock(cout_mutex);
 
-	nlohmann::json jsonInput;
-	std::string str(buffer, buffer + len);
-
-	
-	MakeJsonString(OUT str);
-	//cout << str << endl;
-
-	bool result = StringToJson(str, OUT jsonInput);
-	if (result == false)
-		return false;
-
-	//Send_ship_test_ver2_ToDb(jsonInput);
-	EDT0001_Battery_0001_ToDb(jsonInput);
-	//cout << "Battery" << endl;
-	EDT0001_Battery_Pack_0002_ToDb(jsonInput);
-	//cout << "Send_Battery_Pack_ToDb" << endl;
-	EDT0001_BAT_MODULE_0_0003_ToDb(jsonInput);
-	//cout << "Send_BAT_MODULE_0_ToDb" << endl;
-	EDT0001_BAT_MODULE_1_0004_ToDb(jsonInput);
-	//cout << "Send_BAT_MODULE_1_ToDb" << endl;
-	EDT0001_BAT_MODULE_2_0005_ToDb(jsonInput);
-	//cout << "Send_BAT_MODULE_2_ToDb" << endl;
-	EDT0001_BAT_MODULE_3_0006_ToDb(jsonInput);
-	//cout << "Send_BAT_MODULE_3_ToDb" << endl;
-	EDT0001_Environment_0007_ToDb(jsonInput);
-	//cout << "Send_Environment_ToDb" << endl;
-	EDT0001_AIS_0008_ToDb(jsonInput);
-	//cout << "Send_AIS_ToDb" << endl;
-	EDT0001_System_Time_0009_ToDb(jsonInput);
-	//cout << "Send_System_Time_ToDb" << endl;
-	EDT0001_MOTOR_0010_ToDb(jsonInput);
-	//cout << "Send_MOTOR_ToDb" << endl;
-	EDT0001_INVERTER_0011_ToDb(jsonInput);
-	//cout << "Send_INVERTER_ToDb" << endl;
-
-	return true;
-}
 
 bool Handle_Battery(PacketSessionRef& session, Protocol::Battery& pkt)
 {

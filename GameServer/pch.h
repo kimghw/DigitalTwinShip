@@ -12,3 +12,10 @@
 #include <iostream>
 #include <fstream>
 #include "JsonToConf.h"
+#include "Protocol.pb.h"
+#include "EDT0001.pb.h"
+
+#define START_TIMER { auto start = std::chrono::high_resolution_clock::now();
+#define END_TIMER(msg) auto end = std::chrono::high_resolution_clock::now(); \
+                       std::chrono::duration<double, std::milli> elapsed = end - start; \
+                       std::cout << msg << " took " << elapsed.count() << " ms\n"; }

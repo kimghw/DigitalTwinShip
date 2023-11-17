@@ -1,27 +1,29 @@
 #pragma once
-#include "Protocol.pb.h"
 #include "pch.h"
+
 
 using PacketHandlerFunc = std::function<bool(PacketSessionRef&, BYTE*, int32)>;
 extern PacketHandlerFunc GPacketHandler[UINT16_MAX];
 
 enum : uint16
 {
-	PKT_EDT0001 = 1000,
-	PKT_Battery = 1001,
-	PKT_Battery_Pack = 1002,
-	PKT_BAT_MODULE_0 = 1003,
-	PKT_BAT_MODULE_1 = 1004,
-	PKT_BAT_MODULE_2 = 1005,
-	PKT_BAT_MODULE_3 = 1006,
-	PKT_Environment = 1007,
-	PKT_AIS = 1008,
-	PKT_System_Time = 1009,
-	PKT_MOTOR = 1010,
-	PKT_INVERTER = 1011
+	PKT_TEST = 0,
+	PKT_EDT0001 = 1001,
+	PKT_Battery = 1002,
+	PKT_Battery_Pack = 1003,
+	PKT_BAT_MODULE_0 = 1004,
+	PKT_BAT_MODULE_1 = 1005,
+	PKT_BAT_MODULE_2 = 1006,
+	PKT_BAT_MODULE_3 = 1007,
+	PKT_Environment = 1008,
+	PKT_AIS = 1009,
+	PKT_System_Time = 1010,
+	PKT_MOTOR = 1011,
+	PKT_INVERTER = 1012
 };
 
 // Custom Handlers
+bool Handle_PKT_TEST(PacketSessionRef& session, BYTE* buffer, int32 len);
 bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len);
 bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len);
 bool Handle_Battery(PacketSessionRef& session, Protocol::Battery& pkt);
@@ -36,6 +38,8 @@ bool Handle_System_Time(PacketSessionRef& session, Protocol::System_Time& pkt);
 bool Handle_MOTOR(PacketSessionRef& session, Protocol::MOTOR& pkt);
 bool Handle_INVERTER(PacketSessionRef& session, Protocol::INVERTER& pkt);
 
+
+
 class ClientPacketHandler
 {
 public:
@@ -44,6 +48,10 @@ public:
 		for (int32 i = 0; i < UINT16_MAX; i++)
 			GPacketHandler[i] = Handle_INVALID;
 
+		//JSon
+		GPacketHandler[PKT_TEST] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return Handle_PKT_TEST(session, buffer, len); };
+		GPacketHandler[PKT_EDT0001] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return Handle_EDT0001(session, buffer, len); };
+		
 
 		GPacketHandler[PKT_Battery] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<Protocol::Battery >(Handle_Battery, session, buffer, len); };
 		GPacketHandler[PKT_Battery_Pack] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<Protocol::Battery_Pack >(Handle_Battery_Pack, session, buffer, len); };
@@ -56,15 +64,12 @@ public:
 		GPacketHandler[PKT_System_Time] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<Protocol::System_Time >(Handle_System_Time, session, buffer, len); };
 		GPacketHandler[PKT_MOTOR] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<Protocol::MOTOR >(Handle_MOTOR, session, buffer, len); };
 		GPacketHandler[PKT_INVERTER] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<Protocol::INVERTER >(Handle_INVERTER, session, buffer, len); };
-
-	//JSon
-	GPacketHandler[PKT_EDT0001] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket(Handle_EDT0001, session, buffer, len); };
 	}
 
 	static bool HandlePacket(PacketSessionRef& session, BYTE* buffer, int32 len)
 	{
 		PacketHeader* header = reinterpret_cast<PacketHeader*>(buffer);
-		return GPacketHandler[header->id](session, buffer, len);
+		return GPacketHandler[header->id](session, buffer+sizeof(PacketHeader), len-sizeof(PacketHeader));
 	}
 
 	//Send
@@ -119,7 +124,7 @@ private:
 	//json
 	static SendBufferRef  MakeSendBuffer(const char* json_string, uint16 pktId)
 	{
-		cout << std::strlen(json_string) << endl;
+		//cout << std::strlen(json_string) << endl;
 		const uint16 dataSize = static_cast<uint16>(std::strlen(json_string));
 		const uint16 packetSize = dataSize + sizeof(PacketHeader);
 

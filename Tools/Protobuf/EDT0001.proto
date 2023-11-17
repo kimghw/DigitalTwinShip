@@ -119,7 +119,7 @@ message System_Time
 
 message MOTOR
 {
-    int32 MOTOR_ = 1;
+    int32 MOTOR_PK = 1;
     int32 MT_RPM = 2;
     int32 MT_TORQUE = 3;
     int32 MT_TEMP = 4;
@@ -128,7 +128,7 @@ message MOTOR
 
 message INVERTER
 {
-    int32 INT = 1;
+    int32 INVERTER_PK = 1;
     int32 INV_PHASE_A_CURRENT = 2;
     int32 INV_PHASE_B_CURRENT = 3;
     int32 INV_PHASE_C_CURRENT = 4;

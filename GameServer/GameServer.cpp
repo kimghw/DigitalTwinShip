@@ -11,13 +11,15 @@
 #include "DBBind.h"
 #include "MakeTableQuery.h"
 
-
 int main()
 {
-	serverConf conf; JsonToConf::Init("ServerConfig.json", conf);
-	
+	//Initial value is internal loop back ip
+	serverConf conf = { L"127.0.0.1", 6340, 10 };
+
+	JsonToConf::Init("ServerConfig.json", conf);
+
 	MakeTableQuery::Init();
-cout << "S" << endl;
+	std::wcout << "IPAddress :" << conf.ip << ", Port :" << conf.port << endl;
 
  	ClientPacketHandler::Init();
 
@@ -29,7 +31,7 @@ cout << "S" << endl;
 	
 	ASSERT_CRASH(service->Start());
 
-	for (int32 i = 0; i < 5; i++)
+	for (int32 i = 0; i < 10; i++)
 	{
 		GThreadManager->Launch([=]()
 			{

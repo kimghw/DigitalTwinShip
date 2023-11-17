@@ -26,6 +26,8 @@
   <ItemGroup>
     <Content Include="Templates\template_EDT0001_PacketHandler.cpp" />
     <Content Include="Templates\template_EDT0001_PacketHandler.h" />
+    <Content Include="Templates\template_EDT0001_PacketHandler_OOP.cpp" />
+    <Content Include="Templates\template_EDT0001_PacketHandler_OOP.h" />
     <Content Include="Templates\template_PacketHandler.h" />
     <Content Include="Templates\template_Protocol.proto" />
   </ItemGroup>

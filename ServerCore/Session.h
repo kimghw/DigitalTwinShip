@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "IocpCore.h"
 #include "IocpEvent.h"
 #include "NetAddress.h"
@@ -26,7 +26,7 @@ public:
 	virtual ~Session();
 
 public:
-						/* ¿ÜºÎ¿¡¼­ »ç¿ë */
+						/* Â¿ÃœÂºÃÂ¿Â¡Â¼Â­ Â»Ã§Â¿Ã« */
 	void				Send(SendBufferRef sendBuffer);
 	bool				Connect();
 	void				Disconnect(const WCHAR* cause);
@@ -35,7 +35,7 @@ public:
 	void				SetService(shared_ptr<Service> service) { _service = service; }
 
 public:
-						/* Á¤º¸ °ü·Ã */
+						/* ÃÂ¤ÂºÂ¸ Â°Ã¼Â·Ãƒ */
 	void				SetNetAddress(NetAddress address) { _netAddress = address; }
 	NetAddress			GetAddress() { return _netAddress; }
 	SOCKET				GetSocket() { return _socket; }
@@ -43,12 +43,12 @@ public:
 	SessionRef			GetSessionRef() { return static_pointer_cast<Session>(shared_from_this()); }
 
 private:
-						/* ÀÎÅÍÆäÀÌ½º ±¸Çö */
+						/* Ã€ÃÃ…ÃÃ†Ã¤Ã€ÃŒÂ½Âº Â±Â¸Ã‡Ã¶ */
 	virtual HANDLE		GetHandle() override;
 	virtual void		Dispatch(class IocpEvent* iocpEvent, int32 numOfBytes = 0) override;
 
 private:
-						/* Àü¼Û °ü·Ã */
+						/* Ã€Ã¼Â¼Ã› Â°Ã¼Â·Ãƒ */
 	bool				RegisterConnect();
 	bool				RegisterDisconnect();
 	void				RegisterRecv();
@@ -61,8 +61,10 @@ private:
 
 	void				HandleError(int32 errorCode);
 
+
+
 protected:
-						/* ÄÁÅÙÃ÷ ÄÚµå¿¡¼­ ÀçÁ¤ÀÇ */
+						/* Ã„ÃÃ…Ã™ÃƒÃ· Ã„ÃšÂµÃ¥Â¿Â¡Â¼Â­ Ã€Ã§ÃÂ¤Ã€Ã‡ */
 	virtual void		OnConnected() { }
 	virtual int32		OnRecv(BYTE* buffer, int32 len) { return len; }
 	virtual void		OnSend(int32 len) { }
@@ -77,15 +79,15 @@ private:
 private:
 	USE_LOCK;
 
-							/* ¼ö½Å °ü·Ã */
+							/* Â¼Ã¶Â½Ã… Â°Ã¼Â·Ãƒ */
 	RecvBuffer				_recvBuffer;
 
-							/* ¼Û½Å °ü·Ã */
+							/* Â¼Ã›Â½Ã… Â°Ã¼Â·Ãƒ */
 	Queue<SendBufferRef>	_sendQueue;
 	Atomic<bool>			_sendRegistered = false;
 
 private:
-						/* IocpEvent Àç»ç¿ë */
+						/* IocpEvent Ã€Ã§Â»Ã§Â¿Ã« */
 	ConnectEvent		_connectEvent;
 	DisconnectEvent		_disconnectEvent;
 	RecvEvent			_recvEvent;
@@ -98,8 +100,8 @@ private:
 
 struct PacketHeader
 {
+	uint16 id; // Ã‡ÃÂ·ÃÃ…Ã¤Ã„ÃID (ex. 1=Â·ÃÂ±Ã—Ã€Ã, 2=Ã€ÃŒÂµÂ¿Â¿Ã¤ÃƒÂ»)
 	uint16 size;
-	uint16 id; // ÇÁ·ÎÅäÄİID (ex. 1=·Î±×ÀÎ, 2=ÀÌµ¿¿äÃ»)
 };
 
 class PacketSession : public Session
@@ -110,7 +112,9 @@ public:
 
 	PacketSessionRef	GetPacketSessionRef() { return static_pointer_cast<PacketSession>(shared_from_this()); }
 
+
 protected:
 	virtual int32		OnRecv(BYTE* buffer, int32 len) sealed;
 	virtual void		OnRecvPacket(BYTE* buffer, int32 len) abstract;
 };
+

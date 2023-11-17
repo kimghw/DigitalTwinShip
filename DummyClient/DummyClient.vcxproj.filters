@@ -24,6 +24,7 @@
     <ClCompile Include="Protocol.pb.cc">
       <Filter>Proto</Filter>
     </ClCompile>
+    <ClCompile Include="TestJson.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -35,6 +36,7 @@
     <ClInclude Include="Protocol.pb.h">
       <Filter>Proto</Filter>
     </ClInclude>
+    <ClInclude Include="TestJson.h" />
   </ItemGroup>
   <ItemGroup>
     <Xml Include="PDL.xml">

@@ -45,13 +45,17 @@ public:
 	{
 		for (const auto& table : jconfig["tables"])
 		{
-			//cout << "S5" << endl;
-			std::string createQuery = "DROP TABLE IF EXISTS " + table["table_name"].get<std::string>() + " ;";
-			createQuery += "CREATE TABLE " + table["table_name"].get<std::string>() + " (";
+			std::string tableName = table["table_name"].get<std::string>();
+
+			// IF NOT EXISTS 절을 사용하여 테이블 생성 쿼리 시작
+			std::string createQuery = "IF NOT EXISTS (SELECT * FROM sys.tables WHERE name = '"
+				+ tableName + "' AND type = 'U') BEGIN CREATE TABLE "
+				+ tableName + " (";
+
 			for (const auto& col : table["columns"])
 			{
-				createQuery += col["name"].get<std::string>() + " "
-					+ col["type"].get<std::string>();
+				createQuery += col["name"].get<std::string>() + " " + col["type"].get<std::string>();
+
 				if (col["type"] == "NVARCHAR")
 					createQuery += "(" + std::to_string(col["size"].get<int>()) + ")";
 
@@ -63,15 +67,47 @@ public:
 				else
 					createQuery += col["nullable"].get<bool>() ? " NULL," : " NOT NULL,";
 			}
+
 			createQuery.pop_back();
-			createQuery += ");";
+			createQuery += ") END;"; // END 절 추가
 			std::wstring wcreateQuery = JsonToConf::stringToWString(createQuery);
-			//std::cout << createQuery << endl;
+
 			CheckAndMakeTable(wcreateQuery.c_str());
-			//createTableQueries.push_back(wcreateQuer);
-			cout << "success for checking the tables" << endl;
+			cout << "Success for checking the table: " << tableName << endl;
 		}
 	}
+
+	//static void MakeTableQueryFromJson(nlohmann::json jconfig)
+	//{
+	//	for (const auto& table : jconfig["tables"])
+	//	{
+	//		//cout << "S5" << endl;
+	//		// std::string createQuery = "DROP TABLE IF EXISTS " + table["table_name"].get<std::string>() + " ;";
+	//		std::string createQuery = "CREATE TABLE " + table["table_name"].get<std::string>() + " (";
+	//		for (const auto& col : table["columns"])
+	//		{
+	//			createQuery += col["name"].get<std::string>() + " "
+	//				+ col["type"].get<std::string>();
+	//			if (col["type"] == "NVARCHAR")
+	//				createQuery += "(" + std::to_string(col["size"].get<int>()) + ")";
+
+	//			if (col.contains("primarykey") && !col["primarykey"].is_null())
+	//			{
+	//				createQuery += " NOT NULL ";
+	//				createQuery += col["primarykey"].get<std::string>();
+	//			}
+	//			else
+	//				createQuery += col["nullable"].get<bool>() ? " NULL," : " NOT NULL,";
+	//		}
+	//		createQuery.pop_back();
+	//		createQuery += ");";
+	//		std::wstring wcreateQuery = JsonToConf::stringToWString(createQuery);
+	//		//std::cout << createQuery << endl;
+	//		CheckAndMakeTable(wcreateQuery.c_str());
+	//		//createTableQueries.push_back(wcreateQuer);
+	//		cout << "success for checking the tables" << endl;
+	//	}
+	//}
 
 	static void CheckAndMakeTable(const wchar_t* wcreateQuery)
 	{

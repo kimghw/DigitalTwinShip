@@ -5,6 +5,28 @@
 #include "BufferReader.h"
 #include "ServerPacketHandler.h"
 #include "nlohmann/json.hpp"
+#include <iostream>
+#include <random>
+#include <sstream>
+#include <chrono>
+#include <iomanip>
+#include "TestJson.h"
+
+std::string current_time_to_string() {
+	// 현재 시간을 std::chrono::system_clock으로부터 얻습니다.
+	auto now = std::chrono::system_clock::now();
+	time_t now_c = std::chrono::system_clock::to_time_t(now);
+
+	// time_t를 tm 구조체로 변환합니다.
+	tm now_tm;
+	localtime_s(&now_tm, &now_c); // Windows에서는 localtime_s를 사용합니다. 
+	// POSIX 시스템에서는 localtime_r을 사용하세요.
+
+// stringstream을 사용하여 문자열로 포맷팅합니다.
+	std::stringstream ss;
+	ss << std::put_time(&now_tm, "%Y-%m-%d %H:%M:%S");
+	return ss.str();
+}
 
 class ServerSession : public PacketSession
 {
@@ -53,7 +75,7 @@ int main()
 
 	ASSERT_CRASH(service->Start());
 
-	for (int32 i = 0; i < 3; i++)
+	for (int32 i = 0; i < 1; i++)
 	{
 		GThreadManager->Launch([=]()
 			{
@@ -72,7 +94,7 @@ int main()
 	//logPkg.set_str("Hello, I am Hololens2");
 	//auto sendBuffer = ServerPacketHandler::MakeSendBuffer(logPkg);
 
-	Protocol::C_MAIN mainJson;
+
 	nlohmann::json j;
 	//nlohmann::json j = nlohmann::json::array();
 
@@ -103,24 +125,80 @@ int main()
 	j["18_longtitude"] = "Hello";
 	j["19_System-time"] = "Hello....very good";
 
+	std::random_device rd;
+	std::mt19937 gen(rd());
+	std::uniform_int_distribution<> dis(1, 100);
+
+	// 1부터 100 사이의 균일 분포를 가지는 난수 생성기
+
+	auto now = std::chrono::system_clock::now();
+	std::time_t now_c = std::chrono::system_clock::to_time_t(now);
+
+	// tm 구조체 초기화
+	std::tm now_tm = {};
+
+	localtime_s(&now_tm, &now_c);
+
+	// stringstream을 사용하여 시간 포맷팅
+	std::stringstream ss;
+	ss << std::put_time(&now_tm, "%H%M%S");
+
+	// 문자열로 변환
+	std::string current_time_str = ss.str();
 
 	cout << j << endl;
 	std::string json_string = j.dump();
 
 
-	string test_string = R"({"INV_POST_FAULT":100},{"INV_RUN_FAULT":1000},{"INV_GATE_DRIVER_BOARD_TEMP":1000},{"INV_MODULE_A_TEMP":1000},{"INV_MODULE_B_TEMP":1000},{"INV_MODULE_C_TEMP":1000},{"INV_PHASE_A_CURRENT":100},{"INV_PHASE_B_CURRENT":10},{"INV_PHASE_C_CURRENT":10},{"MT_TORQUE":10},{"MT_RPM":10},{"MT_TEMP":10},{"Wind_speed":5},{"Wind_direction":1650},{"INV_OUTPUT_VOLTAGE":10},{"INV_POWER":10},{"latitude":"35d22m7.302N"},{"longitude":"129d15m15s636E"},{"System_time":"15:33:13"})";
+	string test_string = R"({"INV_POST_FAULT":0,"INV_RUN_FAULT":0,"INV_GATE_DRIVER_BOARD_TEMP":33,"INV_MODULE_A_TEMP":18,"INV_MODULE_B_TEMP":19,"INV_MODULE_C_TEMP":18,"INV_PHASE_A_CURRENT":0,"INV_PHASE_B_CURRENT":0,"INV_PHASE_C_CURRENT":0,"MT_TORQUE":0,"MT_RPM":0,"MT_TEMP":18,"Wind_speed":32,"Wind_direction":1832,"BAT_PACK_CURRENT":0,"INV_OUTPUT_VOLTAGE":351,"INV_POWER":0,"BAT_PACK_VOLTAGE":350,"BAT_PACK_MAX_CELL_VOL":3651,"BAT_PACK_MIN_CELL_VOL":3638,"BAT_MODULE_CELL0_VOL":3649,"BAT_MODULE_CELL1_VOL":3649,"BAT_MODULE_CELL2_VOL":3648,"BAT_MODULE_CELL3_VOL":3648,"BAT_MODULE_CELL4_VOL":3648,"BAT_MODULE_CELL5_VOL":3649,"BAT_MODULE_CELL6_VOL":3649,"BAT_MODULE_CELL7_VOL":3648,"BAT_MODULE_CELL8_VOL":3648,"BAT_MODULE_CELL9_VOL":3649,"BAT_MODULE_CELL10_VOL":3649,"BAT_MODULE_CELL11_VOL":3648,"BAT_MODULE1_CELL0_VOL":3650,"BAT_MODULE1_CELL1_VOL":3650,"BAT_MODULE1_CELL2_VOL":3649,"BAT_MODULE1_CELL3_VOL":3649,"BAT_MODULE1_CELL4_VOL":3649,"BAT_MODULE1_CELL5_VOL":3649,"BAT_MODULE1_CELL6_VOL":3649,"BAT_MODULE1_CELL7_VOL":3649,"BAT_MODULE1_CELL8_VOL":3649,"BAT_MODULE1_CELL9_VOL":3649,"BAT_MODULE1_CELL10_VOL":3648,"BAT_MODULE1_CELL11_VOL":3648,"BAT_MODULE2_CELL0_VOL":3649,"BAT_MODULE2_CELL1_VOL":3648,"BAT_MODULE2_CELL2_VOL":3648,"BAT_MODULE2_CELL3_VOL":3648,"BAT_MODULE2_CELL4_VOL":3648,"BAT_MODULE2_CELL5_VOL":3648,"BAT_MODULE2_CELL6_VOL":3648,"BAT_MODULE2_CELL7_VOL":3648,"BAT_MODULE2_CELL8_VOL":3648,"BAT_MODULE2_CELL9_VOL":3648,"BAT_MODULE2_CELL10_VOL":3648,"BAT_MODULE2_CELL11_VOL":3646,"BAT_MODULE3_CELL0_VOL":3649,"BAT_MODULE3_CELL1_VOL":3648,"BAT_MODULE3_CELL2_VOL":3648,"BAT_MODULE3_CELL3_VOL":3649,"BAT_MODULE3_CELL4_VOL":3648,"BAT_MODULE3_CELL5_VOL":3644,"BAT_MODULE3_CELL6_VOL":3649,"BAT_MODULE3_CELL7_VOL":3648,"BAT_MODULE3_CELL8_VOL":3648,"BAT_MODULE3_CELL9_VOL":3648,"BAT_MODULE3_CELL10_VOL":3649,"BAT_MODULE3_CELL11_VOL":3650,"BAT_BPU_NEGATIVE_CONTACTOR":1,"BAT_BPU_POSITIVE_CONTACTOR":1,"BAT_PROTECTION_A":0,"BAT_PROTECTION_B":0,"BAT_PACK_SOC":100,"BAT_PACK_MAX_TEMP_SBMS_INDEX":7,"BAT_PACK_MIN_TEMP_SBMS_INDEX":1,"BAT_PACK_MAX_CELL_VOL_SBMS_INDEX":5,"BAT_PACK_MIN_CELL_VOL_SBMS_INDEX":6,"BAT_PACK_MAX_TEMP":12,"BAT_PACK_MIN_TEMP":9,"latitude":"35d04d36.768N","longitude":"129d05s16g110E","System_time":"10:25:53","Speed_over_ground_in_knots":0.100000})";
+	nlohmann::json json_obj = nlohmann::json::parse(test_string);
 
 	//mainJson.set_data(j.dump());
 	//int size = mainJson.ByteSizeLong();
 	//cout << size << endl;
-    const char* ptrJson = json_string.c_str();
-	cout << test_string << endl;
+
+
 
 	while (true)
 	{	
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		std::uniform_int_distribution<> dis(0, 100); // 예시로 0에서 100 사이의 정수
+		std::pair<string, string> randomCoordinates = TestJson::generateRandomCoordinates();
+
+
+
+
+		for (auto& element : json_obj.items()) {
+			// 랜덤 값 생성
+			int random_value = dis(gen);
+
+
+			if (element.key() == "System_time")
+			{
+				element.value() = current_time_to_string();
+			}
+			else if (element.key() == "latitude")
+			{
+				element.value() = randomCoordinates.first;
+			}
+			else if (element.key() == "longitude")
+			{
+				element.value() = randomCoordinates.second;
+			}
+			else
+			{
+			// 랜덤 값으로 업데이트
+			element.value() = random_value;
+
+			}
+		}
+		std::string updated_string = json_obj.dump();
+		std::cout << "Updated JSON: " << updated_string << std::endl;
+
 		//auto sendBuffer = ServerPacketHandler::MakeSendBuffer(mainJson);
 		
-		auto sendBuffer = ServerPacketHandler::MakeSendBuffer(test_string.c_str());
+		auto sendBuffer = ServerPacketHandler::MakeSendBuffer(updated_string.c_str());
 		service->Broadcast(sendBuffer);
 		this_thread::sleep_for(0.1s);
 	}

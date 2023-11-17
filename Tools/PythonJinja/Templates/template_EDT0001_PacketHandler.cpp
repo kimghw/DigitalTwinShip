@@ -7,7 +7,6 @@ void EDT0001_{{table['table_name']}}_{{'%04d'|format(loop.index)}}_ToDb(nlohmann
 {
     auto query = L"INSERT INTO [dbo].[{{table_name}}]"
     L"("
-
     {%- for column in table['columns'] %}
     {%- if not column.primarykey%}
     L"[{{column.name}}]{{ "," if not loop.last else "" }}"

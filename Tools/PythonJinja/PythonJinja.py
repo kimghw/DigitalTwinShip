@@ -20,14 +20,14 @@ data = read_json_file(file_path)
 env = Environment(loader=FileSystemLoader('.'))
 
 # 함수 템플릿 갖어오기
-Json_packetHandler_template = env.get_template('./templates/template_EDT0001_PacketHandler.cpp')
-Json_packetHandler_template_h = env.get_template('./templates/template_EDT0001_PacketHandler.h')
+Json_packetHandler_template = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.cpp')
+Json_packetHandler_template_h = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.h')
 protocol_template = env.get_template('./templates/template_Protocol.proto')
 packetHandler_template = env.get_template('./templates/template_PacketHandler.h')
 
 # 코드 렌더/만들기
-json_packetHandler_rendered = Json_packetHandler_template.render(tables = data['tables'])
-json_packetHandler_rendered_h = Json_packetHandler_template_h.render(tables = data['tables'])
+json_packetHandler_rendered = Json_packetHandler_template.render(tables = data['tables'], Ship_num = data['Ship_num'])
+json_packetHandler_rendered_h = Json_packetHandler_template_h.render(tables = data['tables'], Ship_num = data['Ship_num'])
 Protocol_rendered = protocol_template.render(tables = data['tables'])
 packetHandler_rendered = packetHandler_template.render(tables = data['tables'], Ship_num = data['Ship_num'])
 
@@ -58,3 +58,10 @@ file_path = os.path.join(pparent_dir, "GameServer", file_name)
 with open(file_path, 'w', encoding='utf-8') as file:
     file.write(packetHandler_rendered)
     print(f"Saved: {file_path}")
+    
+# (PacketHandler.h) 마지막으로 모든 렌더링된 함수를 하나의 파일에 저장합니다.
+# file_name = "ServerPacketHandler.h" 
+# file_path = os.path.join(pparent_dir, "DummyClient", file_name)
+# with open(file_path, 'w', encoding='utf-8') as file:
+#     file.write(packetHandler_rendered)
+#     print(f"Saved: {file_path}")
