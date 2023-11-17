@@ -19,7 +19,6 @@ int main()
 	JsonToConf::Init("ServerConfig.json", conf);
 
 	MakeTableQuery::Init();
-	std::wcout << "IPAddress :" << conf.ip << ", Port :" << conf.port << endl;
 
  	ClientPacketHandler::Init();
 

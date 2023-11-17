@@ -64,22 +64,18 @@ void DBConnection::Clear()
 bool DBConnection::Execute(const WCHAR* query)
 {
 	
-
 	try
 	{
 		SQLRETURN ret = ::SQLExecDirectW(_statement, (SQLWCHAR*)query, SQL_NTSL);
 		if (ret == SQL_SUCCESS || ret == SQL_SUCCESS_WITH_INFO)
 			return true;
 
-	
 		HandleError(ret);
 		return false;
-
 	}
 	catch (const std::exception& e)
 	{
 		std::wcerr << L"Exception: " << e.what() << std::endl;
-
 	}
 
 

@@ -1,6 +1,11 @@
-#include <nlohmann/json.hpp>
+﻿#include <nlohmann/json.hpp>
 #include <winsock2.h>
 #include <iostream>
+#include <iphlpapi.h>
+#include <iptypes.h>
+
+#pragma comment(lib, "iphlpapi.lib")
+#pragma comment(lib, "ws2_32.lib")
 
 struct serverConf
 {
@@ -40,27 +45,35 @@ public:
 
 		try {
 			JsonToConf::Init_IPconfig(jsonFileName, conf);
-			cout << "Success to get IP information" << endl;
+			
 		}
 		catch (...)
 		{
 			cout << "IP: 127.0.0.1 is connected" << endl;
 		}
+		std::wcout << "IPAddress :" << conf.ip << ", Port :" << conf.port << endl;
+
 	}
 	static void Init_IPconfig(const string& jsonFileName, serverConf& conf)
 	{
+			nlohmann::json jconfig;
+
 		try {
 			std::ifstream inputfile(jsonFileName);
 			if (!inputfile.is_open())
-			{
 				throw std::runtime_error("Failed to open the Json file");
+
+			try {
+				inputfile >> jconfig;
+				inputfile.close();
 			}
-
-			nlohmann::json jconfig;
-
-			try {inputfile >> jconfig;}
 			catch (const std::exception& e){std::cerr<<"runtime error : " << e.what()<<std::endl;}
 
+			if (jconfig["USE"] == 0)
+			{
+				wcout << "Using the loopback IP Address : 127.0.0.1 "<< endl;
+				return;
+			}
 			conf.ip = stringToWString(jconfig["SERVER_IP"]);
 			conf.port = (int32)jconfig["SERVER_PORT"];
 			conf.maxSessionCount = (int32)jconfig["SERVER_MAXSESSIONCOUNT"];
@@ -68,38 +81,47 @@ public:
 			conf.dsn = jconfig["DB_DSN"];
 			conf.username = jconfig["DB_USERNAME"];
 			conf.password = jconfig["DB_PASSWORD"];
+			wcout << "Success to get IP from JsonFile : " << conf.ip << endl;
 
-			inputfile.close();
 		}
 		catch (const std::exception& e) {
 			std::cerr << "Runtime error: " << e.what() << std::endl;
+			std::cout << "Automatically getting the IP address from the network" << endl;
 			GetServerInfo(conf.ip);
 		}
 	}
 
-	static void GetServerInfo(std::wstring& confIp)
+	static void GetServerInfo(std::wstring& confip)
 	{
-		hostInfo serverInfo;
+		//hostInfo serverInfo;
 
 		try {
-			serverInfo.hostname = gethostname(serverInfo.host, sizeof(serverInfo.host));
-			if (serverInfo.hostname == -1) {
-				perror("gethostname");
-				exit(1);
+			WSADATA wsaData;
+			WSAStartup(MAKEWORD(2, 2), &wsaData);
+
+			DWORD dwSize = sizeof(IP_ADAPTER_INFO);
+			IP_ADAPTER_INFO* pAdapterInfo = (IP_ADAPTER_INFO*)malloc(dwSize);
+
+			if (GetAdaptersInfo(pAdapterInfo, &dwSize) == ERROR_BUFFER_OVERFLOW) {
+				free(pAdapterInfo);
+				pAdapterInfo = (IP_ADAPTER_INFO*)malloc(dwSize);
 			}
 
-			serverInfo.host_entry = gethostbyname(serverInfo.host);
-			if (serverInfo.host_entry == nullptr) {
-				perror("gethostbyname");
-				exit(1);
+			if (GetAdaptersInfo(pAdapterInfo, &dwSize) == NO_ERROR) {
+				for (IP_ADAPTER_INFO* pAdapter = pAdapterInfo; pAdapter != NULL; pAdapter = pAdapter->Next) {
+					// 첫 번째 IP 주소만 출력
+					if (pAdapter->IpAddressList.IpAddress.String != NULL) {
+						std::string ipAddr = pAdapter->IpAddressList.IpAddress.String;
+						confip = stringToWString(ipAddr);
+						std::cout << "Success to get the IP Address: " << pAdapter->IpAddressList.IpAddress.String << std::endl;
+					}
+				}
 			}
 
-			serverInfo.ip = inet_ntoa(*((struct in_addr*)serverInfo.host_entry->h_addr_list[0]));
+			if (pAdapterInfo) {
+				free(pAdapterInfo);
+			}
 
-			std::wcout << "IPAddress :" << serverInfo.ip << endl;
-
-			confIp = stringToWString(serverInfo.ip);
-			WSACleanup();
 		}
 		catch (...)
 		{
