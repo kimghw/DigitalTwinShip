@@ -10,6 +10,7 @@
 #include "EDT0001_PacketHandler.h"
 #include <chrono>
 #include <iostream>
+#include "GameSessionManager.h"
 
 PacketHandlerFunc GPacketHandler[UINT16_MAX];
 
@@ -43,6 +44,13 @@ bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len)
 	EDT0001_PacketHandler pkt(buffer, len);
 	pkt.Assign_JsonToPbALL();
 	pkt.Insert_AllPbToDb();
+
+	// Send data to all which are connected with this server
+	SendBufferRef sendBuffer = ClientPacketHandler::MakeSendBuffer(pkt._battery);
+	GSessionManager.Broadcast(sendBuffer);
+
+	//session->Send(sendBuffer);
+
 
 	return false;
 }

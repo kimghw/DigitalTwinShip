@@ -28,6 +28,27 @@ std::string current_time_to_string() {
 	return ss.str();
 }
 
+float dmsStrToDd(const std::string& dmsStr) {
+	std::istringstream iss(dmsStr);
+	float degrees, minutes, seconds;
+	char direction;
+
+	// 문자열을 공백을 기준으로 파싱
+	if (!(iss >> degrees >> minutes >> seconds >> direction)) {
+		throw std::invalid_argument("잘못된 형식의 문자열입니다.");
+	}
+
+	// 도분초를 십진수로 변환
+	double dd = degrees + minutes / 60.0 + seconds / 3600.0;
+
+	// 남쪽과 서쪽 방향의 경우 음수로 처리
+	if (direction == 'S' || direction == 'W') {
+		dd *= -1.0;
+	}
+
+	return dd;
+}
+
 class ServerSession : public PacketSession
 {
 public:
@@ -63,12 +84,14 @@ public:
 	}
 };
 
+// Azure : 20.200.230.157
+// 내부 : 127.0.0.1
 int main()
 {
 	ServerPacketHandler::Init();
 
 	ClientServiceRef service = MakeShared<ClientService>(
-		NetAddress(L"20.200.230.157", 6340),
+		NetAddress(L"127.0.0.1", 6340),
 		MakeShared<IocpCore>(),
 		MakeShared<ServerSession>, // TODO : SessionManager 등
 		1);
@@ -180,11 +203,13 @@ int main()
 			}
 			else if (element.key() == "latitude")
 			{
-				element.value() = randomCoordinates.first;
+				element.value() = dmsStrToDd(randomCoordinates.first);
+				//element.value() = randomCoordinates.first;
 			}
 			else if (element.key() == "longitude")
 			{
-				element.value() = randomCoordinates.second;
+				element.value() = dmsStrToDd(randomCoordinates.second);
+				//element.value() = randomCoordinates.second;
 			}
 			else
 			{

@@ -13,7 +13,7 @@ const std::string EDT0001_PacketHandler::DEFAULT_STRING = "0";
 EDT0001_PacketHandler::EDT0001_PacketHandler(BYTE* buffer, int32 len) : _str(buffer, buffer + len)
 {
     SanitizeAndFormatAsJSON(_str);
-}
+ }
 
 EDT0001_PacketHandler::~EDT0001_PacketHandler()
 {
@@ -455,18 +455,18 @@ void EDT0001_PacketHandler::Assign_JsonToPb_Environment(EDT0001::Environment& en
 void EDT0001_PacketHandler::Assign_JsonToPb_AIS(EDT0001::AIS& ais)
 {
         
-    ValidateJson<int32>("SHIPID", DEFAULT_INT);
+     ValidateJson<int32>("SHIPID", DEFAULT_INT);
     int32 value_SHIPID = _EdtJson.at("SHIPID");
     ais.set_shipid(value_SHIPID);
         
     ValidateJson<float>("latitude", DEFAULT_FLOAT);
-    //float value_latitude = _EdtJson.at("latitude");
-    float value_latitude = dmsStrToDd(_EdtJson.at("latitude"));
+    float value_latitude = _EdtJson.at("latitude");
+    //float value_latitude = _EdtJson.at("latitude"));
     ais.set_latitude(value_latitude);
         
     ValidateJson<float>("longitude", DEFAULT_FLOAT);
-    //float value_longitude = _EdtJson.at("longitude");
-    float value_longitude = dmsStrToDd(_EdtJson.at("longitude"));
+    float value_longitude = _EdtJson.at("longitude");
+    //float value_longitude = dmsStrToDd(_EdtJson.at("longitude"));
     ais.set_longitude(value_longitude);
         
     ValidateJson<string>("System_time", DEFAULT_STRING);
