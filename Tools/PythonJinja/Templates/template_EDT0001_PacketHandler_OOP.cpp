@@ -1,24 +1,24 @@
 ﻿#pragma once
 #include "pch.h"
 #include "JsonPacketHandler.h"
-#include "Protocol.pb.h"
+#include "{{package}}.pb.h"
 #include "EDT0001_PacketHandler.h"
 
-const int {{Ship_num}}_PacketHandler::DEFAULT_INT = 0;
-const float {{Ship_num}}_PacketHandler::DEFAULT_FLOAT = 0.0f;
-const double {{Ship_num}}_PacketHandler::DEFAULT_DOUBLE = 0.0;
-const std::string {{Ship_num}}_PacketHandler::DEFAULT_STRING = "0";
+const int {{package}}_PacketHandler::DEFAULT_INT = 0;
+const float {{package}}_PacketHandler::DEFAULT_FLOAT = 0.0f;
+const double {{package}}_PacketHandler::DEFAULT_DOUBLE = 0.0;
+const std::string {{package}}_PacketHandler::DEFAULT_STRING = "0";
 
-{{Ship_num}}_PacketHandler::{{Ship_num}}_PacketHandler(BYTE* buffer, int32 len) : _str(buffer, buffer + len)
+{{package}}_PacketHandler::{{package}}_PacketHandler(BYTE* buffer, int32 len) : _str(buffer, buffer + len)
 {
     SanitizeAndFormatAsJSON(_str);
 }
 
-{{Ship_num}}_PacketHandler::~{{Ship_num}}_PacketHandler()
+{{package}}_PacketHandler::~{{package}}_PacketHandler()
 {
 }
 
-void {{Ship_num}}_PacketHandler::SanitizeAndFormatAsJSON(std::string& str)
+void {{package}}_PacketHandler::SanitizeAndFormatAsJSON(std::string& str)
 {
     str.erase(std::remove(str.begin(), str.end(), '{'), str.end());
     str.erase(std::remove(str.begin(), str.end(), '}'), str.end());
@@ -32,7 +32,7 @@ void {{Ship_num}}_PacketHandler::SanitizeAndFormatAsJSON(std::string& str)
     ParseJsonFromStr();
 }
 
-void {{Ship_num}}_PacketHandler::replaceDegrees(std::string& str)
+void {{package}}_PacketHandler::replaceDegrees(std::string& str)
 {
     // Replace degree symbol with 'd'
     std::string degree_utf8 = "¡Æ";
@@ -52,7 +52,7 @@ void {{Ship_num}}_PacketHandler::replaceDegrees(std::string& str)
     AssignBackslashBeforeQuotes(str);
 }
 
-void {{Ship_num}}_PacketHandler::AssignBackslashBeforeQuotes(OUT std::string& str)
+void {{package}}_PacketHandler::AssignBackslashBeforeQuotes(OUT std::string& str)
 {
     std::string output;
     for (char c : str) {
@@ -64,7 +64,7 @@ void {{Ship_num}}_PacketHandler::AssignBackslashBeforeQuotes(OUT std::string& st
     str.swap(output);
 }
 
-std::wstring {{Ship_num}}_PacketHandler::stringToWString(const std::string& str)
+std::wstring {{package}}_PacketHandler::stringToWString(const std::string& str)
 {
     int len = MultiByteToWideChar(CP_UTF8, 0, str.c_str(), -1, nullptr, 0);
     if (len == 0) return L"";  // º¯È¯ ½ÇÆÐ
@@ -74,7 +74,7 @@ std::wstring {{Ship_num}}_PacketHandler::stringToWString(const std::string& str)
     return wstring;
 }
 
-bool {{Ship_num}}_PacketHandler::ParseJsonFromStr()
+bool {{package}}_PacketHandler::ParseJsonFromStr()
 {
 
     try {
@@ -114,7 +114,7 @@ bool {{Ship_num}}_PacketHandler::ParseJsonFromStr()
 
 
 template<typename T>
-void {{Ship_num}}_PacketHandler::ValidateJson(const std::string& key, const T& defaultValue)
+void {{package}}_PacketHandler::ValidateJson(const std::string& key, const T& defaultValue)
 {
     try {
         _EdtJson.at(key).get<T>();
@@ -134,7 +134,7 @@ void {{Ship_num}}_PacketHandler::ValidateJson(const std::string& key, const T& d
     }
 }
 
-void {{Ship_num}}_PacketHandler::Assign_JsonToPbALL()
+void {{package}}_PacketHandler::Assign_JsonToPbALL()
 { 
   {% for table in tables-%}
     Assign_JsonToPb_{{table['table_name']}}(_{{table['table_name']|lower}});
@@ -143,7 +143,7 @@ void {{Ship_num}}_PacketHandler::Assign_JsonToPbALL()
 
 //AssignJsonToPb//
 {%- for table in tables%}
-void {{Ship_num}}_PacketHandler::Assign_JsonToPb_{{table['table_name']}}(Protocol::{{table['table_name']}}& {{table['table_name'] | lower}})
+void {{package}}_PacketHandler::Assign_JsonToPb_{{table['table_name']}}({{package}}::{{table['table_name']}}& {{table['table_name'] | lower}})
 { 
         {%- for column in table['columns'] %}
         {%- if not loop.first%}
@@ -167,12 +167,12 @@ void {{Ship_num}}_PacketHandler::Assign_JsonToPb_{{table['table_name']}}(Protoco
 {% endfor%}
 
 {% for table in tables -%}
-Protocol::{{table['table_name']}} {{Ship_num}}_PacketHandler::get_{{table['table_name']}}() {return _{{table['table_name']|lower}};}
+{{package}}::{{table['table_name']}} {{package}}_PacketHandler::get_{{table['table_name']}}() {return _{{table['table_name']|lower}};}
 {% endfor %}
 
 
 //SendAllToDb//
-void {{Ship_num}}_PacketHandler::Insert_AllPbToDb()
+void {{package}}_PacketHandler::Insert_AllPbToDb()
 {
     {%- for table in tables%}
     Insert_{{table['table_name']}}_ToDb(_{{table['table_name'] | lower}});
@@ -180,7 +180,7 @@ void {{Ship_num}}_PacketHandler::Insert_AllPbToDb()
 }
 
 {% for table in tables%}
-void {{Ship_num}}_PacketHandler::Insert_{{table['table_name']}}_ToDb(Protocol::{{table['table_name']}} {{table['table_name']|lower}})
+void {{package}}_PacketHandler::Insert_{{table['table_name']}}_ToDb({{package}}::{{table['table_name']}} {{table['table_name']|lower}})
 {
     auto query = L"INSERT INTO [dbo].[{{table['table_name']}}]"
         L"("

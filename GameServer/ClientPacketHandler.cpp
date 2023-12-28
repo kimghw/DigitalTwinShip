@@ -18,15 +18,13 @@ bool Handle_PKT_TEST(PacketSessionRef& session, BYTE* buffer, int32 len)
 	// 만약 스레드를 쓰고 나와 버린다면 이건 동적할당 + 스마트 포인터로 해야 겠네요.
 	EDT0001_PacketHandler pkt(buffer, len);
 
-	START_TIMER
 	pkt.Assign_JsonToPbALL(); 
-	END_TIMER("Assign_JsonToPbALL")
 
-	//pkt.Insert_AllPbToDb();
-	START_TIMER
-	std::thread dbThread(&EDT0001_PacketHandler::Insert_AllPbToDb, &pkt);
-	dbThread.detach();
-	END_TIMER("pkt.Insert_AllPbToDb()")
+
+	pkt.Insert_AllPbToDb();
+
+
+
 
 	return false;
 }
@@ -46,6 +44,81 @@ bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len)
 	pkt.Assign_JsonToPbALL();
 	pkt.Insert_AllPbToDb();
 
+	return false;
+}
+
+bool Handle_MRSchema(PacketSessionRef& session, BYTE* buffer, int32 len)
+{
+	return false;
+}
+
+bool Handle_Battery(PacketSessionRef& session, EDT0001::Battery& pkt)
+{
+	return false;
+}
+
+bool Handle_Battery_Pack(PacketSessionRef& session, EDT0001::Battery_Pack& pkt)
+{
+	return false;
+}
+
+bool Handle_BAT_MODULE_0(PacketSessionRef& session, EDT0001::BAT_MODULE_0& pkt)
+{
+	return false;
+}
+
+bool Handle_BAT_MODULE_1(PacketSessionRef& session, EDT0001::BAT_MODULE_1& pkt)
+{
+	return false;
+}
+
+bool Handle_BAT_MODULE_2(PacketSessionRef& session, EDT0001::BAT_MODULE_2& pkt)
+{
+	return false;
+}
+
+bool Handle_BAT_MODULE_3(PacketSessionRef& session, EDT0001::BAT_MODULE_3& pkt)
+{
+	return false;
+}
+
+bool Handle_Environment(PacketSessionRef& session, EDT0001::Environment& pkt)
+{
+	return false;
+}
+
+bool Handle_AIS(PacketSessionRef& session, EDT0001::AIS& pkt)
+{
+	return false;
+}
+
+bool Handle_System_Time(PacketSessionRef& session, EDT0001::System_Time& pkt)
+{
+	return false;
+}
+
+bool Handle_MOTOR(PacketSessionRef& session, EDT0001::MOTOR& pkt)
+{
+	return false;
+}
+
+bool Handle_INVERTER(PacketSessionRef& session, EDT0001::INVERTER& pkt)
+{
+	return false;
+}
+
+bool Handle_Network(PacketSessionRef& session, EDT0001::Network& pkt)
+{
+	return false;
+}
+
+bool Handle_SaveAsBytes(PacketSessionRef& session, EDT0001::SaveAsBytes& pkt)
+{
+	return false;
+}
+
+bool Handle_C_Position(PacketSessionRef& session, MRSchema::C_Position& pkt)
+{
 	return false;
 }
 
@@ -181,60 +254,4 @@ bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len)
 //}
 
 
-
-
-bool Handle_Battery(PacketSessionRef& session, Protocol::Battery& pkt)
-{
-	return false;
-}
-
-bool Handle_Battery_Pack(PacketSessionRef& session, Protocol::Battery_Pack& pkt)
-{
-	return false;
-}
-
-bool Handle_BAT_MODULE_0(PacketSessionRef& session, Protocol::BAT_MODULE_0& pkt)
-{
-	return false;
-}
-
-bool Handle_BAT_MODULE_1(PacketSessionRef& session, Protocol::BAT_MODULE_1& pkt)
-{
-	return false;
-}
-
-bool Handle_BAT_MODULE_2(PacketSessionRef& session, Protocol::BAT_MODULE_2& pkt)
-{
-	return false;
-}
-
-bool Handle_BAT_MODULE_3(PacketSessionRef& session, Protocol::BAT_MODULE_3& pkt)
-{
-	return false;
-}
-
-bool Handle_Environment(PacketSessionRef& session, Protocol::Environment& pkt)
-{
-	return false;
-}
-
-bool Handle_AIS(PacketSessionRef& session, Protocol::AIS& pkt)
-{
-	return false;
-}
-
-bool Handle_System_Time(PacketSessionRef& session, Protocol::System_Time& pkt)
-{
-	return false;
-}
-
-bool Handle_MOTOR(PacketSessionRef& session, Protocol::MOTOR& pkt)
-{
-	return false;
-}
-
-bool Handle_INVERTER(PacketSessionRef& session, Protocol::INVERTER& pkt)
-{
-	return false;
-}
 

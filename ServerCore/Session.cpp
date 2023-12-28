@@ -3,6 +3,8 @@
 #include "SocketUtils.h"
 #include "Service.h"
 
+void PacketHeaderByteSwap(BYTE* byte);
+
 /*--------------
 	Session
 ---------------*/
@@ -235,22 +237,26 @@ void Session::ProcessDisconnect()
 void Session::ProcessRecv(int32 numOfBytes)
 {
 	_recvEvent.owner = nullptr; // RELEASE_REF
-	static int32 receivedData = 0;
-	static BYTE* pinitBuffer = nullptr;
-	static int16 initHeaderSize = 0;
+	int32 unprocessedData = 0;
+	BYTE* pinitBuffer = nullptr;
+	static int16 initHeaderSize = 0; //
 	static bool accum = false;
-
-	char* header1 = reinterpret_cast<char*>(_recvBuffer.WritePos());
-	std::swap(*header1, *(header1 + 1));
-	std::swap(*(header1 + 2), *(header1 + 3));
-	PacketHeader* header = reinterpret_cast<PacketHeader*>(_recvBuffer.WritePos());
 
 	if (accum == false)
 	{
-		pinitBuffer = _recvBuffer.ReadPos();
+
+		//PacketHeaderByteSwap(_recvBuffer.WritePos());
+		PacketHeader* header = reinterpret_cast<PacketHeader*>(_recvBuffer.WritePos());
+
+		pinitBuffer    = _recvBuffer.WritePos();
 		initHeaderSize = header->size;
-		receivedData = 0;
 	}
+	else if (accum == true)
+	{
+		unprocessedData = _recvBuffer.DataSize();
+		_recvBuffer.OnWrite(numOfBytes);
+	}
+
 
 	if (numOfBytes == 0)
 	{
@@ -258,48 +264,74 @@ void Session::ProcessRecv(int32 numOfBytes)
 		return;
 	}
 
-	if (numOfBytes == initHeaderSize)
+	if (numOfBytes == initHeaderSize && accum == false)
 	{
-		receivedData = numOfBytes;
+		//accum = false;
+		_recvBuffer.OnWrite(numOfBytes);
 	}
-	else if (numOfBytes < initHeaderSize && accum == false)
+	else if (numOfBytes != initHeaderSize && accum == false)
 	{
-		
-		if (true)
-		{
-
-		}
+		// 보낸 사이즈보다 들어온 사이즈가
 		// first partial data comming
+		/*	const char* partialBuf = reinterpret_cast<const char*>(_recvBuffer.WritePos());
+		int32 length = strlen(partialBuf);
+
+		if (length > numOfBytes)
+		{
+			numOfBytes = initHeaderSize;
+		}*/
+		
+		if (_recvBuffer.OnWrite(numOfBytes) == false)
+		{
+			Disconnect(L"OnWrite Overflow");
+			return;
+		}
+
+		if (_recvBuffer.DataSize() < initHeaderSize)
+		{
+			accum = true;
+			RegisterRecv();
+			return;
+		}
+		//numOfBytes = initHeaderSize;
+	}
+	else if (_recvBuffer.DataSize() == initHeaderSize && accum == true)
+	{
+		// 누적된 패킷사이즈가 헤더의 사이즈랑 같음
+		accum = false;
+
+	}
+	else if (_recvBuffer.DataSize() > initHeaderSize && accum == true)
+	{
+		// 누적된 패킷사이즈가 헤더의 사이즈랑 같음
 		accum = true;
-		receivedData += numOfBytes;
+
+	}
+	else if (_recvBuffer.DataSize() < initHeaderSize && accum == true)
+	{
+		accum = true;
 		RegisterRecv();
 		return;
 	}
-	else if (receivedData == initHeaderSize)
-	{
-		accum = false;
-		receivedData += numOfBytes;
-	}
-
-
-	if (_recvBuffer.OnWrite(receivedData) == false)
-	{
-		Disconnect(L"OnWrite Overflow");
-		return;
-	}
-
+	
 	int32 dataSize = _recvBuffer.DataSize();
-	int32 processLen = OnRecv(_recvBuffer.ReadPos(), dataSize); // ÄÁÅÙÃ÷ ÄÚµå¿¡¼­ ÀçÁ¤ÀÇ
-	if (processLen < 0 || dataSize < processLen || _recvBuffer.OnRead(processLen) == false)
+	int32 processLen = OnRecv(_recvBuffer.ReadPos(), dataSize);
+	if (processLen < 0 || dataSize<processLen || _recvBuffer.OnRead(processLen) == false)
 	{
 		Disconnect(L"OnRead Overflow");
 		return;
+	}
+
+	if ( processLen < dataSize )
+	{
+		accum = true;
 	}
 
 	_recvBuffer.Clean();
 
 	// ¼ö½Å µî·Ï
 	RegisterRecv();
+
 }
 
 void Session::ProcessSend(int32 numOfBytes)
@@ -358,6 +390,7 @@ int32 PacketSession::OnRecv(BYTE* buffer, int32 len)
 	
 	while (true)
 	{
+
 		int32 dataSize = len - processLen;
 		// ÃÖ¼ÒÇÑ Çì´õ´Â ÆÄ½ÌÇÒ ¼ö ÀÖ¾î¾ß ÇÑ´Ù
 		if (dataSize < sizeof(PacketHeader))
@@ -365,16 +398,47 @@ int32 PacketSession::OnRecv(BYTE* buffer, int32 len)
 
 		PacketHeader header = *(reinterpret_cast<PacketHeader*>(&buffer[processLen]));
 		// Çì´õ¿¡ ±â·ÏµÈ ÆÐÅ¶ Å©±â¸¦ ÆÄ½ÌÇÒ ¼ö ÀÖ¾î¾ß ÇÑ´Ù
-		if (dataSize < header.size)
-			break;
+		if (dataSize < header.size) break;
 		
-		// The second factor should switch to header.size
-		OnRecvPacket(&buffer[processLen], dataSize);
 
-		processLen += dataSize;
-		//processLen += header.size;
+			// The second factor should switch to header.size
+		OnRecvPacket(&buffer[processLen], header.size);
+		int leftData = dataSize - header.size;
+		processLen += header.size;
+
+		// 남은 데이터 크기 계산
+		if ( leftData > 0 && processLen > 0 )
+		{
+			PacketHeaderByteSwap(buffer + processLen);
+			header = *(reinterpret_cast<PacketHeader*>(&buffer[processLen]));
+		}
+
+		// 데이터 조각인가?
+		if (leftData < header.size)
+			break;
 	}
 
 	return processLen;
+}
+
+void PacketHeaderByteSwap(BYTE* byte)
+{
+	std::swap(*byte, *(byte + 1));
+	std::swap(*(byte + 2), *(byte + 3));
+}
+
+int32 ValidateNumOfByte(BYTE* byte, int32 numOfBytes)
+{
+	int32 length = 0;
+	while (*(byte++) != 0x00)
+	{
+		length++;
+		if (length = numOfBytes )
+		{
+			numOfBytes = length;
+			break;
+		}
+	}
+	return length;
 }
 

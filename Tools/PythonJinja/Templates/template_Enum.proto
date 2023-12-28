@@ -1,0 +1,14 @@
+syntax = "proto3";
+package  {{package}};
+
+{% for idx in range(combined[1]|length) %}
+enum {{ combined[1][idx] }}Enum {
+  default_{{ idx }} = 0;
+  {%- set ns = namespace(value=combined[0][idx]) -%}
+  {% for key in combined[2][idx] %}
+  {{ key }} = {{ ns.value }};
+  {%- set ns.value = ns.value + 1 %}
+  {%- endfor %}
+}
+{% endfor %}
+

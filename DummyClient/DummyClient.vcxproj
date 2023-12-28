@@ -24,6 +24,7 @@
     <ProjectGuid>{bb44ae35-8484-4283-b63b-ceac19cb6242}</ProjectGuid>
     <RootNamespace>DummyClient</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.22621.0</WindowsTargetPlatformVersion>
+    <ProjectName>Client</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -159,9 +160,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Protocol.pb.cc">
+    <ClCompile Include="EDT0001.pb.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
-      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="enum.pb.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
+    <ClCompile Include="MRSchema.pb.cc">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="ServerPacketHandler.cpp" />
     <ClCompile Include="DummyClient.cpp" />
@@ -174,7 +183,9 @@
     <ClCompile Include="TestJson.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Protocol.pb.h" />
+    <ClInclude Include="EDT0001.pb.h" />
+    <ClInclude Include="enum.pb.h" />
+    <ClInclude Include="MRSchema.pb.h" />
     <ClInclude Include="ServerPacketHandler.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="TestJson.h" />
@@ -183,7 +194,6 @@
     <Xml Include="PDL.xml" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\protobufc\Protocol.proto" />
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

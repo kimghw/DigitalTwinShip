@@ -1,5 +1,5 @@
 syntax = "proto3";
-package Protocol;
+package  {{ package }};
 
 {% for table in tables %}
 message {{ table.table_name }}

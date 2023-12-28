@@ -1,10 +1,10 @@
 syntax = "proto3";
-package Protocol;
+package  EDT0001;
 
 
 message Battery
 {
-    int32 BatteryPK = 1;
+    int32 Battery_PK = 1;
     int32 BAT_BPU_NEGATIVE_CONTACTOR = 2;
     int32 BAT_BPU_POSITIVE_CONTACTOR = 3;
     int32 BAT_BPU_PRE_CONTACTOR = 4;
@@ -15,7 +15,7 @@ message Battery
 
 message Battery_Pack
 {
-    int32 Battery_Pack = 1;
+    int32 Battery_PK = 1;
     int32 BAT_PACK_CURRENT = 2;
     int32 BAT_PACK_SOC = 3;
     int32 BAT_PACK_VOLTAGE = 4;
@@ -32,7 +32,7 @@ message Battery_Pack
 
 message BAT_MODULE_0
 {
-    int32 BatteryMd_0 = 1;
+    int32 BatteryMd_PK = 1;
     int32 BAT_MODULE_CELL0_VOL = 2;
     int32 BAT_MODULE_CELL1_VOL = 3;
     int32 BAT_MODULE_CELL2_VOL = 4;
@@ -50,7 +50,7 @@ message BAT_MODULE_0
 
 message BAT_MODULE_1
 {
-    int32 BatteryMd_1 = 1;
+    int32 BatteryMd_1_PK = 1;
     int32 BAT_MODULE1_CELL0_VOL = 2;
     int32 BAT_MODULE1_CELL1_VOL = 3;
     int32 BAT_MODULE1_CELL2_VOL = 4;
@@ -68,7 +68,7 @@ message BAT_MODULE_1
 
 message BAT_MODULE_2
 {
-    int32 BatteryMd_2 = 1;
+    int32 BatteryMd_2_PK = 1;
     int32 BAT_MODULE2_CELL0_VOL = 2;
     int32 BAT_MODULE2_CELL1_VOL = 3;
     int32 BAT_MODULE2_CELL2_VOL = 4;
@@ -86,7 +86,7 @@ message BAT_MODULE_2
 
 message BAT_MODULE_3
 {
-    int32 BatteryMd_3 = 1;
+    int32 BatteryMd_3_PK = 1;
     int32 BAT_MODULE3_CELL0_VOL = 2;
     int32 BAT_MODULE3_CELL1_VOL = 3;
     int32 BAT_MODULE3_CELL2_VOL = 4;
@@ -106,14 +106,15 @@ message Environment
 message AIS
 {
     int32 AIS_PK = 1;
-    string latitude = 2;
-    string longitude = 3;
-    string System_time = 4;
+    int32 SHIPID = 2;
+    float latitude = 3;
+    float longitude = 4;
+    string System_time = 5;
 }
 
 message System_Time
 {
-    int32 Times = 1;
+    int32 Times_PK = 1;
     string System_time = 2;
 }
 
@@ -141,4 +142,18 @@ message INVERTER
     int32 INV_POWER = 11;
     int32 INV_OUTPUT_VOLTAGE = 12;
     string System_time = 13;
+}
+
+message Network
+{
+    int32 NetWork_PK = 1;
+    int32 Status_Network = 2;
+    string System_time = 3;
+}
+
+message SaveAsBytes
+{
+    int32 SaveAsBytes_PK = 1;
+    int32 Bytes = 2;
+    string System_time = 3;
 }

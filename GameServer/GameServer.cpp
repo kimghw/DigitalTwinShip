@@ -10,14 +10,16 @@
 #include "DBConnectionPool.h"
 #include "DBBind.h"
 #include "MakeTableQuery.h"
+#include "MRSchema.pb.h"
+#include "EDT0001.pb.h"
+#include "enum.pb.h"
 
 int main()
 {
 	//Initial value is internal loop back ip
-	serverConf conf = { L"127.0.0.1", 6340, 10 };
+	ServerIpInfo conf = { L"127.0.0.1", 6340, 10 };
 
-	JsonToConf::Init("ServerConfig.json", conf);
-
+	ServerConf::Init("ServerConfig.json", conf);
 	MakeTableQuery::Init();
 
  	ClientPacketHandler::Init();
@@ -44,10 +46,23 @@ int main()
 	while (true)
 	{
 		wcout << "Server is running..." << endl;
-		this_thread::sleep_for(10s);
+		this_thread::sleep_for(1s);
+		
 
-
+		
 	}
 
 	GThreadManager->Join();
 }
+
+//string strLat = _EdtJson.at("latitude");
+//float value_latitude = dmsStrToDd(strLat);
+////ValidateJson<float>("latitude", DEFAULT_FLOAT);
+////float value_latitude = _EdtJson.at("latitude");
+//ais.set_latitude(value_latitude);
+//
+//string strLon = _EdtJson.at("longitude");
+//float value_longitude = dmsStrToDd(strLon);
+////ValidateJson<float>("longitude", DEFAULT_FLOAT);
+////float value_longitude = _EdtJson.at("longitude");
+//ais.set_longitude(value_longitude);

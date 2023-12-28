@@ -1,0 +1,11 @@
+syntax = "proto3";
+package  MRSchema;
+
+
+message C_Position
+{
+    string ID = 1;
+    float XPOS = 2;
+    float YPOS = 3;
+    float ZPOS = 4;
+}

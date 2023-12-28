@@ -21,10 +21,16 @@
     <ClCompile Include="ServerPacketHandler.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="Protocol.pb.cc">
+    <ClCompile Include="TestJson.cpp" />
+    <ClCompile Include="EDT0001.pb.cc">
       <Filter>Proto</Filter>
     </ClCompile>
-    <ClCompile Include="TestJson.cpp" />
+    <ClCompile Include="enum.pb.cc">
+      <Filter>Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="MRSchema.pb.cc">
+      <Filter>Proto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -33,10 +39,16 @@
     <ClInclude Include="ServerPacketHandler.h">
       <Filter>Main</Filter>
     </ClInclude>
-    <ClInclude Include="Protocol.pb.h">
+    <ClInclude Include="TestJson.h" />
+    <ClInclude Include="EDT0001.pb.h">
       <Filter>Proto</Filter>
     </ClInclude>
-    <ClInclude Include="TestJson.h" />
+    <ClInclude Include="enum.pb.h">
+      <Filter>Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="MRSchema.pb.h">
+      <Filter>Proto</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Xml Include="PDL.xml">
@@ -44,9 +56,6 @@
     </Xml>
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\protobufc\Protocol.proto">
-      <Filter>Proto</Filter>
-    </None>
     <None Include="packages.config" />
   </ItemGroup>
 </Project>

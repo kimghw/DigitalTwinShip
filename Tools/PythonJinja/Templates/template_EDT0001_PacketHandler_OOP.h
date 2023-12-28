@@ -3,13 +3,14 @@
 #include "pch.h"
 #include "DBConnectionPool.h"
 #include "Protocol.pb.h"
+#include "enum.pb.h"
 
 
-class {{Ship_num}}_PacketHandler
+class {{package}}_PacketHandler
 {
 public:
-	{{Ship_num}}_PacketHandler(BYTE* buffer, int32 len); // 생성자
-	~{{Ship_num}}_PacketHandler(); // 소멸자
+	{{package}}_PacketHandler(BYTE* buffer, int32 len); // 생성자
+	~{{package}}_PacketHandler(); // 소멸자
 
 private:
 	void SanitizeAndFormatAsJSON(std::string& str);
@@ -26,20 +27,20 @@ public:
 	//StoreTheJsoninProtobuf
 	void Assign_JsonToPbALL();
 	{% for table in tables-%}
-	void Assign_JsonToPb_{{table['table_name']}}(Protocol::{{table['table_name']}}& {{table['table_name']|lower}});
+	void Assign_JsonToPb_{{table['table_name']}}({{package}}::{{table['table_name']}}& {{table['table_name']|lower}});
 	{% endfor%}
 
 public:
 	//Get the value
 	{% for table in tables -%}
-	Protocol::{{table['table_name']}} get_{{table['table_name']}}();
+	{{package}}::{{table['table_name']}} get_{{table['table_name']}}();
 	{% endfor -%}
 
 public:
 	//Send to Database
 	void Insert_AllPbToDb();
 	{% for table in tables-%}
-	void Insert_{{table['table_name']}}_ToDb(Protocol::{{table['table_name']}} {{table['table_name']|lower}});
+	void Insert_{{table['table_name']}}_ToDb({{package}}::{{table['table_name']}} {{table['table_name']|lower}});
 	{% endfor%}
 
 
@@ -57,7 +58,7 @@ private:
 
 public:
 {% for table in tables%}
-	Protocol::{{table['table_name']}} _{{table['table_name']|lower}};
+	{{package}}::{{table['table_name']}} _{{table['table_name']|lower}};
 {%- endfor%}
 };
 

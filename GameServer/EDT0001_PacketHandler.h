@@ -2,8 +2,8 @@
 #include "DBBind.h"
 #include "pch.h"
 #include "DBConnectionPool.h"
-#include "EDT0001.pb.h"
-
+#include "Protocol.pb.h"
+#include "enum.pb.h"
 
 
 class EDT0001_PacketHandler
@@ -26,48 +26,52 @@ private:
 public:
 	//StoreTheJsoninProtobuf
 	void Assign_JsonToPbALL();
-	void Assign_JsonToPb_Battery(Protocol::Battery& battery);
-	void Assign_JsonToPb_Battery_Pack(Protocol::Battery_Pack& battery_pack);
-	void Assign_JsonToPb_BAT_MODULE_0(Protocol::BAT_MODULE_0& bat_module_0);
-	void Assign_JsonToPb_BAT_MODULE_1(Protocol::BAT_MODULE_1& bat_module_1);
-	void Assign_JsonToPb_BAT_MODULE_2(Protocol::BAT_MODULE_2& bat_module_2);
-	void Assign_JsonToPb_BAT_MODULE_3(Protocol::BAT_MODULE_3& bat_module_3);
-	void Assign_JsonToPb_Environment(Protocol::Environment& environment);
-	void Assign_JsonToPb_AIS(Protocol::AIS& ais);
-	void Assign_JsonToPb_System_Time(Protocol::System_Time& system_time);
-	void Assign_JsonToPb_MOTOR(Protocol::MOTOR& motor);
-	void Assign_JsonToPb_INVERTER(Protocol::INVERTER& inverter);
+	void Assign_JsonToPb_Battery(EDT0001::Battery& battery);
+	void Assign_JsonToPb_Battery_Pack(EDT0001::Battery_Pack& battery_pack);
+	void Assign_JsonToPb_BAT_MODULE_0(EDT0001::BAT_MODULE_0& bat_module_0);
+	void Assign_JsonToPb_BAT_MODULE_1(EDT0001::BAT_MODULE_1& bat_module_1);
+	void Assign_JsonToPb_BAT_MODULE_2(EDT0001::BAT_MODULE_2& bat_module_2);
+	void Assign_JsonToPb_BAT_MODULE_3(EDT0001::BAT_MODULE_3& bat_module_3);
+	void Assign_JsonToPb_Environment(EDT0001::Environment& environment);
+	void Assign_JsonToPb_AIS(EDT0001::AIS& ais);
+	void Assign_JsonToPb_System_Time(EDT0001::System_Time& system_time);
+	void Assign_JsonToPb_MOTOR(EDT0001::MOTOR& motor);
+	void Assign_JsonToPb_INVERTER(EDT0001::INVERTER& inverter);
+	void Assign_JsonToPb_Network(EDT0001::Network& network);
+	void Assign_JsonToPb_SaveAsBytes(EDT0001::SaveAsBytes& saveasbytes);
 	
 
 public:
 	//Get the value
-	Protocol::Battery get_Battery();
-	Protocol::Battery_Pack get_Battery_Pack();
-	Protocol::BAT_MODULE_0 get_BAT_MODULE_0();
-	Protocol::BAT_MODULE_1 get_BAT_MODULE_1();
-	Protocol::BAT_MODULE_2 get_BAT_MODULE_2();
-	Protocol::BAT_MODULE_3 get_BAT_MODULE_3();
-	Protocol::Environment get_Environment();
-	Protocol::AIS get_AIS();
-	Protocol::System_Time get_System_Time();
-	Protocol::MOTOR get_MOTOR();
-	Protocol::INVERTER get_INVERTER();
+	EDT0001::Battery get_Battery();
+	EDT0001::Battery_Pack get_Battery_Pack();
+	EDT0001::BAT_MODULE_0 get_BAT_MODULE_0();
+	EDT0001::BAT_MODULE_1 get_BAT_MODULE_1();
+	EDT0001::BAT_MODULE_2 get_BAT_MODULE_2();
+	EDT0001::BAT_MODULE_3 get_BAT_MODULE_3();
+	EDT0001::Environment get_Environment();
+	EDT0001::AIS get_AIS();
+	EDT0001::System_Time get_System_Time();
+	EDT0001::MOTOR get_MOTOR();
+	EDT0001::INVERTER get_INVERTER();
+	EDT0001::Network get_Network();
+	EDT0001::SaveAsBytes get_SaveAsBytes();
 	public:
 	//Send to Database
 	void Insert_AllPbToDb();
-	void Insert_Battery_ToDb(Protocol::Battery battery);
-	void Insert_Battery_Pack_ToDb(Protocol::Battery_Pack battery_pack);
-	void Insert_BAT_MODULE_0_ToDb(Protocol::BAT_MODULE_0 bat_module_0);
-	void Insert_BAT_MODULE_1_ToDb(Protocol::BAT_MODULE_1 bat_module_1);
-	void Insert_BAT_MODULE_2_ToDb(Protocol::BAT_MODULE_2 bat_module_2);
-	void Insert_BAT_MODULE_3_ToDb(Protocol::BAT_MODULE_3 bat_module_3);
-	void Insert_Environment_ToDb(Protocol::Environment environment);
-	void Insert_AIS_ToDb(Protocol::AIS ais);
-	void Insert_System_Time_ToDb(Protocol::System_Time system_time);
-	void Insert_MOTOR_ToDb(Protocol::MOTOR motor);
-	void Insert_INVERTER_ToDb(Protocol::INVERTER inverter);
-
-	void Insert_Insert_ALLPbToDbAsArray();
+	void Insert_Battery_ToDb(EDT0001::Battery battery);
+	void Insert_Battery_Pack_ToDb(EDT0001::Battery_Pack battery_pack);
+	void Insert_BAT_MODULE_0_ToDb(EDT0001::BAT_MODULE_0 bat_module_0);
+	void Insert_BAT_MODULE_1_ToDb(EDT0001::BAT_MODULE_1 bat_module_1);
+	void Insert_BAT_MODULE_2_ToDb(EDT0001::BAT_MODULE_2 bat_module_2);
+	void Insert_BAT_MODULE_3_ToDb(EDT0001::BAT_MODULE_3 bat_module_3);
+	void Insert_Environment_ToDb(EDT0001::Environment environment);
+	void Insert_AIS_ToDb(EDT0001::AIS ais);
+	void Insert_System_Time_ToDb(EDT0001::System_Time system_time);
+	void Insert_MOTOR_ToDb(EDT0001::MOTOR motor);
+	void Insert_INVERTER_ToDb(EDT0001::INVERTER inverter);
+	void Insert_Network_ToDb(EDT0001::Network network);
+	void Insert_SaveAsBytes_ToDb(EDT0001::SaveAsBytes saveasbytes);
 	
 
 
@@ -85,17 +89,19 @@ private:
 
 public:
 
-	Protocol::Battery _battery;
-	Protocol::Battery_Pack _battery_pack;
-	Protocol::BAT_MODULE_0 _bat_module_0;
-	Protocol::BAT_MODULE_1 _bat_module_1;
-	Protocol::BAT_MODULE_2 _bat_module_2;
-	Protocol::BAT_MODULE_3 _bat_module_3;
-	Protocol::Environment _environment;
-	Protocol::AIS _ais;
-	Protocol::System_Time _system_time;
-	Protocol::MOTOR _motor;
-	Protocol::INVERTER _inverter;
+	EDT0001::Battery _battery;
+	EDT0001::Battery_Pack _battery_pack;
+	EDT0001::BAT_MODULE_0 _bat_module_0;
+	EDT0001::BAT_MODULE_1 _bat_module_1;
+	EDT0001::BAT_MODULE_2 _bat_module_2;
+	EDT0001::BAT_MODULE_3 _bat_module_3;
+	EDT0001::Environment _environment;
+	EDT0001::AIS _ais;
+	EDT0001::System_Time _system_time;
+	EDT0001::MOTOR _motor;
+	EDT0001::INVERTER _inverter;
+	EDT0001::Network _network;
+	EDT0001::SaveAsBytes _saveasbytes;
 };
 
 //struct 정의

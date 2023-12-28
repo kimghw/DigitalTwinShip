@@ -48,6 +48,12 @@
     <ClCompile Include="EDT0001.pb.cc">
       <Filter>Proto</Filter>
     </ClCompile>
+    <ClCompile Include="enum.pb.cc">
+      <Filter>Proto</Filter>
+    </ClCompile>
+    <ClCompile Include="MRSchema.pb.cc">
+      <Filter>Proto</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
@@ -68,15 +74,21 @@
     <ClInclude Include="ClientPacketHandler.h">
       <Filter>PacketHandler</Filter>
     </ClInclude>
+    <ClInclude Include="Tools.h">
+      <Filter>PacketHandler</Filter>
+    </ClInclude>
     <ClInclude Include="EDT0001.pb.h">
+      <Filter>Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="enum.pb.h">
+      <Filter>Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="MRSchema.pb.h">
       <Filter>Proto</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
-    <None Include="ServerConfig.json">
-      <Filter>ExternalFiles</Filter>
-    </None>
     <None Include="DbSchema.json">
       <Filter>ExternalFiles</Filter>
     </None>
@@ -84,6 +96,21 @@
       <Filter>Proto</Filter>
     </None>
     <None Include="..\Tools\Protobuf\Protocol.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="ServerConfig.json">
+      <Filter>Main</Filter>
+    </None>
+    <None Include="..\Tools\Protobuf\protobuf.bat">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="MRSchema.json">
+      <Filter>ExternalFiles</Filter>
+    </None>
+    <None Include="..\Tools\Protobuf\enum.proto">
+      <Filter>Proto</Filter>
+    </None>
+    <None Include="..\Tools\Protobuf\MRSchema.proto">
       <Filter>Proto</Filter>
     </None>
   </ItemGroup>

@@ -2,8 +2,6 @@
 // source: EDT0001.proto
 
 #include "EDT0001.pb.h"
-#include "pch.h"
-
 
 #include <algorithm>
 
@@ -22,11 +20,11 @@ PROTOBUF_PRAGMA_INIT_SEG
 namespace _pb = ::PROTOBUF_NAMESPACE_ID;
 namespace _pbi = _pb::internal;
 
-namespace Protocol {
+namespace EDT0001 {
 PROTOBUF_CONSTEXPR Battery::Battery(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.batterypk_)*/0
+  , /*decltype(_impl_.battery_pk_)*/0
   , /*decltype(_impl_.bat_bpu_negative_contactor_)*/0
   , /*decltype(_impl_.bat_bpu_positive_contactor_)*/0
   , /*decltype(_impl_.bat_bpu_pre_contactor_)*/0
@@ -45,7 +43,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR Battery_Pack::Battery_Pack(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.battery_pack_)*/0
+  , /*decltype(_impl_.battery_pk_)*/0
   , /*decltype(_impl_.bat_pack_current_)*/0
   , /*decltype(_impl_.bat_pack_soc_)*/0
   , /*decltype(_impl_.bat_pack_voltage_)*/0
@@ -70,7 +68,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR BAT_MODULE_0::BAT_MODULE_0(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.batterymd_0_)*/0
+  , /*decltype(_impl_.batterymd_pk_)*/0
   , /*decltype(_impl_.bat_module_cell0_vol_)*/0
   , /*decltype(_impl_.bat_module_cell1_vol_)*/0
   , /*decltype(_impl_.bat_module_cell2_vol_)*/0
@@ -96,7 +94,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR BAT_MODULE_1::BAT_MODULE_1(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.batterymd_1_)*/0
+  , /*decltype(_impl_.batterymd_1_pk_)*/0
   , /*decltype(_impl_.bat_module1_cell0_vol_)*/0
   , /*decltype(_impl_.bat_module1_cell1_vol_)*/0
   , /*decltype(_impl_.bat_module1_cell2_vol_)*/0
@@ -122,7 +120,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR BAT_MODULE_2::BAT_MODULE_2(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.batterymd_2_)*/0
+  , /*decltype(_impl_.batterymd_2_pk_)*/0
   , /*decltype(_impl_.bat_module2_cell0_vol_)*/0
   , /*decltype(_impl_.bat_module2_cell1_vol_)*/0
   , /*decltype(_impl_.bat_module2_cell2_vol_)*/0
@@ -147,7 +145,7 @@ struct BAT_MODULE_2DefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 BAT_MODULE_2DefaultTypeInternal _BAT_MODULE_2_default_instance_;
 PROTOBUF_CONSTEXPR BAT_MODULE_3::BAT_MODULE_3(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.batterymd_3_)*/0
+    /*decltype(_impl_.batterymd_3_pk_)*/0
   , /*decltype(_impl_.bat_module3_cell0_vol_)*/0
   , /*decltype(_impl_.bat_module3_cell1_vol_)*/0
   , /*decltype(_impl_.bat_module3_cell2_vol_)*/0
@@ -182,10 +180,11 @@ struct EnvironmentDefaultTypeInternal {
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 EnvironmentDefaultTypeInternal _Environment_default_instance_;
 PROTOBUF_CONSTEXPR AIS::AIS(
     ::_pbi::ConstantInitialized): _impl_{
-    /*decltype(_impl_.latitude_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.longitude_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
   , /*decltype(_impl_.ais_pk_)*/0
+  , /*decltype(_impl_.shipid_)*/0
+  , /*decltype(_impl_.latitude_)*/0
+  , /*decltype(_impl_.longitude_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct AISDefaultTypeInternal {
   PROTOBUF_CONSTEXPR AISDefaultTypeInternal()
@@ -199,7 +198,7 @@ PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORIT
 PROTOBUF_CONSTEXPR System_Time::System_Time(
     ::_pbi::ConstantInitialized): _impl_{
     /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
-  , /*decltype(_impl_.times_)*/0
+  , /*decltype(_impl_.times_pk_)*/0
   , /*decltype(_impl_._cached_size_)*/{}} {}
 struct System_TimeDefaultTypeInternal {
   PROTOBUF_CONSTEXPR System_TimeDefaultTypeInternal()
@@ -252,283 +251,340 @@ struct INVERTERDefaultTypeInternal {
   };
 };
 PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 INVERTERDefaultTypeInternal _INVERTER_default_instance_;
-}  // namespace Protocol
-static ::_pb::Metadata file_level_metadata_EDT0001_2eproto[11];
+PROTOBUF_CONSTEXPR Network::Network(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.network_pk_)*/0
+  , /*decltype(_impl_.status_network_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct NetworkDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR NetworkDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~NetworkDefaultTypeInternal() {}
+  union {
+    Network _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 NetworkDefaultTypeInternal _Network_default_instance_;
+PROTOBUF_CONSTEXPR SaveAsBytes::SaveAsBytes(
+    ::_pbi::ConstantInitialized): _impl_{
+    /*decltype(_impl_.system_time_)*/{&::_pbi::fixed_address_empty_string, ::_pbi::ConstantInitialized{}}
+  , /*decltype(_impl_.saveasbytes_pk_)*/0
+  , /*decltype(_impl_.bytes_)*/0
+  , /*decltype(_impl_._cached_size_)*/{}} {}
+struct SaveAsBytesDefaultTypeInternal {
+  PROTOBUF_CONSTEXPR SaveAsBytesDefaultTypeInternal()
+      : _instance(::_pbi::ConstantInitialized{}) {}
+  ~SaveAsBytesDefaultTypeInternal() {}
+  union {
+    SaveAsBytes _instance;
+  };
+};
+PROTOBUF_ATTRIBUTE_NO_DESTROY PROTOBUF_CONSTINIT PROTOBUF_ATTRIBUTE_INIT_PRIORITY1 SaveAsBytesDefaultTypeInternal _SaveAsBytes_default_instance_;
+}  // namespace EDT0001
+static ::_pb::Metadata file_level_metadata_EDT0001_2eproto[13];
 static constexpr ::_pb::EnumDescriptor const** file_level_enum_descriptors_EDT0001_2eproto = nullptr;
 static constexpr ::_pb::ServiceDescriptor const** file_level_service_descriptors_EDT0001_2eproto = nullptr;
 
 const uint32_t TableStruct_EDT0001_2eproto::offsets[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.batterypk_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_bpu_negative_contactor_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_bpu_positive_contactor_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_bpu_pre_contactor_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_protection_a_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.bat_protection_b_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery, _impl_.battery_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery, _impl_.bat_bpu_negative_contactor_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery, _impl_.bat_bpu_positive_contactor_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery, _impl_.bat_bpu_pre_contactor_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery, _impl_.bat_protection_a_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery, _impl_.bat_protection_b_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.battery_pack_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_current_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_soc_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_voltage_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_max_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_max_temp_sbms_index_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_min_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_min_temp_sbms_index_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_max_cell_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_max_cell_vol_sbms_index_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_min_cell_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.bat_pack_min_cell_vol_sbms_index_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Battery_Pack, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.battery_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_current_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_soc_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_voltage_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_max_temp_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_max_temp_sbms_index_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_min_temp_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_min_temp_sbms_index_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_max_cell_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_max_cell_vol_sbms_index_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_min_cell_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.bat_pack_min_cell_vol_sbms_index_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Battery_Pack, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.batterymd_0_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell0_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell1_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell2_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell3_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell4_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell5_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell6_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell7_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell8_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell9_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell10_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.bat_module_cell11_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_0, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.batterymd_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell0_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell1_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell2_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell3_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell4_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell5_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell6_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell7_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell8_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell9_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell10_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.bat_module_cell11_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_0, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.batterymd_1_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell0_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell1_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell2_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell3_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell4_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell5_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell6_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell7_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell8_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell9_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell10_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.bat_module1_cell11_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_1, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.batterymd_1_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell0_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell1_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell2_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell3_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell4_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell5_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell6_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell7_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell8_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell9_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell10_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.bat_module1_cell11_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_1, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.batterymd_2_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell0_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell1_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell2_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell3_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell4_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell5_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell6_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell7_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell8_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell9_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell10_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.bat_module2_cell11_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_2, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.batterymd_2_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell0_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell1_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell2_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell3_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell4_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell5_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell6_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell7_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell8_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell9_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell10_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.bat_module2_cell11_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_2, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_3, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.batterymd_3_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell0_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell1_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell2_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell8_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell10_vol_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::BAT_MODULE_3, _impl_.bat_module3_cell11_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_3, _impl_.batterymd_3_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_3, _impl_.bat_module3_cell0_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_3, _impl_.bat_module3_cell1_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_3, _impl_.bat_module3_cell2_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_3, _impl_.bat_module3_cell8_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_3, _impl_.bat_module3_cell10_vol_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::BAT_MODULE_3, _impl_.bat_module3_cell11_vol_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Environment, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _impl_.env_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _impl_.wind_speed_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _impl_.wind_direction_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::Environment, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Environment, _impl_.env_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Environment, _impl_.wind_speed_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Environment, _impl_.wind_direction_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Environment, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::AIS, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _impl_.ais_pk_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _impl_.latitude_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _impl_.longitude_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::AIS, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::AIS, _impl_.ais_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::AIS, _impl_.shipid_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::AIS, _impl_.latitude_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::AIS, _impl_.longitude_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::AIS, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::System_Time, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::System_Time, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::System_Time, _impl_.times_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::System_Time, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::System_Time, _impl_.times_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::System_Time, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::MOTOR, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.motor_pk_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.mt_rpm_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.mt_torque_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.mt_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::MOTOR, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::MOTOR, _impl_.motor_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::MOTOR, _impl_.mt_rpm_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::MOTOR, _impl_.mt_torque_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::MOTOR, _impl_.mt_temp_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::MOTOR, _impl_.system_time_),
   ~0u,  // no _has_bits_
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _internal_metadata_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _internal_metadata_),
   ~0u,  // no _extensions_
   ~0u,  // no _oneof_case_
   ~0u,  // no _weak_field_map_
   ~0u,  // no _inlined_string_donated_
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inverter_pk_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_phase_a_current_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_phase_b_current_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_phase_c_current_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_post_fault_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_gate_driver_board_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_module_a_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_run_fault_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_module_b_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_module_c_temp_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_power_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.inv_output_voltage_),
-  PROTOBUF_FIELD_OFFSET(::Protocol::INVERTER, _impl_.system_time_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inverter_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_phase_a_current_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_phase_b_current_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_phase_c_current_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_post_fault_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_gate_driver_board_temp_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_module_a_temp_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_run_fault_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_module_b_temp_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_module_c_temp_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_power_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.inv_output_voltage_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::INVERTER, _impl_.system_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Network, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Network, _impl_.network_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Network, _impl_.status_network_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::Network, _impl_.system_time_),
+  ~0u,  // no _has_bits_
+  PROTOBUF_FIELD_OFFSET(::EDT0001::SaveAsBytes, _internal_metadata_),
+  ~0u,  // no _extensions_
+  ~0u,  // no _oneof_case_
+  ~0u,  // no _weak_field_map_
+  ~0u,  // no _inlined_string_donated_
+  PROTOBUF_FIELD_OFFSET(::EDT0001::SaveAsBytes, _impl_.saveasbytes_pk_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::SaveAsBytes, _impl_.bytes_),
+  PROTOBUF_FIELD_OFFSET(::EDT0001::SaveAsBytes, _impl_.system_time_),
 };
 static const ::_pbi::MigrationSchema schemas[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) = {
-  { 0, -1, -1, sizeof(::Protocol::Battery)},
-  { 13, -1, -1, sizeof(::Protocol::Battery_Pack)},
-  { 32, -1, -1, sizeof(::Protocol::BAT_MODULE_0)},
-  { 52, -1, -1, sizeof(::Protocol::BAT_MODULE_1)},
-  { 72, -1, -1, sizeof(::Protocol::BAT_MODULE_2)},
-  { 92, -1, -1, sizeof(::Protocol::BAT_MODULE_3)},
-  { 105, -1, -1, sizeof(::Protocol::Environment)},
-  { 115, -1, -1, sizeof(::Protocol::AIS)},
-  { 125, -1, -1, sizeof(::Protocol::System_Time)},
-  { 133, -1, -1, sizeof(::Protocol::MOTOR)},
-  { 144, -1, -1, sizeof(::Protocol::INVERTER)},
+  { 0, -1, -1, sizeof(::EDT0001::Battery)},
+  { 13, -1, -1, sizeof(::EDT0001::Battery_Pack)},
+  { 32, -1, -1, sizeof(::EDT0001::BAT_MODULE_0)},
+  { 52, -1, -1, sizeof(::EDT0001::BAT_MODULE_1)},
+  { 72, -1, -1, sizeof(::EDT0001::BAT_MODULE_2)},
+  { 92, -1, -1, sizeof(::EDT0001::BAT_MODULE_3)},
+  { 105, -1, -1, sizeof(::EDT0001::Environment)},
+  { 115, -1, -1, sizeof(::EDT0001::AIS)},
+  { 126, -1, -1, sizeof(::EDT0001::System_Time)},
+  { 134, -1, -1, sizeof(::EDT0001::MOTOR)},
+  { 145, -1, -1, sizeof(::EDT0001::INVERTER)},
+  { 164, -1, -1, sizeof(::EDT0001::Network)},
+  { 173, -1, -1, sizeof(::EDT0001::SaveAsBytes)},
 };
 
 static const ::_pb::Message* const file_default_instances[] = {
-  &::Protocol::_Battery_default_instance_._instance,
-  &::Protocol::_Battery_Pack_default_instance_._instance,
-  &::Protocol::_BAT_MODULE_0_default_instance_._instance,
-  &::Protocol::_BAT_MODULE_1_default_instance_._instance,
-  &::Protocol::_BAT_MODULE_2_default_instance_._instance,
-  &::Protocol::_BAT_MODULE_3_default_instance_._instance,
-  &::Protocol::_Environment_default_instance_._instance,
-  &::Protocol::_AIS_default_instance_._instance,
-  &::Protocol::_System_Time_default_instance_._instance,
-  &::Protocol::_MOTOR_default_instance_._instance,
-  &::Protocol::_INVERTER_default_instance_._instance,
+  &::EDT0001::_Battery_default_instance_._instance,
+  &::EDT0001::_Battery_Pack_default_instance_._instance,
+  &::EDT0001::_BAT_MODULE_0_default_instance_._instance,
+  &::EDT0001::_BAT_MODULE_1_default_instance_._instance,
+  &::EDT0001::_BAT_MODULE_2_default_instance_._instance,
+  &::EDT0001::_BAT_MODULE_3_default_instance_._instance,
+  &::EDT0001::_Environment_default_instance_._instance,
+  &::EDT0001::_AIS_default_instance_._instance,
+  &::EDT0001::_System_Time_default_instance_._instance,
+  &::EDT0001::_MOTOR_default_instance_._instance,
+  &::EDT0001::_INVERTER_default_instance_._instance,
+  &::EDT0001::_Network_default_instance_._instance,
+  &::EDT0001::_SaveAsBytes_default_instance_._instance,
 };
 
 const char descriptor_table_protodef_EDT0001_2eproto[] PROTOBUF_SECTION_VARIABLE(protodesc_cold) =
-  "\n\rEDT0001.proto\022\010Protocol\"\314\001\n\007Battery\022\021\n"
-  "\tBatteryPK\030\001 \001(\005\022\"\n\032BAT_BPU_NEGATIVE_CON"
+  "\n\rEDT0001.proto\022\007EDT0001\"\315\001\n\007Battery\022\022\n\n"
+  "Battery_PK\030\001 \001(\005\022\"\n\032BAT_BPU_NEGATIVE_CON"
   "TACTOR\030\002 \001(\005\022\"\n\032BAT_BPU_POSITIVE_CONTACT"
   "OR\030\003 \001(\005\022\035\n\025BAT_BPU_PRE_CONTACTOR\030\004 \001(\005\022"
   "\030\n\020BAT_PROTECTION_A\030\005 \001(\005\022\030\n\020BAT_PROTECT"
-  "ION_B\030\006 \001(\005\022\023\n\013System_time\030\007 \001(\t\"\227\003\n\014Bat"
-  "tery_Pack\022\024\n\014Battery_Pack\030\001 \001(\005\022\030\n\020BAT_P"
-  "ACK_CURRENT\030\002 \001(\005\022\024\n\014BAT_PACK_SOC\030\003 \001(\005\022"
-  "\030\n\020BAT_PACK_VOLTAGE\030\004 \001(\005\022\031\n\021BAT_PACK_MA"
-  "X_TEMP\030\005 \001(\005\022$\n\034BAT_PACK_MAX_TEMP_SBMS_I"
-  "NDEX\030\006 \001(\005\022\031\n\021BAT_PACK_MIN_TEMP\030\007 \001(\005\022$\n"
-  "\034BAT_PACK_MIN_TEMP_SBMS_INDEX\030\010 \001(\005\022\035\n\025B"
-  "AT_PACK_MAX_CELL_VOL\030\t \001(\005\022(\n BAT_PACK_M"
-  "AX_CELL_VOL_SBMS_INDEX\030\n \001(\005\022\035\n\025BAT_PACK"
-  "_MIN_CELL_VOL\030\013 \001(\005\022(\n BAT_PACK_MIN_CELL"
-  "_VOL_SBMS_INDEX\030\014 \001(\005\022\023\n\013System_time\030\r \001"
-  "(\t\"\242\003\n\014BAT_MODULE_0\022\023\n\013BatteryMd_0\030\001 \001(\005"
-  "\022\034\n\024BAT_MODULE_CELL0_VOL\030\002 \001(\005\022\034\n\024BAT_MO"
-  "DULE_CELL1_VOL\030\003 \001(\005\022\034\n\024BAT_MODULE_CELL2"
-  "_VOL\030\004 \001(\005\022\034\n\024BAT_MODULE_CELL3_VOL\030\005 \001(\005"
-  "\022\034\n\024BAT_MODULE_CELL4_VOL\030\006 \001(\005\022\034\n\024BAT_MO"
-  "DULE_CELL5_VOL\030\007 \001(\005\022\034\n\024BAT_MODULE_CELL6"
-  "_VOL\030\010 \001(\005\022\034\n\024BAT_MODULE_CELL7_VOL\030\t \001(\005"
-  "\022\034\n\024BAT_MODULE_CELL8_VOL\030\n \001(\005\022\034\n\024BAT_MO"
-  "DULE_CELL9_VOL\030\013 \001(\005\022\035\n\025BAT_MODULE_CELL1"
-  "0_VOL\030\014 \001(\005\022\035\n\025BAT_MODULE_CELL11_VOL\030\r \001"
-  "(\005\022\023\n\013System_time\030\016 \001(\t\"\256\003\n\014BAT_MODULE_1"
-  "\022\023\n\013BatteryMd_1\030\001 \001(\005\022\035\n\025BAT_MODULE1_CEL"
-  "L0_VOL\030\002 \001(\005\022\035\n\025BAT_MODULE1_CELL1_VOL\030\003 "
-  "\001(\005\022\035\n\025BAT_MODULE1_CELL2_VOL\030\004 \001(\005\022\035\n\025BA"
-  "T_MODULE1_CELL3_VOL\030\005 \001(\005\022\035\n\025BAT_MODULE1"
-  "_CELL4_VOL\030\006 \001(\005\022\035\n\025BAT_MODULE1_CELL5_VO"
-  "L\030\007 \001(\005\022\035\n\025BAT_MODULE1_CELL6_VOL\030\010 \001(\005\022\035"
-  "\n\025BAT_MODULE1_CELL7_VOL\030\t \001(\005\022\035\n\025BAT_MOD"
-  "ULE1_CELL8_VOL\030\n \001(\005\022\035\n\025BAT_MODULE1_CELL"
-  "9_VOL\030\013 \001(\005\022\036\n\026BAT_MODULE1_CELL10_VOL\030\014 "
-  "\001(\005\022\036\n\026BAT_MODULE1_CELL11_VOL\030\r \001(\005\022\023\n\013S"
-  "ystem_time\030\016 \001(\t\"\256\003\n\014BAT_MODULE_2\022\023\n\013Bat"
-  "teryMd_2\030\001 \001(\005\022\035\n\025BAT_MODULE2_CELL0_VOL\030"
-  "\002 \001(\005\022\035\n\025BAT_MODULE2_CELL1_VOL\030\003 \001(\005\022\035\n\025"
-  "BAT_MODULE2_CELL2_VOL\030\004 \001(\005\022\035\n\025BAT_MODUL"
-  "E2_CELL3_VOL\030\005 \001(\005\022\035\n\025BAT_MODULE2_CELL4_"
-  "VOL\030\006 \001(\005\022\035\n\025BAT_MODULE2_CELL5_VOL\030\007 \001(\005"
-  "\022\035\n\025BAT_MODULE2_CELL6_VOL\030\010 \001(\005\022\035\n\025BAT_M"
-  "ODULE2_CELL7_VOL\030\t \001(\005\022\035\n\025BAT_MODULE2_CE"
-  "LL8_VOL\030\n \001(\005\022\035\n\025BAT_MODULE2_CELL9_VOL\030\013"
-  " \001(\005\022\036\n\026BAT_MODULE2_CELL10_VOL\030\014 \001(\005\022\036\n\026"
-  "BAT_MODULE2_CELL11_VOL\030\r \001(\005\022\023\n\013System_t"
-  "ime\030\016 \001(\t\"\337\001\n\014BAT_MODULE_3\022\023\n\013BatteryMd_"
-  "3\030\001 \001(\005\022\035\n\025BAT_MODULE3_CELL0_VOL\030\002 \001(\005\022\035"
-  "\n\025BAT_MODULE3_CELL1_VOL\030\003 \001(\005\022\035\n\025BAT_MOD"
-  "ULE3_CELL2_VOL\030\004 \001(\005\022\035\n\025BAT_MODULE3_CELL"
-  "8_VOL\030\005 \001(\005\022\036\n\026BAT_MODULE3_CELL10_VOL\030\006 "
-  "\001(\005\022\036\n\026BAT_MODULE3_CELL11_VOL\030\007 \001(\005\"[\n\013E"
-  "nvironment\022\013\n\003Env\030\001 \001(\005\022\022\n\nWind_speed\030\002 "
-  "\001(\005\022\026\n\016Wind_direction\030\003 \001(\005\022\023\n\013System_ti"
-  "me\030\004 \001(\t\"O\n\003AIS\022\016\n\006AIS_PK\030\001 \001(\005\022\020\n\010latit"
-  "ude\030\002 \001(\t\022\021\n\tlongitude\030\003 \001(\t\022\023\n\013System_t"
-  "ime\030\004 \001(\t\"1\n\013System_Time\022\r\n\005Times\030\001 \001(\005\022"
-  "\023\n\013System_time\030\002 \001(\t\"b\n\005MOTOR\022\020\n\010MOTOR_P"
-  "K\030\001 \001(\005\022\016\n\006MT_RPM\030\002 \001(\005\022\021\n\tMT_TORQUE\030\003 \001"
-  "(\005\022\017\n\007MT_TEMP\030\004 \001(\005\022\023\n\013System_time\030\005 \001(\t"
-  "\"\336\002\n\010INVERTER\022\023\n\013INVERTER_PK\030\001 \001(\005\022\033\n\023IN"
-  "V_PHASE_A_CURRENT\030\002 \001(\005\022\033\n\023INV_PHASE_B_C"
-  "URRENT\030\003 \001(\005\022\033\n\023INV_PHASE_C_CURRENT\030\004 \001("
-  "\005\022\026\n\016INV_POST_FAULT\030\005 \001(\005\022\"\n\032INV_GATE_DR"
-  "IVER_BOARD_TEMP\030\006 \001(\005\022\031\n\021INV_MODULE_A_TE"
-  "MP\030\007 \001(\005\022\025\n\rINV_RUN_FAULT\030\010 \001(\005\022\031\n\021INV_M"
-  "ODULE_B_TEMP\030\t \001(\005\022\031\n\021INV_MODULE_C_TEMP\030"
-  "\n \001(\005\022\021\n\tINV_POWER\030\013 \001(\005\022\032\n\022INV_OUTPUT_V"
-  "OLTAGE\030\014 \001(\005\022\023\n\013System_time\030\r \001(\tb\006proto"
-  "3"
+  "ION_B\030\006 \001(\005\022\023\n\013System_time\030\007 \001(\t\"\225\003\n\014Bat"
+  "tery_Pack\022\022\n\nBattery_PK\030\001 \001(\005\022\030\n\020BAT_PAC"
+  "K_CURRENT\030\002 \001(\005\022\024\n\014BAT_PACK_SOC\030\003 \001(\005\022\030\n"
+  "\020BAT_PACK_VOLTAGE\030\004 \001(\005\022\031\n\021BAT_PACK_MAX_"
+  "TEMP\030\005 \001(\005\022$\n\034BAT_PACK_MAX_TEMP_SBMS_IND"
+  "EX\030\006 \001(\005\022\031\n\021BAT_PACK_MIN_TEMP\030\007 \001(\005\022$\n\034B"
+  "AT_PACK_MIN_TEMP_SBMS_INDEX\030\010 \001(\005\022\035\n\025BAT"
+  "_PACK_MAX_CELL_VOL\030\t \001(\005\022(\n BAT_PACK_MAX"
+  "_CELL_VOL_SBMS_INDEX\030\n \001(\005\022\035\n\025BAT_PACK_M"
+  "IN_CELL_VOL\030\013 \001(\005\022(\n BAT_PACK_MIN_CELL_V"
+  "OL_SBMS_INDEX\030\014 \001(\005\022\023\n\013System_time\030\r \001(\t"
+  "\"\243\003\n\014BAT_MODULE_0\022\024\n\014BatteryMd_PK\030\001 \001(\005\022"
+  "\034\n\024BAT_MODULE_CELL0_VOL\030\002 \001(\005\022\034\n\024BAT_MOD"
+  "ULE_CELL1_VOL\030\003 \001(\005\022\034\n\024BAT_MODULE_CELL2_"
+  "VOL\030\004 \001(\005\022\034\n\024BAT_MODULE_CELL3_VOL\030\005 \001(\005\022"
+  "\034\n\024BAT_MODULE_CELL4_VOL\030\006 \001(\005\022\034\n\024BAT_MOD"
+  "ULE_CELL5_VOL\030\007 \001(\005\022\034\n\024BAT_MODULE_CELL6_"
+  "VOL\030\010 \001(\005\022\034\n\024BAT_MODULE_CELL7_VOL\030\t \001(\005\022"
+  "\034\n\024BAT_MODULE_CELL8_VOL\030\n \001(\005\022\034\n\024BAT_MOD"
+  "ULE_CELL9_VOL\030\013 \001(\005\022\035\n\025BAT_MODULE_CELL10"
+  "_VOL\030\014 \001(\005\022\035\n\025BAT_MODULE_CELL11_VOL\030\r \001("
+  "\005\022\023\n\013System_time\030\016 \001(\t\"\261\003\n\014BAT_MODULE_1\022"
+  "\026\n\016BatteryMd_1_PK\030\001 \001(\005\022\035\n\025BAT_MODULE1_C"
+  "ELL0_VOL\030\002 \001(\005\022\035\n\025BAT_MODULE1_CELL1_VOL\030"
+  "\003 \001(\005\022\035\n\025BAT_MODULE1_CELL2_VOL\030\004 \001(\005\022\035\n\025"
+  "BAT_MODULE1_CELL3_VOL\030\005 \001(\005\022\035\n\025BAT_MODUL"
+  "E1_CELL4_VOL\030\006 \001(\005\022\035\n\025BAT_MODULE1_CELL5_"
+  "VOL\030\007 \001(\005\022\035\n\025BAT_MODULE1_CELL6_VOL\030\010 \001(\005"
+  "\022\035\n\025BAT_MODULE1_CELL7_VOL\030\t \001(\005\022\035\n\025BAT_M"
+  "ODULE1_CELL8_VOL\030\n \001(\005\022\035\n\025BAT_MODULE1_CE"
+  "LL9_VOL\030\013 \001(\005\022\036\n\026BAT_MODULE1_CELL10_VOL\030"
+  "\014 \001(\005\022\036\n\026BAT_MODULE1_CELL11_VOL\030\r \001(\005\022\023\n"
+  "\013System_time\030\016 \001(\t\"\261\003\n\014BAT_MODULE_2\022\026\n\016B"
+  "atteryMd_2_PK\030\001 \001(\005\022\035\n\025BAT_MODULE2_CELL0"
+  "_VOL\030\002 \001(\005\022\035\n\025BAT_MODULE2_CELL1_VOL\030\003 \001("
+  "\005\022\035\n\025BAT_MODULE2_CELL2_VOL\030\004 \001(\005\022\035\n\025BAT_"
+  "MODULE2_CELL3_VOL\030\005 \001(\005\022\035\n\025BAT_MODULE2_C"
+  "ELL4_VOL\030\006 \001(\005\022\035\n\025BAT_MODULE2_CELL5_VOL\030"
+  "\007 \001(\005\022\035\n\025BAT_MODULE2_CELL6_VOL\030\010 \001(\005\022\035\n\025"
+  "BAT_MODULE2_CELL7_VOL\030\t \001(\005\022\035\n\025BAT_MODUL"
+  "E2_CELL8_VOL\030\n \001(\005\022\035\n\025BAT_MODULE2_CELL9_"
+  "VOL\030\013 \001(\005\022\036\n\026BAT_MODULE2_CELL10_VOL\030\014 \001("
+  "\005\022\036\n\026BAT_MODULE2_CELL11_VOL\030\r \001(\005\022\023\n\013Sys"
+  "tem_time\030\016 \001(\t\"\342\001\n\014BAT_MODULE_3\022\026\n\016Batte"
+  "ryMd_3_PK\030\001 \001(\005\022\035\n\025BAT_MODULE3_CELL0_VOL"
+  "\030\002 \001(\005\022\035\n\025BAT_MODULE3_CELL1_VOL\030\003 \001(\005\022\035\n"
+  "\025BAT_MODULE3_CELL2_VOL\030\004 \001(\005\022\035\n\025BAT_MODU"
+  "LE3_CELL8_VOL\030\005 \001(\005\022\036\n\026BAT_MODULE3_CELL1"
+  "0_VOL\030\006 \001(\005\022\036\n\026BAT_MODULE3_CELL11_VOL\030\007 "
+  "\001(\005\"[\n\013Environment\022\013\n\003Env\030\001 \001(\005\022\022\n\nWind_"
+  "speed\030\002 \001(\005\022\026\n\016Wind_direction\030\003 \001(\005\022\023\n\013S"
+  "ystem_time\030\004 \001(\t\"_\n\003AIS\022\016\n\006AIS_PK\030\001 \001(\005\022"
+  "\016\n\006SHIPID\030\002 \001(\005\022\020\n\010latitude\030\003 \001(\002\022\021\n\tlon"
+  "gitude\030\004 \001(\002\022\023\n\013System_time\030\005 \001(\t\"4\n\013Sys"
+  "tem_Time\022\020\n\010Times_PK\030\001 \001(\005\022\023\n\013System_tim"
+  "e\030\002 \001(\t\"b\n\005MOTOR\022\020\n\010MOTOR_PK\030\001 \001(\005\022\016\n\006MT"
+  "_RPM\030\002 \001(\005\022\021\n\tMT_TORQUE\030\003 \001(\005\022\017\n\007MT_TEMP"
+  "\030\004 \001(\005\022\023\n\013System_time\030\005 \001(\t\"\336\002\n\010INVERTER"
+  "\022\023\n\013INVERTER_PK\030\001 \001(\005\022\033\n\023INV_PHASE_A_CUR"
+  "RENT\030\002 \001(\005\022\033\n\023INV_PHASE_B_CURRENT\030\003 \001(\005\022"
+  "\033\n\023INV_PHASE_C_CURRENT\030\004 \001(\005\022\026\n\016INV_POST"
+  "_FAULT\030\005 \001(\005\022\"\n\032INV_GATE_DRIVER_BOARD_TE"
+  "MP\030\006 \001(\005\022\031\n\021INV_MODULE_A_TEMP\030\007 \001(\005\022\025\n\rI"
+  "NV_RUN_FAULT\030\010 \001(\005\022\031\n\021INV_MODULE_B_TEMP\030"
+  "\t \001(\005\022\031\n\021INV_MODULE_C_TEMP\030\n \001(\005\022\021\n\tINV_"
+  "POWER\030\013 \001(\005\022\032\n\022INV_OUTPUT_VOLTAGE\030\014 \001(\005\022"
+  "\023\n\013System_time\030\r \001(\t\"J\n\007Network\022\022\n\nNetWo"
+  "rk_PK\030\001 \001(\005\022\026\n\016Status_Network\030\002 \001(\005\022\023\n\013S"
+  "ystem_time\030\003 \001(\t\"I\n\013SaveAsBytes\022\026\n\016SaveA"
+  "sBytes_PK\030\001 \001(\005\022\r\n\005Bytes\030\002 \001(\005\022\023\n\013System"
+  "_time\030\003 \001(\tb\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_EDT0001_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_EDT0001_2eproto = {
-    false, false, 2841, descriptor_table_protodef_EDT0001_2eproto,
+    false, false, 3019, descriptor_table_protodef_EDT0001_2eproto,
     "EDT0001.proto",
-    &descriptor_table_EDT0001_2eproto_once, nullptr, 0, 11,
+    &descriptor_table_EDT0001_2eproto_once, nullptr, 0, 13,
     schemas, file_default_instances, TableStruct_EDT0001_2eproto::offsets,
     file_level_metadata_EDT0001_2eproto, file_level_enum_descriptors_EDT0001_2eproto,
     file_level_service_descriptors_EDT0001_2eproto,
@@ -539,7 +595,7 @@ PROTOBUF_ATTRIBUTE_WEAK const ::_pbi::DescriptorTable* descriptor_table_EDT0001_
 
 // Force running AddDescriptors() at dynamic initialization time.
 PROTOBUF_ATTRIBUTE_INIT_PRIORITY2 static ::_pbi::AddDescriptorsRunner dynamic_init_dummy_EDT0001_2eproto(&descriptor_table_EDT0001_2eproto);
-namespace Protocol {
+namespace EDT0001 {
 
 // ===================================================================
 
@@ -551,14 +607,14 @@ Battery::Battery(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.Battery)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.Battery)
 }
 Battery::Battery(const Battery& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   Battery* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.batterypk_){}
+    , decltype(_impl_.battery_pk_){}
     , decltype(_impl_.bat_bpu_negative_contactor_){}
     , decltype(_impl_.bat_bpu_positive_contactor_){}
     , decltype(_impl_.bat_bpu_pre_contactor_){}
@@ -575,10 +631,10 @@ Battery::Battery(const Battery& from)
     _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.batterypk_, &from._impl_.batterypk_,
+  ::memcpy(&_impl_.battery_pk_, &from._impl_.battery_pk_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_protection_b_) -
-    reinterpret_cast<char*>(&_impl_.batterypk_)) + sizeof(_impl_.bat_protection_b_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.Battery)
+    reinterpret_cast<char*>(&_impl_.battery_pk_)) + sizeof(_impl_.bat_protection_b_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.Battery)
 }
 
 inline void Battery::SharedCtor(
@@ -587,7 +643,7 @@ inline void Battery::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.batterypk_){0}
+    , decltype(_impl_.battery_pk_){0}
     , decltype(_impl_.bat_bpu_negative_contactor_){0}
     , decltype(_impl_.bat_bpu_positive_contactor_){0}
     , decltype(_impl_.bat_bpu_pre_contactor_){0}
@@ -602,7 +658,7 @@ inline void Battery::SharedCtor(
 }
 
 Battery::~Battery() {
-  // @@protoc_insertion_point(destructor:Protocol.Battery)
+  // @@protoc_insertion_point(destructor:EDT0001.Battery)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -620,15 +676,15 @@ void Battery::SetCachedSize(int size) const {
 }
 
 void Battery::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.Battery)
+// @@protoc_insertion_point(message_clear_start:EDT0001.Battery)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.system_time_.ClearToEmpty();
-  ::memset(&_impl_.batterypk_, 0, static_cast<size_t>(
+  ::memset(&_impl_.battery_pk_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.bat_protection_b_) -
-      reinterpret_cast<char*>(&_impl_.batterypk_)) + sizeof(_impl_.bat_protection_b_));
+      reinterpret_cast<char*>(&_impl_.battery_pk_)) + sizeof(_impl_.bat_protection_b_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -638,10 +694,10 @@ const char* Battery::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 BatteryPK = 1;
+      // int32 Battery_PK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.batterypk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.battery_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -692,7 +748,7 @@ const char* Battery::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) 
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.Battery.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.Battery.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -721,14 +777,14 @@ failure:
 
 uint8_t* Battery::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.Battery)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.Battery)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 BatteryPK = 1;
-  if (this->_internal_batterypk() != 0) {
+  // int32 Battery_PK = 1;
+  if (this->_internal_battery_pk() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterypk(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_battery_pk(), target);
   }
 
   // int32 BAT_BPU_NEGATIVE_CONTACTOR = 2;
@@ -766,7 +822,7 @@ uint8_t* Battery::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.Battery.System_time");
+      "EDT0001.Battery.System_time");
     target = stream->WriteStringMaybeAliased(
         7, this->_internal_system_time(), target);
   }
@@ -775,12 +831,12 @@ uint8_t* Battery::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.Battery)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.Battery)
   return target;
 }
 
 size_t Battery::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.Battery)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.Battery)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -794,9 +850,9 @@ size_t Battery::ByteSizeLong() const {
         this->_internal_system_time());
   }
 
-  // int32 BatteryPK = 1;
-  if (this->_internal_batterypk() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterypk());
+  // int32 Battery_PK = 1;
+  if (this->_internal_battery_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_battery_pk());
   }
 
   // int32 BAT_BPU_NEGATIVE_CONTACTOR = 2;
@@ -837,7 +893,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Battery::GetClassData() const 
 void Battery::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Battery*>(&to_msg);
   auto& from = static_cast<const Battery&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.Battery)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.Battery)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -845,8 +901,8 @@ void Battery::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOB
   if (!from._internal_system_time().empty()) {
     _this->_internal_set_system_time(from._internal_system_time());
   }
-  if (from._internal_batterypk() != 0) {
-    _this->_internal_set_batterypk(from._internal_batterypk());
+  if (from._internal_battery_pk() != 0) {
+    _this->_internal_set_battery_pk(from._internal_battery_pk());
   }
   if (from._internal_bat_bpu_negative_contactor() != 0) {
     _this->_internal_set_bat_bpu_negative_contactor(from._internal_bat_bpu_negative_contactor());
@@ -867,7 +923,7 @@ void Battery::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOB
 }
 
 void Battery::CopyFrom(const Battery& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.Battery)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.Battery)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -886,12 +942,12 @@ void Battery::InternalSwap(Battery* other) {
       &_impl_.system_time_, lhs_arena,
       &other->_impl_.system_time_, rhs_arena
   );
-  ::google::protobuf::internal::memswap<
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Battery, _impl_.bat_protection_b_)
       + sizeof(Battery::_impl_.bat_protection_b_)
-      - PROTOBUF_FIELD_OFFSET(Battery, _impl_.batterypk_)>(
-          reinterpret_cast<char*>(&_impl_.batterypk_),
-          reinterpret_cast<char*>(&other->_impl_.batterypk_));
+      - PROTOBUF_FIELD_OFFSET(Battery, _impl_.battery_pk_)>(
+          reinterpret_cast<char*>(&_impl_.battery_pk_),
+          reinterpret_cast<char*>(&other->_impl_.battery_pk_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Battery::GetMetadata() const {
@@ -910,14 +966,14 @@ Battery_Pack::Battery_Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.Battery_Pack)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.Battery_Pack)
 }
 Battery_Pack::Battery_Pack(const Battery_Pack& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   Battery_Pack* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.battery_pack_){}
+    , decltype(_impl_.battery_pk_){}
     , decltype(_impl_.bat_pack_current_){}
     , decltype(_impl_.bat_pack_soc_){}
     , decltype(_impl_.bat_pack_voltage_){}
@@ -940,10 +996,10 @@ Battery_Pack::Battery_Pack(const Battery_Pack& from)
     _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.battery_pack_, &from._impl_.battery_pack_,
+  ::memcpy(&_impl_.battery_pk_, &from._impl_.battery_pk_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_pack_min_cell_vol_sbms_index_) -
-    reinterpret_cast<char*>(&_impl_.battery_pack_)) + sizeof(_impl_.bat_pack_min_cell_vol_sbms_index_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.Battery_Pack)
+    reinterpret_cast<char*>(&_impl_.battery_pk_)) + sizeof(_impl_.bat_pack_min_cell_vol_sbms_index_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.Battery_Pack)
 }
 
 inline void Battery_Pack::SharedCtor(
@@ -952,7 +1008,7 @@ inline void Battery_Pack::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.battery_pack_){0}
+    , decltype(_impl_.battery_pk_){0}
     , decltype(_impl_.bat_pack_current_){0}
     , decltype(_impl_.bat_pack_soc_){0}
     , decltype(_impl_.bat_pack_voltage_){0}
@@ -973,7 +1029,7 @@ inline void Battery_Pack::SharedCtor(
 }
 
 Battery_Pack::~Battery_Pack() {
-  // @@protoc_insertion_point(destructor:Protocol.Battery_Pack)
+  // @@protoc_insertion_point(destructor:EDT0001.Battery_Pack)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -991,15 +1047,15 @@ void Battery_Pack::SetCachedSize(int size) const {
 }
 
 void Battery_Pack::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.Battery_Pack)
+// @@protoc_insertion_point(message_clear_start:EDT0001.Battery_Pack)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.system_time_.ClearToEmpty();
-  ::memset(&_impl_.battery_pack_, 0, static_cast<size_t>(
+  ::memset(&_impl_.battery_pk_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.bat_pack_min_cell_vol_sbms_index_) -
-      reinterpret_cast<char*>(&_impl_.battery_pack_)) + sizeof(_impl_.bat_pack_min_cell_vol_sbms_index_));
+      reinterpret_cast<char*>(&_impl_.battery_pk_)) + sizeof(_impl_.bat_pack_min_cell_vol_sbms_index_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1009,10 +1065,10 @@ const char* Battery_Pack::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 Battery_Pack = 1;
+      // int32 Battery_PK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.battery_pack_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.battery_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1111,7 +1167,7 @@ const char* Battery_Pack::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.Battery_Pack.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.Battery_Pack.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -1140,14 +1196,14 @@ failure:
 
 uint8_t* Battery_Pack::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.Battery_Pack)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.Battery_Pack)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 Battery_Pack = 1;
-  if (this->_internal_battery_pack() != 0) {
+  // int32 Battery_PK = 1;
+  if (this->_internal_battery_pk() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_battery_pack(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_battery_pk(), target);
   }
 
   // int32 BAT_PACK_CURRENT = 2;
@@ -1221,7 +1277,7 @@ uint8_t* Battery_Pack::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.Battery_Pack.System_time");
+      "EDT0001.Battery_Pack.System_time");
     target = stream->WriteStringMaybeAliased(
         13, this->_internal_system_time(), target);
   }
@@ -1230,12 +1286,12 @@ uint8_t* Battery_Pack::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.Battery_Pack)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.Battery_Pack)
   return target;
 }
 
 size_t Battery_Pack::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.Battery_Pack)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.Battery_Pack)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1249,9 +1305,9 @@ size_t Battery_Pack::ByteSizeLong() const {
         this->_internal_system_time());
   }
 
-  // int32 Battery_Pack = 1;
-  if (this->_internal_battery_pack() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_battery_pack());
+  // int32 Battery_PK = 1;
+  if (this->_internal_battery_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_battery_pk());
   }
 
   // int32 BAT_PACK_CURRENT = 2;
@@ -1322,7 +1378,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Battery_Pack::GetClassData() c
 void Battery_Pack::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Battery_Pack*>(&to_msg);
   auto& from = static_cast<const Battery_Pack&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.Battery_Pack)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.Battery_Pack)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1330,8 +1386,8 @@ void Battery_Pack::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (!from._internal_system_time().empty()) {
     _this->_internal_set_system_time(from._internal_system_time());
   }
-  if (from._internal_battery_pack() != 0) {
-    _this->_internal_set_battery_pack(from._internal_battery_pack());
+  if (from._internal_battery_pk() != 0) {
+    _this->_internal_set_battery_pk(from._internal_battery_pk());
   }
   if (from._internal_bat_pack_current() != 0) {
     _this->_internal_set_bat_pack_current(from._internal_bat_pack_current());
@@ -1370,7 +1426,7 @@ void Battery_Pack::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
 }
 
 void Battery_Pack::CopyFrom(const Battery_Pack& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.Battery_Pack)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.Battery_Pack)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1392,9 +1448,9 @@ void Battery_Pack::InternalSwap(Battery_Pack* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(Battery_Pack, _impl_.bat_pack_min_cell_vol_sbms_index_)
       + sizeof(Battery_Pack::_impl_.bat_pack_min_cell_vol_sbms_index_)
-      - PROTOBUF_FIELD_OFFSET(Battery_Pack, _impl_.battery_pack_)>(
-          reinterpret_cast<char*>(&_impl_.battery_pack_),
-          reinterpret_cast<char*>(&other->_impl_.battery_pack_));
+      - PROTOBUF_FIELD_OFFSET(Battery_Pack, _impl_.battery_pk_)>(
+          reinterpret_cast<char*>(&_impl_.battery_pk_),
+          reinterpret_cast<char*>(&other->_impl_.battery_pk_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata Battery_Pack::GetMetadata() const {
@@ -1413,14 +1469,14 @@ BAT_MODULE_0::BAT_MODULE_0(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.BAT_MODULE_0)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.BAT_MODULE_0)
 }
 BAT_MODULE_0::BAT_MODULE_0(const BAT_MODULE_0& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   BAT_MODULE_0* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.batterymd_0_){}
+    , decltype(_impl_.batterymd_pk_){}
     , decltype(_impl_.bat_module_cell0_vol_){}
     , decltype(_impl_.bat_module_cell1_vol_){}
     , decltype(_impl_.bat_module_cell2_vol_){}
@@ -1444,10 +1500,10 @@ BAT_MODULE_0::BAT_MODULE_0(const BAT_MODULE_0& from)
     _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.batterymd_0_, &from._impl_.batterymd_0_,
+  ::memcpy(&_impl_.batterymd_pk_, &from._impl_.batterymd_pk_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_module_cell11_vol_) -
-    reinterpret_cast<char*>(&_impl_.batterymd_0_)) + sizeof(_impl_.bat_module_cell11_vol_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.BAT_MODULE_0)
+    reinterpret_cast<char*>(&_impl_.batterymd_pk_)) + sizeof(_impl_.bat_module_cell11_vol_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.BAT_MODULE_0)
 }
 
 inline void BAT_MODULE_0::SharedCtor(
@@ -1456,7 +1512,7 @@ inline void BAT_MODULE_0::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.batterymd_0_){0}
+    , decltype(_impl_.batterymd_pk_){0}
     , decltype(_impl_.bat_module_cell0_vol_){0}
     , decltype(_impl_.bat_module_cell1_vol_){0}
     , decltype(_impl_.bat_module_cell2_vol_){0}
@@ -1478,7 +1534,7 @@ inline void BAT_MODULE_0::SharedCtor(
 }
 
 BAT_MODULE_0::~BAT_MODULE_0() {
-  // @@protoc_insertion_point(destructor:Protocol.BAT_MODULE_0)
+  // @@protoc_insertion_point(destructor:EDT0001.BAT_MODULE_0)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -1496,15 +1552,15 @@ void BAT_MODULE_0::SetCachedSize(int size) const {
 }
 
 void BAT_MODULE_0::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.BAT_MODULE_0)
+// @@protoc_insertion_point(message_clear_start:EDT0001.BAT_MODULE_0)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.system_time_.ClearToEmpty();
-  ::memset(&_impl_.batterymd_0_, 0, static_cast<size_t>(
+  ::memset(&_impl_.batterymd_pk_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.bat_module_cell11_vol_) -
-      reinterpret_cast<char*>(&_impl_.batterymd_0_)) + sizeof(_impl_.bat_module_cell11_vol_));
+      reinterpret_cast<char*>(&_impl_.batterymd_pk_)) + sizeof(_impl_.bat_module_cell11_vol_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -1514,10 +1570,10 @@ const char* BAT_MODULE_0::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 BatteryMd_0 = 1;
+      // int32 BatteryMd_PK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.batterymd_0_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.batterymd_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -1624,7 +1680,7 @@ const char* BAT_MODULE_0::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.BAT_MODULE_0.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.BAT_MODULE_0.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -1653,14 +1709,14 @@ failure:
 
 uint8_t* BAT_MODULE_0::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.BAT_MODULE_0)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.BAT_MODULE_0)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 BatteryMd_0 = 1;
-  if (this->_internal_batterymd_0() != 0) {
+  // int32 BatteryMd_PK = 1;
+  if (this->_internal_batterymd_pk() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_0(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_pk(), target);
   }
 
   // int32 BAT_MODULE_CELL0_VOL = 2;
@@ -1740,7 +1796,7 @@ uint8_t* BAT_MODULE_0::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.BAT_MODULE_0.System_time");
+      "EDT0001.BAT_MODULE_0.System_time");
     target = stream->WriteStringMaybeAliased(
         14, this->_internal_system_time(), target);
   }
@@ -1749,12 +1805,12 @@ uint8_t* BAT_MODULE_0::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.BAT_MODULE_0)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.BAT_MODULE_0)
   return target;
 }
 
 size_t BAT_MODULE_0::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.BAT_MODULE_0)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.BAT_MODULE_0)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -1768,9 +1824,9 @@ size_t BAT_MODULE_0::ByteSizeLong() const {
         this->_internal_system_time());
   }
 
-  // int32 BatteryMd_0 = 1;
-  if (this->_internal_batterymd_0() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_0());
+  // int32 BatteryMd_PK = 1;
+  if (this->_internal_batterymd_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_pk());
   }
 
   // int32 BAT_MODULE_CELL0_VOL = 2;
@@ -1846,7 +1902,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BAT_MODULE_0::GetClassData() c
 void BAT_MODULE_0::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BAT_MODULE_0*>(&to_msg);
   auto& from = static_cast<const BAT_MODULE_0&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.BAT_MODULE_0)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.BAT_MODULE_0)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -1854,8 +1910,8 @@ void BAT_MODULE_0::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (!from._internal_system_time().empty()) {
     _this->_internal_set_system_time(from._internal_system_time());
   }
-  if (from._internal_batterymd_0() != 0) {
-    _this->_internal_set_batterymd_0(from._internal_batterymd_0());
+  if (from._internal_batterymd_pk() != 0) {
+    _this->_internal_set_batterymd_pk(from._internal_batterymd_pk());
   }
   if (from._internal_bat_module_cell0_vol() != 0) {
     _this->_internal_set_bat_module_cell0_vol(from._internal_bat_module_cell0_vol());
@@ -1897,7 +1953,7 @@ void BAT_MODULE_0::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
 }
 
 void BAT_MODULE_0::CopyFrom(const BAT_MODULE_0& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.BAT_MODULE_0)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.BAT_MODULE_0)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -1919,9 +1975,9 @@ void BAT_MODULE_0::InternalSwap(BAT_MODULE_0* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BAT_MODULE_0, _impl_.bat_module_cell11_vol_)
       + sizeof(BAT_MODULE_0::_impl_.bat_module_cell11_vol_)
-      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_0, _impl_.batterymd_0_)>(
-          reinterpret_cast<char*>(&_impl_.batterymd_0_),
-          reinterpret_cast<char*>(&other->_impl_.batterymd_0_));
+      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_0, _impl_.batterymd_pk_)>(
+          reinterpret_cast<char*>(&_impl_.batterymd_pk_),
+          reinterpret_cast<char*>(&other->_impl_.batterymd_pk_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BAT_MODULE_0::GetMetadata() const {
@@ -1940,14 +1996,14 @@ BAT_MODULE_1::BAT_MODULE_1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.BAT_MODULE_1)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.BAT_MODULE_1)
 }
 BAT_MODULE_1::BAT_MODULE_1(const BAT_MODULE_1& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   BAT_MODULE_1* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.batterymd_1_){}
+    , decltype(_impl_.batterymd_1_pk_){}
     , decltype(_impl_.bat_module1_cell0_vol_){}
     , decltype(_impl_.bat_module1_cell1_vol_){}
     , decltype(_impl_.bat_module1_cell2_vol_){}
@@ -1971,10 +2027,10 @@ BAT_MODULE_1::BAT_MODULE_1(const BAT_MODULE_1& from)
     _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.batterymd_1_, &from._impl_.batterymd_1_,
+  ::memcpy(&_impl_.batterymd_1_pk_, &from._impl_.batterymd_1_pk_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_module1_cell11_vol_) -
-    reinterpret_cast<char*>(&_impl_.batterymd_1_)) + sizeof(_impl_.bat_module1_cell11_vol_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.BAT_MODULE_1)
+    reinterpret_cast<char*>(&_impl_.batterymd_1_pk_)) + sizeof(_impl_.bat_module1_cell11_vol_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.BAT_MODULE_1)
 }
 
 inline void BAT_MODULE_1::SharedCtor(
@@ -1983,7 +2039,7 @@ inline void BAT_MODULE_1::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.batterymd_1_){0}
+    , decltype(_impl_.batterymd_1_pk_){0}
     , decltype(_impl_.bat_module1_cell0_vol_){0}
     , decltype(_impl_.bat_module1_cell1_vol_){0}
     , decltype(_impl_.bat_module1_cell2_vol_){0}
@@ -2005,7 +2061,7 @@ inline void BAT_MODULE_1::SharedCtor(
 }
 
 BAT_MODULE_1::~BAT_MODULE_1() {
-  // @@protoc_insertion_point(destructor:Protocol.BAT_MODULE_1)
+  // @@protoc_insertion_point(destructor:EDT0001.BAT_MODULE_1)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2023,15 +2079,15 @@ void BAT_MODULE_1::SetCachedSize(int size) const {
 }
 
 void BAT_MODULE_1::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.BAT_MODULE_1)
+// @@protoc_insertion_point(message_clear_start:EDT0001.BAT_MODULE_1)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.system_time_.ClearToEmpty();
-  ::memset(&_impl_.batterymd_1_, 0, static_cast<size_t>(
+  ::memset(&_impl_.batterymd_1_pk_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.bat_module1_cell11_vol_) -
-      reinterpret_cast<char*>(&_impl_.batterymd_1_)) + sizeof(_impl_.bat_module1_cell11_vol_));
+      reinterpret_cast<char*>(&_impl_.batterymd_1_pk_)) + sizeof(_impl_.bat_module1_cell11_vol_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2041,10 +2097,10 @@ const char* BAT_MODULE_1::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 BatteryMd_1 = 1;
+      // int32 BatteryMd_1_PK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.batterymd_1_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.batterymd_1_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2151,7 +2207,7 @@ const char* BAT_MODULE_1::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.BAT_MODULE_1.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.BAT_MODULE_1.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -2180,14 +2236,14 @@ failure:
 
 uint8_t* BAT_MODULE_1::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.BAT_MODULE_1)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.BAT_MODULE_1)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 BatteryMd_1 = 1;
-  if (this->_internal_batterymd_1() != 0) {
+  // int32 BatteryMd_1_PK = 1;
+  if (this->_internal_batterymd_1_pk() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_1(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_1_pk(), target);
   }
 
   // int32 BAT_MODULE1_CELL0_VOL = 2;
@@ -2267,7 +2323,7 @@ uint8_t* BAT_MODULE_1::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.BAT_MODULE_1.System_time");
+      "EDT0001.BAT_MODULE_1.System_time");
     target = stream->WriteStringMaybeAliased(
         14, this->_internal_system_time(), target);
   }
@@ -2276,12 +2332,12 @@ uint8_t* BAT_MODULE_1::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.BAT_MODULE_1)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.BAT_MODULE_1)
   return target;
 }
 
 size_t BAT_MODULE_1::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.BAT_MODULE_1)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.BAT_MODULE_1)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2295,9 +2351,9 @@ size_t BAT_MODULE_1::ByteSizeLong() const {
         this->_internal_system_time());
   }
 
-  // int32 BatteryMd_1 = 1;
-  if (this->_internal_batterymd_1() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_1());
+  // int32 BatteryMd_1_PK = 1;
+  if (this->_internal_batterymd_1_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_1_pk());
   }
 
   // int32 BAT_MODULE1_CELL0_VOL = 2;
@@ -2373,7 +2429,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BAT_MODULE_1::GetClassData() c
 void BAT_MODULE_1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BAT_MODULE_1*>(&to_msg);
   auto& from = static_cast<const BAT_MODULE_1&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.BAT_MODULE_1)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.BAT_MODULE_1)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2381,8 +2437,8 @@ void BAT_MODULE_1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (!from._internal_system_time().empty()) {
     _this->_internal_set_system_time(from._internal_system_time());
   }
-  if (from._internal_batterymd_1() != 0) {
-    _this->_internal_set_batterymd_1(from._internal_batterymd_1());
+  if (from._internal_batterymd_1_pk() != 0) {
+    _this->_internal_set_batterymd_1_pk(from._internal_batterymd_1_pk());
   }
   if (from._internal_bat_module1_cell0_vol() != 0) {
     _this->_internal_set_bat_module1_cell0_vol(from._internal_bat_module1_cell0_vol());
@@ -2424,7 +2480,7 @@ void BAT_MODULE_1::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
 }
 
 void BAT_MODULE_1::CopyFrom(const BAT_MODULE_1& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.BAT_MODULE_1)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.BAT_MODULE_1)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2446,9 +2502,9 @@ void BAT_MODULE_1::InternalSwap(BAT_MODULE_1* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BAT_MODULE_1, _impl_.bat_module1_cell11_vol_)
       + sizeof(BAT_MODULE_1::_impl_.bat_module1_cell11_vol_)
-      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_1, _impl_.batterymd_1_)>(
-          reinterpret_cast<char*>(&_impl_.batterymd_1_),
-          reinterpret_cast<char*>(&other->_impl_.batterymd_1_));
+      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_1, _impl_.batterymd_1_pk_)>(
+          reinterpret_cast<char*>(&_impl_.batterymd_1_pk_),
+          reinterpret_cast<char*>(&other->_impl_.batterymd_1_pk_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BAT_MODULE_1::GetMetadata() const {
@@ -2467,14 +2523,14 @@ BAT_MODULE_2::BAT_MODULE_2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.BAT_MODULE_2)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.BAT_MODULE_2)
 }
 BAT_MODULE_2::BAT_MODULE_2(const BAT_MODULE_2& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   BAT_MODULE_2* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.batterymd_2_){}
+    , decltype(_impl_.batterymd_2_pk_){}
     , decltype(_impl_.bat_module2_cell0_vol_){}
     , decltype(_impl_.bat_module2_cell1_vol_){}
     , decltype(_impl_.bat_module2_cell2_vol_){}
@@ -2498,10 +2554,10 @@ BAT_MODULE_2::BAT_MODULE_2(const BAT_MODULE_2& from)
     _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  ::memcpy(&_impl_.batterymd_2_, &from._impl_.batterymd_2_,
+  ::memcpy(&_impl_.batterymd_2_pk_, &from._impl_.batterymd_2_pk_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_module2_cell11_vol_) -
-    reinterpret_cast<char*>(&_impl_.batterymd_2_)) + sizeof(_impl_.bat_module2_cell11_vol_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.BAT_MODULE_2)
+    reinterpret_cast<char*>(&_impl_.batterymd_2_pk_)) + sizeof(_impl_.bat_module2_cell11_vol_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.BAT_MODULE_2)
 }
 
 inline void BAT_MODULE_2::SharedCtor(
@@ -2510,7 +2566,7 @@ inline void BAT_MODULE_2::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.batterymd_2_){0}
+    , decltype(_impl_.batterymd_2_pk_){0}
     , decltype(_impl_.bat_module2_cell0_vol_){0}
     , decltype(_impl_.bat_module2_cell1_vol_){0}
     , decltype(_impl_.bat_module2_cell2_vol_){0}
@@ -2532,7 +2588,7 @@ inline void BAT_MODULE_2::SharedCtor(
 }
 
 BAT_MODULE_2::~BAT_MODULE_2() {
-  // @@protoc_insertion_point(destructor:Protocol.BAT_MODULE_2)
+  // @@protoc_insertion_point(destructor:EDT0001.BAT_MODULE_2)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -2550,15 +2606,15 @@ void BAT_MODULE_2::SetCachedSize(int size) const {
 }
 
 void BAT_MODULE_2::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.BAT_MODULE_2)
+// @@protoc_insertion_point(message_clear_start:EDT0001.BAT_MODULE_2)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.system_time_.ClearToEmpty();
-  ::memset(&_impl_.batterymd_2_, 0, static_cast<size_t>(
+  ::memset(&_impl_.batterymd_2_pk_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.bat_module2_cell11_vol_) -
-      reinterpret_cast<char*>(&_impl_.batterymd_2_)) + sizeof(_impl_.bat_module2_cell11_vol_));
+      reinterpret_cast<char*>(&_impl_.batterymd_2_pk_)) + sizeof(_impl_.bat_module2_cell11_vol_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -2568,10 +2624,10 @@ const char* BAT_MODULE_2::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 BatteryMd_2 = 1;
+      // int32 BatteryMd_2_PK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.batterymd_2_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.batterymd_2_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -2678,7 +2734,7 @@ const char* BAT_MODULE_2::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.BAT_MODULE_2.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.BAT_MODULE_2.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -2707,14 +2763,14 @@ failure:
 
 uint8_t* BAT_MODULE_2::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.BAT_MODULE_2)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.BAT_MODULE_2)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 BatteryMd_2 = 1;
-  if (this->_internal_batterymd_2() != 0) {
+  // int32 BatteryMd_2_PK = 1;
+  if (this->_internal_batterymd_2_pk() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_2(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_2_pk(), target);
   }
 
   // int32 BAT_MODULE2_CELL0_VOL = 2;
@@ -2794,7 +2850,7 @@ uint8_t* BAT_MODULE_2::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.BAT_MODULE_2.System_time");
+      "EDT0001.BAT_MODULE_2.System_time");
     target = stream->WriteStringMaybeAliased(
         14, this->_internal_system_time(), target);
   }
@@ -2803,12 +2859,12 @@ uint8_t* BAT_MODULE_2::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.BAT_MODULE_2)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.BAT_MODULE_2)
   return target;
 }
 
 size_t BAT_MODULE_2::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.BAT_MODULE_2)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.BAT_MODULE_2)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -2822,9 +2878,9 @@ size_t BAT_MODULE_2::ByteSizeLong() const {
         this->_internal_system_time());
   }
 
-  // int32 BatteryMd_2 = 1;
-  if (this->_internal_batterymd_2() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_2());
+  // int32 BatteryMd_2_PK = 1;
+  if (this->_internal_batterymd_2_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_2_pk());
   }
 
   // int32 BAT_MODULE2_CELL0_VOL = 2;
@@ -2900,7 +2956,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BAT_MODULE_2::GetClassData() c
 void BAT_MODULE_2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BAT_MODULE_2*>(&to_msg);
   auto& from = static_cast<const BAT_MODULE_2&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.BAT_MODULE_2)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.BAT_MODULE_2)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -2908,8 +2964,8 @@ void BAT_MODULE_2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
   if (!from._internal_system_time().empty()) {
     _this->_internal_set_system_time(from._internal_system_time());
   }
-  if (from._internal_batterymd_2() != 0) {
-    _this->_internal_set_batterymd_2(from._internal_batterymd_2());
+  if (from._internal_batterymd_2_pk() != 0) {
+    _this->_internal_set_batterymd_2_pk(from._internal_batterymd_2_pk());
   }
   if (from._internal_bat_module2_cell0_vol() != 0) {
     _this->_internal_set_bat_module2_cell0_vol(from._internal_bat_module2_cell0_vol());
@@ -2951,7 +3007,7 @@ void BAT_MODULE_2::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
 }
 
 void BAT_MODULE_2::CopyFrom(const BAT_MODULE_2& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.BAT_MODULE_2)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.BAT_MODULE_2)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -2973,9 +3029,9 @@ void BAT_MODULE_2::InternalSwap(BAT_MODULE_2* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BAT_MODULE_2, _impl_.bat_module2_cell11_vol_)
       + sizeof(BAT_MODULE_2::_impl_.bat_module2_cell11_vol_)
-      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_2, _impl_.batterymd_2_)>(
-          reinterpret_cast<char*>(&_impl_.batterymd_2_),
-          reinterpret_cast<char*>(&other->_impl_.batterymd_2_));
+      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_2, _impl_.batterymd_2_pk_)>(
+          reinterpret_cast<char*>(&_impl_.batterymd_2_pk_),
+          reinterpret_cast<char*>(&other->_impl_.batterymd_2_pk_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BAT_MODULE_2::GetMetadata() const {
@@ -2994,13 +3050,13 @@ BAT_MODULE_3::BAT_MODULE_3(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.BAT_MODULE_3)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.BAT_MODULE_3)
 }
 BAT_MODULE_3::BAT_MODULE_3(const BAT_MODULE_3& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   BAT_MODULE_3* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.batterymd_3_){}
+      decltype(_impl_.batterymd_3_pk_){}
     , decltype(_impl_.bat_module3_cell0_vol_){}
     , decltype(_impl_.bat_module3_cell1_vol_){}
     , decltype(_impl_.bat_module3_cell2_vol_){}
@@ -3010,10 +3066,10 @@ BAT_MODULE_3::BAT_MODULE_3(const BAT_MODULE_3& from)
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  ::memcpy(&_impl_.batterymd_3_, &from._impl_.batterymd_3_,
+  ::memcpy(&_impl_.batterymd_3_pk_, &from._impl_.batterymd_3_pk_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bat_module3_cell11_vol_) -
-    reinterpret_cast<char*>(&_impl_.batterymd_3_)) + sizeof(_impl_.bat_module3_cell11_vol_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.BAT_MODULE_3)
+    reinterpret_cast<char*>(&_impl_.batterymd_3_pk_)) + sizeof(_impl_.bat_module3_cell11_vol_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.BAT_MODULE_3)
 }
 
 inline void BAT_MODULE_3::SharedCtor(
@@ -3021,7 +3077,7 @@ inline void BAT_MODULE_3::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.batterymd_3_){0}
+      decltype(_impl_.batterymd_3_pk_){0}
     , decltype(_impl_.bat_module3_cell0_vol_){0}
     , decltype(_impl_.bat_module3_cell1_vol_){0}
     , decltype(_impl_.bat_module3_cell2_vol_){0}
@@ -3033,7 +3089,7 @@ inline void BAT_MODULE_3::SharedCtor(
 }
 
 BAT_MODULE_3::~BAT_MODULE_3() {
-  // @@protoc_insertion_point(destructor:Protocol.BAT_MODULE_3)
+  // @@protoc_insertion_point(destructor:EDT0001.BAT_MODULE_3)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -3050,14 +3106,14 @@ void BAT_MODULE_3::SetCachedSize(int size) const {
 }
 
 void BAT_MODULE_3::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.BAT_MODULE_3)
+// @@protoc_insertion_point(message_clear_start:EDT0001.BAT_MODULE_3)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  ::memset(&_impl_.batterymd_3_, 0, static_cast<size_t>(
+  ::memset(&_impl_.batterymd_3_pk_, 0, static_cast<size_t>(
       reinterpret_cast<char*>(&_impl_.bat_module3_cell11_vol_) -
-      reinterpret_cast<char*>(&_impl_.batterymd_3_)) + sizeof(_impl_.bat_module3_cell11_vol_));
+      reinterpret_cast<char*>(&_impl_.batterymd_3_pk_)) + sizeof(_impl_.bat_module3_cell11_vol_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3067,10 +3123,10 @@ const char* BAT_MODULE_3::_InternalParse(const char* ptr, ::_pbi::ParseContext* 
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 BatteryMd_3 = 1;
+      // int32 BatteryMd_3_PK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.batterymd_3_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.batterymd_3_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -3148,14 +3204,14 @@ failure:
 
 uint8_t* BAT_MODULE_3::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.BAT_MODULE_3)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.BAT_MODULE_3)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 BatteryMd_3 = 1;
-  if (this->_internal_batterymd_3() != 0) {
+  // int32 BatteryMd_3_PK = 1;
+  if (this->_internal_batterymd_3_pk() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_3(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_batterymd_3_pk(), target);
   }
 
   // int32 BAT_MODULE3_CELL0_VOL = 2;
@@ -3198,21 +3254,21 @@ uint8_t* BAT_MODULE_3::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.BAT_MODULE_3)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.BAT_MODULE_3)
   return target;
 }
 
 size_t BAT_MODULE_3::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.BAT_MODULE_3)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.BAT_MODULE_3)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // int32 BatteryMd_3 = 1;
-  if (this->_internal_batterymd_3() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_3());
+  // int32 BatteryMd_3_PK = 1;
+  if (this->_internal_batterymd_3_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_batterymd_3_pk());
   }
 
   // int32 BAT_MODULE3_CELL0_VOL = 2;
@@ -3258,13 +3314,13 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*BAT_MODULE_3::GetClassData() c
 void BAT_MODULE_3::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<BAT_MODULE_3*>(&to_msg);
   auto& from = static_cast<const BAT_MODULE_3&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.BAT_MODULE_3)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.BAT_MODULE_3)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (from._internal_batterymd_3() != 0) {
-    _this->_internal_set_batterymd_3(from._internal_batterymd_3());
+  if (from._internal_batterymd_3_pk() != 0) {
+    _this->_internal_set_batterymd_3_pk(from._internal_batterymd_3_pk());
   }
   if (from._internal_bat_module3_cell0_vol() != 0) {
     _this->_internal_set_bat_module3_cell0_vol(from._internal_bat_module3_cell0_vol());
@@ -3288,7 +3344,7 @@ void BAT_MODULE_3::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::P
 }
 
 void BAT_MODULE_3::CopyFrom(const BAT_MODULE_3& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.BAT_MODULE_3)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.BAT_MODULE_3)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3304,9 +3360,9 @@ void BAT_MODULE_3::InternalSwap(BAT_MODULE_3* other) {
   ::PROTOBUF_NAMESPACE_ID::internal::memswap<
       PROTOBUF_FIELD_OFFSET(BAT_MODULE_3, _impl_.bat_module3_cell11_vol_)
       + sizeof(BAT_MODULE_3::_impl_.bat_module3_cell11_vol_)
-      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_3, _impl_.batterymd_3_)>(
-          reinterpret_cast<char*>(&_impl_.batterymd_3_),
-          reinterpret_cast<char*>(&other->_impl_.batterymd_3_));
+      - PROTOBUF_FIELD_OFFSET(BAT_MODULE_3, _impl_.batterymd_3_pk_)>(
+          reinterpret_cast<char*>(&_impl_.batterymd_3_pk_),
+          reinterpret_cast<char*>(&other->_impl_.batterymd_3_pk_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata BAT_MODULE_3::GetMetadata() const {
@@ -3325,7 +3381,7 @@ Environment::Environment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.Environment)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.Environment)
 }
 Environment::Environment(const Environment& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -3349,7 +3405,7 @@ Environment::Environment(const Environment& from)
   ::memcpy(&_impl_.env_, &from._impl_.env_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.wind_direction_) -
     reinterpret_cast<char*>(&_impl_.env_)) + sizeof(_impl_.wind_direction_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.Environment)
+  // @@protoc_insertion_point(copy_constructor:EDT0001.Environment)
 }
 
 inline void Environment::SharedCtor(
@@ -3370,7 +3426,7 @@ inline void Environment::SharedCtor(
 }
 
 Environment::~Environment() {
-  // @@protoc_insertion_point(destructor:Protocol.Environment)
+  // @@protoc_insertion_point(destructor:EDT0001.Environment)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -3388,7 +3444,7 @@ void Environment::SetCachedSize(int size) const {
 }
 
 void Environment::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.Environment)
+// @@protoc_insertion_point(message_clear_start:EDT0001.Environment)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -3436,7 +3492,7 @@ const char* Environment::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.Environment.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.Environment.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -3465,7 +3521,7 @@ failure:
 
 uint8_t* Environment::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.Environment)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.Environment)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3492,7 +3548,7 @@ uint8_t* Environment::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.Environment.System_time");
+      "EDT0001.Environment.System_time");
     target = stream->WriteStringMaybeAliased(
         4, this->_internal_system_time(), target);
   }
@@ -3501,12 +3557,12 @@ uint8_t* Environment::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.Environment)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.Environment)
   return target;
 }
 
 size_t Environment::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.Environment)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.Environment)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -3548,7 +3604,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Environment::GetClassData() co
 void Environment::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<Environment*>(&to_msg);
   auto& from = static_cast<const Environment&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.Environment)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.Environment)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -3569,7 +3625,7 @@ void Environment::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
 }
 
 void Environment::CopyFrom(const Environment& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.Environment)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.Environment)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3612,35 +3668,20 @@ AIS::AIS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.AIS)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.AIS)
 }
 AIS::AIS(const AIS& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   AIS* const _this = this; (void)_this;
   new (&_impl_) Impl_{
-      decltype(_impl_.latitude_){}
-    , decltype(_impl_.longitude_){}
-    , decltype(_impl_.system_time_){}
+      decltype(_impl_.system_time_){}
     , decltype(_impl_.ais_pk_){}
+    , decltype(_impl_.shipid_){}
+    , decltype(_impl_.latitude_){}
+    , decltype(_impl_.longitude_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
-  _impl_.latitude_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.latitude_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_latitude().empty()) {
-    _this->_impl_.latitude_.Set(from._internal_latitude(), 
-      _this->GetArenaForAllocation());
-  }
-  _impl_.longitude_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.longitude_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (!from._internal_longitude().empty()) {
-    _this->_impl_.longitude_.Set(from._internal_longitude(), 
-      _this->GetArenaForAllocation());
-  }
   _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.system_time_.Set("", GetArenaForAllocation());
@@ -3649,8 +3690,10 @@ AIS::AIS(const AIS& from)
     _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.ais_pk_ = from._impl_.ais_pk_;
-  // @@protoc_insertion_point(copy_constructor:Protocol.AIS)
+  ::memcpy(&_impl_.ais_pk_, &from._impl_.ais_pk_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.longitude_) -
+    reinterpret_cast<char*>(&_impl_.ais_pk_)) + sizeof(_impl_.longitude_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.AIS)
 }
 
 inline void AIS::SharedCtor(
@@ -3658,20 +3701,13 @@ inline void AIS::SharedCtor(
   (void)arena;
   (void)is_message_owned;
   new (&_impl_) Impl_{
-      decltype(_impl_.latitude_){}
-    , decltype(_impl_.longitude_){}
-    , decltype(_impl_.system_time_){}
+      decltype(_impl_.system_time_){}
     , decltype(_impl_.ais_pk_){0}
+    , decltype(_impl_.shipid_){0}
+    , decltype(_impl_.latitude_){0}
+    , decltype(_impl_.longitude_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
-  _impl_.latitude_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.latitude_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  _impl_.longitude_.InitDefault();
-  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-    _impl_.longitude_.Set("", GetArenaForAllocation());
-  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
   _impl_.system_time_.InitDefault();
   #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
     _impl_.system_time_.Set("", GetArenaForAllocation());
@@ -3679,7 +3715,7 @@ inline void AIS::SharedCtor(
 }
 
 AIS::~AIS() {
-  // @@protoc_insertion_point(destructor:Protocol.AIS)
+  // @@protoc_insertion_point(destructor:EDT0001.AIS)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -3689,8 +3725,6 @@ AIS::~AIS() {
 
 inline void AIS::SharedDtor() {
   GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
-  _impl_.latitude_.Destroy();
-  _impl_.longitude_.Destroy();
   _impl_.system_time_.Destroy();
 }
 
@@ -3699,15 +3733,15 @@ void AIS::SetCachedSize(int size) const {
 }
 
 void AIS::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.AIS)
+// @@protoc_insertion_point(message_clear_start:EDT0001.AIS)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  _impl_.latitude_.ClearToEmpty();
-  _impl_.longitude_.ClearToEmpty();
   _impl_.system_time_.ClearToEmpty();
-  _impl_.ais_pk_ = 0;
+  ::memset(&_impl_.ais_pk_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.longitude_) -
+      reinterpret_cast<char*>(&_impl_.ais_pk_)) + sizeof(_impl_.longitude_));
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -3725,33 +3759,37 @@ const char* AIS::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
         } else
           goto handle_unusual;
         continue;
-      // string latitude = 2;
+      // int32 SHIPID = 2;
       case 2:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 18)) {
-          auto str = _internal_mutable_latitude();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.shipid_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.AIS.latitude"));
         } else
           goto handle_unusual;
         continue;
-      // string longitude = 3;
+      // float latitude = 3;
       case 3:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
-          auto str = _internal_mutable_longitude();
-          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
-          CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.AIS.longitude"));
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 29)) {
+          _impl_.latitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
         } else
           goto handle_unusual;
         continue;
-      // string System_time = 4;
+      // float longitude = 4;
       case 4:
-        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 34)) {
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 37)) {
+          _impl_.longitude_ = ::PROTOBUF_NAMESPACE_ID::internal::UnalignedLoad<float>(ptr);
+          ptr += sizeof(float);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 5;
+      case 5:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 42)) {
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.AIS.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.AIS.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -3780,7 +3818,7 @@ failure:
 
 uint8_t* AIS::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.AIS)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.AIS)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -3790,67 +3828,59 @@ uint8_t* AIS::_InternalSerialize(
     target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_ais_pk(), target);
   }
 
-  // string latitude = 2;
-  if (!this->_internal_latitude().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_latitude().data(), static_cast<int>(this->_internal_latitude().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.AIS.latitude");
-    target = stream->WriteStringMaybeAliased(
-        2, this->_internal_latitude(), target);
+  // int32 SHIPID = 2;
+  if (this->_internal_shipid() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_shipid(), target);
   }
 
-  // string longitude = 3;
-  if (!this->_internal_longitude().empty()) {
-    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
-      this->_internal_longitude().data(), static_cast<int>(this->_internal_longitude().length()),
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.AIS.longitude");
-    target = stream->WriteStringMaybeAliased(
-        3, this->_internal_longitude(), target);
+  // float latitude = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_latitude = this->_internal_latitude();
+  uint32_t raw_latitude;
+  memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
+  if (raw_latitude != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(3, this->_internal_latitude(), target);
   }
 
-  // string System_time = 4;
+  // float longitude = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_longitude = this->_internal_longitude();
+  uint32_t raw_longitude;
+  memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
+  if (raw_longitude != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteFloatToArray(4, this->_internal_longitude(), target);
+  }
+
+  // string System_time = 5;
   if (!this->_internal_system_time().empty()) {
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.AIS.System_time");
+      "EDT0001.AIS.System_time");
     target = stream->WriteStringMaybeAliased(
-        4, this->_internal_system_time(), target);
+        5, this->_internal_system_time(), target);
   }
 
   if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.AIS)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.AIS)
   return target;
 }
 
 size_t AIS::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.AIS)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.AIS)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
-  // string latitude = 2;
-  if (!this->_internal_latitude().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_latitude());
-  }
-
-  // string longitude = 3;
-  if (!this->_internal_longitude().empty()) {
-    total_size += 1 +
-      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
-        this->_internal_longitude());
-  }
-
-  // string System_time = 4;
+  // string System_time = 5;
   if (!this->_internal_system_time().empty()) {
     total_size += 1 +
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
@@ -3860,6 +3890,29 @@ size_t AIS::ByteSizeLong() const {
   // int32 AIS_PK = 1;
   if (this->_internal_ais_pk() != 0) {
     total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_ais_pk());
+  }
+
+  // int32 SHIPID = 2;
+  if (this->_internal_shipid() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_shipid());
+  }
+
+  // float latitude = 3;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_latitude = this->_internal_latitude();
+  uint32_t raw_latitude;
+  memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
+  if (raw_latitude != 0) {
+    total_size += 1 + 4;
+  }
+
+  // float longitude = 4;
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_longitude = this->_internal_longitude();
+  uint32_t raw_longitude;
+  memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
+  if (raw_longitude != 0) {
+    total_size += 1 + 4;
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -3875,28 +3928,39 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*AIS::GetClassData() const { re
 void AIS::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<AIS*>(&to_msg);
   auto& from = static_cast<const AIS&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.AIS)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.AIS)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  if (!from._internal_latitude().empty()) {
-    _this->_internal_set_latitude(from._internal_latitude());
-  }
-  if (!from._internal_longitude().empty()) {
-    _this->_internal_set_longitude(from._internal_longitude());
-  }
   if (!from._internal_system_time().empty()) {
     _this->_internal_set_system_time(from._internal_system_time());
   }
   if (from._internal_ais_pk() != 0) {
     _this->_internal_set_ais_pk(from._internal_ais_pk());
   }
+  if (from._internal_shipid() != 0) {
+    _this->_internal_set_shipid(from._internal_shipid());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_latitude = from._internal_latitude();
+  uint32_t raw_latitude;
+  memcpy(&raw_latitude, &tmp_latitude, sizeof(tmp_latitude));
+  if (raw_latitude != 0) {
+    _this->_internal_set_latitude(from._internal_latitude());
+  }
+  static_assert(sizeof(uint32_t) == sizeof(float), "Code assumes uint32_t and float are the same size.");
+  float tmp_longitude = from._internal_longitude();
+  uint32_t raw_longitude;
+  memcpy(&raw_longitude, &tmp_longitude, sizeof(tmp_longitude));
+  if (raw_longitude != 0) {
+    _this->_internal_set_longitude(from._internal_longitude());
+  }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void AIS::CopyFrom(const AIS& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.AIS)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.AIS)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -3912,18 +3976,15 @@ void AIS::InternalSwap(AIS* other) {
   auto* rhs_arena = other->GetArenaForAllocation();
   _internal_metadata_.InternalSwap(&other->_internal_metadata_);
   ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.latitude_, lhs_arena,
-      &other->_impl_.latitude_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
-      &_impl_.longitude_, lhs_arena,
-      &other->_impl_.longitude_, rhs_arena
-  );
-  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
       &_impl_.system_time_, lhs_arena,
       &other->_impl_.system_time_, rhs_arena
   );
-  swap(_impl_.ais_pk_, other->_impl_.ais_pk_);
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(AIS, _impl_.longitude_)
+      + sizeof(AIS::_impl_.longitude_)
+      - PROTOBUF_FIELD_OFFSET(AIS, _impl_.ais_pk_)>(
+          reinterpret_cast<char*>(&_impl_.ais_pk_),
+          reinterpret_cast<char*>(&other->_impl_.ais_pk_));
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata AIS::GetMetadata() const {
@@ -3942,14 +4003,14 @@ System_Time::System_Time(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.System_Time)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.System_Time)
 }
 System_Time::System_Time(const System_Time& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
   System_Time* const _this = this; (void)_this;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.times_){}
+    , decltype(_impl_.times_pk_){}
     , /*decltype(_impl_._cached_size_)*/{}};
 
   _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
@@ -3961,8 +4022,8 @@ System_Time::System_Time(const System_Time& from)
     _this->_impl_.system_time_.Set(from._internal_system_time(), 
       _this->GetArenaForAllocation());
   }
-  _this->_impl_.times_ = from._impl_.times_;
-  // @@protoc_insertion_point(copy_constructor:Protocol.System_Time)
+  _this->_impl_.times_pk_ = from._impl_.times_pk_;
+  // @@protoc_insertion_point(copy_constructor:EDT0001.System_Time)
 }
 
 inline void System_Time::SharedCtor(
@@ -3971,7 +4032,7 @@ inline void System_Time::SharedCtor(
   (void)is_message_owned;
   new (&_impl_) Impl_{
       decltype(_impl_.system_time_){}
-    , decltype(_impl_.times_){0}
+    , decltype(_impl_.times_pk_){0}
     , /*decltype(_impl_._cached_size_)*/{}
   };
   _impl_.system_time_.InitDefault();
@@ -3981,7 +4042,7 @@ inline void System_Time::SharedCtor(
 }
 
 System_Time::~System_Time() {
-  // @@protoc_insertion_point(destructor:Protocol.System_Time)
+  // @@protoc_insertion_point(destructor:EDT0001.System_Time)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -3999,13 +4060,13 @@ void System_Time::SetCachedSize(int size) const {
 }
 
 void System_Time::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.System_Time)
+// @@protoc_insertion_point(message_clear_start:EDT0001.System_Time)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
 
   _impl_.system_time_.ClearToEmpty();
-  _impl_.times_ = 0;
+  _impl_.times_pk_ = 0;
   _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
 }
 
@@ -4015,10 +4076,10 @@ const char* System_Time::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
     uint32_t tag;
     ptr = ::_pbi::ReadTag(ptr, &tag);
     switch (tag >> 3) {
-      // int32 Times = 1;
+      // int32 Times_PK = 1;
       case 1:
         if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
-          _impl_.times_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          _impl_.times_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
           CHK_(ptr);
         } else
           goto handle_unusual;
@@ -4029,7 +4090,7 @@ const char* System_Time::_InternalParse(const char* ptr, ::_pbi::ParseContext* c
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.System_Time.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.System_Time.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -4058,14 +4119,14 @@ failure:
 
 uint8_t* System_Time::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.System_Time)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.System_Time)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
-  // int32 Times = 1;
-  if (this->_internal_times() != 0) {
+  // int32 Times_PK = 1;
+  if (this->_internal_times_pk() != 0) {
     target = stream->EnsureSpace(target);
-    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_times(), target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_times_pk(), target);
   }
 
   // string System_time = 2;
@@ -4073,7 +4134,7 @@ uint8_t* System_Time::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.System_Time.System_time");
+      "EDT0001.System_Time.System_time");
     target = stream->WriteStringMaybeAliased(
         2, this->_internal_system_time(), target);
   }
@@ -4082,12 +4143,12 @@ uint8_t* System_Time::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.System_Time)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.System_Time)
   return target;
 }
 
 size_t System_Time::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.System_Time)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.System_Time)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -4101,9 +4162,9 @@ size_t System_Time::ByteSizeLong() const {
         this->_internal_system_time());
   }
 
-  // int32 Times = 1;
-  if (this->_internal_times() != 0) {
-    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_times());
+  // int32 Times_PK = 1;
+  if (this->_internal_times_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_times_pk());
   }
 
   return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
@@ -4119,7 +4180,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*System_Time::GetClassData() co
 void System_Time::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<System_Time*>(&to_msg);
   auto& from = static_cast<const System_Time&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.System_Time)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.System_Time)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -4127,14 +4188,14 @@ void System_Time::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PR
   if (!from._internal_system_time().empty()) {
     _this->_internal_set_system_time(from._internal_system_time());
   }
-  if (from._internal_times() != 0) {
-    _this->_internal_set_times(from._internal_times());
+  if (from._internal_times_pk() != 0) {
+    _this->_internal_set_times_pk(from._internal_times_pk());
   }
   _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
 }
 
 void System_Time::CopyFrom(const System_Time& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.System_Time)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.System_Time)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4153,7 +4214,7 @@ void System_Time::InternalSwap(System_Time* other) {
       &_impl_.system_time_, lhs_arena,
       &other->_impl_.system_time_, rhs_arena
   );
-  swap(_impl_.times_, other->_impl_.times_);
+  swap(_impl_.times_pk_, other->_impl_.times_pk_);
 }
 
 ::PROTOBUF_NAMESPACE_ID::Metadata System_Time::GetMetadata() const {
@@ -4172,7 +4233,7 @@ MOTOR::MOTOR(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.MOTOR)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.MOTOR)
 }
 MOTOR::MOTOR(const MOTOR& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -4197,7 +4258,7 @@ MOTOR::MOTOR(const MOTOR& from)
   ::memcpy(&_impl_.motor_pk_, &from._impl_.motor_pk_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.mt_temp_) -
     reinterpret_cast<char*>(&_impl_.motor_pk_)) + sizeof(_impl_.mt_temp_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.MOTOR)
+  // @@protoc_insertion_point(copy_constructor:EDT0001.MOTOR)
 }
 
 inline void MOTOR::SharedCtor(
@@ -4219,7 +4280,7 @@ inline void MOTOR::SharedCtor(
 }
 
 MOTOR::~MOTOR() {
-  // @@protoc_insertion_point(destructor:Protocol.MOTOR)
+  // @@protoc_insertion_point(destructor:EDT0001.MOTOR)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -4237,7 +4298,7 @@ void MOTOR::SetCachedSize(int size) const {
 }
 
 void MOTOR::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.MOTOR)
+// @@protoc_insertion_point(message_clear_start:EDT0001.MOTOR)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4293,7 +4354,7 @@ const char* MOTOR::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.MOTOR.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.MOTOR.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -4322,7 +4383,7 @@ failure:
 
 uint8_t* MOTOR::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.MOTOR)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.MOTOR)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4355,7 +4416,7 @@ uint8_t* MOTOR::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.MOTOR.System_time");
+      "EDT0001.MOTOR.System_time");
     target = stream->WriteStringMaybeAliased(
         5, this->_internal_system_time(), target);
   }
@@ -4364,12 +4425,12 @@ uint8_t* MOTOR::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.MOTOR)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.MOTOR)
   return target;
 }
 
 size_t MOTOR::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.MOTOR)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.MOTOR)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -4416,7 +4477,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*MOTOR::GetClassData() const { 
 void MOTOR::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<MOTOR*>(&to_msg);
   auto& from = static_cast<const MOTOR&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.MOTOR)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.MOTOR)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -4440,7 +4501,7 @@ void MOTOR::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF
 }
 
 void MOTOR::CopyFrom(const MOTOR& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.MOTOR)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.MOTOR)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4483,7 +4544,7 @@ INVERTER::INVERTER(::PROTOBUF_NAMESPACE_ID::Arena* arena,
                          bool is_message_owned)
   : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
   SharedCtor(arena, is_message_owned);
-  // @@protoc_insertion_point(arena_constructor:Protocol.INVERTER)
+  // @@protoc_insertion_point(arena_constructor:EDT0001.INVERTER)
 }
 INVERTER::INVERTER(const INVERTER& from)
   : ::PROTOBUF_NAMESPACE_ID::Message() {
@@ -4516,7 +4577,7 @@ INVERTER::INVERTER(const INVERTER& from)
   ::memcpy(&_impl_.inverter_pk_, &from._impl_.inverter_pk_,
     static_cast<size_t>(reinterpret_cast<char*>(&_impl_.inv_output_voltage_) -
     reinterpret_cast<char*>(&_impl_.inverter_pk_)) + sizeof(_impl_.inv_output_voltage_));
-  // @@protoc_insertion_point(copy_constructor:Protocol.INVERTER)
+  // @@protoc_insertion_point(copy_constructor:EDT0001.INVERTER)
 }
 
 inline void INVERTER::SharedCtor(
@@ -4546,7 +4607,7 @@ inline void INVERTER::SharedCtor(
 }
 
 INVERTER::~INVERTER() {
-  // @@protoc_insertion_point(destructor:Protocol.INVERTER)
+  // @@protoc_insertion_point(destructor:EDT0001.INVERTER)
   if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
   (void)arena;
     return;
@@ -4564,7 +4625,7 @@ void INVERTER::SetCachedSize(int size) const {
 }
 
 void INVERTER::Clear() {
-// @@protoc_insertion_point(message_clear_start:Protocol.INVERTER)
+// @@protoc_insertion_point(message_clear_start:EDT0001.INVERTER)
   uint32_t cached_has_bits = 0;
   // Prevent compiler warnings about cached_has_bits being unused
   (void) cached_has_bits;
@@ -4684,7 +4745,7 @@ const char* INVERTER::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx)
           auto str = _internal_mutable_system_time();
           ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
           CHK_(ptr);
-          CHK_(::_pbi::VerifyUTF8(str, "Protocol.INVERTER.System_time"));
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.INVERTER.System_time"));
         } else
           goto handle_unusual;
         continue;
@@ -4713,7 +4774,7 @@ failure:
 
 uint8_t* INVERTER::_InternalSerialize(
     uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
-  // @@protoc_insertion_point(serialize_to_array_start:Protocol.INVERTER)
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.INVERTER)
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
 
@@ -4794,7 +4855,7 @@ uint8_t* INVERTER::_InternalSerialize(
     ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
       this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
       ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
-      "Protocol.INVERTER.System_time");
+      "EDT0001.INVERTER.System_time");
     target = stream->WriteStringMaybeAliased(
         13, this->_internal_system_time(), target);
   }
@@ -4803,12 +4864,12 @@ uint8_t* INVERTER::_InternalSerialize(
     target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
         _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
   }
-  // @@protoc_insertion_point(serialize_to_array_end:Protocol.INVERTER)
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.INVERTER)
   return target;
 }
 
 size_t INVERTER::ByteSizeLong() const {
-// @@protoc_insertion_point(message_byte_size_start:Protocol.INVERTER)
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.INVERTER)
   size_t total_size = 0;
 
   uint32_t cached_has_bits = 0;
@@ -4895,7 +4956,7 @@ const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*INVERTER::GetClassData() const
 void INVERTER::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
   auto* const _this = static_cast<INVERTER*>(&to_msg);
   auto& from = static_cast<const INVERTER&>(from_msg);
-  // @@protoc_insertion_point(class_specific_merge_from_start:Protocol.INVERTER)
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.INVERTER)
   GOOGLE_DCHECK_NE(&from, _this);
   uint32_t cached_has_bits = 0;
   (void) cached_has_bits;
@@ -4943,7 +5004,7 @@ void INVERTER::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTO
 }
 
 void INVERTER::CopyFrom(const INVERTER& from) {
-// @@protoc_insertion_point(class_specific_copy_from_start:Protocol.INVERTER)
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.INVERTER)
   if (&from == this) return;
   Clear();
   MergeFrom(from);
@@ -4976,52 +5037,586 @@ void INVERTER::InternalSwap(INVERTER* other) {
       file_level_metadata_EDT0001_2eproto[10]);
 }
 
+// ===================================================================
+
+class Network::_Internal {
+ public:
+};
+
+Network::Network(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:EDT0001.Network)
+}
+Network::Network(const Network& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  Network* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.network_pk_){}
+    , decltype(_impl_.status_network_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.network_pk_, &from._impl_.network_pk_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.status_network_) -
+    reinterpret_cast<char*>(&_impl_.network_pk_)) + sizeof(_impl_.status_network_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.Network)
+}
+
+inline void Network::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.network_pk_){0}
+    , decltype(_impl_.status_network_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+Network::~Network() {
+  // @@protoc_insertion_point(destructor:EDT0001.Network)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void Network::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.system_time_.Destroy();
+}
+
+void Network::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void Network::Clear() {
+// @@protoc_insertion_point(message_clear_start:EDT0001.Network)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.network_pk_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.status_network_) -
+      reinterpret_cast<char*>(&_impl_.network_pk_)) + sizeof(_impl_.status_network_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* Network::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 NetWork_PK = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.network_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 Status_Network = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.status_network_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.Network.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* Network::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.Network)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 NetWork_PK = 1;
+  if (this->_internal_network_pk() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_network_pk(), target);
+  }
+
+  // int32 Status_Network = 2;
+  if (this->_internal_status_network() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_status_network(), target);
+  }
+
+  // string System_time = 3;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "EDT0001.Network.System_time");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.Network)
+  return target;
+}
+
+size_t Network::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.Network)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string System_time = 3;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 NetWork_PK = 1;
+  if (this->_internal_network_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_network_pk());
+  }
+
+  // int32 Status_Network = 2;
+  if (this->_internal_status_network() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_status_network());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData Network::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    Network::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*Network::GetClassData() const { return &_class_data_; }
+
+
+void Network::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<Network*>(&to_msg);
+  auto& from = static_cast<const Network&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.Network)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_network_pk() != 0) {
+    _this->_internal_set_network_pk(from._internal_network_pk());
+  }
+  if (from._internal_status_network() != 0) {
+    _this->_internal_set_status_network(from._internal_status_network());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void Network::CopyFrom(const Network& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.Network)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool Network::IsInitialized() const {
+  return true;
+}
+
+void Network::InternalSwap(Network* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(Network, _impl_.status_network_)
+      + sizeof(Network::_impl_.status_network_)
+      - PROTOBUF_FIELD_OFFSET(Network, _impl_.network_pk_)>(
+          reinterpret_cast<char*>(&_impl_.network_pk_),
+          reinterpret_cast<char*>(&other->_impl_.network_pk_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata Network::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_EDT0001_2eproto_getter, &descriptor_table_EDT0001_2eproto_once,
+      file_level_metadata_EDT0001_2eproto[11]);
+}
+
+// ===================================================================
+
+class SaveAsBytes::_Internal {
+ public:
+};
+
+SaveAsBytes::SaveAsBytes(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                         bool is_message_owned)
+  : ::PROTOBUF_NAMESPACE_ID::Message(arena, is_message_owned) {
+  SharedCtor(arena, is_message_owned);
+  // @@protoc_insertion_point(arena_constructor:EDT0001.SaveAsBytes)
+}
+SaveAsBytes::SaveAsBytes(const SaveAsBytes& from)
+  : ::PROTOBUF_NAMESPACE_ID::Message() {
+  SaveAsBytes* const _this = this; (void)_this;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.saveasbytes_pk_){}
+    , decltype(_impl_.bytes_){}
+    , /*decltype(_impl_._cached_size_)*/{}};
+
+  _internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (!from._internal_system_time().empty()) {
+    _this->_impl_.system_time_.Set(from._internal_system_time(), 
+      _this->GetArenaForAllocation());
+  }
+  ::memcpy(&_impl_.saveasbytes_pk_, &from._impl_.saveasbytes_pk_,
+    static_cast<size_t>(reinterpret_cast<char*>(&_impl_.bytes_) -
+    reinterpret_cast<char*>(&_impl_.saveasbytes_pk_)) + sizeof(_impl_.bytes_));
+  // @@protoc_insertion_point(copy_constructor:EDT0001.SaveAsBytes)
+}
+
+inline void SaveAsBytes::SharedCtor(
+    ::_pb::Arena* arena, bool is_message_owned) {
+  (void)arena;
+  (void)is_message_owned;
+  new (&_impl_) Impl_{
+      decltype(_impl_.system_time_){}
+    , decltype(_impl_.saveasbytes_pk_){0}
+    , decltype(_impl_.bytes_){0}
+    , /*decltype(_impl_._cached_size_)*/{}
+  };
+  _impl_.system_time_.InitDefault();
+  #ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+}
+
+SaveAsBytes::~SaveAsBytes() {
+  // @@protoc_insertion_point(destructor:EDT0001.SaveAsBytes)
+  if (auto *arena = _internal_metadata_.DeleteReturnArena<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>()) {
+  (void)arena;
+    return;
+  }
+  SharedDtor();
+}
+
+inline void SaveAsBytes::SharedDtor() {
+  GOOGLE_DCHECK(GetArenaForAllocation() == nullptr);
+  _impl_.system_time_.Destroy();
+}
+
+void SaveAsBytes::SetCachedSize(int size) const {
+  _impl_._cached_size_.Set(size);
+}
+
+void SaveAsBytes::Clear() {
+// @@protoc_insertion_point(message_clear_start:EDT0001.SaveAsBytes)
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  _impl_.system_time_.ClearToEmpty();
+  ::memset(&_impl_.saveasbytes_pk_, 0, static_cast<size_t>(
+      reinterpret_cast<char*>(&_impl_.bytes_) -
+      reinterpret_cast<char*>(&_impl_.saveasbytes_pk_)) + sizeof(_impl_.bytes_));
+  _internal_metadata_.Clear<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>();
+}
+
+const char* SaveAsBytes::_InternalParse(const char* ptr, ::_pbi::ParseContext* ctx) {
+#define CHK_(x) if (PROTOBUF_PREDICT_FALSE(!(x))) goto failure
+  while (!ctx->Done(&ptr)) {
+    uint32_t tag;
+    ptr = ::_pbi::ReadTag(ptr, &tag);
+    switch (tag >> 3) {
+      // int32 SaveAsBytes_PK = 1;
+      case 1:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 8)) {
+          _impl_.saveasbytes_pk_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // int32 Bytes = 2;
+      case 2:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 16)) {
+          _impl_.bytes_ = ::PROTOBUF_NAMESPACE_ID::internal::ReadVarint32(&ptr);
+          CHK_(ptr);
+        } else
+          goto handle_unusual;
+        continue;
+      // string System_time = 3;
+      case 3:
+        if (PROTOBUF_PREDICT_TRUE(static_cast<uint8_t>(tag) == 26)) {
+          auto str = _internal_mutable_system_time();
+          ptr = ::_pbi::InlineGreedyStringParser(str, ptr, ctx);
+          CHK_(ptr);
+          CHK_(::_pbi::VerifyUTF8(str, "EDT0001.SaveAsBytes.System_time"));
+        } else
+          goto handle_unusual;
+        continue;
+      default:
+        goto handle_unusual;
+    }  // switch
+  handle_unusual:
+    if ((tag == 0) || ((tag & 7) == 4)) {
+      CHK_(ptr);
+      ctx->SetLastTag(tag);
+      goto message_done;
+    }
+    ptr = UnknownFieldParse(
+        tag,
+        _internal_metadata_.mutable_unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(),
+        ptr, ctx);
+    CHK_(ptr != nullptr);
+  }  // while
+message_done:
+  return ptr;
+failure:
+  ptr = nullptr;
+  goto message_done;
+#undef CHK_
+}
+
+uint8_t* SaveAsBytes::_InternalSerialize(
+    uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const {
+  // @@protoc_insertion_point(serialize_to_array_start:EDT0001.SaveAsBytes)
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  // int32 SaveAsBytes_PK = 1;
+  if (this->_internal_saveasbytes_pk() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(1, this->_internal_saveasbytes_pk(), target);
+  }
+
+  // int32 Bytes = 2;
+  if (this->_internal_bytes() != 0) {
+    target = stream->EnsureSpace(target);
+    target = ::_pbi::WireFormatLite::WriteInt32ToArray(2, this->_internal_bytes(), target);
+  }
+
+  // string System_time = 3;
+  if (!this->_internal_system_time().empty()) {
+    ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::VerifyUtf8String(
+      this->_internal_system_time().data(), static_cast<int>(this->_internal_system_time().length()),
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::SERIALIZE,
+      "EDT0001.SaveAsBytes.System_time");
+    target = stream->WriteStringMaybeAliased(
+        3, this->_internal_system_time(), target);
+  }
+
+  if (PROTOBUF_PREDICT_FALSE(_internal_metadata_.have_unknown_fields())) {
+    target = ::_pbi::WireFormat::InternalSerializeUnknownFieldsToArray(
+        _internal_metadata_.unknown_fields<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(::PROTOBUF_NAMESPACE_ID::UnknownFieldSet::default_instance), target, stream);
+  }
+  // @@protoc_insertion_point(serialize_to_array_end:EDT0001.SaveAsBytes)
+  return target;
+}
+
+size_t SaveAsBytes::ByteSizeLong() const {
+// @@protoc_insertion_point(message_byte_size_start:EDT0001.SaveAsBytes)
+  size_t total_size = 0;
+
+  uint32_t cached_has_bits = 0;
+  // Prevent compiler warnings about cached_has_bits being unused
+  (void) cached_has_bits;
+
+  // string System_time = 3;
+  if (!this->_internal_system_time().empty()) {
+    total_size += 1 +
+      ::PROTOBUF_NAMESPACE_ID::internal::WireFormatLite::StringSize(
+        this->_internal_system_time());
+  }
+
+  // int32 SaveAsBytes_PK = 1;
+  if (this->_internal_saveasbytes_pk() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_saveasbytes_pk());
+  }
+
+  // int32 Bytes = 2;
+  if (this->_internal_bytes() != 0) {
+    total_size += ::_pbi::WireFormatLite::Int32SizePlusOne(this->_internal_bytes());
+  }
+
+  return MaybeComputeUnknownFieldsSize(total_size, &_impl_._cached_size_);
+}
+
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData SaveAsBytes::_class_data_ = {
+    ::PROTOBUF_NAMESPACE_ID::Message::CopyWithSourceCheck,
+    SaveAsBytes::MergeImpl
+};
+const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*SaveAsBytes::GetClassData() const { return &_class_data_; }
+
+
+void SaveAsBytes::MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg) {
+  auto* const _this = static_cast<SaveAsBytes*>(&to_msg);
+  auto& from = static_cast<const SaveAsBytes&>(from_msg);
+  // @@protoc_insertion_point(class_specific_merge_from_start:EDT0001.SaveAsBytes)
+  GOOGLE_DCHECK_NE(&from, _this);
+  uint32_t cached_has_bits = 0;
+  (void) cached_has_bits;
+
+  if (!from._internal_system_time().empty()) {
+    _this->_internal_set_system_time(from._internal_system_time());
+  }
+  if (from._internal_saveasbytes_pk() != 0) {
+    _this->_internal_set_saveasbytes_pk(from._internal_saveasbytes_pk());
+  }
+  if (from._internal_bytes() != 0) {
+    _this->_internal_set_bytes(from._internal_bytes());
+  }
+  _this->_internal_metadata_.MergeFrom<::PROTOBUF_NAMESPACE_ID::UnknownFieldSet>(from._internal_metadata_);
+}
+
+void SaveAsBytes::CopyFrom(const SaveAsBytes& from) {
+// @@protoc_insertion_point(class_specific_copy_from_start:EDT0001.SaveAsBytes)
+  if (&from == this) return;
+  Clear();
+  MergeFrom(from);
+}
+
+bool SaveAsBytes::IsInitialized() const {
+  return true;
+}
+
+void SaveAsBytes::InternalSwap(SaveAsBytes* other) {
+  using std::swap;
+  auto* lhs_arena = GetArenaForAllocation();
+  auto* rhs_arena = other->GetArenaForAllocation();
+  _internal_metadata_.InternalSwap(&other->_internal_metadata_);
+  ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr::InternalSwap(
+      &_impl_.system_time_, lhs_arena,
+      &other->_impl_.system_time_, rhs_arena
+  );
+  ::PROTOBUF_NAMESPACE_ID::internal::memswap<
+      PROTOBUF_FIELD_OFFSET(SaveAsBytes, _impl_.bytes_)
+      + sizeof(SaveAsBytes::_impl_.bytes_)
+      - PROTOBUF_FIELD_OFFSET(SaveAsBytes, _impl_.saveasbytes_pk_)>(
+          reinterpret_cast<char*>(&_impl_.saveasbytes_pk_),
+          reinterpret_cast<char*>(&other->_impl_.saveasbytes_pk_));
+}
+
+::PROTOBUF_NAMESPACE_ID::Metadata SaveAsBytes::GetMetadata() const {
+  return ::_pbi::AssignDescriptors(
+      &descriptor_table_EDT0001_2eproto_getter, &descriptor_table_EDT0001_2eproto_once,
+      file_level_metadata_EDT0001_2eproto[12]);
+}
+
 // @@protoc_insertion_point(namespace_scope)
-}  // namespace Protocol
+}  // namespace EDT0001
 PROTOBUF_NAMESPACE_OPEN
-template<> PROTOBUF_NOINLINE ::Protocol::Battery*
-Arena::CreateMaybeMessage< ::Protocol::Battery >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::Battery >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::Battery*
+Arena::CreateMaybeMessage< ::EDT0001::Battery >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::Battery >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::Battery_Pack*
-Arena::CreateMaybeMessage< ::Protocol::Battery_Pack >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::Battery_Pack >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::Battery_Pack*
+Arena::CreateMaybeMessage< ::EDT0001::Battery_Pack >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::Battery_Pack >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::BAT_MODULE_0*
-Arena::CreateMaybeMessage< ::Protocol::BAT_MODULE_0 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::BAT_MODULE_0 >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::BAT_MODULE_0*
+Arena::CreateMaybeMessage< ::EDT0001::BAT_MODULE_0 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::BAT_MODULE_0 >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::BAT_MODULE_1*
-Arena::CreateMaybeMessage< ::Protocol::BAT_MODULE_1 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::BAT_MODULE_1 >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::BAT_MODULE_1*
+Arena::CreateMaybeMessage< ::EDT0001::BAT_MODULE_1 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::BAT_MODULE_1 >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::BAT_MODULE_2*
-Arena::CreateMaybeMessage< ::Protocol::BAT_MODULE_2 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::BAT_MODULE_2 >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::BAT_MODULE_2*
+Arena::CreateMaybeMessage< ::EDT0001::BAT_MODULE_2 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::BAT_MODULE_2 >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::BAT_MODULE_3*
-Arena::CreateMaybeMessage< ::Protocol::BAT_MODULE_3 >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::BAT_MODULE_3 >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::BAT_MODULE_3*
+Arena::CreateMaybeMessage< ::EDT0001::BAT_MODULE_3 >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::BAT_MODULE_3 >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::Environment*
-Arena::CreateMaybeMessage< ::Protocol::Environment >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::Environment >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::Environment*
+Arena::CreateMaybeMessage< ::EDT0001::Environment >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::Environment >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::AIS*
-Arena::CreateMaybeMessage< ::Protocol::AIS >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::AIS >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::AIS*
+Arena::CreateMaybeMessage< ::EDT0001::AIS >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::AIS >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::System_Time*
-Arena::CreateMaybeMessage< ::Protocol::System_Time >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::System_Time >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::System_Time*
+Arena::CreateMaybeMessage< ::EDT0001::System_Time >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::System_Time >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::MOTOR*
-Arena::CreateMaybeMessage< ::Protocol::MOTOR >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::MOTOR >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::MOTOR*
+Arena::CreateMaybeMessage< ::EDT0001::MOTOR >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::MOTOR >(arena);
 }
-template<> PROTOBUF_NOINLINE ::Protocol::INVERTER*
-Arena::CreateMaybeMessage< ::Protocol::INVERTER >(Arena* arena) {
-  return Arena::CreateMessageInternal< ::Protocol::INVERTER >(arena);
+template<> PROTOBUF_NOINLINE ::EDT0001::INVERTER*
+Arena::CreateMaybeMessage< ::EDT0001::INVERTER >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::INVERTER >(arena);
+}
+template<> PROTOBUF_NOINLINE ::EDT0001::Network*
+Arena::CreateMaybeMessage< ::EDT0001::Network >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::Network >(arena);
+}
+template<> PROTOBUF_NOINLINE ::EDT0001::SaveAsBytes*
+Arena::CreateMaybeMessage< ::EDT0001::SaveAsBytes >(Arena* arena) {
+  return Arena::CreateMessageInternal< ::EDT0001::SaveAsBytes >(arena);
 }
 PROTOBUF_NAMESPACE_CLOSE
 

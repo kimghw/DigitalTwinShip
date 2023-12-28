@@ -1,11 +1,14 @@
 {
-  "Ship_num": "EDT0001",
+  "enum": 1002,
+  "enumNameSpace": "EDT",
+  "type": "EDT",
+  "package": "EDT0001",
   "tables": [
     {
       "table_name": "Battery",
       "columns": [
         {
-          "name": "BatteryPK",
+          "name": "Battery_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -47,7 +50,7 @@
       "table_name": "Battery_Pack",
       "columns": [
         {
-          "name": "Battery_Pack",
+          "name": "Battery_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -119,7 +122,7 @@
       "table_name": "BAT_MODULE_0",
       "columns": [
         {
-          "name": "BatteryMd_0",
+          "name": "BatteryMd_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -196,7 +199,7 @@
       "table_name": "BAT_MODULE_1",
       "columns": [
         {
-          "name": "BatteryMd_1",
+          "name": "BatteryMd_1_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -273,7 +276,7 @@
       "table_name": "BAT_MODULE_2",
       "columns": [
         {
-          "name": "BatteryMd_2",
+          "name": "BatteryMd_2_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -350,7 +353,7 @@
       "table_name": "BAT_MODULE_3",
       "columns": [
         {
-          "name": "BatteryMd_3",
+          "name": "BatteryMd_3_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -424,15 +427,18 @@
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
         },
         {
+          "name": "SHIPID",
+          "type": "INT",
+          "nullable": true
+        },
+        {
           "name": "latitude",
-          "type": "NVARCHAR",
-          "size": 100,
+          "type": "FLOAT",
           "nullable": true
         },
         {
           "name": "longitude",
-          "type": "NVARCHAR",
-          "size": 100,
+          "type": "FLOAT",
           "nullable": true
         },
         {
@@ -447,7 +453,7 @@
       "table_name": "System_Time",
       "columns": [
         {
-          "name": "Times",
+          "name": "Times_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
@@ -574,7 +580,7 @@
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
         },
         {
-          "name": "INV_PHASE_A_CURRENT",
+          "name": "Status_Network",
           "type": "INT",
           "nullable": true
         },
@@ -587,16 +593,16 @@
       ]
     },
     {
-      "table_name": "SaveAsBYTEs",
+      "table_name": "SaveAsBytes",
       "columns": [
         {
-          "name": "SaveAsBYTEs_PK",
+          "name": "SaveAsBytes_PK",
           "type": "INT",
           "nullable": false,
           "primarykey": "PRIMARY KEY IDENTITY(1,1),"
         },
         {
-          "name": "BYTEs",
+          "name": "Bytes",
           "type": "INT",
           "nullable": true
         },

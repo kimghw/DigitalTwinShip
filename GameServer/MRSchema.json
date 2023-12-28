@@ -1,0 +1,30 @@
+{
+  "enum": 2001,
+  "enumNameSpace": "EDT",
+  "type": "MR",
+  "package": "MRSchema",
+  "tables": [
+    {
+      "table_name": "C_Position",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "NVARCHAR"
+        },
+        {
+          "name": "XPOS",
+          "type": "FLOAT"
+        },
+        {
+          "name": "YPOS",
+          "type": "FLOAT"
+        },
+        {
+          "name": "ZPOS",
+          "type": "FLOAT"
+        }
+      ]
+    }
+  ]
+}
+

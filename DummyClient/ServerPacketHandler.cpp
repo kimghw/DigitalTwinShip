@@ -6,6 +6,7 @@
 #include <regex>
 #include "Protocol.pb.h"
 #include "DBConnection.h"
+//#include "ClientPacketHandler.h"
 
 
 PacketHandlerFunc GPacketHandler[UINT16_MAX];
@@ -160,59 +161,19 @@ bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len)
 
 
 
+	bool Handle_Battery(PacketSessionRef& session, EDT0001::Battery& pkt) { return false; }
 
-bool Handle_Battery(PacketSessionRef& session, Protocol::Battery& pkt)
-{
-	return false;
-}
+	bool Handle_Battery_Pack(PacketSessionRef& session, EDT0001::Battery_Pack& pkt) { return false; }
+	bool Handle_BAT_MODULE_0(PacketSessionRef& session, EDT0001::BAT_MODULE_0& pkt) { return false; }
+	bool Handle_BAT_MODULE_1(PacketSessionRef& session, EDT0001::BAT_MODULE_1& pkt) { return false; }
+	bool Handle_BAT_MODULE_2(PacketSessionRef& session, EDT0001::BAT_MODULE_2& pkt) { return false; }
+	bool Handle_BAT_MODULE_3(PacketSessionRef& session, EDT0001::BAT_MODULE_3& pkt) { return false; }
+	bool Handle_Environment(PacketSessionRef& session, EDT0001::Environment& pkt) { return false; }
+	bool Handle_AIS(PacketSessionRef& session, EDT0001::AIS& pkt) { return false; }
+	bool Handle_System_Time(PacketSessionRef& session, EDT0001::System_Time& pkt) { return false; }
+	bool Handle_MOTOR(PacketSessionRef& session, EDT0001::MOTOR& pkt) { return false; }
+	bool Handle_INVERTER(PacketSessionRef& session, EDT0001::INVERTER& pkt) { return false; }
+	bool Handle_Network(PacketSessionRef& session, EDT0001::Network& pkt) { return false; }
+	bool Handle_SaveAsBytes(PacketSessionRef& session, EDT0001::SaveAsBytes& pkt) { return false; }
 
-bool Handle_Battery_Pack(PacketSessionRef& session, Protocol::Battery_Pack& pkt)
-{
-	return false;
-}
-
-bool Handle_BAT_MODULE_0(PacketSessionRef& session, Protocol::BAT_MODULE_0& pkt)
-{
-	return false;
-}
-
-bool Handle_BAT_MODULE_1(PacketSessionRef& session, Protocol::BAT_MODULE_1& pkt)
-{
-	return false;
-}
-
-bool Handle_BAT_MODULE_2(PacketSessionRef& session, Protocol::BAT_MODULE_2& pkt)
-{
-	return false;
-}
-
-bool Handle_BAT_MODULE_3(PacketSessionRef& session, Protocol::BAT_MODULE_3& pkt)
-{
-	return false;
-}
-
-bool Handle_Environment(PacketSessionRef& session, Protocol::Environment& pkt)
-{
-	return false;
-}
-
-bool Handle_AIS(PacketSessionRef& session, Protocol::AIS& pkt)
-{
-	return false;
-}
-
-bool Handle_System_Time(PacketSessionRef& session, Protocol::System_Time& pkt)
-{
-	return false;
-}
-
-bool Handle_MOTOR(PacketSessionRef& session, Protocol::MOTOR& pkt)
-{
-	return false;
-}
-
-bool Handle_INVERTER(PacketSessionRef& session, Protocol::INVERTER& pkt)
-{
-	return false;
-}
-
+	bool Handle_C_Position(PacketSessionRef& session, MRSchema::C_Position& pkt) { return false; }

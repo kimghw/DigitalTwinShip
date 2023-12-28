@@ -1,8 +1,9 @@
 ﻿#pragma once
 #include "pch.h"
 #include "JsonPacketHandler.h"
-#include "Protocol.pb.h"
+#include "EDT0001.pb.h"
 #include "EDT0001_PacketHandler.h"
+#include "Tools.h"
 
 const int EDT0001_PacketHandler::DEFAULT_INT = 0;
 const float EDT0001_PacketHandler::DEFAULT_FLOAT = 0.0f;
@@ -12,7 +13,6 @@ const std::string EDT0001_PacketHandler::DEFAULT_STRING = "0";
 EDT0001_PacketHandler::EDT0001_PacketHandler(BYTE* buffer, int32 len) : _str(buffer, buffer + len)
 {
     SanitizeAndFormatAsJSON(_str);
-    //ParseJsonFromStr();
 }
 
 EDT0001_PacketHandler::~EDT0001_PacketHandler()
@@ -24,12 +24,12 @@ void EDT0001_PacketHandler::SanitizeAndFormatAsJSON(std::string& str)
     str.erase(std::remove(str.begin(), str.end(), '{'), str.end());
     str.erase(std::remove(str.begin(), str.end(), '}'), str.end());
     str.erase(std::remove(str.begin(), str.end(), ' '), str.end());
-    //std::replace(str.begin(), str.end(), '-', '-');
+    std::replace(str.begin(), str.end(), '-', '_');
     str.insert(0, "{");
     str.append("}");
     replaceDegrees(OUT str);
 
-    //AssignBackslashBeforeQuotes(str);
+    AssignBackslashBeforeQuotes(str);
     ParseJsonFromStr();
 }
 
@@ -85,7 +85,7 @@ bool EDT0001_PacketHandler::ParseJsonFromStr()
     catch (const nlohmann::json::parse_error& e) {
         // JSON 파싱 예외 처리
         std::cerr << "JSON parsing error: " << e.what() << ", exception id: " << e.id << std::endl;
-         return false;
+        return false;
     }
     catch (const nlohmann::json::type_error& e) {
         // 타입 관련 예외 처리
@@ -148,10 +148,12 @@ void EDT0001_PacketHandler::Assign_JsonToPbALL()
   Assign_JsonToPb_System_Time(_system_time);
   Assign_JsonToPb_MOTOR(_motor);
   Assign_JsonToPb_INVERTER(_inverter);
+  Assign_JsonToPb_Network(_network);
+  Assign_JsonToPb_SaveAsBytes(_saveasbytes);
   }
 
 //AssignJsonToPb//
-void EDT0001_PacketHandler::Assign_JsonToPb_Battery(Protocol::Battery& battery)
+void EDT0001_PacketHandler::Assign_JsonToPb_Battery(EDT0001::Battery& battery)
 {
         
     ValidateJson<int32>("BAT_BPU_NEGATIVE_CONTACTOR", DEFAULT_INT);
@@ -180,7 +182,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_Battery(Protocol::Battery& battery)
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_Battery_Pack(Protocol::Battery_Pack& battery_pack)
+void EDT0001_PacketHandler::Assign_JsonToPb_Battery_Pack(EDT0001::Battery_Pack& battery_pack)
 {
         
     ValidateJson<int32>("BAT_PACK_CURRENT", DEFAULT_INT);
@@ -233,7 +235,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_Battery_Pack(Protocol::Battery_Pack&
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_0(Protocol::BAT_MODULE_0& bat_module_0)
+void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_0(EDT0001::BAT_MODULE_0& bat_module_0)
 {
         
     ValidateJson<int32>("BAT_MODULE_CELL0_VOL", DEFAULT_INT);
@@ -290,7 +292,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_0(Protocol::BAT_MODULE_0&
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_1(Protocol::BAT_MODULE_1& bat_module_1)
+void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_1(EDT0001::BAT_MODULE_1& bat_module_1)
 {
         
     ValidateJson<int32>("BAT_MODULE1_CELL0_VOL", DEFAULT_INT);
@@ -347,7 +349,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_1(Protocol::BAT_MODULE_1&
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_2(Protocol::BAT_MODULE_2& bat_module_2)
+void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_2(EDT0001::BAT_MODULE_2& bat_module_2)
 {
         
     ValidateJson<int32>("BAT_MODULE2_CELL0_VOL", DEFAULT_INT);
@@ -404,7 +406,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_2(Protocol::BAT_MODULE_2&
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_3(Protocol::BAT_MODULE_3& bat_module_3)
+void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_3(EDT0001::BAT_MODULE_3& bat_module_3)
 {
         
     ValidateJson<int32>("BAT_MODULE3_CELL0_VOL", DEFAULT_INT);
@@ -433,7 +435,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_BAT_MODULE_3(Protocol::BAT_MODULE_3&
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_Environment(Protocol::Environment& environment)
+void EDT0001_PacketHandler::Assign_JsonToPb_Environment(EDT0001::Environment& environment)
 {
         
     ValidateJson<int32>("Wind_speed", DEFAULT_INT);
@@ -450,15 +452,21 @@ void EDT0001_PacketHandler::Assign_JsonToPb_Environment(Protocol::Environment& e
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_AIS(Protocol::AIS& ais)
+void EDT0001_PacketHandler::Assign_JsonToPb_AIS(EDT0001::AIS& ais)
 {
         
-    ValidateJson<string>("latitude", DEFAULT_STRING);
-    string value_latitude = _EdtJson.at("latitude");
+    ValidateJson<int32>("SHIPID", DEFAULT_INT);
+    int32 value_SHIPID = _EdtJson.at("SHIPID");
+    ais.set_shipid(value_SHIPID);
+        
+    ValidateJson<float>("latitude", DEFAULT_FLOAT);
+    //float value_latitude = _EdtJson.at("latitude");
+    float value_latitude = dmsStrToDd(_EdtJson.at("latitude"));
     ais.set_latitude(value_latitude);
         
-    ValidateJson<string>("longitude", DEFAULT_STRING);
-    string value_longitude = _EdtJson.at("longitude");
+    ValidateJson<float>("longitude", DEFAULT_FLOAT);
+    //float value_longitude = _EdtJson.at("longitude");
+    float value_longitude = dmsStrToDd(_EdtJson.at("longitude"));
     ais.set_longitude(value_longitude);
         
     ValidateJson<string>("System_time", DEFAULT_STRING);
@@ -467,7 +475,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_AIS(Protocol::AIS& ais)
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_System_Time(Protocol::System_Time& system_time)
+void EDT0001_PacketHandler::Assign_JsonToPb_System_Time(EDT0001::System_Time& system_time)
 {
         
     ValidateJson<string>("System_time", DEFAULT_STRING);
@@ -476,7 +484,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_System_Time(Protocol::System_Time& s
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_MOTOR(Protocol::MOTOR& motor)
+void EDT0001_PacketHandler::Assign_JsonToPb_MOTOR(EDT0001::MOTOR& motor)
 {
         
     ValidateJson<int32>("MT_RPM", DEFAULT_INT);
@@ -497,7 +505,7 @@ void EDT0001_PacketHandler::Assign_JsonToPb_MOTOR(Protocol::MOTOR& motor)
         
 }
 
-void EDT0001_PacketHandler::Assign_JsonToPb_INVERTER(Protocol::INVERTER& inverter)
+void EDT0001_PacketHandler::Assign_JsonToPb_INVERTER(EDT0001::INVERTER& inverter)
 {
         
     ValidateJson<int32>("INV_PHASE_A_CURRENT", DEFAULT_INT);
@@ -550,18 +558,46 @@ void EDT0001_PacketHandler::Assign_JsonToPb_INVERTER(Protocol::INVERTER& inverte
         
 }
 
+void EDT0001_PacketHandler::Assign_JsonToPb_Network(EDT0001::Network& network)
+{
+        
+    ValidateJson<int32>("Status_Network", DEFAULT_INT);
+    int32 value_Status_Network = _EdtJson.at("Status_Network");
+    network.set_status_network(value_Status_Network);
+        
+    ValidateJson<string>("System_time", DEFAULT_STRING);
+    string value_System_time = _EdtJson.at("System_time");
+    network.set_system_time(value_System_time);
+        
+}
 
-Protocol::Battery EDT0001_PacketHandler::get_Battery() {return _battery;}
-Protocol::Battery_Pack EDT0001_PacketHandler::get_Battery_Pack() {return _battery_pack;}
-Protocol::BAT_MODULE_0 EDT0001_PacketHandler::get_BAT_MODULE_0() {return _bat_module_0;}
-Protocol::BAT_MODULE_1 EDT0001_PacketHandler::get_BAT_MODULE_1() {return _bat_module_1;}
-Protocol::BAT_MODULE_2 EDT0001_PacketHandler::get_BAT_MODULE_2() {return _bat_module_2;}
-Protocol::BAT_MODULE_3 EDT0001_PacketHandler::get_BAT_MODULE_3() {return _bat_module_3;}
-Protocol::Environment EDT0001_PacketHandler::get_Environment() {return _environment;}
-Protocol::AIS EDT0001_PacketHandler::get_AIS() {return _ais;}
-Protocol::System_Time EDT0001_PacketHandler::get_System_Time() {return _system_time;}
-Protocol::MOTOR EDT0001_PacketHandler::get_MOTOR() {return _motor;}
-Protocol::INVERTER EDT0001_PacketHandler::get_INVERTER() {return _inverter;}
+void EDT0001_PacketHandler::Assign_JsonToPb_SaveAsBytes(EDT0001::SaveAsBytes& saveasbytes)
+{
+        
+    ValidateJson<int32>("Bytes", DEFAULT_INT);
+    int32 value_Bytes = _EdtJson.at("Bytes");
+    saveasbytes.set_bytes(value_Bytes);
+        
+    ValidateJson<string>("System_time", DEFAULT_STRING);
+    string value_System_time = _EdtJson.at("System_time");
+    saveasbytes.set_system_time(value_System_time);
+        
+}
+
+
+EDT0001::Battery EDT0001_PacketHandler::get_Battery() {return _battery;}
+EDT0001::Battery_Pack EDT0001_PacketHandler::get_Battery_Pack() {return _battery_pack;}
+EDT0001::BAT_MODULE_0 EDT0001_PacketHandler::get_BAT_MODULE_0() {return _bat_module_0;}
+EDT0001::BAT_MODULE_1 EDT0001_PacketHandler::get_BAT_MODULE_1() {return _bat_module_1;}
+EDT0001::BAT_MODULE_2 EDT0001_PacketHandler::get_BAT_MODULE_2() {return _bat_module_2;}
+EDT0001::BAT_MODULE_3 EDT0001_PacketHandler::get_BAT_MODULE_3() {return _bat_module_3;}
+EDT0001::Environment EDT0001_PacketHandler::get_Environment() {return _environment;}
+EDT0001::AIS EDT0001_PacketHandler::get_AIS() {return _ais;}
+EDT0001::System_Time EDT0001_PacketHandler::get_System_Time() {return _system_time;}
+EDT0001::MOTOR EDT0001_PacketHandler::get_MOTOR() {return _motor;}
+EDT0001::INVERTER EDT0001_PacketHandler::get_INVERTER() {return _inverter;}
+EDT0001::Network EDT0001_PacketHandler::get_Network() {return _network;}
+EDT0001::SaveAsBytes EDT0001_PacketHandler::get_SaveAsBytes() {return _saveasbytes;}
 
 
 
@@ -579,10 +615,12 @@ void EDT0001_PacketHandler::Insert_AllPbToDb()
     Insert_System_Time_ToDb(_system_time);
     Insert_MOTOR_ToDb(_motor);
     Insert_INVERTER_ToDb(_inverter);
+    Insert_Network_ToDb(_network);
+    Insert_SaveAsBytes_ToDb(_saveasbytes);
 }
 
 
-void EDT0001_PacketHandler::Insert_Battery_ToDb(Protocol::Battery battery)
+void EDT0001_PacketHandler::Insert_Battery_ToDb(EDT0001::Battery battery)
 {
     auto query = L"INSERT INTO [dbo].[Battery]"
         L"("
@@ -621,7 +659,7 @@ void EDT0001_PacketHandler::Insert_Battery_ToDb(Protocol::Battery battery)
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_Battery_Pack_ToDb(Protocol::Battery_Pack battery_pack)
+void EDT0001_PacketHandler::Insert_Battery_Pack_ToDb(EDT0001::Battery_Pack battery_pack)
 {
     auto query = L"INSERT INTO [dbo].[Battery_Pack]"
         L"("
@@ -684,7 +722,7 @@ void EDT0001_PacketHandler::Insert_Battery_Pack_ToDb(Protocol::Battery_Pack batt
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_BAT_MODULE_0_ToDb(Protocol::BAT_MODULE_0 bat_module_0)
+void EDT0001_PacketHandler::Insert_BAT_MODULE_0_ToDb(EDT0001::BAT_MODULE_0 bat_module_0)
 {
     auto query = L"INSERT INTO [dbo].[BAT_MODULE_0]"
         L"("
@@ -751,7 +789,7 @@ void EDT0001_PacketHandler::Insert_BAT_MODULE_0_ToDb(Protocol::BAT_MODULE_0 bat_
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_BAT_MODULE_1_ToDb(Protocol::BAT_MODULE_1 bat_module_1)
+void EDT0001_PacketHandler::Insert_BAT_MODULE_1_ToDb(EDT0001::BAT_MODULE_1 bat_module_1)
 {
     auto query = L"INSERT INTO [dbo].[BAT_MODULE_1]"
         L"("
@@ -818,7 +856,7 @@ void EDT0001_PacketHandler::Insert_BAT_MODULE_1_ToDb(Protocol::BAT_MODULE_1 bat_
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_BAT_MODULE_2_ToDb(Protocol::BAT_MODULE_2 bat_module_2)
+void EDT0001_PacketHandler::Insert_BAT_MODULE_2_ToDb(EDT0001::BAT_MODULE_2 bat_module_2)
 {
     auto query = L"INSERT INTO [dbo].[BAT_MODULE_2]"
         L"("
@@ -885,7 +923,7 @@ void EDT0001_PacketHandler::Insert_BAT_MODULE_2_ToDb(Protocol::BAT_MODULE_2 bat_
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_BAT_MODULE_3_ToDb(Protocol::BAT_MODULE_3 bat_module_3)
+void EDT0001_PacketHandler::Insert_BAT_MODULE_3_ToDb(EDT0001::BAT_MODULE_3 bat_module_3)
 {
     auto query = L"INSERT INTO [dbo].[BAT_MODULE_3]"
         L"("
@@ -922,7 +960,7 @@ void EDT0001_PacketHandler::Insert_BAT_MODULE_3_ToDb(Protocol::BAT_MODULE_3 bat_
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_Environment_ToDb(Protocol::Environment environment)
+void EDT0001_PacketHandler::Insert_Environment_ToDb(EDT0001::Environment environment)
 {
     auto query = L"INSERT INTO [dbo].[Environment]"
         L"("
@@ -949,29 +987,30 @@ void EDT0001_PacketHandler::Insert_Environment_ToDb(Protocol::Environment enviro
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_AIS_ToDb(Protocol::AIS ais)
+void EDT0001_PacketHandler::Insert_AIS_ToDb(EDT0001::AIS ais)
 {
     auto query = L"INSERT INTO [dbo].[AIS]"
         L"("
+        L"[SHIPID],"
         L"[latitude],"
         L"[longitude],"
         L"[System_time]"
         L")"
-        L"VALUES(?,?,?);";
+        L"VALUES(?,?,?,?);";
 
     DBConnection* dbConn = GDBConnectionPool->Pop();
-    DBBind <3,0> dbBind(*dbConn, query);
+    DBBind <4,0> dbBind(*dbConn, query);
     int32 count = 0;
     
-    std::string latitude = ais.latitude();
-    std::wstring wlatitude = stringToWString(latitude);
-    WCHAR* pwlatitude = const_cast<WCHAR*>(wlatitude.c_str());
-    dbBind.BindParam(count++, pwlatitude);
+    int32 SHIPID = static_cast<int32>(ais.shipid());
+    dbBind.BindParam(count++, SHIPID);
     
-    std::string longitude = ais.longitude();
-    std::wstring wlongitude = stringToWString(longitude);
-    WCHAR* pwlongitude = const_cast<WCHAR*>(wlongitude.c_str());
-    dbBind.BindParam(count++, pwlongitude);
+   
+    float latitude = static_cast<float>(ais.latitude());
+    dbBind.BindParam(count++, latitude);
+    
+    float longitude = static_cast<float>(ais.longitude());
+    dbBind.BindParam(count++, longitude);
     
     std::string System_time = ais.system_time();
     std::wstring wSystem_time = stringToWString(System_time);
@@ -980,7 +1019,7 @@ void EDT0001_PacketHandler::Insert_AIS_ToDb(Protocol::AIS ais)
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_System_Time_ToDb(Protocol::System_Time system_time)
+void EDT0001_PacketHandler::Insert_System_Time_ToDb(EDT0001::System_Time system_time)
 {
     auto query = L"INSERT INTO [dbo].[System_Time]"
         L"("
@@ -999,7 +1038,7 @@ void EDT0001_PacketHandler::Insert_System_Time_ToDb(Protocol::System_Time system
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_MOTOR_ToDb(Protocol::MOTOR motor)
+void EDT0001_PacketHandler::Insert_MOTOR_ToDb(EDT0001::MOTOR motor)
 {
     auto query = L"INSERT INTO [dbo].[MOTOR]"
         L"("
@@ -1030,7 +1069,7 @@ void EDT0001_PacketHandler::Insert_MOTOR_ToDb(Protocol::MOTOR motor)
     ASSERT_CRASH(dbBind.Execute());
     GDBConnectionPool->Push(dbConn);
 }
-void EDT0001_PacketHandler::Insert_INVERTER_ToDb(Protocol::INVERTER inverter)
+void EDT0001_PacketHandler::Insert_INVERTER_ToDb(EDT0001::INVERTER inverter)
 {
     auto query = L"INSERT INTO [dbo].[INVERTER]"
         L"("
@@ -1087,6 +1126,52 @@ void EDT0001_PacketHandler::Insert_INVERTER_ToDb(Protocol::INVERTER inverter)
     dbBind.BindParam(count++, INV_OUTPUT_VOLTAGE);
     
     std::string System_time = inverter.system_time();
+    std::wstring wSystem_time = stringToWString(System_time);
+    WCHAR* pwSystem_time = const_cast<WCHAR*>(wSystem_time.c_str());
+    dbBind.BindParam(count++, pwSystem_time);
+    ASSERT_CRASH(dbBind.Execute());
+    GDBConnectionPool->Push(dbConn);
+}
+void EDT0001_PacketHandler::Insert_Network_ToDb(EDT0001::Network network)
+{
+    auto query = L"INSERT INTO [dbo].[Network]"
+        L"("
+        L"[Status_Network],"
+        L"[System_time]"
+        L")"
+        L"VALUES(?,?);";
+
+    DBConnection* dbConn = GDBConnectionPool->Pop();
+    DBBind <2,0> dbBind(*dbConn, query);
+    int32 count = 0;
+    
+    int32 Status_Network = static_cast<int32>(network.status_network());
+    dbBind.BindParam(count++, Status_Network);
+    
+    std::string System_time = network.system_time();
+    std::wstring wSystem_time = stringToWString(System_time);
+    WCHAR* pwSystem_time = const_cast<WCHAR*>(wSystem_time.c_str());
+    dbBind.BindParam(count++, pwSystem_time);
+    ASSERT_CRASH(dbBind.Execute());
+    GDBConnectionPool->Push(dbConn);
+}
+void EDT0001_PacketHandler::Insert_SaveAsBytes_ToDb(EDT0001::SaveAsBytes saveasbytes)
+{
+    auto query = L"INSERT INTO [dbo].[SaveAsBytes]"
+        L"("
+        L"[Bytes],"
+        L"[System_time]"
+        L")"
+        L"VALUES(?,?);";
+
+    DBConnection* dbConn = GDBConnectionPool->Pop();
+    DBBind <2,0> dbBind(*dbConn, query);
+    int32 count = 0;
+    
+    int32 Bytes = static_cast<int32>(saveasbytes.bytes());
+    dbBind.BindParam(count++, Bytes);
+    
+    std::string System_time = saveasbytes.system_time();
     std::wstring wSystem_time = stringToWString(System_time);
     WCHAR* pwSystem_time = const_cast<WCHAR*>(wSystem_time.c_str());
     dbBind.BindParam(count++, pwSystem_time);

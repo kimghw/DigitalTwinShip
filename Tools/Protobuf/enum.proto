@@ -1,0 +1,26 @@
+syntax = "proto3";
+package  EDT;
+
+
+enum EDT0001Enum {
+  default_0 = 0;
+  Battery = 1002;
+  Battery_Pack = 1003;
+  BAT_MODULE_0 = 1004;
+  BAT_MODULE_1 = 1005;
+  BAT_MODULE_2 = 1006;
+  BAT_MODULE_3 = 1007;
+  Environment = 1008;
+  AIS = 1009;
+  System_Time = 1010;
+  MOTOR = 1011;
+  INVERTER = 1012;
+  Network = 1013;
+  SaveAsBytes = 1014;
+}
+
+enum MRSchemaEnum {
+  default_1 = 0;
+  C_Position = 2001;
+}
+

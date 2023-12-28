@@ -44,7 +44,7 @@ struct TableStruct_EDT0001_2eproto {
   static const uint32_t offsets[];
 };
 extern const ::PROTOBUF_NAMESPACE_ID::internal::DescriptorTable descriptor_table_EDT0001_2eproto;
-namespace Protocol {
+namespace EDT0001 {
 class AIS;
 struct AISDefaultTypeInternal;
 extern AISDefaultTypeInternal _AIS_default_instance_;
@@ -75,29 +75,37 @@ extern INVERTERDefaultTypeInternal _INVERTER_default_instance_;
 class MOTOR;
 struct MOTORDefaultTypeInternal;
 extern MOTORDefaultTypeInternal _MOTOR_default_instance_;
+class Network;
+struct NetworkDefaultTypeInternal;
+extern NetworkDefaultTypeInternal _Network_default_instance_;
+class SaveAsBytes;
+struct SaveAsBytesDefaultTypeInternal;
+extern SaveAsBytesDefaultTypeInternal _SaveAsBytes_default_instance_;
 class System_Time;
 struct System_TimeDefaultTypeInternal;
 extern System_TimeDefaultTypeInternal _System_Time_default_instance_;
-}  // namespace Protocol
+}  // namespace EDT0001
 PROTOBUF_NAMESPACE_OPEN
-template<> ::Protocol::AIS* Arena::CreateMaybeMessage<::Protocol::AIS>(Arena*);
-template<> ::Protocol::BAT_MODULE_0* Arena::CreateMaybeMessage<::Protocol::BAT_MODULE_0>(Arena*);
-template<> ::Protocol::BAT_MODULE_1* Arena::CreateMaybeMessage<::Protocol::BAT_MODULE_1>(Arena*);
-template<> ::Protocol::BAT_MODULE_2* Arena::CreateMaybeMessage<::Protocol::BAT_MODULE_2>(Arena*);
-template<> ::Protocol::BAT_MODULE_3* Arena::CreateMaybeMessage<::Protocol::BAT_MODULE_3>(Arena*);
-template<> ::Protocol::Battery* Arena::CreateMaybeMessage<::Protocol::Battery>(Arena*);
-template<> ::Protocol::Battery_Pack* Arena::CreateMaybeMessage<::Protocol::Battery_Pack>(Arena*);
-template<> ::Protocol::Environment* Arena::CreateMaybeMessage<::Protocol::Environment>(Arena*);
-template<> ::Protocol::INVERTER* Arena::CreateMaybeMessage<::Protocol::INVERTER>(Arena*);
-template<> ::Protocol::MOTOR* Arena::CreateMaybeMessage<::Protocol::MOTOR>(Arena*);
-template<> ::Protocol::System_Time* Arena::CreateMaybeMessage<::Protocol::System_Time>(Arena*);
+template<> ::EDT0001::AIS* Arena::CreateMaybeMessage<::EDT0001::AIS>(Arena*);
+template<> ::EDT0001::BAT_MODULE_0* Arena::CreateMaybeMessage<::EDT0001::BAT_MODULE_0>(Arena*);
+template<> ::EDT0001::BAT_MODULE_1* Arena::CreateMaybeMessage<::EDT0001::BAT_MODULE_1>(Arena*);
+template<> ::EDT0001::BAT_MODULE_2* Arena::CreateMaybeMessage<::EDT0001::BAT_MODULE_2>(Arena*);
+template<> ::EDT0001::BAT_MODULE_3* Arena::CreateMaybeMessage<::EDT0001::BAT_MODULE_3>(Arena*);
+template<> ::EDT0001::Battery* Arena::CreateMaybeMessage<::EDT0001::Battery>(Arena*);
+template<> ::EDT0001::Battery_Pack* Arena::CreateMaybeMessage<::EDT0001::Battery_Pack>(Arena*);
+template<> ::EDT0001::Environment* Arena::CreateMaybeMessage<::EDT0001::Environment>(Arena*);
+template<> ::EDT0001::INVERTER* Arena::CreateMaybeMessage<::EDT0001::INVERTER>(Arena*);
+template<> ::EDT0001::MOTOR* Arena::CreateMaybeMessage<::EDT0001::MOTOR>(Arena*);
+template<> ::EDT0001::Network* Arena::CreateMaybeMessage<::EDT0001::Network>(Arena*);
+template<> ::EDT0001::SaveAsBytes* Arena::CreateMaybeMessage<::EDT0001::SaveAsBytes>(Arena*);
+template<> ::EDT0001::System_Time* Arena::CreateMaybeMessage<::EDT0001::System_Time>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
-namespace Protocol {
+namespace EDT0001 {
 
 // ===================================================================
 
 class Battery final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.Battery) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.Battery) */ {
  public:
   inline Battery() : Battery(nullptr) {}
   ~Battery() override;
@@ -200,7 +208,7 @@ class Battery final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.Battery";
+    return "EDT0001.Battery";
   }
   protected:
   explicit Battery(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -239,13 +247,13 @@ class Battery final :
   std::string* _internal_mutable_system_time();
   public:
 
-  // int32 BatteryPK = 1;
-  void clear_batterypk();
-  int32_t batterypk() const;
-  void set_batterypk(int32_t value);
+  // int32 Battery_PK = 1;
+  void clear_battery_pk();
+  int32_t battery_pk() const;
+  void set_battery_pk(int32_t value);
   private:
-  int32_t _internal_batterypk() const;
-  void _internal_set_batterypk(int32_t value);
+  int32_t _internal_battery_pk() const;
+  void _internal_set_battery_pk(int32_t value);
   public:
 
   // int32 BAT_BPU_NEGATIVE_CONTACTOR = 2;
@@ -293,7 +301,7 @@ class Battery final :
   void _internal_set_bat_protection_b(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.Battery)
+  // @@protoc_insertion_point(class_scope:EDT0001.Battery)
  private:
   class _Internal;
 
@@ -302,7 +310,7 @@ class Battery final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
-    int32_t batterypk_;
+    int32_t battery_pk_;
     int32_t bat_bpu_negative_contactor_;
     int32_t bat_bpu_positive_contactor_;
     int32_t bat_bpu_pre_contactor_;
@@ -316,7 +324,7 @@ class Battery final :
 // -------------------------------------------------------------------
 
 class Battery_Pack final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.Battery_Pack) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.Battery_Pack) */ {
  public:
   inline Battery_Pack() : Battery_Pack(nullptr) {}
   ~Battery_Pack() override;
@@ -419,7 +427,7 @@ class Battery_Pack final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.Battery_Pack";
+    return "EDT0001.Battery_Pack";
   }
   protected:
   explicit Battery_Pack(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -437,7 +445,7 @@ class Battery_Pack final :
 
   enum : int {
     kSystemTimeFieldNumber = 13,
-    kBatteryPackFieldNumber = 1,
+    kBatteryPKFieldNumber = 1,
     kBATPACKCURRENTFieldNumber = 2,
     kBATPACKSOCFieldNumber = 3,
     kBATPACKVOLTAGEFieldNumber = 4,
@@ -464,13 +472,13 @@ class Battery_Pack final :
   std::string* _internal_mutable_system_time();
   public:
 
-  // int32 Battery_Pack = 1;
-  void clear_battery_pack();
-  int32_t battery_pack() const;
-  void set_battery_pack(int32_t value);
+  // int32 Battery_PK = 1;
+  void clear_battery_pk();
+  int32_t battery_pk() const;
+  void set_battery_pk(int32_t value);
   private:
-  int32_t _internal_battery_pack() const;
-  void _internal_set_battery_pack(int32_t value);
+  int32_t _internal_battery_pk() const;
+  void _internal_set_battery_pk(int32_t value);
   public:
 
   // int32 BAT_PACK_CURRENT = 2;
@@ -572,7 +580,7 @@ class Battery_Pack final :
   void _internal_set_bat_pack_min_cell_vol_sbms_index(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.Battery_Pack)
+  // @@protoc_insertion_point(class_scope:EDT0001.Battery_Pack)
  private:
   class _Internal;
 
@@ -581,7 +589,7 @@ class Battery_Pack final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
-    int32_t battery_pack_;
+    int32_t battery_pk_;
     int32_t bat_pack_current_;
     int32_t bat_pack_soc_;
     int32_t bat_pack_voltage_;
@@ -601,7 +609,7 @@ class Battery_Pack final :
 // -------------------------------------------------------------------
 
 class BAT_MODULE_0 final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.BAT_MODULE_0) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.BAT_MODULE_0) */ {
  public:
   inline BAT_MODULE_0() : BAT_MODULE_0(nullptr) {}
   ~BAT_MODULE_0() override;
@@ -704,7 +712,7 @@ class BAT_MODULE_0 final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.BAT_MODULE_0";
+    return "EDT0001.BAT_MODULE_0";
   }
   protected:
   explicit BAT_MODULE_0(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -722,7 +730,7 @@ class BAT_MODULE_0 final :
 
   enum : int {
     kSystemTimeFieldNumber = 14,
-    kBatteryMd0FieldNumber = 1,
+    kBatteryMdPKFieldNumber = 1,
     kBATMODULECELL0VOLFieldNumber = 2,
     kBATMODULECELL1VOLFieldNumber = 3,
     kBATMODULECELL2VOLFieldNumber = 4,
@@ -750,13 +758,13 @@ class BAT_MODULE_0 final :
   std::string* _internal_mutable_system_time();
   public:
 
-  // int32 BatteryMd_0 = 1;
-  void clear_batterymd_0();
-  int32_t batterymd_0() const;
-  void set_batterymd_0(int32_t value);
+  // int32 BatteryMd_PK = 1;
+  void clear_batterymd_pk();
+  int32_t batterymd_pk() const;
+  void set_batterymd_pk(int32_t value);
   private:
-  int32_t _internal_batterymd_0() const;
-  void _internal_set_batterymd_0(int32_t value);
+  int32_t _internal_batterymd_pk() const;
+  void _internal_set_batterymd_pk(int32_t value);
   public:
 
   // int32 BAT_MODULE_CELL0_VOL = 2;
@@ -867,7 +875,7 @@ class BAT_MODULE_0 final :
   void _internal_set_bat_module_cell11_vol(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.BAT_MODULE_0)
+  // @@protoc_insertion_point(class_scope:EDT0001.BAT_MODULE_0)
  private:
   class _Internal;
 
@@ -876,7 +884,7 @@ class BAT_MODULE_0 final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
-    int32_t batterymd_0_;
+    int32_t batterymd_pk_;
     int32_t bat_module_cell0_vol_;
     int32_t bat_module_cell1_vol_;
     int32_t bat_module_cell2_vol_;
@@ -897,7 +905,7 @@ class BAT_MODULE_0 final :
 // -------------------------------------------------------------------
 
 class BAT_MODULE_1 final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.BAT_MODULE_1) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.BAT_MODULE_1) */ {
  public:
   inline BAT_MODULE_1() : BAT_MODULE_1(nullptr) {}
   ~BAT_MODULE_1() override;
@@ -1000,7 +1008,7 @@ class BAT_MODULE_1 final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.BAT_MODULE_1";
+    return "EDT0001.BAT_MODULE_1";
   }
   protected:
   explicit BAT_MODULE_1(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1018,7 +1026,7 @@ class BAT_MODULE_1 final :
 
   enum : int {
     kSystemTimeFieldNumber = 14,
-    kBatteryMd1FieldNumber = 1,
+    kBatteryMd1PKFieldNumber = 1,
     kBATMODULE1CELL0VOLFieldNumber = 2,
     kBATMODULE1CELL1VOLFieldNumber = 3,
     kBATMODULE1CELL2VOLFieldNumber = 4,
@@ -1046,13 +1054,13 @@ class BAT_MODULE_1 final :
   std::string* _internal_mutable_system_time();
   public:
 
-  // int32 BatteryMd_1 = 1;
-  void clear_batterymd_1();
-  int32_t batterymd_1() const;
-  void set_batterymd_1(int32_t value);
+  // int32 BatteryMd_1_PK = 1;
+  void clear_batterymd_1_pk();
+  int32_t batterymd_1_pk() const;
+  void set_batterymd_1_pk(int32_t value);
   private:
-  int32_t _internal_batterymd_1() const;
-  void _internal_set_batterymd_1(int32_t value);
+  int32_t _internal_batterymd_1_pk() const;
+  void _internal_set_batterymd_1_pk(int32_t value);
   public:
 
   // int32 BAT_MODULE1_CELL0_VOL = 2;
@@ -1163,7 +1171,7 @@ class BAT_MODULE_1 final :
   void _internal_set_bat_module1_cell11_vol(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.BAT_MODULE_1)
+  // @@protoc_insertion_point(class_scope:EDT0001.BAT_MODULE_1)
  private:
   class _Internal;
 
@@ -1172,7 +1180,7 @@ class BAT_MODULE_1 final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
-    int32_t batterymd_1_;
+    int32_t batterymd_1_pk_;
     int32_t bat_module1_cell0_vol_;
     int32_t bat_module1_cell1_vol_;
     int32_t bat_module1_cell2_vol_;
@@ -1193,7 +1201,7 @@ class BAT_MODULE_1 final :
 // -------------------------------------------------------------------
 
 class BAT_MODULE_2 final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.BAT_MODULE_2) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.BAT_MODULE_2) */ {
  public:
   inline BAT_MODULE_2() : BAT_MODULE_2(nullptr) {}
   ~BAT_MODULE_2() override;
@@ -1296,7 +1304,7 @@ class BAT_MODULE_2 final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.BAT_MODULE_2";
+    return "EDT0001.BAT_MODULE_2";
   }
   protected:
   explicit BAT_MODULE_2(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1314,7 +1322,7 @@ class BAT_MODULE_2 final :
 
   enum : int {
     kSystemTimeFieldNumber = 14,
-    kBatteryMd2FieldNumber = 1,
+    kBatteryMd2PKFieldNumber = 1,
     kBATMODULE2CELL0VOLFieldNumber = 2,
     kBATMODULE2CELL1VOLFieldNumber = 3,
     kBATMODULE2CELL2VOLFieldNumber = 4,
@@ -1342,13 +1350,13 @@ class BAT_MODULE_2 final :
   std::string* _internal_mutable_system_time();
   public:
 
-  // int32 BatteryMd_2 = 1;
-  void clear_batterymd_2();
-  int32_t batterymd_2() const;
-  void set_batterymd_2(int32_t value);
+  // int32 BatteryMd_2_PK = 1;
+  void clear_batterymd_2_pk();
+  int32_t batterymd_2_pk() const;
+  void set_batterymd_2_pk(int32_t value);
   private:
-  int32_t _internal_batterymd_2() const;
-  void _internal_set_batterymd_2(int32_t value);
+  int32_t _internal_batterymd_2_pk() const;
+  void _internal_set_batterymd_2_pk(int32_t value);
   public:
 
   // int32 BAT_MODULE2_CELL0_VOL = 2;
@@ -1459,7 +1467,7 @@ class BAT_MODULE_2 final :
   void _internal_set_bat_module2_cell11_vol(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.BAT_MODULE_2)
+  // @@protoc_insertion_point(class_scope:EDT0001.BAT_MODULE_2)
  private:
   class _Internal;
 
@@ -1468,7 +1476,7 @@ class BAT_MODULE_2 final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
-    int32_t batterymd_2_;
+    int32_t batterymd_2_pk_;
     int32_t bat_module2_cell0_vol_;
     int32_t bat_module2_cell1_vol_;
     int32_t bat_module2_cell2_vol_;
@@ -1489,7 +1497,7 @@ class BAT_MODULE_2 final :
 // -------------------------------------------------------------------
 
 class BAT_MODULE_3 final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.BAT_MODULE_3) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.BAT_MODULE_3) */ {
  public:
   inline BAT_MODULE_3() : BAT_MODULE_3(nullptr) {}
   ~BAT_MODULE_3() override;
@@ -1592,7 +1600,7 @@ class BAT_MODULE_3 final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.BAT_MODULE_3";
+    return "EDT0001.BAT_MODULE_3";
   }
   protected:
   explicit BAT_MODULE_3(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1609,7 +1617,7 @@ class BAT_MODULE_3 final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kBatteryMd3FieldNumber = 1,
+    kBatteryMd3PKFieldNumber = 1,
     kBATMODULE3CELL0VOLFieldNumber = 2,
     kBATMODULE3CELL1VOLFieldNumber = 3,
     kBATMODULE3CELL2VOLFieldNumber = 4,
@@ -1617,13 +1625,13 @@ class BAT_MODULE_3 final :
     kBATMODULE3CELL10VOLFieldNumber = 6,
     kBATMODULE3CELL11VOLFieldNumber = 7,
   };
-  // int32 BatteryMd_3 = 1;
-  void clear_batterymd_3();
-  int32_t batterymd_3() const;
-  void set_batterymd_3(int32_t value);
+  // int32 BatteryMd_3_PK = 1;
+  void clear_batterymd_3_pk();
+  int32_t batterymd_3_pk() const;
+  void set_batterymd_3_pk(int32_t value);
   private:
-  int32_t _internal_batterymd_3() const;
-  void _internal_set_batterymd_3(int32_t value);
+  int32_t _internal_batterymd_3_pk() const;
+  void _internal_set_batterymd_3_pk(int32_t value);
   public:
 
   // int32 BAT_MODULE3_CELL0_VOL = 2;
@@ -1680,7 +1688,7 @@ class BAT_MODULE_3 final :
   void _internal_set_bat_module3_cell11_vol(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.BAT_MODULE_3)
+  // @@protoc_insertion_point(class_scope:EDT0001.BAT_MODULE_3)
  private:
   class _Internal;
 
@@ -1688,7 +1696,7 @@ class BAT_MODULE_3 final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    int32_t batterymd_3_;
+    int32_t batterymd_3_pk_;
     int32_t bat_module3_cell0_vol_;
     int32_t bat_module3_cell1_vol_;
     int32_t bat_module3_cell2_vol_;
@@ -1703,7 +1711,7 @@ class BAT_MODULE_3 final :
 // -------------------------------------------------------------------
 
 class Environment final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.Environment) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.Environment) */ {
  public:
   inline Environment() : Environment(nullptr) {}
   ~Environment() override;
@@ -1806,7 +1814,7 @@ class Environment final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.Environment";
+    return "EDT0001.Environment";
   }
   protected:
   explicit Environment(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -1869,7 +1877,7 @@ class Environment final :
   void _internal_set_wind_direction(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.Environment)
+  // @@protoc_insertion_point(class_scope:EDT0001.Environment)
  private:
   class _Internal;
 
@@ -1889,7 +1897,7 @@ class Environment final :
 // -------------------------------------------------------------------
 
 class AIS final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.AIS) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.AIS) */ {
  public:
   inline AIS() : AIS(nullptr) {}
   ~AIS() override;
@@ -1992,7 +2000,7 @@ class AIS final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.AIS";
+    return "EDT0001.AIS";
   }
   protected:
   explicit AIS(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -2009,40 +2017,13 @@ class AIS final :
   // accessors -------------------------------------------------------
 
   enum : int {
-    kLatitudeFieldNumber = 2,
-    kLongitudeFieldNumber = 3,
-    kSystemTimeFieldNumber = 4,
+    kSystemTimeFieldNumber = 5,
     kAISPKFieldNumber = 1,
+    kSHIPIDFieldNumber = 2,
+    kLatitudeFieldNumber = 3,
+    kLongitudeFieldNumber = 4,
   };
-  // string latitude = 2;
-  void clear_latitude();
-  const std::string& latitude() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_latitude(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_latitude();
-  PROTOBUF_NODISCARD std::string* release_latitude();
-  void set_allocated_latitude(std::string* latitude);
-  private:
-  const std::string& _internal_latitude() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_latitude(const std::string& value);
-  std::string* _internal_mutable_latitude();
-  public:
-
-  // string longitude = 3;
-  void clear_longitude();
-  const std::string& longitude() const;
-  template <typename ArgT0 = const std::string&, typename... ArgT>
-  void set_longitude(ArgT0&& arg0, ArgT... args);
-  std::string* mutable_longitude();
-  PROTOBUF_NODISCARD std::string* release_longitude();
-  void set_allocated_longitude(std::string* longitude);
-  private:
-  const std::string& _internal_longitude() const;
-  inline PROTOBUF_ALWAYS_INLINE void _internal_set_longitude(const std::string& value);
-  std::string* _internal_mutable_longitude();
-  public:
-
-  // string System_time = 4;
+  // string System_time = 5;
   void clear_system_time();
   const std::string& system_time() const;
   template <typename ArgT0 = const std::string&, typename... ArgT>
@@ -2065,7 +2046,34 @@ class AIS final :
   void _internal_set_ais_pk(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.AIS)
+  // int32 SHIPID = 2;
+  void clear_shipid();
+  int32_t shipid() const;
+  void set_shipid(int32_t value);
+  private:
+  int32_t _internal_shipid() const;
+  void _internal_set_shipid(int32_t value);
+  public:
+
+  // float latitude = 3;
+  void clear_latitude();
+  float latitude() const;
+  void set_latitude(float value);
+  private:
+  float _internal_latitude() const;
+  void _internal_set_latitude(float value);
+  public:
+
+  // float longitude = 4;
+  void clear_longitude();
+  float longitude() const;
+  void set_longitude(float value);
+  private:
+  float _internal_longitude() const;
+  void _internal_set_longitude(float value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:EDT0001.AIS)
  private:
   class _Internal;
 
@@ -2073,10 +2081,11 @@ class AIS final :
   typedef void InternalArenaConstructable_;
   typedef void DestructorSkippable_;
   struct Impl_ {
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr latitude_;
-    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr longitude_;
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
     int32_t ais_pk_;
+    int32_t shipid_;
+    float latitude_;
+    float longitude_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2085,7 +2094,7 @@ class AIS final :
 // -------------------------------------------------------------------
 
 class System_Time final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.System_Time) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.System_Time) */ {
  public:
   inline System_Time() : System_Time(nullptr) {}
   ~System_Time() override;
@@ -2188,7 +2197,7 @@ class System_Time final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.System_Time";
+    return "EDT0001.System_Time";
   }
   protected:
   explicit System_Time(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -2206,7 +2215,7 @@ class System_Time final :
 
   enum : int {
     kSystemTimeFieldNumber = 2,
-    kTimesFieldNumber = 1,
+    kTimesPKFieldNumber = 1,
   };
   // string System_time = 2;
   void clear_system_time();
@@ -2222,16 +2231,16 @@ class System_Time final :
   std::string* _internal_mutable_system_time();
   public:
 
-  // int32 Times = 1;
-  void clear_times();
-  int32_t times() const;
-  void set_times(int32_t value);
+  // int32 Times_PK = 1;
+  void clear_times_pk();
+  int32_t times_pk() const;
+  void set_times_pk(int32_t value);
   private:
-  int32_t _internal_times() const;
-  void _internal_set_times(int32_t value);
+  int32_t _internal_times_pk() const;
+  void _internal_set_times_pk(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.System_Time)
+  // @@protoc_insertion_point(class_scope:EDT0001.System_Time)
  private:
   class _Internal;
 
@@ -2240,7 +2249,7 @@ class System_Time final :
   typedef void DestructorSkippable_;
   struct Impl_ {
     ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
-    int32_t times_;
+    int32_t times_pk_;
     mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
   };
   union { Impl_ _impl_; };
@@ -2249,7 +2258,7 @@ class System_Time final :
 // -------------------------------------------------------------------
 
 class MOTOR final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.MOTOR) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.MOTOR) */ {
  public:
   inline MOTOR() : MOTOR(nullptr) {}
   ~MOTOR() override;
@@ -2352,7 +2361,7 @@ class MOTOR final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.MOTOR";
+    return "EDT0001.MOTOR";
   }
   protected:
   explicit MOTOR(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -2425,7 +2434,7 @@ class MOTOR final :
   void _internal_set_mt_temp(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.MOTOR)
+  // @@protoc_insertion_point(class_scope:EDT0001.MOTOR)
  private:
   class _Internal;
 
@@ -2446,7 +2455,7 @@ class MOTOR final :
 // -------------------------------------------------------------------
 
 class INVERTER final :
-    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:Protocol.INVERTER) */ {
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.INVERTER) */ {
  public:
   inline INVERTER() : INVERTER(nullptr) {}
   ~INVERTER() override;
@@ -2549,7 +2558,7 @@ class INVERTER final :
   private:
   friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
   static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
-    return "Protocol.INVERTER";
+    return "EDT0001.INVERTER";
   }
   protected:
   explicit INVERTER(::PROTOBUF_NAMESPACE_ID::Arena* arena,
@@ -2702,7 +2711,7 @@ class INVERTER final :
   void _internal_set_inv_output_voltage(int32_t value);
   public:
 
-  // @@protoc_insertion_point(class_scope:Protocol.INVERTER)
+  // @@protoc_insertion_point(class_scope:EDT0001.INVERTER)
  private:
   class _Internal;
 
@@ -2728,6 +2737,356 @@ class INVERTER final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_EDT0001_2eproto;
 };
+// -------------------------------------------------------------------
+
+class Network final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.Network) */ {
+ public:
+  inline Network() : Network(nullptr) {}
+  ~Network() override;
+  explicit PROTOBUF_CONSTEXPR Network(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  Network(const Network& from);
+  Network(Network&& from) noexcept
+    : Network() {
+    *this = ::std::move(from);
+  }
+
+  inline Network& operator=(const Network& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline Network& operator=(Network&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const Network& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const Network* internal_default_instance() {
+    return reinterpret_cast<const Network*>(
+               &_Network_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    11;
+
+  friend void swap(Network& a, Network& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(Network* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(Network* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  Network* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<Network>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const Network& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const Network& from) {
+    Network::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(Network* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "EDT0001.Network";
+  }
+  protected:
+  explicit Network(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSystemTimeFieldNumber = 3,
+    kNetWorkPKFieldNumber = 1,
+    kStatusNetworkFieldNumber = 2,
+  };
+  // string System_time = 3;
+  void clear_system_time();
+  const std::string& system_time() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_system_time(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_system_time();
+  PROTOBUF_NODISCARD std::string* release_system_time();
+  void set_allocated_system_time(std::string* system_time);
+  private:
+  const std::string& _internal_system_time() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_system_time(const std::string& value);
+  std::string* _internal_mutable_system_time();
+  public:
+
+  // int32 NetWork_PK = 1;
+  void clear_network_pk();
+  int32_t network_pk() const;
+  void set_network_pk(int32_t value);
+  private:
+  int32_t _internal_network_pk() const;
+  void _internal_set_network_pk(int32_t value);
+  public:
+
+  // int32 Status_Network = 2;
+  void clear_status_network();
+  int32_t status_network() const;
+  void set_status_network(int32_t value);
+  private:
+  int32_t _internal_status_network() const;
+  void _internal_set_status_network(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:EDT0001.Network)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
+    int32_t network_pk_;
+    int32_t status_network_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_EDT0001_2eproto;
+};
+// -------------------------------------------------------------------
+
+class SaveAsBytes final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:EDT0001.SaveAsBytes) */ {
+ public:
+  inline SaveAsBytes() : SaveAsBytes(nullptr) {}
+  ~SaveAsBytes() override;
+  explicit PROTOBUF_CONSTEXPR SaveAsBytes(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  SaveAsBytes(const SaveAsBytes& from);
+  SaveAsBytes(SaveAsBytes&& from) noexcept
+    : SaveAsBytes() {
+    *this = ::std::move(from);
+  }
+
+  inline SaveAsBytes& operator=(const SaveAsBytes& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline SaveAsBytes& operator=(SaveAsBytes&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const SaveAsBytes& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const SaveAsBytes* internal_default_instance() {
+    return reinterpret_cast<const SaveAsBytes*>(
+               &_SaveAsBytes_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    12;
+
+  friend void swap(SaveAsBytes& a, SaveAsBytes& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(SaveAsBytes* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(SaveAsBytes* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  SaveAsBytes* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<SaveAsBytes>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const SaveAsBytes& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const SaveAsBytes& from) {
+    SaveAsBytes::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(SaveAsBytes* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "EDT0001.SaveAsBytes";
+  }
+  protected:
+  explicit SaveAsBytes(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kSystemTimeFieldNumber = 3,
+    kSaveAsBytesPKFieldNumber = 1,
+    kBytesFieldNumber = 2,
+  };
+  // string System_time = 3;
+  void clear_system_time();
+  const std::string& system_time() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_system_time(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_system_time();
+  PROTOBUF_NODISCARD std::string* release_system_time();
+  void set_allocated_system_time(std::string* system_time);
+  private:
+  const std::string& _internal_system_time() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_system_time(const std::string& value);
+  std::string* _internal_mutable_system_time();
+  public:
+
+  // int32 SaveAsBytes_PK = 1;
+  void clear_saveasbytes_pk();
+  int32_t saveasbytes_pk() const;
+  void set_saveasbytes_pk(int32_t value);
+  private:
+  int32_t _internal_saveasbytes_pk() const;
+  void _internal_set_saveasbytes_pk(int32_t value);
+  public:
+
+  // int32 Bytes = 2;
+  void clear_bytes();
+  int32_t bytes() const;
+  void set_bytes(int32_t value);
+  private:
+  int32_t _internal_bytes() const;
+  void _internal_set_bytes(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:EDT0001.SaveAsBytes)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr system_time_;
+    int32_t saveasbytes_pk_;
+    int32_t bytes_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_EDT0001_2eproto;
+};
 // ===================================================================
 
 
@@ -2739,24 +3098,24 @@ class INVERTER final :
 #endif  // __GNUC__
 // Battery
 
-// int32 BatteryPK = 1;
-inline void Battery::clear_batterypk() {
-  _impl_.batterypk_ = 0;
+// int32 Battery_PK = 1;
+inline void Battery::clear_battery_pk() {
+  _impl_.battery_pk_ = 0;
 }
-inline int32_t Battery::_internal_batterypk() const {
-  return _impl_.batterypk_;
+inline int32_t Battery::_internal_battery_pk() const {
+  return _impl_.battery_pk_;
 }
-inline int32_t Battery::batterypk() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery.BatteryPK)
-  return _internal_batterypk();
+inline int32_t Battery::battery_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.Battery.Battery_PK)
+  return _internal_battery_pk();
 }
-inline void Battery::_internal_set_batterypk(int32_t value) {
+inline void Battery::_internal_set_battery_pk(int32_t value) {
   
-  _impl_.batterypk_ = value;
+  _impl_.battery_pk_ = value;
 }
-inline void Battery::set_batterypk(int32_t value) {
-  _internal_set_batterypk(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery.BatteryPK)
+inline void Battery::set_battery_pk(int32_t value) {
+  _internal_set_battery_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.Battery.Battery_PK)
 }
 
 // int32 BAT_BPU_NEGATIVE_CONTACTOR = 2;
@@ -2767,7 +3126,7 @@ inline int32_t Battery::_internal_bat_bpu_negative_contactor() const {
   return _impl_.bat_bpu_negative_contactor_;
 }
 inline int32_t Battery::bat_bpu_negative_contactor() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery.BAT_BPU_NEGATIVE_CONTACTOR)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery.BAT_BPU_NEGATIVE_CONTACTOR)
   return _internal_bat_bpu_negative_contactor();
 }
 inline void Battery::_internal_set_bat_bpu_negative_contactor(int32_t value) {
@@ -2776,7 +3135,7 @@ inline void Battery::_internal_set_bat_bpu_negative_contactor(int32_t value) {
 }
 inline void Battery::set_bat_bpu_negative_contactor(int32_t value) {
   _internal_set_bat_bpu_negative_contactor(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery.BAT_BPU_NEGATIVE_CONTACTOR)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery.BAT_BPU_NEGATIVE_CONTACTOR)
 }
 
 // int32 BAT_BPU_POSITIVE_CONTACTOR = 3;
@@ -2787,7 +3146,7 @@ inline int32_t Battery::_internal_bat_bpu_positive_contactor() const {
   return _impl_.bat_bpu_positive_contactor_;
 }
 inline int32_t Battery::bat_bpu_positive_contactor() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery.BAT_BPU_POSITIVE_CONTACTOR)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery.BAT_BPU_POSITIVE_CONTACTOR)
   return _internal_bat_bpu_positive_contactor();
 }
 inline void Battery::_internal_set_bat_bpu_positive_contactor(int32_t value) {
@@ -2796,7 +3155,7 @@ inline void Battery::_internal_set_bat_bpu_positive_contactor(int32_t value) {
 }
 inline void Battery::set_bat_bpu_positive_contactor(int32_t value) {
   _internal_set_bat_bpu_positive_contactor(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery.BAT_BPU_POSITIVE_CONTACTOR)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery.BAT_BPU_POSITIVE_CONTACTOR)
 }
 
 // int32 BAT_BPU_PRE_CONTACTOR = 4;
@@ -2807,7 +3166,7 @@ inline int32_t Battery::_internal_bat_bpu_pre_contactor() const {
   return _impl_.bat_bpu_pre_contactor_;
 }
 inline int32_t Battery::bat_bpu_pre_contactor() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery.BAT_BPU_PRE_CONTACTOR)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery.BAT_BPU_PRE_CONTACTOR)
   return _internal_bat_bpu_pre_contactor();
 }
 inline void Battery::_internal_set_bat_bpu_pre_contactor(int32_t value) {
@@ -2816,7 +3175,7 @@ inline void Battery::_internal_set_bat_bpu_pre_contactor(int32_t value) {
 }
 inline void Battery::set_bat_bpu_pre_contactor(int32_t value) {
   _internal_set_bat_bpu_pre_contactor(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery.BAT_BPU_PRE_CONTACTOR)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery.BAT_BPU_PRE_CONTACTOR)
 }
 
 // int32 BAT_PROTECTION_A = 5;
@@ -2827,7 +3186,7 @@ inline int32_t Battery::_internal_bat_protection_a() const {
   return _impl_.bat_protection_a_;
 }
 inline int32_t Battery::bat_protection_a() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery.BAT_PROTECTION_A)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery.BAT_PROTECTION_A)
   return _internal_bat_protection_a();
 }
 inline void Battery::_internal_set_bat_protection_a(int32_t value) {
@@ -2836,7 +3195,7 @@ inline void Battery::_internal_set_bat_protection_a(int32_t value) {
 }
 inline void Battery::set_bat_protection_a(int32_t value) {
   _internal_set_bat_protection_a(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery.BAT_PROTECTION_A)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery.BAT_PROTECTION_A)
 }
 
 // int32 BAT_PROTECTION_B = 6;
@@ -2847,7 +3206,7 @@ inline int32_t Battery::_internal_bat_protection_b() const {
   return _impl_.bat_protection_b_;
 }
 inline int32_t Battery::bat_protection_b() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery.BAT_PROTECTION_B)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery.BAT_PROTECTION_B)
   return _internal_bat_protection_b();
 }
 inline void Battery::_internal_set_bat_protection_b(int32_t value) {
@@ -2856,7 +3215,7 @@ inline void Battery::_internal_set_bat_protection_b(int32_t value) {
 }
 inline void Battery::set_bat_protection_b(int32_t value) {
   _internal_set_bat_protection_b(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery.BAT_PROTECTION_B)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery.BAT_PROTECTION_B)
 }
 
 // string System_time = 7;
@@ -2864,7 +3223,7 @@ inline void Battery::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& Battery::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -2872,11 +3231,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void Battery::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.Battery.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery.System_time)
 }
 inline std::string* Battery::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.Battery.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.Battery.System_time)
   return _s;
 }
 inline const std::string& Battery::_internal_system_time() const {
@@ -2891,7 +3250,7 @@ inline std::string* Battery::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Battery::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.Battery.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.Battery.System_time)
   return _impl_.system_time_.Release();
 }
 inline void Battery::set_allocated_system_time(std::string* system_time) {
@@ -2906,31 +3265,31 @@ inline void Battery::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.Battery.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.Battery.System_time)
 }
 
 // -------------------------------------------------------------------
 
 // Battery_Pack
 
-// int32 Battery_Pack = 1;
-inline void Battery_Pack::clear_battery_pack() {
-  _impl_.battery_pack_ = 0;
+// int32 Battery_PK = 1;
+inline void Battery_Pack::clear_battery_pk() {
+  _impl_.battery_pk_ = 0;
 }
-inline int32_t Battery_Pack::_internal_battery_pack() const {
-  return _impl_.battery_pack_;
+inline int32_t Battery_Pack::_internal_battery_pk() const {
+  return _impl_.battery_pk_;
 }
-inline int32_t Battery_Pack::battery_pack() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.Battery_Pack)
-  return _internal_battery_pack();
+inline int32_t Battery_Pack::battery_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.Battery_PK)
+  return _internal_battery_pk();
 }
-inline void Battery_Pack::_internal_set_battery_pack(int32_t value) {
+inline void Battery_Pack::_internal_set_battery_pk(int32_t value) {
   
-  _impl_.battery_pack_ = value;
+  _impl_.battery_pk_ = value;
 }
-inline void Battery_Pack::set_battery_pack(int32_t value) {
-  _internal_set_battery_pack(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.Battery_Pack)
+inline void Battery_Pack::set_battery_pk(int32_t value) {
+  _internal_set_battery_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.Battery_PK)
 }
 
 // int32 BAT_PACK_CURRENT = 2;
@@ -2941,7 +3300,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_current() const {
   return _impl_.bat_pack_current_;
 }
 inline int32_t Battery_Pack::bat_pack_current() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_CURRENT)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_CURRENT)
   return _internal_bat_pack_current();
 }
 inline void Battery_Pack::_internal_set_bat_pack_current(int32_t value) {
@@ -2950,7 +3309,7 @@ inline void Battery_Pack::_internal_set_bat_pack_current(int32_t value) {
 }
 inline void Battery_Pack::set_bat_pack_current(int32_t value) {
   _internal_set_bat_pack_current(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_CURRENT)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_CURRENT)
 }
 
 // int32 BAT_PACK_SOC = 3;
@@ -2961,7 +3320,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_soc() const {
   return _impl_.bat_pack_soc_;
 }
 inline int32_t Battery_Pack::bat_pack_soc() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_SOC)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_SOC)
   return _internal_bat_pack_soc();
 }
 inline void Battery_Pack::_internal_set_bat_pack_soc(int32_t value) {
@@ -2970,7 +3329,7 @@ inline void Battery_Pack::_internal_set_bat_pack_soc(int32_t value) {
 }
 inline void Battery_Pack::set_bat_pack_soc(int32_t value) {
   _internal_set_bat_pack_soc(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_SOC)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_SOC)
 }
 
 // int32 BAT_PACK_VOLTAGE = 4;
@@ -2981,7 +3340,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_voltage() const {
   return _impl_.bat_pack_voltage_;
 }
 inline int32_t Battery_Pack::bat_pack_voltage() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_VOLTAGE)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_VOLTAGE)
   return _internal_bat_pack_voltage();
 }
 inline void Battery_Pack::_internal_set_bat_pack_voltage(int32_t value) {
@@ -2990,7 +3349,7 @@ inline void Battery_Pack::_internal_set_bat_pack_voltage(int32_t value) {
 }
 inline void Battery_Pack::set_bat_pack_voltage(int32_t value) {
   _internal_set_bat_pack_voltage(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_VOLTAGE)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_VOLTAGE)
 }
 
 // int32 BAT_PACK_MAX_TEMP = 5;
@@ -3001,7 +3360,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_max_temp() const {
   return _impl_.bat_pack_max_temp_;
 }
 inline int32_t Battery_Pack::bat_pack_max_temp() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_MAX_TEMP)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_MAX_TEMP)
   return _internal_bat_pack_max_temp();
 }
 inline void Battery_Pack::_internal_set_bat_pack_max_temp(int32_t value) {
@@ -3010,7 +3369,7 @@ inline void Battery_Pack::_internal_set_bat_pack_max_temp(int32_t value) {
 }
 inline void Battery_Pack::set_bat_pack_max_temp(int32_t value) {
   _internal_set_bat_pack_max_temp(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_MAX_TEMP)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_MAX_TEMP)
 }
 
 // int32 BAT_PACK_MAX_TEMP_SBMS_INDEX = 6;
@@ -3021,7 +3380,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_max_temp_sbms_index() const {
   return _impl_.bat_pack_max_temp_sbms_index_;
 }
 inline int32_t Battery_Pack::bat_pack_max_temp_sbms_index() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_MAX_TEMP_SBMS_INDEX)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_MAX_TEMP_SBMS_INDEX)
   return _internal_bat_pack_max_temp_sbms_index();
 }
 inline void Battery_Pack::_internal_set_bat_pack_max_temp_sbms_index(int32_t value) {
@@ -3030,7 +3389,7 @@ inline void Battery_Pack::_internal_set_bat_pack_max_temp_sbms_index(int32_t val
 }
 inline void Battery_Pack::set_bat_pack_max_temp_sbms_index(int32_t value) {
   _internal_set_bat_pack_max_temp_sbms_index(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_MAX_TEMP_SBMS_INDEX)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_MAX_TEMP_SBMS_INDEX)
 }
 
 // int32 BAT_PACK_MIN_TEMP = 7;
@@ -3041,7 +3400,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_min_temp() const {
   return _impl_.bat_pack_min_temp_;
 }
 inline int32_t Battery_Pack::bat_pack_min_temp() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_MIN_TEMP)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_MIN_TEMP)
   return _internal_bat_pack_min_temp();
 }
 inline void Battery_Pack::_internal_set_bat_pack_min_temp(int32_t value) {
@@ -3050,7 +3409,7 @@ inline void Battery_Pack::_internal_set_bat_pack_min_temp(int32_t value) {
 }
 inline void Battery_Pack::set_bat_pack_min_temp(int32_t value) {
   _internal_set_bat_pack_min_temp(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_MIN_TEMP)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_MIN_TEMP)
 }
 
 // int32 BAT_PACK_MIN_TEMP_SBMS_INDEX = 8;
@@ -3061,7 +3420,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_min_temp_sbms_index() const {
   return _impl_.bat_pack_min_temp_sbms_index_;
 }
 inline int32_t Battery_Pack::bat_pack_min_temp_sbms_index() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_MIN_TEMP_SBMS_INDEX)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_MIN_TEMP_SBMS_INDEX)
   return _internal_bat_pack_min_temp_sbms_index();
 }
 inline void Battery_Pack::_internal_set_bat_pack_min_temp_sbms_index(int32_t value) {
@@ -3070,7 +3429,7 @@ inline void Battery_Pack::_internal_set_bat_pack_min_temp_sbms_index(int32_t val
 }
 inline void Battery_Pack::set_bat_pack_min_temp_sbms_index(int32_t value) {
   _internal_set_bat_pack_min_temp_sbms_index(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_MIN_TEMP_SBMS_INDEX)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_MIN_TEMP_SBMS_INDEX)
 }
 
 // int32 BAT_PACK_MAX_CELL_VOL = 9;
@@ -3081,7 +3440,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_max_cell_vol() const {
   return _impl_.bat_pack_max_cell_vol_;
 }
 inline int32_t Battery_Pack::bat_pack_max_cell_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_MAX_CELL_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_MAX_CELL_VOL)
   return _internal_bat_pack_max_cell_vol();
 }
 inline void Battery_Pack::_internal_set_bat_pack_max_cell_vol(int32_t value) {
@@ -3090,7 +3449,7 @@ inline void Battery_Pack::_internal_set_bat_pack_max_cell_vol(int32_t value) {
 }
 inline void Battery_Pack::set_bat_pack_max_cell_vol(int32_t value) {
   _internal_set_bat_pack_max_cell_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_MAX_CELL_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_MAX_CELL_VOL)
 }
 
 // int32 BAT_PACK_MAX_CELL_VOL_SBMS_INDEX = 10;
@@ -3101,7 +3460,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_max_cell_vol_sbms_index() const 
   return _impl_.bat_pack_max_cell_vol_sbms_index_;
 }
 inline int32_t Battery_Pack::bat_pack_max_cell_vol_sbms_index() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_MAX_CELL_VOL_SBMS_INDEX)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_MAX_CELL_VOL_SBMS_INDEX)
   return _internal_bat_pack_max_cell_vol_sbms_index();
 }
 inline void Battery_Pack::_internal_set_bat_pack_max_cell_vol_sbms_index(int32_t value) {
@@ -3110,7 +3469,7 @@ inline void Battery_Pack::_internal_set_bat_pack_max_cell_vol_sbms_index(int32_t
 }
 inline void Battery_Pack::set_bat_pack_max_cell_vol_sbms_index(int32_t value) {
   _internal_set_bat_pack_max_cell_vol_sbms_index(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_MAX_CELL_VOL_SBMS_INDEX)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_MAX_CELL_VOL_SBMS_INDEX)
 }
 
 // int32 BAT_PACK_MIN_CELL_VOL = 11;
@@ -3121,7 +3480,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_min_cell_vol() const {
   return _impl_.bat_pack_min_cell_vol_;
 }
 inline int32_t Battery_Pack::bat_pack_min_cell_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_MIN_CELL_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_MIN_CELL_VOL)
   return _internal_bat_pack_min_cell_vol();
 }
 inline void Battery_Pack::_internal_set_bat_pack_min_cell_vol(int32_t value) {
@@ -3130,7 +3489,7 @@ inline void Battery_Pack::_internal_set_bat_pack_min_cell_vol(int32_t value) {
 }
 inline void Battery_Pack::set_bat_pack_min_cell_vol(int32_t value) {
   _internal_set_bat_pack_min_cell_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_MIN_CELL_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_MIN_CELL_VOL)
 }
 
 // int32 BAT_PACK_MIN_CELL_VOL_SBMS_INDEX = 12;
@@ -3141,7 +3500,7 @@ inline int32_t Battery_Pack::_internal_bat_pack_min_cell_vol_sbms_index() const 
   return _impl_.bat_pack_min_cell_vol_sbms_index_;
 }
 inline int32_t Battery_Pack::bat_pack_min_cell_vol_sbms_index() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.BAT_PACK_MIN_CELL_VOL_SBMS_INDEX)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.BAT_PACK_MIN_CELL_VOL_SBMS_INDEX)
   return _internal_bat_pack_min_cell_vol_sbms_index();
 }
 inline void Battery_Pack::_internal_set_bat_pack_min_cell_vol_sbms_index(int32_t value) {
@@ -3150,7 +3509,7 @@ inline void Battery_Pack::_internal_set_bat_pack_min_cell_vol_sbms_index(int32_t
 }
 inline void Battery_Pack::set_bat_pack_min_cell_vol_sbms_index(int32_t value) {
   _internal_set_bat_pack_min_cell_vol_sbms_index(value);
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.BAT_PACK_MIN_CELL_VOL_SBMS_INDEX)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.BAT_PACK_MIN_CELL_VOL_SBMS_INDEX)
 }
 
 // string System_time = 13;
@@ -3158,7 +3517,7 @@ inline void Battery_Pack::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& Battery_Pack::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.Battery_Pack.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.Battery_Pack.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -3166,11 +3525,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void Battery_Pack::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.Battery_Pack.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.Battery_Pack.System_time)
 }
 inline std::string* Battery_Pack::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.Battery_Pack.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.Battery_Pack.System_time)
   return _s;
 }
 inline const std::string& Battery_Pack::_internal_system_time() const {
@@ -3185,7 +3544,7 @@ inline std::string* Battery_Pack::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Battery_Pack::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.Battery_Pack.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.Battery_Pack.System_time)
   return _impl_.system_time_.Release();
 }
 inline void Battery_Pack::set_allocated_system_time(std::string* system_time) {
@@ -3200,31 +3559,31 @@ inline void Battery_Pack::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.Battery_Pack.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.Battery_Pack.System_time)
 }
 
 // -------------------------------------------------------------------
 
 // BAT_MODULE_0
 
-// int32 BatteryMd_0 = 1;
-inline void BAT_MODULE_0::clear_batterymd_0() {
-  _impl_.batterymd_0_ = 0;
+// int32 BatteryMd_PK = 1;
+inline void BAT_MODULE_0::clear_batterymd_pk() {
+  _impl_.batterymd_pk_ = 0;
 }
-inline int32_t BAT_MODULE_0::_internal_batterymd_0() const {
-  return _impl_.batterymd_0_;
+inline int32_t BAT_MODULE_0::_internal_batterymd_pk() const {
+  return _impl_.batterymd_pk_;
 }
-inline int32_t BAT_MODULE_0::batterymd_0() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BatteryMd_0)
-  return _internal_batterymd_0();
+inline int32_t BAT_MODULE_0::batterymd_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BatteryMd_PK)
+  return _internal_batterymd_pk();
 }
-inline void BAT_MODULE_0::_internal_set_batterymd_0(int32_t value) {
+inline void BAT_MODULE_0::_internal_set_batterymd_pk(int32_t value) {
   
-  _impl_.batterymd_0_ = value;
+  _impl_.batterymd_pk_ = value;
 }
-inline void BAT_MODULE_0::set_batterymd_0(int32_t value) {
-  _internal_set_batterymd_0(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BatteryMd_0)
+inline void BAT_MODULE_0::set_batterymd_pk(int32_t value) {
+  _internal_set_batterymd_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BatteryMd_PK)
 }
 
 // int32 BAT_MODULE_CELL0_VOL = 2;
@@ -3235,7 +3594,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell0_vol() const {
   return _impl_.bat_module_cell0_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell0_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL0_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL0_VOL)
   return _internal_bat_module_cell0_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell0_vol(int32_t value) {
@@ -3244,7 +3603,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell0_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell0_vol(int32_t value) {
   _internal_set_bat_module_cell0_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL0_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL0_VOL)
 }
 
 // int32 BAT_MODULE_CELL1_VOL = 3;
@@ -3255,7 +3614,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell1_vol() const {
   return _impl_.bat_module_cell1_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell1_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL1_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL1_VOL)
   return _internal_bat_module_cell1_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell1_vol(int32_t value) {
@@ -3264,7 +3623,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell1_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell1_vol(int32_t value) {
   _internal_set_bat_module_cell1_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL1_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL1_VOL)
 }
 
 // int32 BAT_MODULE_CELL2_VOL = 4;
@@ -3275,7 +3634,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell2_vol() const {
   return _impl_.bat_module_cell2_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell2_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL2_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL2_VOL)
   return _internal_bat_module_cell2_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell2_vol(int32_t value) {
@@ -3284,7 +3643,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell2_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell2_vol(int32_t value) {
   _internal_set_bat_module_cell2_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL2_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL2_VOL)
 }
 
 // int32 BAT_MODULE_CELL3_VOL = 5;
@@ -3295,7 +3654,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell3_vol() const {
   return _impl_.bat_module_cell3_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell3_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL3_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL3_VOL)
   return _internal_bat_module_cell3_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell3_vol(int32_t value) {
@@ -3304,7 +3663,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell3_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell3_vol(int32_t value) {
   _internal_set_bat_module_cell3_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL3_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL3_VOL)
 }
 
 // int32 BAT_MODULE_CELL4_VOL = 6;
@@ -3315,7 +3674,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell4_vol() const {
   return _impl_.bat_module_cell4_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell4_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL4_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL4_VOL)
   return _internal_bat_module_cell4_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell4_vol(int32_t value) {
@@ -3324,7 +3683,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell4_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell4_vol(int32_t value) {
   _internal_set_bat_module_cell4_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL4_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL4_VOL)
 }
 
 // int32 BAT_MODULE_CELL5_VOL = 7;
@@ -3335,7 +3694,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell5_vol() const {
   return _impl_.bat_module_cell5_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell5_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL5_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL5_VOL)
   return _internal_bat_module_cell5_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell5_vol(int32_t value) {
@@ -3344,7 +3703,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell5_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell5_vol(int32_t value) {
   _internal_set_bat_module_cell5_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL5_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL5_VOL)
 }
 
 // int32 BAT_MODULE_CELL6_VOL = 8;
@@ -3355,7 +3714,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell6_vol() const {
   return _impl_.bat_module_cell6_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell6_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL6_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL6_VOL)
   return _internal_bat_module_cell6_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell6_vol(int32_t value) {
@@ -3364,7 +3723,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell6_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell6_vol(int32_t value) {
   _internal_set_bat_module_cell6_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL6_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL6_VOL)
 }
 
 // int32 BAT_MODULE_CELL7_VOL = 9;
@@ -3375,7 +3734,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell7_vol() const {
   return _impl_.bat_module_cell7_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell7_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL7_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL7_VOL)
   return _internal_bat_module_cell7_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell7_vol(int32_t value) {
@@ -3384,7 +3743,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell7_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell7_vol(int32_t value) {
   _internal_set_bat_module_cell7_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL7_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL7_VOL)
 }
 
 // int32 BAT_MODULE_CELL8_VOL = 10;
@@ -3395,7 +3754,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell8_vol() const {
   return _impl_.bat_module_cell8_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell8_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL8_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL8_VOL)
   return _internal_bat_module_cell8_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell8_vol(int32_t value) {
@@ -3404,7 +3763,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell8_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell8_vol(int32_t value) {
   _internal_set_bat_module_cell8_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL8_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL8_VOL)
 }
 
 // int32 BAT_MODULE_CELL9_VOL = 11;
@@ -3415,7 +3774,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell9_vol() const {
   return _impl_.bat_module_cell9_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell9_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL9_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL9_VOL)
   return _internal_bat_module_cell9_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell9_vol(int32_t value) {
@@ -3424,7 +3783,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell9_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell9_vol(int32_t value) {
   _internal_set_bat_module_cell9_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL9_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL9_VOL)
 }
 
 // int32 BAT_MODULE_CELL10_VOL = 12;
@@ -3435,7 +3794,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell10_vol() const {
   return _impl_.bat_module_cell10_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell10_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL10_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL10_VOL)
   return _internal_bat_module_cell10_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell10_vol(int32_t value) {
@@ -3444,7 +3803,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell10_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell10_vol(int32_t value) {
   _internal_set_bat_module_cell10_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL10_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL10_VOL)
 }
 
 // int32 BAT_MODULE_CELL11_VOL = 13;
@@ -3455,7 +3814,7 @@ inline int32_t BAT_MODULE_0::_internal_bat_module_cell11_vol() const {
   return _impl_.bat_module_cell11_vol_;
 }
 inline int32_t BAT_MODULE_0::bat_module_cell11_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.BAT_MODULE_CELL11_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL11_VOL)
   return _internal_bat_module_cell11_vol();
 }
 inline void BAT_MODULE_0::_internal_set_bat_module_cell11_vol(int32_t value) {
@@ -3464,7 +3823,7 @@ inline void BAT_MODULE_0::_internal_set_bat_module_cell11_vol(int32_t value) {
 }
 inline void BAT_MODULE_0::set_bat_module_cell11_vol(int32_t value) {
   _internal_set_bat_module_cell11_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.BAT_MODULE_CELL11_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.BAT_MODULE_CELL11_VOL)
 }
 
 // string System_time = 14;
@@ -3472,7 +3831,7 @@ inline void BAT_MODULE_0::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& BAT_MODULE_0::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_0.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_0.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -3480,11 +3839,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BAT_MODULE_0::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_0.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_0.System_time)
 }
 inline std::string* BAT_MODULE_0::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.BAT_MODULE_0.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.BAT_MODULE_0.System_time)
   return _s;
 }
 inline const std::string& BAT_MODULE_0::_internal_system_time() const {
@@ -3499,7 +3858,7 @@ inline std::string* BAT_MODULE_0::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BAT_MODULE_0::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.BAT_MODULE_0.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.BAT_MODULE_0.System_time)
   return _impl_.system_time_.Release();
 }
 inline void BAT_MODULE_0::set_allocated_system_time(std::string* system_time) {
@@ -3514,31 +3873,31 @@ inline void BAT_MODULE_0::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.BAT_MODULE_0.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.BAT_MODULE_0.System_time)
 }
 
 // -------------------------------------------------------------------
 
 // BAT_MODULE_1
 
-// int32 BatteryMd_1 = 1;
-inline void BAT_MODULE_1::clear_batterymd_1() {
-  _impl_.batterymd_1_ = 0;
+// int32 BatteryMd_1_PK = 1;
+inline void BAT_MODULE_1::clear_batterymd_1_pk() {
+  _impl_.batterymd_1_pk_ = 0;
 }
-inline int32_t BAT_MODULE_1::_internal_batterymd_1() const {
-  return _impl_.batterymd_1_;
+inline int32_t BAT_MODULE_1::_internal_batterymd_1_pk() const {
+  return _impl_.batterymd_1_pk_;
 }
-inline int32_t BAT_MODULE_1::batterymd_1() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BatteryMd_1)
-  return _internal_batterymd_1();
+inline int32_t BAT_MODULE_1::batterymd_1_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BatteryMd_1_PK)
+  return _internal_batterymd_1_pk();
 }
-inline void BAT_MODULE_1::_internal_set_batterymd_1(int32_t value) {
+inline void BAT_MODULE_1::_internal_set_batterymd_1_pk(int32_t value) {
   
-  _impl_.batterymd_1_ = value;
+  _impl_.batterymd_1_pk_ = value;
 }
-inline void BAT_MODULE_1::set_batterymd_1(int32_t value) {
-  _internal_set_batterymd_1(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BatteryMd_1)
+inline void BAT_MODULE_1::set_batterymd_1_pk(int32_t value) {
+  _internal_set_batterymd_1_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BatteryMd_1_PK)
 }
 
 // int32 BAT_MODULE1_CELL0_VOL = 2;
@@ -3549,7 +3908,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell0_vol() const {
   return _impl_.bat_module1_cell0_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell0_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL0_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL0_VOL)
   return _internal_bat_module1_cell0_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell0_vol(int32_t value) {
@@ -3558,7 +3917,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell0_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell0_vol(int32_t value) {
   _internal_set_bat_module1_cell0_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL0_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL0_VOL)
 }
 
 // int32 BAT_MODULE1_CELL1_VOL = 3;
@@ -3569,7 +3928,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell1_vol() const {
   return _impl_.bat_module1_cell1_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell1_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL1_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL1_VOL)
   return _internal_bat_module1_cell1_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell1_vol(int32_t value) {
@@ -3578,7 +3937,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell1_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell1_vol(int32_t value) {
   _internal_set_bat_module1_cell1_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL1_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL1_VOL)
 }
 
 // int32 BAT_MODULE1_CELL2_VOL = 4;
@@ -3589,7 +3948,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell2_vol() const {
   return _impl_.bat_module1_cell2_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell2_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL2_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL2_VOL)
   return _internal_bat_module1_cell2_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell2_vol(int32_t value) {
@@ -3598,7 +3957,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell2_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell2_vol(int32_t value) {
   _internal_set_bat_module1_cell2_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL2_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL2_VOL)
 }
 
 // int32 BAT_MODULE1_CELL3_VOL = 5;
@@ -3609,7 +3968,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell3_vol() const {
   return _impl_.bat_module1_cell3_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell3_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL3_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL3_VOL)
   return _internal_bat_module1_cell3_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell3_vol(int32_t value) {
@@ -3618,7 +3977,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell3_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell3_vol(int32_t value) {
   _internal_set_bat_module1_cell3_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL3_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL3_VOL)
 }
 
 // int32 BAT_MODULE1_CELL4_VOL = 6;
@@ -3629,7 +3988,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell4_vol() const {
   return _impl_.bat_module1_cell4_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell4_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL4_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL4_VOL)
   return _internal_bat_module1_cell4_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell4_vol(int32_t value) {
@@ -3638,7 +3997,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell4_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell4_vol(int32_t value) {
   _internal_set_bat_module1_cell4_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL4_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL4_VOL)
 }
 
 // int32 BAT_MODULE1_CELL5_VOL = 7;
@@ -3649,7 +4008,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell5_vol() const {
   return _impl_.bat_module1_cell5_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell5_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL5_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL5_VOL)
   return _internal_bat_module1_cell5_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell5_vol(int32_t value) {
@@ -3658,7 +4017,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell5_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell5_vol(int32_t value) {
   _internal_set_bat_module1_cell5_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL5_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL5_VOL)
 }
 
 // int32 BAT_MODULE1_CELL6_VOL = 8;
@@ -3669,7 +4028,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell6_vol() const {
   return _impl_.bat_module1_cell6_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell6_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL6_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL6_VOL)
   return _internal_bat_module1_cell6_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell6_vol(int32_t value) {
@@ -3678,7 +4037,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell6_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell6_vol(int32_t value) {
   _internal_set_bat_module1_cell6_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL6_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL6_VOL)
 }
 
 // int32 BAT_MODULE1_CELL7_VOL = 9;
@@ -3689,7 +4048,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell7_vol() const {
   return _impl_.bat_module1_cell7_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell7_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL7_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL7_VOL)
   return _internal_bat_module1_cell7_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell7_vol(int32_t value) {
@@ -3698,7 +4057,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell7_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell7_vol(int32_t value) {
   _internal_set_bat_module1_cell7_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL7_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL7_VOL)
 }
 
 // int32 BAT_MODULE1_CELL8_VOL = 10;
@@ -3709,7 +4068,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell8_vol() const {
   return _impl_.bat_module1_cell8_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell8_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL8_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL8_VOL)
   return _internal_bat_module1_cell8_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell8_vol(int32_t value) {
@@ -3718,7 +4077,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell8_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell8_vol(int32_t value) {
   _internal_set_bat_module1_cell8_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL8_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL8_VOL)
 }
 
 // int32 BAT_MODULE1_CELL9_VOL = 11;
@@ -3729,7 +4088,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell9_vol() const {
   return _impl_.bat_module1_cell9_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell9_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL9_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL9_VOL)
   return _internal_bat_module1_cell9_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell9_vol(int32_t value) {
@@ -3738,7 +4097,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell9_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell9_vol(int32_t value) {
   _internal_set_bat_module1_cell9_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL9_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL9_VOL)
 }
 
 // int32 BAT_MODULE1_CELL10_VOL = 12;
@@ -3749,7 +4108,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell10_vol() const {
   return _impl_.bat_module1_cell10_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell10_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL10_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL10_VOL)
   return _internal_bat_module1_cell10_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell10_vol(int32_t value) {
@@ -3758,7 +4117,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell10_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell10_vol(int32_t value) {
   _internal_set_bat_module1_cell10_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL10_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL10_VOL)
 }
 
 // int32 BAT_MODULE1_CELL11_VOL = 13;
@@ -3769,7 +4128,7 @@ inline int32_t BAT_MODULE_1::_internal_bat_module1_cell11_vol() const {
   return _impl_.bat_module1_cell11_vol_;
 }
 inline int32_t BAT_MODULE_1::bat_module1_cell11_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL11_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL11_VOL)
   return _internal_bat_module1_cell11_vol();
 }
 inline void BAT_MODULE_1::_internal_set_bat_module1_cell11_vol(int32_t value) {
@@ -3778,7 +4137,7 @@ inline void BAT_MODULE_1::_internal_set_bat_module1_cell11_vol(int32_t value) {
 }
 inline void BAT_MODULE_1::set_bat_module1_cell11_vol(int32_t value) {
   _internal_set_bat_module1_cell11_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.BAT_MODULE1_CELL11_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.BAT_MODULE1_CELL11_VOL)
 }
 
 // string System_time = 14;
@@ -3786,7 +4145,7 @@ inline void BAT_MODULE_1::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& BAT_MODULE_1::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_1.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_1.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -3794,11 +4153,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BAT_MODULE_1::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_1.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_1.System_time)
 }
 inline std::string* BAT_MODULE_1::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.BAT_MODULE_1.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.BAT_MODULE_1.System_time)
   return _s;
 }
 inline const std::string& BAT_MODULE_1::_internal_system_time() const {
@@ -3813,7 +4172,7 @@ inline std::string* BAT_MODULE_1::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BAT_MODULE_1::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.BAT_MODULE_1.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.BAT_MODULE_1.System_time)
   return _impl_.system_time_.Release();
 }
 inline void BAT_MODULE_1::set_allocated_system_time(std::string* system_time) {
@@ -3828,31 +4187,31 @@ inline void BAT_MODULE_1::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.BAT_MODULE_1.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.BAT_MODULE_1.System_time)
 }
 
 // -------------------------------------------------------------------
 
 // BAT_MODULE_2
 
-// int32 BatteryMd_2 = 1;
-inline void BAT_MODULE_2::clear_batterymd_2() {
-  _impl_.batterymd_2_ = 0;
+// int32 BatteryMd_2_PK = 1;
+inline void BAT_MODULE_2::clear_batterymd_2_pk() {
+  _impl_.batterymd_2_pk_ = 0;
 }
-inline int32_t BAT_MODULE_2::_internal_batterymd_2() const {
-  return _impl_.batterymd_2_;
+inline int32_t BAT_MODULE_2::_internal_batterymd_2_pk() const {
+  return _impl_.batterymd_2_pk_;
 }
-inline int32_t BAT_MODULE_2::batterymd_2() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BatteryMd_2)
-  return _internal_batterymd_2();
+inline int32_t BAT_MODULE_2::batterymd_2_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BatteryMd_2_PK)
+  return _internal_batterymd_2_pk();
 }
-inline void BAT_MODULE_2::_internal_set_batterymd_2(int32_t value) {
+inline void BAT_MODULE_2::_internal_set_batterymd_2_pk(int32_t value) {
   
-  _impl_.batterymd_2_ = value;
+  _impl_.batterymd_2_pk_ = value;
 }
-inline void BAT_MODULE_2::set_batterymd_2(int32_t value) {
-  _internal_set_batterymd_2(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BatteryMd_2)
+inline void BAT_MODULE_2::set_batterymd_2_pk(int32_t value) {
+  _internal_set_batterymd_2_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BatteryMd_2_PK)
 }
 
 // int32 BAT_MODULE2_CELL0_VOL = 2;
@@ -3863,7 +4222,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell0_vol() const {
   return _impl_.bat_module2_cell0_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell0_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL0_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL0_VOL)
   return _internal_bat_module2_cell0_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell0_vol(int32_t value) {
@@ -3872,7 +4231,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell0_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell0_vol(int32_t value) {
   _internal_set_bat_module2_cell0_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL0_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL0_VOL)
 }
 
 // int32 BAT_MODULE2_CELL1_VOL = 3;
@@ -3883,7 +4242,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell1_vol() const {
   return _impl_.bat_module2_cell1_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell1_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL1_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL1_VOL)
   return _internal_bat_module2_cell1_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell1_vol(int32_t value) {
@@ -3892,7 +4251,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell1_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell1_vol(int32_t value) {
   _internal_set_bat_module2_cell1_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL1_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL1_VOL)
 }
 
 // int32 BAT_MODULE2_CELL2_VOL = 4;
@@ -3903,7 +4262,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell2_vol() const {
   return _impl_.bat_module2_cell2_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell2_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL2_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL2_VOL)
   return _internal_bat_module2_cell2_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell2_vol(int32_t value) {
@@ -3912,7 +4271,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell2_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell2_vol(int32_t value) {
   _internal_set_bat_module2_cell2_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL2_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL2_VOL)
 }
 
 // int32 BAT_MODULE2_CELL3_VOL = 5;
@@ -3923,7 +4282,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell3_vol() const {
   return _impl_.bat_module2_cell3_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell3_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL3_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL3_VOL)
   return _internal_bat_module2_cell3_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell3_vol(int32_t value) {
@@ -3932,7 +4291,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell3_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell3_vol(int32_t value) {
   _internal_set_bat_module2_cell3_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL3_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL3_VOL)
 }
 
 // int32 BAT_MODULE2_CELL4_VOL = 6;
@@ -3943,7 +4302,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell4_vol() const {
   return _impl_.bat_module2_cell4_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell4_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL4_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL4_VOL)
   return _internal_bat_module2_cell4_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell4_vol(int32_t value) {
@@ -3952,7 +4311,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell4_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell4_vol(int32_t value) {
   _internal_set_bat_module2_cell4_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL4_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL4_VOL)
 }
 
 // int32 BAT_MODULE2_CELL5_VOL = 7;
@@ -3963,7 +4322,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell5_vol() const {
   return _impl_.bat_module2_cell5_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell5_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL5_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL5_VOL)
   return _internal_bat_module2_cell5_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell5_vol(int32_t value) {
@@ -3972,7 +4331,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell5_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell5_vol(int32_t value) {
   _internal_set_bat_module2_cell5_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL5_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL5_VOL)
 }
 
 // int32 BAT_MODULE2_CELL6_VOL = 8;
@@ -3983,7 +4342,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell6_vol() const {
   return _impl_.bat_module2_cell6_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell6_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL6_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL6_VOL)
   return _internal_bat_module2_cell6_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell6_vol(int32_t value) {
@@ -3992,7 +4351,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell6_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell6_vol(int32_t value) {
   _internal_set_bat_module2_cell6_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL6_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL6_VOL)
 }
 
 // int32 BAT_MODULE2_CELL7_VOL = 9;
@@ -4003,7 +4362,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell7_vol() const {
   return _impl_.bat_module2_cell7_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell7_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL7_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL7_VOL)
   return _internal_bat_module2_cell7_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell7_vol(int32_t value) {
@@ -4012,7 +4371,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell7_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell7_vol(int32_t value) {
   _internal_set_bat_module2_cell7_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL7_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL7_VOL)
 }
 
 // int32 BAT_MODULE2_CELL8_VOL = 10;
@@ -4023,7 +4382,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell8_vol() const {
   return _impl_.bat_module2_cell8_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell8_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL8_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL8_VOL)
   return _internal_bat_module2_cell8_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell8_vol(int32_t value) {
@@ -4032,7 +4391,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell8_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell8_vol(int32_t value) {
   _internal_set_bat_module2_cell8_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL8_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL8_VOL)
 }
 
 // int32 BAT_MODULE2_CELL9_VOL = 11;
@@ -4043,7 +4402,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell9_vol() const {
   return _impl_.bat_module2_cell9_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell9_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL9_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL9_VOL)
   return _internal_bat_module2_cell9_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell9_vol(int32_t value) {
@@ -4052,7 +4411,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell9_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell9_vol(int32_t value) {
   _internal_set_bat_module2_cell9_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL9_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL9_VOL)
 }
 
 // int32 BAT_MODULE2_CELL10_VOL = 12;
@@ -4063,7 +4422,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell10_vol() const {
   return _impl_.bat_module2_cell10_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell10_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL10_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL10_VOL)
   return _internal_bat_module2_cell10_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell10_vol(int32_t value) {
@@ -4072,7 +4431,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell10_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell10_vol(int32_t value) {
   _internal_set_bat_module2_cell10_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL10_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL10_VOL)
 }
 
 // int32 BAT_MODULE2_CELL11_VOL = 13;
@@ -4083,7 +4442,7 @@ inline int32_t BAT_MODULE_2::_internal_bat_module2_cell11_vol() const {
   return _impl_.bat_module2_cell11_vol_;
 }
 inline int32_t BAT_MODULE_2::bat_module2_cell11_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL11_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL11_VOL)
   return _internal_bat_module2_cell11_vol();
 }
 inline void BAT_MODULE_2::_internal_set_bat_module2_cell11_vol(int32_t value) {
@@ -4092,7 +4451,7 @@ inline void BAT_MODULE_2::_internal_set_bat_module2_cell11_vol(int32_t value) {
 }
 inline void BAT_MODULE_2::set_bat_module2_cell11_vol(int32_t value) {
   _internal_set_bat_module2_cell11_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.BAT_MODULE2_CELL11_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.BAT_MODULE2_CELL11_VOL)
 }
 
 // string System_time = 14;
@@ -4100,7 +4459,7 @@ inline void BAT_MODULE_2::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& BAT_MODULE_2::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_2.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_2.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -4108,11 +4467,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void BAT_MODULE_2::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_2.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_2.System_time)
 }
 inline std::string* BAT_MODULE_2::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.BAT_MODULE_2.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.BAT_MODULE_2.System_time)
   return _s;
 }
 inline const std::string& BAT_MODULE_2::_internal_system_time() const {
@@ -4127,7 +4486,7 @@ inline std::string* BAT_MODULE_2::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* BAT_MODULE_2::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.BAT_MODULE_2.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.BAT_MODULE_2.System_time)
   return _impl_.system_time_.Release();
 }
 inline void BAT_MODULE_2::set_allocated_system_time(std::string* system_time) {
@@ -4142,31 +4501,31 @@ inline void BAT_MODULE_2::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.BAT_MODULE_2.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.BAT_MODULE_2.System_time)
 }
 
 // -------------------------------------------------------------------
 
 // BAT_MODULE_3
 
-// int32 BatteryMd_3 = 1;
-inline void BAT_MODULE_3::clear_batterymd_3() {
-  _impl_.batterymd_3_ = 0;
+// int32 BatteryMd_3_PK = 1;
+inline void BAT_MODULE_3::clear_batterymd_3_pk() {
+  _impl_.batterymd_3_pk_ = 0;
 }
-inline int32_t BAT_MODULE_3::_internal_batterymd_3() const {
-  return _impl_.batterymd_3_;
+inline int32_t BAT_MODULE_3::_internal_batterymd_3_pk() const {
+  return _impl_.batterymd_3_pk_;
 }
-inline int32_t BAT_MODULE_3::batterymd_3() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_3.BatteryMd_3)
-  return _internal_batterymd_3();
+inline int32_t BAT_MODULE_3::batterymd_3_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_3.BatteryMd_3_PK)
+  return _internal_batterymd_3_pk();
 }
-inline void BAT_MODULE_3::_internal_set_batterymd_3(int32_t value) {
+inline void BAT_MODULE_3::_internal_set_batterymd_3_pk(int32_t value) {
   
-  _impl_.batterymd_3_ = value;
+  _impl_.batterymd_3_pk_ = value;
 }
-inline void BAT_MODULE_3::set_batterymd_3(int32_t value) {
-  _internal_set_batterymd_3(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_3.BatteryMd_3)
+inline void BAT_MODULE_3::set_batterymd_3_pk(int32_t value) {
+  _internal_set_batterymd_3_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_3.BatteryMd_3_PK)
 }
 
 // int32 BAT_MODULE3_CELL0_VOL = 2;
@@ -4177,7 +4536,7 @@ inline int32_t BAT_MODULE_3::_internal_bat_module3_cell0_vol() const {
   return _impl_.bat_module3_cell0_vol_;
 }
 inline int32_t BAT_MODULE_3::bat_module3_cell0_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL0_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL0_VOL)
   return _internal_bat_module3_cell0_vol();
 }
 inline void BAT_MODULE_3::_internal_set_bat_module3_cell0_vol(int32_t value) {
@@ -4186,7 +4545,7 @@ inline void BAT_MODULE_3::_internal_set_bat_module3_cell0_vol(int32_t value) {
 }
 inline void BAT_MODULE_3::set_bat_module3_cell0_vol(int32_t value) {
   _internal_set_bat_module3_cell0_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL0_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL0_VOL)
 }
 
 // int32 BAT_MODULE3_CELL1_VOL = 3;
@@ -4197,7 +4556,7 @@ inline int32_t BAT_MODULE_3::_internal_bat_module3_cell1_vol() const {
   return _impl_.bat_module3_cell1_vol_;
 }
 inline int32_t BAT_MODULE_3::bat_module3_cell1_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL1_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL1_VOL)
   return _internal_bat_module3_cell1_vol();
 }
 inline void BAT_MODULE_3::_internal_set_bat_module3_cell1_vol(int32_t value) {
@@ -4206,7 +4565,7 @@ inline void BAT_MODULE_3::_internal_set_bat_module3_cell1_vol(int32_t value) {
 }
 inline void BAT_MODULE_3::set_bat_module3_cell1_vol(int32_t value) {
   _internal_set_bat_module3_cell1_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL1_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL1_VOL)
 }
 
 // int32 BAT_MODULE3_CELL2_VOL = 4;
@@ -4217,7 +4576,7 @@ inline int32_t BAT_MODULE_3::_internal_bat_module3_cell2_vol() const {
   return _impl_.bat_module3_cell2_vol_;
 }
 inline int32_t BAT_MODULE_3::bat_module3_cell2_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL2_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL2_VOL)
   return _internal_bat_module3_cell2_vol();
 }
 inline void BAT_MODULE_3::_internal_set_bat_module3_cell2_vol(int32_t value) {
@@ -4226,7 +4585,7 @@ inline void BAT_MODULE_3::_internal_set_bat_module3_cell2_vol(int32_t value) {
 }
 inline void BAT_MODULE_3::set_bat_module3_cell2_vol(int32_t value) {
   _internal_set_bat_module3_cell2_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL2_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL2_VOL)
 }
 
 // int32 BAT_MODULE3_CELL8_VOL = 5;
@@ -4237,7 +4596,7 @@ inline int32_t BAT_MODULE_3::_internal_bat_module3_cell8_vol() const {
   return _impl_.bat_module3_cell8_vol_;
 }
 inline int32_t BAT_MODULE_3::bat_module3_cell8_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL8_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL8_VOL)
   return _internal_bat_module3_cell8_vol();
 }
 inline void BAT_MODULE_3::_internal_set_bat_module3_cell8_vol(int32_t value) {
@@ -4246,7 +4605,7 @@ inline void BAT_MODULE_3::_internal_set_bat_module3_cell8_vol(int32_t value) {
 }
 inline void BAT_MODULE_3::set_bat_module3_cell8_vol(int32_t value) {
   _internal_set_bat_module3_cell8_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL8_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL8_VOL)
 }
 
 // int32 BAT_MODULE3_CELL10_VOL = 6;
@@ -4257,7 +4616,7 @@ inline int32_t BAT_MODULE_3::_internal_bat_module3_cell10_vol() const {
   return _impl_.bat_module3_cell10_vol_;
 }
 inline int32_t BAT_MODULE_3::bat_module3_cell10_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL10_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL10_VOL)
   return _internal_bat_module3_cell10_vol();
 }
 inline void BAT_MODULE_3::_internal_set_bat_module3_cell10_vol(int32_t value) {
@@ -4266,7 +4625,7 @@ inline void BAT_MODULE_3::_internal_set_bat_module3_cell10_vol(int32_t value) {
 }
 inline void BAT_MODULE_3::set_bat_module3_cell10_vol(int32_t value) {
   _internal_set_bat_module3_cell10_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL10_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL10_VOL)
 }
 
 // int32 BAT_MODULE3_CELL11_VOL = 7;
@@ -4277,7 +4636,7 @@ inline int32_t BAT_MODULE_3::_internal_bat_module3_cell11_vol() const {
   return _impl_.bat_module3_cell11_vol_;
 }
 inline int32_t BAT_MODULE_3::bat_module3_cell11_vol() const {
-  // @@protoc_insertion_point(field_get:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL11_VOL)
+  // @@protoc_insertion_point(field_get:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL11_VOL)
   return _internal_bat_module3_cell11_vol();
 }
 inline void BAT_MODULE_3::_internal_set_bat_module3_cell11_vol(int32_t value) {
@@ -4286,7 +4645,7 @@ inline void BAT_MODULE_3::_internal_set_bat_module3_cell11_vol(int32_t value) {
 }
 inline void BAT_MODULE_3::set_bat_module3_cell11_vol(int32_t value) {
   _internal_set_bat_module3_cell11_vol(value);
-  // @@protoc_insertion_point(field_set:Protocol.BAT_MODULE_3.BAT_MODULE3_CELL11_VOL)
+  // @@protoc_insertion_point(field_set:EDT0001.BAT_MODULE_3.BAT_MODULE3_CELL11_VOL)
 }
 
 // -------------------------------------------------------------------
@@ -4301,7 +4660,7 @@ inline int32_t Environment::_internal_env() const {
   return _impl_.env_;
 }
 inline int32_t Environment::env() const {
-  // @@protoc_insertion_point(field_get:Protocol.Environment.Env)
+  // @@protoc_insertion_point(field_get:EDT0001.Environment.Env)
   return _internal_env();
 }
 inline void Environment::_internal_set_env(int32_t value) {
@@ -4310,7 +4669,7 @@ inline void Environment::_internal_set_env(int32_t value) {
 }
 inline void Environment::set_env(int32_t value) {
   _internal_set_env(value);
-  // @@protoc_insertion_point(field_set:Protocol.Environment.Env)
+  // @@protoc_insertion_point(field_set:EDT0001.Environment.Env)
 }
 
 // int32 Wind_speed = 2;
@@ -4321,7 +4680,7 @@ inline int32_t Environment::_internal_wind_speed() const {
   return _impl_.wind_speed_;
 }
 inline int32_t Environment::wind_speed() const {
-  // @@protoc_insertion_point(field_get:Protocol.Environment.Wind_speed)
+  // @@protoc_insertion_point(field_get:EDT0001.Environment.Wind_speed)
   return _internal_wind_speed();
 }
 inline void Environment::_internal_set_wind_speed(int32_t value) {
@@ -4330,7 +4689,7 @@ inline void Environment::_internal_set_wind_speed(int32_t value) {
 }
 inline void Environment::set_wind_speed(int32_t value) {
   _internal_set_wind_speed(value);
-  // @@protoc_insertion_point(field_set:Protocol.Environment.Wind_speed)
+  // @@protoc_insertion_point(field_set:EDT0001.Environment.Wind_speed)
 }
 
 // int32 Wind_direction = 3;
@@ -4341,7 +4700,7 @@ inline int32_t Environment::_internal_wind_direction() const {
   return _impl_.wind_direction_;
 }
 inline int32_t Environment::wind_direction() const {
-  // @@protoc_insertion_point(field_get:Protocol.Environment.Wind_direction)
+  // @@protoc_insertion_point(field_get:EDT0001.Environment.Wind_direction)
   return _internal_wind_direction();
 }
 inline void Environment::_internal_set_wind_direction(int32_t value) {
@@ -4350,7 +4709,7 @@ inline void Environment::_internal_set_wind_direction(int32_t value) {
 }
 inline void Environment::set_wind_direction(int32_t value) {
   _internal_set_wind_direction(value);
-  // @@protoc_insertion_point(field_set:Protocol.Environment.Wind_direction)
+  // @@protoc_insertion_point(field_set:EDT0001.Environment.Wind_direction)
 }
 
 // string System_time = 4;
@@ -4358,7 +4717,7 @@ inline void Environment::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& Environment::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.Environment.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.Environment.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -4366,11 +4725,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void Environment::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.Environment.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.Environment.System_time)
 }
 inline std::string* Environment::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.Environment.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.Environment.System_time)
   return _s;
 }
 inline const std::string& Environment::_internal_system_time() const {
@@ -4385,7 +4744,7 @@ inline std::string* Environment::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* Environment::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.Environment.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.Environment.System_time)
   return _impl_.system_time_.Release();
 }
 inline void Environment::set_allocated_system_time(std::string* system_time) {
@@ -4400,7 +4759,7 @@ inline void Environment::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.Environment.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.Environment.System_time)
 }
 
 // -------------------------------------------------------------------
@@ -4415,7 +4774,7 @@ inline int32_t AIS::_internal_ais_pk() const {
   return _impl_.ais_pk_;
 }
 inline int32_t AIS::ais_pk() const {
-  // @@protoc_insertion_point(field_get:Protocol.AIS.AIS_PK)
+  // @@protoc_insertion_point(field_get:EDT0001.AIS.AIS_PK)
   return _internal_ais_pk();
 }
 inline void AIS::_internal_set_ais_pk(int32_t value) {
@@ -4424,115 +4783,75 @@ inline void AIS::_internal_set_ais_pk(int32_t value) {
 }
 inline void AIS::set_ais_pk(int32_t value) {
   _internal_set_ais_pk(value);
-  // @@protoc_insertion_point(field_set:Protocol.AIS.AIS_PK)
+  // @@protoc_insertion_point(field_set:EDT0001.AIS.AIS_PK)
 }
 
-// string latitude = 2;
-inline void AIS::clear_latitude() {
-  _impl_.latitude_.ClearToEmpty();
+// int32 SHIPID = 2;
+inline void AIS::clear_shipid() {
+  _impl_.shipid_ = 0;
 }
-inline const std::string& AIS::latitude() const {
-  // @@protoc_insertion_point(field_get:Protocol.AIS.latitude)
+inline int32_t AIS::_internal_shipid() const {
+  return _impl_.shipid_;
+}
+inline int32_t AIS::shipid() const {
+  // @@protoc_insertion_point(field_get:EDT0001.AIS.SHIPID)
+  return _internal_shipid();
+}
+inline void AIS::_internal_set_shipid(int32_t value) {
+  
+  _impl_.shipid_ = value;
+}
+inline void AIS::set_shipid(int32_t value) {
+  _internal_set_shipid(value);
+  // @@protoc_insertion_point(field_set:EDT0001.AIS.SHIPID)
+}
+
+// float latitude = 3;
+inline void AIS::clear_latitude() {
+  _impl_.latitude_ = 0;
+}
+inline float AIS::_internal_latitude() const {
+  return _impl_.latitude_;
+}
+inline float AIS::latitude() const {
+  // @@protoc_insertion_point(field_get:EDT0001.AIS.latitude)
   return _internal_latitude();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void AIS::set_latitude(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.latitude_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.AIS.latitude)
-}
-inline std::string* AIS::mutable_latitude() {
-  std::string* _s = _internal_mutable_latitude();
-  // @@protoc_insertion_point(field_mutable:Protocol.AIS.latitude)
-  return _s;
-}
-inline const std::string& AIS::_internal_latitude() const {
-  return _impl_.latitude_.Get();
-}
-inline void AIS::_internal_set_latitude(const std::string& value) {
+inline void AIS::_internal_set_latitude(float value) {
   
-  _impl_.latitude_.Set(value, GetArenaForAllocation());
+  _impl_.latitude_ = value;
 }
-inline std::string* AIS::_internal_mutable_latitude() {
-  
-  return _impl_.latitude_.Mutable(GetArenaForAllocation());
-}
-inline std::string* AIS::release_latitude() {
-  // @@protoc_insertion_point(field_release:Protocol.AIS.latitude)
-  return _impl_.latitude_.Release();
-}
-inline void AIS::set_allocated_latitude(std::string* latitude) {
-  if (latitude != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.latitude_.SetAllocated(latitude, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.latitude_.IsDefault()) {
-    _impl_.latitude_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.AIS.latitude)
+inline void AIS::set_latitude(float value) {
+  _internal_set_latitude(value);
+  // @@protoc_insertion_point(field_set:EDT0001.AIS.latitude)
 }
 
-// string longitude = 3;
+// float longitude = 4;
 inline void AIS::clear_longitude() {
-  _impl_.longitude_.ClearToEmpty();
+  _impl_.longitude_ = 0;
 }
-inline const std::string& AIS::longitude() const {
-  // @@protoc_insertion_point(field_get:Protocol.AIS.longitude)
+inline float AIS::_internal_longitude() const {
+  return _impl_.longitude_;
+}
+inline float AIS::longitude() const {
+  // @@protoc_insertion_point(field_get:EDT0001.AIS.longitude)
   return _internal_longitude();
 }
-template <typename ArgT0, typename... ArgT>
-inline PROTOBUF_ALWAYS_INLINE
-void AIS::set_longitude(ArgT0&& arg0, ArgT... args) {
- 
- _impl_.longitude_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.AIS.longitude)
-}
-inline std::string* AIS::mutable_longitude() {
-  std::string* _s = _internal_mutable_longitude();
-  // @@protoc_insertion_point(field_mutable:Protocol.AIS.longitude)
-  return _s;
-}
-inline const std::string& AIS::_internal_longitude() const {
-  return _impl_.longitude_.Get();
-}
-inline void AIS::_internal_set_longitude(const std::string& value) {
+inline void AIS::_internal_set_longitude(float value) {
   
-  _impl_.longitude_.Set(value, GetArenaForAllocation());
+  _impl_.longitude_ = value;
 }
-inline std::string* AIS::_internal_mutable_longitude() {
-  
-  return _impl_.longitude_.Mutable(GetArenaForAllocation());
-}
-inline std::string* AIS::release_longitude() {
-  // @@protoc_insertion_point(field_release:Protocol.AIS.longitude)
-  return _impl_.longitude_.Release();
-}
-inline void AIS::set_allocated_longitude(std::string* longitude) {
-  if (longitude != nullptr) {
-    
-  } else {
-    
-  }
-  _impl_.longitude_.SetAllocated(longitude, GetArenaForAllocation());
-#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  if (_impl_.longitude_.IsDefault()) {
-    _impl_.longitude_.Set("", GetArenaForAllocation());
-  }
-#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.AIS.longitude)
+inline void AIS::set_longitude(float value) {
+  _internal_set_longitude(value);
+  // @@protoc_insertion_point(field_set:EDT0001.AIS.longitude)
 }
 
-// string System_time = 4;
+// string System_time = 5;
 inline void AIS::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& AIS::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.AIS.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.AIS.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -4540,11 +4859,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void AIS::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.AIS.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.AIS.System_time)
 }
 inline std::string* AIS::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.AIS.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.AIS.System_time)
   return _s;
 }
 inline const std::string& AIS::_internal_system_time() const {
@@ -4559,7 +4878,7 @@ inline std::string* AIS::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* AIS::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.AIS.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.AIS.System_time)
   return _impl_.system_time_.Release();
 }
 inline void AIS::set_allocated_system_time(std::string* system_time) {
@@ -4574,31 +4893,31 @@ inline void AIS::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.AIS.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.AIS.System_time)
 }
 
 // -------------------------------------------------------------------
 
 // System_Time
 
-// int32 Times = 1;
-inline void System_Time::clear_times() {
-  _impl_.times_ = 0;
+// int32 Times_PK = 1;
+inline void System_Time::clear_times_pk() {
+  _impl_.times_pk_ = 0;
 }
-inline int32_t System_Time::_internal_times() const {
-  return _impl_.times_;
+inline int32_t System_Time::_internal_times_pk() const {
+  return _impl_.times_pk_;
 }
-inline int32_t System_Time::times() const {
-  // @@protoc_insertion_point(field_get:Protocol.System_Time.Times)
-  return _internal_times();
+inline int32_t System_Time::times_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.System_Time.Times_PK)
+  return _internal_times_pk();
 }
-inline void System_Time::_internal_set_times(int32_t value) {
+inline void System_Time::_internal_set_times_pk(int32_t value) {
   
-  _impl_.times_ = value;
+  _impl_.times_pk_ = value;
 }
-inline void System_Time::set_times(int32_t value) {
-  _internal_set_times(value);
-  // @@protoc_insertion_point(field_set:Protocol.System_Time.Times)
+inline void System_Time::set_times_pk(int32_t value) {
+  _internal_set_times_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.System_Time.Times_PK)
 }
 
 // string System_time = 2;
@@ -4606,7 +4925,7 @@ inline void System_Time::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& System_Time::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.System_Time.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.System_Time.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -4614,11 +4933,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void System_Time::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.System_Time.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.System_Time.System_time)
 }
 inline std::string* System_Time::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.System_Time.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.System_Time.System_time)
   return _s;
 }
 inline const std::string& System_Time::_internal_system_time() const {
@@ -4633,7 +4952,7 @@ inline std::string* System_Time::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* System_Time::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.System_Time.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.System_Time.System_time)
   return _impl_.system_time_.Release();
 }
 inline void System_Time::set_allocated_system_time(std::string* system_time) {
@@ -4648,7 +4967,7 @@ inline void System_Time::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.System_Time.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.System_Time.System_time)
 }
 
 // -------------------------------------------------------------------
@@ -4663,7 +4982,7 @@ inline int32_t MOTOR::_internal_motor_pk() const {
   return _impl_.motor_pk_;
 }
 inline int32_t MOTOR::motor_pk() const {
-  // @@protoc_insertion_point(field_get:Protocol.MOTOR.MOTOR_PK)
+  // @@protoc_insertion_point(field_get:EDT0001.MOTOR.MOTOR_PK)
   return _internal_motor_pk();
 }
 inline void MOTOR::_internal_set_motor_pk(int32_t value) {
@@ -4672,7 +4991,7 @@ inline void MOTOR::_internal_set_motor_pk(int32_t value) {
 }
 inline void MOTOR::set_motor_pk(int32_t value) {
   _internal_set_motor_pk(value);
-  // @@protoc_insertion_point(field_set:Protocol.MOTOR.MOTOR_PK)
+  // @@protoc_insertion_point(field_set:EDT0001.MOTOR.MOTOR_PK)
 }
 
 // int32 MT_RPM = 2;
@@ -4683,7 +5002,7 @@ inline int32_t MOTOR::_internal_mt_rpm() const {
   return _impl_.mt_rpm_;
 }
 inline int32_t MOTOR::mt_rpm() const {
-  // @@protoc_insertion_point(field_get:Protocol.MOTOR.MT_RPM)
+  // @@protoc_insertion_point(field_get:EDT0001.MOTOR.MT_RPM)
   return _internal_mt_rpm();
 }
 inline void MOTOR::_internal_set_mt_rpm(int32_t value) {
@@ -4692,7 +5011,7 @@ inline void MOTOR::_internal_set_mt_rpm(int32_t value) {
 }
 inline void MOTOR::set_mt_rpm(int32_t value) {
   _internal_set_mt_rpm(value);
-  // @@protoc_insertion_point(field_set:Protocol.MOTOR.MT_RPM)
+  // @@protoc_insertion_point(field_set:EDT0001.MOTOR.MT_RPM)
 }
 
 // int32 MT_TORQUE = 3;
@@ -4703,7 +5022,7 @@ inline int32_t MOTOR::_internal_mt_torque() const {
   return _impl_.mt_torque_;
 }
 inline int32_t MOTOR::mt_torque() const {
-  // @@protoc_insertion_point(field_get:Protocol.MOTOR.MT_TORQUE)
+  // @@protoc_insertion_point(field_get:EDT0001.MOTOR.MT_TORQUE)
   return _internal_mt_torque();
 }
 inline void MOTOR::_internal_set_mt_torque(int32_t value) {
@@ -4712,7 +5031,7 @@ inline void MOTOR::_internal_set_mt_torque(int32_t value) {
 }
 inline void MOTOR::set_mt_torque(int32_t value) {
   _internal_set_mt_torque(value);
-  // @@protoc_insertion_point(field_set:Protocol.MOTOR.MT_TORQUE)
+  // @@protoc_insertion_point(field_set:EDT0001.MOTOR.MT_TORQUE)
 }
 
 // int32 MT_TEMP = 4;
@@ -4723,7 +5042,7 @@ inline int32_t MOTOR::_internal_mt_temp() const {
   return _impl_.mt_temp_;
 }
 inline int32_t MOTOR::mt_temp() const {
-  // @@protoc_insertion_point(field_get:Protocol.MOTOR.MT_TEMP)
+  // @@protoc_insertion_point(field_get:EDT0001.MOTOR.MT_TEMP)
   return _internal_mt_temp();
 }
 inline void MOTOR::_internal_set_mt_temp(int32_t value) {
@@ -4732,7 +5051,7 @@ inline void MOTOR::_internal_set_mt_temp(int32_t value) {
 }
 inline void MOTOR::set_mt_temp(int32_t value) {
   _internal_set_mt_temp(value);
-  // @@protoc_insertion_point(field_set:Protocol.MOTOR.MT_TEMP)
+  // @@protoc_insertion_point(field_set:EDT0001.MOTOR.MT_TEMP)
 }
 
 // string System_time = 5;
@@ -4740,7 +5059,7 @@ inline void MOTOR::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& MOTOR::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.MOTOR.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.MOTOR.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -4748,11 +5067,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void MOTOR::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.MOTOR.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.MOTOR.System_time)
 }
 inline std::string* MOTOR::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.MOTOR.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.MOTOR.System_time)
   return _s;
 }
 inline const std::string& MOTOR::_internal_system_time() const {
@@ -4767,7 +5086,7 @@ inline std::string* MOTOR::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* MOTOR::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.MOTOR.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.MOTOR.System_time)
   return _impl_.system_time_.Release();
 }
 inline void MOTOR::set_allocated_system_time(std::string* system_time) {
@@ -4782,7 +5101,7 @@ inline void MOTOR::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.MOTOR.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.MOTOR.System_time)
 }
 
 // -------------------------------------------------------------------
@@ -4797,7 +5116,7 @@ inline int32_t INVERTER::_internal_inverter_pk() const {
   return _impl_.inverter_pk_;
 }
 inline int32_t INVERTER::inverter_pk() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INVERTER_PK)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INVERTER_PK)
   return _internal_inverter_pk();
 }
 inline void INVERTER::_internal_set_inverter_pk(int32_t value) {
@@ -4806,7 +5125,7 @@ inline void INVERTER::_internal_set_inverter_pk(int32_t value) {
 }
 inline void INVERTER::set_inverter_pk(int32_t value) {
   _internal_set_inverter_pk(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INVERTER_PK)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INVERTER_PK)
 }
 
 // int32 INV_PHASE_A_CURRENT = 2;
@@ -4817,7 +5136,7 @@ inline int32_t INVERTER::_internal_inv_phase_a_current() const {
   return _impl_.inv_phase_a_current_;
 }
 inline int32_t INVERTER::inv_phase_a_current() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_PHASE_A_CURRENT)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_PHASE_A_CURRENT)
   return _internal_inv_phase_a_current();
 }
 inline void INVERTER::_internal_set_inv_phase_a_current(int32_t value) {
@@ -4826,7 +5145,7 @@ inline void INVERTER::_internal_set_inv_phase_a_current(int32_t value) {
 }
 inline void INVERTER::set_inv_phase_a_current(int32_t value) {
   _internal_set_inv_phase_a_current(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_PHASE_A_CURRENT)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_PHASE_A_CURRENT)
 }
 
 // int32 INV_PHASE_B_CURRENT = 3;
@@ -4837,7 +5156,7 @@ inline int32_t INVERTER::_internal_inv_phase_b_current() const {
   return _impl_.inv_phase_b_current_;
 }
 inline int32_t INVERTER::inv_phase_b_current() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_PHASE_B_CURRENT)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_PHASE_B_CURRENT)
   return _internal_inv_phase_b_current();
 }
 inline void INVERTER::_internal_set_inv_phase_b_current(int32_t value) {
@@ -4846,7 +5165,7 @@ inline void INVERTER::_internal_set_inv_phase_b_current(int32_t value) {
 }
 inline void INVERTER::set_inv_phase_b_current(int32_t value) {
   _internal_set_inv_phase_b_current(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_PHASE_B_CURRENT)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_PHASE_B_CURRENT)
 }
 
 // int32 INV_PHASE_C_CURRENT = 4;
@@ -4857,7 +5176,7 @@ inline int32_t INVERTER::_internal_inv_phase_c_current() const {
   return _impl_.inv_phase_c_current_;
 }
 inline int32_t INVERTER::inv_phase_c_current() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_PHASE_C_CURRENT)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_PHASE_C_CURRENT)
   return _internal_inv_phase_c_current();
 }
 inline void INVERTER::_internal_set_inv_phase_c_current(int32_t value) {
@@ -4866,7 +5185,7 @@ inline void INVERTER::_internal_set_inv_phase_c_current(int32_t value) {
 }
 inline void INVERTER::set_inv_phase_c_current(int32_t value) {
   _internal_set_inv_phase_c_current(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_PHASE_C_CURRENT)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_PHASE_C_CURRENT)
 }
 
 // int32 INV_POST_FAULT = 5;
@@ -4877,7 +5196,7 @@ inline int32_t INVERTER::_internal_inv_post_fault() const {
   return _impl_.inv_post_fault_;
 }
 inline int32_t INVERTER::inv_post_fault() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_POST_FAULT)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_POST_FAULT)
   return _internal_inv_post_fault();
 }
 inline void INVERTER::_internal_set_inv_post_fault(int32_t value) {
@@ -4886,7 +5205,7 @@ inline void INVERTER::_internal_set_inv_post_fault(int32_t value) {
 }
 inline void INVERTER::set_inv_post_fault(int32_t value) {
   _internal_set_inv_post_fault(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_POST_FAULT)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_POST_FAULT)
 }
 
 // int32 INV_GATE_DRIVER_BOARD_TEMP = 6;
@@ -4897,7 +5216,7 @@ inline int32_t INVERTER::_internal_inv_gate_driver_board_temp() const {
   return _impl_.inv_gate_driver_board_temp_;
 }
 inline int32_t INVERTER::inv_gate_driver_board_temp() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_GATE_DRIVER_BOARD_TEMP)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_GATE_DRIVER_BOARD_TEMP)
   return _internal_inv_gate_driver_board_temp();
 }
 inline void INVERTER::_internal_set_inv_gate_driver_board_temp(int32_t value) {
@@ -4906,7 +5225,7 @@ inline void INVERTER::_internal_set_inv_gate_driver_board_temp(int32_t value) {
 }
 inline void INVERTER::set_inv_gate_driver_board_temp(int32_t value) {
   _internal_set_inv_gate_driver_board_temp(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_GATE_DRIVER_BOARD_TEMP)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_GATE_DRIVER_BOARD_TEMP)
 }
 
 // int32 INV_MODULE_A_TEMP = 7;
@@ -4917,7 +5236,7 @@ inline int32_t INVERTER::_internal_inv_module_a_temp() const {
   return _impl_.inv_module_a_temp_;
 }
 inline int32_t INVERTER::inv_module_a_temp() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_MODULE_A_TEMP)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_MODULE_A_TEMP)
   return _internal_inv_module_a_temp();
 }
 inline void INVERTER::_internal_set_inv_module_a_temp(int32_t value) {
@@ -4926,7 +5245,7 @@ inline void INVERTER::_internal_set_inv_module_a_temp(int32_t value) {
 }
 inline void INVERTER::set_inv_module_a_temp(int32_t value) {
   _internal_set_inv_module_a_temp(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_MODULE_A_TEMP)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_MODULE_A_TEMP)
 }
 
 // int32 INV_RUN_FAULT = 8;
@@ -4937,7 +5256,7 @@ inline int32_t INVERTER::_internal_inv_run_fault() const {
   return _impl_.inv_run_fault_;
 }
 inline int32_t INVERTER::inv_run_fault() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_RUN_FAULT)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_RUN_FAULT)
   return _internal_inv_run_fault();
 }
 inline void INVERTER::_internal_set_inv_run_fault(int32_t value) {
@@ -4946,7 +5265,7 @@ inline void INVERTER::_internal_set_inv_run_fault(int32_t value) {
 }
 inline void INVERTER::set_inv_run_fault(int32_t value) {
   _internal_set_inv_run_fault(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_RUN_FAULT)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_RUN_FAULT)
 }
 
 // int32 INV_MODULE_B_TEMP = 9;
@@ -4957,7 +5276,7 @@ inline int32_t INVERTER::_internal_inv_module_b_temp() const {
   return _impl_.inv_module_b_temp_;
 }
 inline int32_t INVERTER::inv_module_b_temp() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_MODULE_B_TEMP)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_MODULE_B_TEMP)
   return _internal_inv_module_b_temp();
 }
 inline void INVERTER::_internal_set_inv_module_b_temp(int32_t value) {
@@ -4966,7 +5285,7 @@ inline void INVERTER::_internal_set_inv_module_b_temp(int32_t value) {
 }
 inline void INVERTER::set_inv_module_b_temp(int32_t value) {
   _internal_set_inv_module_b_temp(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_MODULE_B_TEMP)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_MODULE_B_TEMP)
 }
 
 // int32 INV_MODULE_C_TEMP = 10;
@@ -4977,7 +5296,7 @@ inline int32_t INVERTER::_internal_inv_module_c_temp() const {
   return _impl_.inv_module_c_temp_;
 }
 inline int32_t INVERTER::inv_module_c_temp() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_MODULE_C_TEMP)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_MODULE_C_TEMP)
   return _internal_inv_module_c_temp();
 }
 inline void INVERTER::_internal_set_inv_module_c_temp(int32_t value) {
@@ -4986,7 +5305,7 @@ inline void INVERTER::_internal_set_inv_module_c_temp(int32_t value) {
 }
 inline void INVERTER::set_inv_module_c_temp(int32_t value) {
   _internal_set_inv_module_c_temp(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_MODULE_C_TEMP)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_MODULE_C_TEMP)
 }
 
 // int32 INV_POWER = 11;
@@ -4997,7 +5316,7 @@ inline int32_t INVERTER::_internal_inv_power() const {
   return _impl_.inv_power_;
 }
 inline int32_t INVERTER::inv_power() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_POWER)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_POWER)
   return _internal_inv_power();
 }
 inline void INVERTER::_internal_set_inv_power(int32_t value) {
@@ -5006,7 +5325,7 @@ inline void INVERTER::_internal_set_inv_power(int32_t value) {
 }
 inline void INVERTER::set_inv_power(int32_t value) {
   _internal_set_inv_power(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_POWER)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_POWER)
 }
 
 // int32 INV_OUTPUT_VOLTAGE = 12;
@@ -5017,7 +5336,7 @@ inline int32_t INVERTER::_internal_inv_output_voltage() const {
   return _impl_.inv_output_voltage_;
 }
 inline int32_t INVERTER::inv_output_voltage() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.INV_OUTPUT_VOLTAGE)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.INV_OUTPUT_VOLTAGE)
   return _internal_inv_output_voltage();
 }
 inline void INVERTER::_internal_set_inv_output_voltage(int32_t value) {
@@ -5026,7 +5345,7 @@ inline void INVERTER::_internal_set_inv_output_voltage(int32_t value) {
 }
 inline void INVERTER::set_inv_output_voltage(int32_t value) {
   _internal_set_inv_output_voltage(value);
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.INV_OUTPUT_VOLTAGE)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.INV_OUTPUT_VOLTAGE)
 }
 
 // string System_time = 13;
@@ -5034,7 +5353,7 @@ inline void INVERTER::clear_system_time() {
   _impl_.system_time_.ClearToEmpty();
 }
 inline const std::string& INVERTER::system_time() const {
-  // @@protoc_insertion_point(field_get:Protocol.INVERTER.System_time)
+  // @@protoc_insertion_point(field_get:EDT0001.INVERTER.System_time)
   return _internal_system_time();
 }
 template <typename ArgT0, typename... ArgT>
@@ -5042,11 +5361,11 @@ inline PROTOBUF_ALWAYS_INLINE
 void INVERTER::set_system_time(ArgT0&& arg0, ArgT... args) {
  
  _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
-  // @@protoc_insertion_point(field_set:Protocol.INVERTER.System_time)
+  // @@protoc_insertion_point(field_set:EDT0001.INVERTER.System_time)
 }
 inline std::string* INVERTER::mutable_system_time() {
   std::string* _s = _internal_mutable_system_time();
-  // @@protoc_insertion_point(field_mutable:Protocol.INVERTER.System_time)
+  // @@protoc_insertion_point(field_mutable:EDT0001.INVERTER.System_time)
   return _s;
 }
 inline const std::string& INVERTER::_internal_system_time() const {
@@ -5061,7 +5380,7 @@ inline std::string* INVERTER::_internal_mutable_system_time() {
   return _impl_.system_time_.Mutable(GetArenaForAllocation());
 }
 inline std::string* INVERTER::release_system_time() {
-  // @@protoc_insertion_point(field_release:Protocol.INVERTER.System_time)
+  // @@protoc_insertion_point(field_release:EDT0001.INVERTER.System_time)
   return _impl_.system_time_.Release();
 }
 inline void INVERTER::set_allocated_system_time(std::string* system_time) {
@@ -5076,7 +5395,195 @@ inline void INVERTER::set_allocated_system_time(std::string* system_time) {
     _impl_.system_time_.Set("", GetArenaForAllocation());
   }
 #endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
-  // @@protoc_insertion_point(field_set_allocated:Protocol.INVERTER.System_time)
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.INVERTER.System_time)
+}
+
+// -------------------------------------------------------------------
+
+// Network
+
+// int32 NetWork_PK = 1;
+inline void Network::clear_network_pk() {
+  _impl_.network_pk_ = 0;
+}
+inline int32_t Network::_internal_network_pk() const {
+  return _impl_.network_pk_;
+}
+inline int32_t Network::network_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.Network.NetWork_PK)
+  return _internal_network_pk();
+}
+inline void Network::_internal_set_network_pk(int32_t value) {
+  
+  _impl_.network_pk_ = value;
+}
+inline void Network::set_network_pk(int32_t value) {
+  _internal_set_network_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.Network.NetWork_PK)
+}
+
+// int32 Status_Network = 2;
+inline void Network::clear_status_network() {
+  _impl_.status_network_ = 0;
+}
+inline int32_t Network::_internal_status_network() const {
+  return _impl_.status_network_;
+}
+inline int32_t Network::status_network() const {
+  // @@protoc_insertion_point(field_get:EDT0001.Network.Status_Network)
+  return _internal_status_network();
+}
+inline void Network::_internal_set_status_network(int32_t value) {
+  
+  _impl_.status_network_ = value;
+}
+inline void Network::set_status_network(int32_t value) {
+  _internal_set_status_network(value);
+  // @@protoc_insertion_point(field_set:EDT0001.Network.Status_Network)
+}
+
+// string System_time = 3;
+inline void Network::clear_system_time() {
+  _impl_.system_time_.ClearToEmpty();
+}
+inline const std::string& Network::system_time() const {
+  // @@protoc_insertion_point(field_get:EDT0001.Network.System_time)
+  return _internal_system_time();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void Network::set_system_time(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:EDT0001.Network.System_time)
+}
+inline std::string* Network::mutable_system_time() {
+  std::string* _s = _internal_mutable_system_time();
+  // @@protoc_insertion_point(field_mutable:EDT0001.Network.System_time)
+  return _s;
+}
+inline const std::string& Network::_internal_system_time() const {
+  return _impl_.system_time_.Get();
+}
+inline void Network::_internal_set_system_time(const std::string& value) {
+  
+  _impl_.system_time_.Set(value, GetArenaForAllocation());
+}
+inline std::string* Network::_internal_mutable_system_time() {
+  
+  return _impl_.system_time_.Mutable(GetArenaForAllocation());
+}
+inline std::string* Network::release_system_time() {
+  // @@protoc_insertion_point(field_release:EDT0001.Network.System_time)
+  return _impl_.system_time_.Release();
+}
+inline void Network::set_allocated_system_time(std::string* system_time) {
+  if (system_time != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.system_time_.SetAllocated(system_time, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.system_time_.IsDefault()) {
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.Network.System_time)
+}
+
+// -------------------------------------------------------------------
+
+// SaveAsBytes
+
+// int32 SaveAsBytes_PK = 1;
+inline void SaveAsBytes::clear_saveasbytes_pk() {
+  _impl_.saveasbytes_pk_ = 0;
+}
+inline int32_t SaveAsBytes::_internal_saveasbytes_pk() const {
+  return _impl_.saveasbytes_pk_;
+}
+inline int32_t SaveAsBytes::saveasbytes_pk() const {
+  // @@protoc_insertion_point(field_get:EDT0001.SaveAsBytes.SaveAsBytes_PK)
+  return _internal_saveasbytes_pk();
+}
+inline void SaveAsBytes::_internal_set_saveasbytes_pk(int32_t value) {
+  
+  _impl_.saveasbytes_pk_ = value;
+}
+inline void SaveAsBytes::set_saveasbytes_pk(int32_t value) {
+  _internal_set_saveasbytes_pk(value);
+  // @@protoc_insertion_point(field_set:EDT0001.SaveAsBytes.SaveAsBytes_PK)
+}
+
+// int32 Bytes = 2;
+inline void SaveAsBytes::clear_bytes() {
+  _impl_.bytes_ = 0;
+}
+inline int32_t SaveAsBytes::_internal_bytes() const {
+  return _impl_.bytes_;
+}
+inline int32_t SaveAsBytes::bytes() const {
+  // @@protoc_insertion_point(field_get:EDT0001.SaveAsBytes.Bytes)
+  return _internal_bytes();
+}
+inline void SaveAsBytes::_internal_set_bytes(int32_t value) {
+  
+  _impl_.bytes_ = value;
+}
+inline void SaveAsBytes::set_bytes(int32_t value) {
+  _internal_set_bytes(value);
+  // @@protoc_insertion_point(field_set:EDT0001.SaveAsBytes.Bytes)
+}
+
+// string System_time = 3;
+inline void SaveAsBytes::clear_system_time() {
+  _impl_.system_time_.ClearToEmpty();
+}
+inline const std::string& SaveAsBytes::system_time() const {
+  // @@protoc_insertion_point(field_get:EDT0001.SaveAsBytes.System_time)
+  return _internal_system_time();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void SaveAsBytes::set_system_time(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.system_time_.Set(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:EDT0001.SaveAsBytes.System_time)
+}
+inline std::string* SaveAsBytes::mutable_system_time() {
+  std::string* _s = _internal_mutable_system_time();
+  // @@protoc_insertion_point(field_mutable:EDT0001.SaveAsBytes.System_time)
+  return _s;
+}
+inline const std::string& SaveAsBytes::_internal_system_time() const {
+  return _impl_.system_time_.Get();
+}
+inline void SaveAsBytes::_internal_set_system_time(const std::string& value) {
+  
+  _impl_.system_time_.Set(value, GetArenaForAllocation());
+}
+inline std::string* SaveAsBytes::_internal_mutable_system_time() {
+  
+  return _impl_.system_time_.Mutable(GetArenaForAllocation());
+}
+inline std::string* SaveAsBytes::release_system_time() {
+  // @@protoc_insertion_point(field_release:EDT0001.SaveAsBytes.System_time)
+  return _impl_.system_time_.Release();
+}
+inline void SaveAsBytes::set_allocated_system_time(std::string* system_time) {
+  if (system_time != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.system_time_.SetAllocated(system_time, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.system_time_.IsDefault()) {
+    _impl_.system_time_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:EDT0001.SaveAsBytes.System_time)
 }
 
 #ifdef __GNUC__
@@ -5102,10 +5609,14 @@ inline void INVERTER::set_allocated_system_time(std::string* system_time) {
 
 // -------------------------------------------------------------------
 
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 
-}  // namespace Protocol
+}  // namespace EDT0001
 
 // @@protoc_insertion_point(global_scope)
 

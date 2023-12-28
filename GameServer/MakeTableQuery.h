@@ -70,7 +70,7 @@ public:
 
 			createQuery.pop_back();
 			createQuery += ") END;"; // END 절 추가
-			std::wstring wcreateQuery = JsonToConf::stringToWString(createQuery);
+			std::wstring wcreateQuery = ServerConf::stringToWString(createQuery);
 
 			CheckAndMakeTable(wcreateQuery.c_str());
 			cout << "Success for checking the table: " << tableName << endl;

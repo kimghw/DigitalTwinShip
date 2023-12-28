@@ -10,6 +10,15 @@ void GameSession::OnConnected()
 	GSessionManager.Add(static_pointer_cast<GameSession>(shared_from_this()));
 	cout << "Client is connected" << endl;
 
+	MRSchema::C_Position msg;
+	msg.set_id("Hello");
+	int len = msg.ByteSizeLong();
+	std::vector<unsigned char> bytes(len);
+	msg.SerializeToArray(bytes.data(), len);
+
+	auto sendBuffer = ClientPacketHandler::MakeSendBuffer(msg);
+	this->Send(sendBuffer);
+
 	//Protocol::S_TEST pkt;
 	//pkt.set_id(1);
 	//pkt.set_player("G");
@@ -42,7 +51,7 @@ void GameSession::OnRecvPacket(BYTE* buffer, int32 len)
 	//cout << str << endl;
 
 	PacketSessionRef session = GetPacketSessionRef();
-	ClientPacketHandler::HandlePacket(session, buffer, len);
+	ClientPacketHandler::HandleBuffer(session, buffer, len);
 }
 
 void GameSession::OnSend(int32 len)

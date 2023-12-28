@@ -1,6 +1,6 @@
-#pragma once
+﻿#pragma once
 
-#define WIN32_LEAN_AND_MEAN // ���� ������ �ʴ� ������ Windows ������� �����մϴ�.
+#define WIN32_LEAN_AND_MEAN // °ÅÀÇ »ç¿ëµÇÁö ¾Ê´Â ³»¿ëÀ» Windows Çì´õ¿¡¼­ Á¦¿ÜÇÕ´Ï´Ù.
 
 #ifdef _DEBUG
 #pragma comment(lib, "Debug\\ServerCore.lib")
@@ -14,8 +14,16 @@
 #include "JsonToConf.h"
 #include "Protocol.pb.h"
 #include "EDT0001.pb.h"
+#include <thread>
 
-#define START_TIMER { auto start = std::chrono::high_resolution_clock::now();
-#define END_TIMER(msg) auto end = std::chrono::high_resolution_clock::now(); \
-                       std::chrono::duration<double, std::milli> elapsed = end - start; \
-                       std::cout << msg << " took " << elapsed.count() << " ms\n"; }
+// 매크로 시작: 고유한 start 시간 기록
+#define START_TIMER { const auto startTime = std::chrono::high_resolution_clock::now();
+
+// 매크로 종료: 시간 차이 계산과 출력
+#define END_TIMER(msg) const auto endTime = std::chrono::high_resolution_clock::now(); \
+    const auto elapsed = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime).count(); \
+    std::cout << msg << " took " << elapsed << " ms\n"; \
+}
+
+
+#define RUN_IN_THREAD(func, ...) std::thread(func, ##__VA_ARGS__).detach();

@@ -66,7 +66,7 @@ public:
         double s = (degrees - d - m / 60.0) * 3600;
 
         std::ostringstream oss;
-        oss << d << "d " << m << "m " << std::fixed << std::setprecision(2) << s << " " << direction;
+        oss << d << " " << m << " " << std::fixed << std::setprecision(2) << s << " " << direction;
 
         return oss.str();
     }

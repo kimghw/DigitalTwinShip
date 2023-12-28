@@ -7,7 +7,7 @@
 #pragma comment(lib, "iphlpapi.lib")
 #pragma comment(lib, "ws2_32.lib")
 
-struct serverConf
+struct ServerIpInfo
 {
 	std::wstring ip;
 	std::uint32_t port;
@@ -27,7 +27,7 @@ struct hostInfo
 };
 
 
-class JsonToConf
+class ServerConf
 {
 public:
 	static std::wstring stringToWString(const std::string& str)
@@ -41,10 +41,10 @@ public:
 		return ws;
 	}
 
-	static void Init(const string& jsonFileName, serverConf& conf) {
+	static void Init(const string& jsonFileName, ServerIpInfo& conf) {
 
 		try {
-			JsonToConf::Init_IPconfig(jsonFileName, conf);
+			ServerConf::Init_IPconfig(jsonFileName, conf);
 			
 		}
 		catch (...)
@@ -54,7 +54,7 @@ public:
 		std::wcout << "IPAddress :" << conf.ip << ", Port :" << conf.port << endl;
 
 	}
-	static void Init_IPconfig(const string& jsonFileName, serverConf& conf)
+	static void Init_IPconfig(const string& jsonFileName, ServerIpInfo& conf)
 	{
 			nlohmann::json jconfig;
 
