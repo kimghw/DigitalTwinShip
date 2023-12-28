@@ -1,16 +1,7 @@
 #pragma once
-#include "Protocol.pb.h"
-
-using PacketHandlerFunc = std::function<bool(PacketSessionRef&, BYTE*, int32)>;
+{%- for package in packages%}
+#include "{{package['package']}}.pb.h"
 extern PacketHandlerFunc GPacketHandler[UINT16_MAX];
-
-enum : uint16
-{
-	PKT_{{Ship_num}} = 1001,
-{%- for table in tables%}
-	PKT_{{table['table_name']}} = {{'%04d'|format(loop.index+1001)}}{%- if not loop.last-%},{%- endif-%}
-{%- endfor %}
-};
 
 // Custom Handlers
 bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len);
