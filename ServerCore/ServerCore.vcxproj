@@ -230,6 +230,7 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="C:\Users\Kimghw\Downloads\채팅+실습_소스코드 (1)\Common\Protobuf\bin\GenPackets.bat" />
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

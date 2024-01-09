@@ -7,12 +7,15 @@
 #include "SendBuffer.h"
 #include "DBConnectionPool.h"
 
+
+
 ThreadManager*		GThreadManager = nullptr;
 Memory*				GMemory = nullptr;
 SendBufferManager*	GSendBufferManager = nullptr;
 
 DeadLockProfiler*	GDeadLockProfiler = nullptr;
 DBConnectionPool* GDBConnectionPool = nullptr;
+
 
 
 class CoreGlobal
@@ -25,6 +28,7 @@ public:
 		GSendBufferManager	= new SendBufferManager();
 		GDeadLockProfiler	= new DeadLockProfiler();
 		GDBConnectionPool = new DBConnectionPool();
+
 
 		SocketUtils::Init();
 	}

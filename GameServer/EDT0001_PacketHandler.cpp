@@ -4,6 +4,7 @@
 #include "EDT0001.pb.h"
 #include "EDT0001_PacketHandler.h"
 #include "Tools.h"
+#include "MessageSubjectManager.h"
 
 const int EDT0001_PacketHandler::DEFAULT_INT = 0;
 const float EDT0001_PacketHandler::DEFAULT_FLOAT = 0.0f;
@@ -138,6 +139,7 @@ void EDT0001_PacketHandler::ValidateJson(const std::string& key, const T& defaul
 void EDT0001_PacketHandler::Assign_JsonToPbALL()
 { 
   Assign_JsonToPb_Battery(_battery);
+  MessageSubjectManager::GetInstance().SetMessageUpdate(_battery, EDT::Battery);
   Assign_JsonToPb_Battery_Pack(_battery_pack);
   Assign_JsonToPb_BAT_MODULE_0(_bat_module_0);
   Assign_JsonToPb_BAT_MODULE_1(_bat_module_1);

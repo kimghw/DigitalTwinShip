@@ -48,22 +48,23 @@ public:
 		for (int32 i = 0; i < UINT16_MAX; i++)
 			GPacketHandler[i] = Handle_INVALID;
 
+
 		//JSon
-		GPacketHandler[1001] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return Handle_EDT0001(session, buffer, len); };
-		GPacketHandler[EDT::Battery] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::Battery>(Handle_Battery, session, buffer, len); };
-		GPacketHandler[EDT::Battery_Pack] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::Battery_Pack>(Handle_Battery_Pack, session, buffer, len); };
-		GPacketHandler[EDT::BAT_MODULE_0] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::BAT_MODULE_0>(Handle_BAT_MODULE_0, session, buffer, len); };
-		GPacketHandler[EDT::BAT_MODULE_1] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::BAT_MODULE_1>(Handle_BAT_MODULE_1, session, buffer, len); };
-		GPacketHandler[EDT::BAT_MODULE_2] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::BAT_MODULE_2>(Handle_BAT_MODULE_2, session, buffer, len); };
-		GPacketHandler[EDT::BAT_MODULE_3] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::BAT_MODULE_3>(Handle_BAT_MODULE_3, session, buffer, len); };
-		GPacketHandler[EDT::Environment] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::Environment>(Handle_Environment, session, buffer, len); };
-		GPacketHandler[EDT::AIS] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::AIS>(Handle_AIS, session, buffer, len); };
-		GPacketHandler[EDT::System_Time] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::System_Time>(Handle_System_Time, session, buffer, len); };
-		GPacketHandler[EDT::MOTOR] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::MOTOR>(Handle_MOTOR, session, buffer, len); };
-		GPacketHandler[EDT::INVERTER] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::INVERTER>(Handle_INVERTER, session, buffer, len); };
-		GPacketHandler[EDT::Network] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::Network>(Handle_Network, session, buffer, len); };
-		GPacketHandler[EDT::SaveAsBytes] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::SaveAsBytes>(Handle_SaveAsBytes, session, buffer, len); };
-		GPacketHandler[EDT::C_Position] = [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<MRSchema::C_Position>(Handle_C_Position, session, buffer, len); };
+		GPacketHandler[1001]				= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return Handle_EDT0001(session, buffer, len); };
+		GPacketHandler[EDT::Battery]		= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::Battery>(Handle_Battery, session, buffer, len); };
+		GPacketHandler[EDT::Battery_Pack]	= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::Battery_Pack>(Handle_Battery_Pack, session, buffer, len); };
+		GPacketHandler[EDT::BAT_MODULE_0]	= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::BAT_MODULE_0>(Handle_BAT_MODULE_0, session, buffer, len); };
+		GPacketHandler[EDT::BAT_MODULE_1]	= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::BAT_MODULE_1>(Handle_BAT_MODULE_1, session, buffer, len); };
+		GPacketHandler[EDT::BAT_MODULE_2]	= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::BAT_MODULE_2>(Handle_BAT_MODULE_2, session, buffer, len); };
+		GPacketHandler[EDT::BAT_MODULE_3]	= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::BAT_MODULE_3>(Handle_BAT_MODULE_3, session, buffer, len); };
+		GPacketHandler[EDT::Environment]	= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::Environment>(Handle_Environment, session, buffer, len); };
+		GPacketHandler[EDT::AIS]			= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::AIS>(Handle_AIS, session, buffer, len); };
+		GPacketHandler[EDT::System_Time]	= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::System_Time>(Handle_System_Time, session, buffer, len); };
+		GPacketHandler[EDT::MOTOR]			= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::MOTOR>(Handle_MOTOR, session, buffer, len); };
+		GPacketHandler[EDT::INVERTER]		= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::INVERTER>(Handle_INVERTER, session, buffer, len); };
+		GPacketHandler[EDT::Network]		= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::Network>(Handle_Network, session, buffer, len); };
+		GPacketHandler[EDT::SaveAsBytes]	= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<EDT0001::SaveAsBytes>(Handle_SaveAsBytes, session, buffer, len); };
+		GPacketHandler[EDT::C_Position]		= [](PacketSessionRef& session, BYTE* buffer, int32 len) { return HandlePacket<MRSchema::C_Position>(Handle_C_Position, session, buffer, len); };
 	}
 	// R03 : After checking the packet type, 
 	template<typename PacketType, typename ProcessFunc>

@@ -19,18 +19,21 @@
     <Filter Include="DataBase">
       <UniqueIdentifier>{53af05bd-40dd-4429-b005-2e07e18f13f6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="MessageSubject">
+      <UniqueIdentifier>{ee48e27a-5a84-4e32-875c-e2f5549dc1b7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="GameServer.cpp">
+    <ClCompile Include="DTServer.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="pch.cpp">
       <Filter>Utils</Filter>
     </ClCompile>
-    <ClCompile Include="GameSession.cpp">
+    <ClCompile Include="DataSession.cpp">
       <Filter>Main</Filter>
     </ClCompile>
-    <ClCompile Include="GameSessionManager.cpp">
+    <ClCompile Include="DataSessionManager.cpp">
       <Filter>Main</Filter>
     </ClCompile>
     <ClCompile Include="JsonToConf.cpp">
@@ -54,12 +57,18 @@
     <ClCompile Include="MRSchema.pb.cc">
       <Filter>Proto</Filter>
     </ClCompile>
+    <ClCompile Include="MessageSubject.cpp">
+      <Filter>MessageSubject</Filter>
+    </ClCompile>
+    <ClCompile Include="MessageSubjectManager.cpp">
+      <Filter>MessageSubject</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="pch.h">
       <Filter>Utils</Filter>
     </ClInclude>
-    <ClInclude Include="GameSession.h">
+    <ClInclude Include="DataSession.h">
       <Filter>Main</Filter>
     </ClInclude>
     <ClInclude Include="JsonToConf.h">
@@ -85,6 +94,15 @@
     </ClInclude>
     <ClInclude Include="MRSchema.pb.h">
       <Filter>Proto</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageSubject.h">
+      <Filter>MessageSubject</Filter>
+    </ClInclude>
+    <ClInclude Include="DataSessionManager.h">
+      <Filter>Main</Filter>
+    </ClInclude>
+    <ClInclude Include="MessageSubjectManager.h">
+      <Filter>MessageSubject</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -113,5 +131,6 @@
     <None Include="..\Tools\Protobuf\MRSchema.proto">
       <Filter>Proto</Filter>
     </None>
+    <None Include="ClassDiag1m.cd" />
   </ItemGroup>
 </Project>

@@ -1,13 +1,13 @@
 #include "pch.h"
-#include "GameSession.h"
-#include "GameSessionManager.h"
+#include "DataSession.h"
+#include "DataSessionManager.h"
 #include "ClientPacketHandler.h"
 
 
 
-void GameSession::OnConnected()
+void DataSession::OnConnected()
 {
-	GSessionManager.Add(static_pointer_cast<GameSession>(shared_from_this()));
+	GSessionManager.Add(static_pointer_cast<DataSession>(shared_from_this()));
 	cout << "Client is connected" << endl;
 
 	MRSchema::C_Position msg;
@@ -36,12 +36,12 @@ void GameSession::OnConnected()
 	//}
 }
 
-void GameSession::OnDisconnected()
+void DataSession::OnDisconnected()
 {
-	GSessionManager.Remove(static_pointer_cast<GameSession>(shared_from_this()));
+	GSessionManager.Remove(static_pointer_cast<DataSession>(shared_from_this()));
 }
 
-void GameSession::OnRecvPacket(BYTE* buffer, int32 len)
+void DataSession::OnRecvPacket(BYTE* buffer, int32 len)
 {
 
 	PacketHeader* packetHeader = reinterpret_cast<PacketHeader*>(buffer);
@@ -54,7 +54,23 @@ void GameSession::OnRecvPacket(BYTE* buffer, int32 len)
 	ClientPacketHandler::HandleBuffer(session, buffer, len);
 }
 
-void GameSession::OnSend(int32 len)
+void DataSession::OnSend(int32 len)
 {
 
 }
+
+void DataSession::MessageUpdate(const SendBufferRef& messageFromSubject)
+{
+	this->Send(messageFromSubject);
+}
+
+//void DataSession::OnReceivedData(const google::protobuf::Message& proto_buf)
+//{
+//
+//	/*int len = proto_buf.ByteSizeLong();
+//	std::vector<unsigned char> bytes(len);
+//	msg.SerializeToArray(bytes.data(), len);
+//
+//	auto sendBuffer = ClientPacketHandler::MakeSendBuffer(msg);
+//	this->Send(sendBuffer);*/
+//}

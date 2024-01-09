@@ -5,6 +5,7 @@
 #include "Protocol.pb.h"
 #include "enum.pb.h"
 
+
 // this has protobuf variables
 class EDT0001_PacketHandler
 {

@@ -12,9 +12,17 @@
 #include <iostream>
 #include <fstream>
 #include "JsonToConf.h"
-#include "Protocol.pb.h"
-#include "EDT0001.pb.h"
 #include <thread>
+
+
+#include "ClientPacketHandler.h"
+#include "DataSessionManager.h"
+
+#include <google/protobuf/message.h>
+#include "MRSchema.pb.h"
+#include "EDT0001.pb.h"
+#include "enum.pb.h"
+
 
 // 매크로 시작: 고유한 start 시간 기록
 #define START_TIMER { const auto startTime = std::chrono::high_resolution_clock::now();

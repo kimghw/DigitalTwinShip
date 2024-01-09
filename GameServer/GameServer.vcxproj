@@ -164,6 +164,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClientPacketHandler.cpp" />
+    <ClCompile Include="MessageSubject.cpp" />
     <ClCompile Include="EDT0001.pb.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -172,10 +173,11 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="MakeTableQuery.cpp" />
-    <ClCompile Include="GameServer.cpp" />
-    <ClCompile Include="GameSession.cpp" />
-    <ClCompile Include="GameSessionManager.cpp" />
+    <ClCompile Include="DTServer.cpp" />
+    <ClCompile Include="DataSession.cpp" />
+    <ClCompile Include="DataSessionManager.cpp" />
     <ClCompile Include="JsonToConf.cpp" />
+    <ClCompile Include="MessageSubjectManager.cpp" />
     <ClCompile Include="MRSchema.pb.cc">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
     </ClCompile>
@@ -188,12 +190,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ClientPacketHandler.h" />
+    <ClInclude Include="MessageSubject.h" />
     <ClInclude Include="EDT0001.pb.h" />
     <ClInclude Include="EDT0001_PacketHandler.h" />
     <ClInclude Include="enum.pb.h" />
+    <ClInclude Include="DataSessionManager.h" />
     <ClInclude Include="MakeTableQuery.h" />
-    <ClInclude Include="GameSession.h" />
+    <ClInclude Include="DataSession.h" />
     <ClInclude Include="JsonToConf.h" />
+    <ClInclude Include="MessageSubjectManager.h" />
     <ClInclude Include="MRSchema.pb.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="Tools.h" />
@@ -204,6 +209,7 @@
     <None Include="..\Tools\Protobuf\MRSchema.proto" />
     <None Include="..\Tools\Protobuf\protobuf.bat" />
     <None Include="..\Tools\Protobuf\Protocol.proto" />
+    <None Include="ClassDiag1m.cd" />
     <None Include="DbSchema.json" />
     <None Include="packages.config" />
     <None Include="ServerConfig.json" />

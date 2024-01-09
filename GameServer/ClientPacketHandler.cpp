@@ -10,13 +10,15 @@
 #include "EDT0001_PacketHandler.h"
 #include <chrono>
 #include <iostream>
-#include "GameSessionManager.h"
+#include "DataSessionManager.h"
+#include "MessageSubjectManager.h"
 
 PacketHandlerFunc GPacketHandler[UINT16_MAX];
 
 bool Handle_PKT_TEST(PacketSessionRef& session, BYTE* buffer, int32 len)
 {
-	// 만약 스레드를 쓰고 나와 버린다면 이건 동적할당 + 스마트 포인터로 해야 겠네요.
+	
+
 	EDT0001_PacketHandler pkt(buffer, len);
 
 	pkt.Assign_JsonToPbALL(); 
@@ -39,8 +41,8 @@ bool Handle_INVALID(PacketSessionRef& session, BYTE* buffer, int32 len)
 
 bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len)
 {
-
-	// 만약 스레드를 쓰고 나와 버린다면 이건 동적할당 + 스마트 포인터로 해야 겠네요.
+	
+	// Pasrsing the buffer and save the result in the protobuf<T>
 	EDT0001_PacketHandler pkt(buffer, len);
 	pkt.Assign_JsonToPbALL();
 	pkt.Insert_AllPbToDb();
@@ -49,7 +51,18 @@ bool Handle_EDT0001(PacketSessionRef& session, BYTE* buffer, int32 len)
 	SendBufferRef sendBuffer = ClientPacketHandler::MakeSendBuffer(pkt._battery);
 	GSessionManager.Broadcast(sendBuffer);
 
-	//session->Send(sendBuffer);
+	set<DataSessionRef> sessions = GSessionManager.GetAllSession();
+	//for (const auto& session : sessions)
+	//{
+
+	//	for (const auto& sss : _pEventPublishers)
+	//	{
+	//		SendBufferRef sendBuffer = ClientPacketHandler::MakeSendBuffer(pkt._battery);
+	//	}
+
+	//	session->Send(sendBuffer);
+	//}
+
 
 
 	return false;

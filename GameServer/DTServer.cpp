@@ -2,17 +2,15 @@
 #include "ThreadManager.h"
 #include "Service.h"
 #include "Session.h"
-#include "GameSession.h"
-#include "GameSessionManager.h"
+#include "DataSession.h"
+#include "DataSessionManager.h"
 #include "BufferWriter.h"
 #include "ClientPacketHandler.h"
 #include <tchar.h>
 #include "DBConnectionPool.h"
 #include "DBBind.h"
 #include "MakeTableQuery.h"
-#include "MRSchema.pb.h"
-#include "EDT0001.pb.h"
-#include "enum.pb.h"
+
 
 int main()
 {
@@ -27,7 +25,7 @@ int main()
 	ServerServiceRef service = MakeShared<ServerService>(
 		NetAddress(conf.ip, conf.port),
 		MakeShared<IocpCore>(),
-		MakeShared<GameSession>, // TODO : SessionManager 등
+		MakeShared<DataSession>, // TODO : SessionManager 등
 		conf.maxSessionCount);
 	
 	ASSERT_CRASH(service->Start());
