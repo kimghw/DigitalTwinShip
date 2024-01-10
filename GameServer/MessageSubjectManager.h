@@ -5,38 +5,35 @@
 
 class MessageSubjectManager
 {
+
+	// Singleton
 public:
 	static MessageSubjectManager& GetInstance()
 	{
 		return instance;
 	}
-
+	// Not allow to copy
 	MessageSubjectManager(const MessageSubjectManager&) = delete;
 	MessageSubjectManager& operator=(const MessageSubjectManager&) = delete;
 
 private:
-	MessageSubjectManager(){}
+	MessageSubjectManager();
 	static MessageSubjectManager instance;
 
 public:
 
-	void Init()
-	{
-		_pMessageSubjects[EDT::Battery] = std::make_shared<MessageSubject<EDT0001::Battery>>(static_cast<int16>(EDT::Battery));
-		_pMessageSubjects[EDT::AIS] = std::make_shared<MessageSubject<EDT0001::AIS>>(static_cast<int16>(EDT::AIS));
-	}
-
 	// Set the data
 	template<typename T>
-	void SetMessageUpdate(T& dataType, int16 indexSubjects)
+	void SetMessageUpdate(T& message, int16 indexSubjects)
 	{
 		auto it = _pMessageSubjects.find(indexSubjects);
 		if (it != _pMessageSubjects.end()) {
 
 			// If the message subject with the given index exists, update the data
-			if (it->second->GetProtocolID() == indexSubjects)
+			if (it->second->GetProtocolId() == indexSubjects)
 			{
-				 it->second->Set_ReceivedData(dataType);
+				SendBufferRef sendBuffer = ClientPacketHandler::MakeSendBuffer(message);
+				it->second->Set_ReceivedData(sendBuffer);
 			}
 			else {
 				//cout << "Type and index are not different" << endl;
@@ -80,65 +77,21 @@ private:
 			// For example: output an error log, throw an exception, etc.
 		}
 	}
-
-
+	
 	// calls by clients
 public:
 	// SubscribeEvent
-	void SubscribeEvent(int16 protocolId, DataSessionRef* subscriber) 
-	{
-		auto it = _pMessageSubjects.find(protocolId);
-		if (it != _pMessageSubjects.end() && it->second != nullptr) {
-			it->second->SubscribeEvent(subscriber);
-		}
-		else {
-			// protocolId? ???? ??? ??? ?? ??? ?? ??
-		}
-	}
+	void SubscribeEvent(int16 protocolId, DataSessionRef subscriber);
 	// UnsubscribedEvent
-	void UnsubscribeEvent(int16 protocolId, DataSessionRef* subscriber)
-	{
-		auto it = _pMessageSubjects.find(protocolId);
-		if (it != _pMessageSubjects.end() && it->second != nullptr) {
-			it->second->UnsubscribeEvent(subscriber);
-		}
-		else {
-			// protocolId? ???? ??? ??? ?? ??? ?? ??
-		}
-	}
+	void UnsubscribeEvent(int16 protocolId, DataSessionRef subscriber);
 	// SubscrbedEvnets
-	void SubscribeEvents(vector<int> registered, DataSessionRef* subscriber)
-	{
-		// TODO : Session should have the list
-		for (const auto& num : registered)
-		{
-			auto it = _pMessageSubjects.find(num);
-			if (it != _pMessageSubjects.end() && it->second != nullptr) {
-				it->second->SubscribeEvent(subscriber);
-			}
-			else {
-				cout << "some of the keys are not registered" << endl;
-			}
-		}
-
-	}
+	void SubscribeEvents(vector<int> registered, DataSessionRef subscriber);
 	// UnSubscrbedEvnets
-	void UnsubscribeEvents(vector<int> registered, DataSessionRef* subscriber)
-	{
-		// TODO : Session should leave the list
-		for (const auto& num : registered)
-		{
-			auto it = _pMessageSubjects.find(num);
-			if (it != _pMessageSubjects.end() && it->second != nullptr) {
-				it->second->UnsubscribeEvent(subscriber);
-			}
-			else {
-				cout << "some of the keys are not registered" << endl;
-			}
-		}
-	}
+	void UnsubscribeEvents(vector<int> registered, DataSessionRef subscriber);
+
 
 public:
-	std::map<int, IMessageSubjectRef> _pMessageSubjects;
+	USE_LOCK
+	std::unordered_map<int, IMessageSubjectRef> _pMessageSubjects;
 	
 };

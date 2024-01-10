@@ -4,7 +4,7 @@
 #include "EDT0001.pb.h"
 #include "EDT0001_PacketHandler.h"
 #include "Tools.h"
-#include "MessageSubjectManager.h"
+
 
 const int EDT0001_PacketHandler::DEFAULT_INT = 0;
 const float EDT0001_PacketHandler::DEFAULT_FLOAT = 0.0f;

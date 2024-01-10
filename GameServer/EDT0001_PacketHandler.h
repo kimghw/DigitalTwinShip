@@ -4,6 +4,8 @@
 #include "DBConnectionPool.h"
 #include "Protocol.pb.h"
 #include "enum.pb.h"
+#include "MessageSubjectManager.h"
+
 
 
 // this has protobuf variables
