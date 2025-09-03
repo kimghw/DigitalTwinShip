@@ -24,7 +24,37 @@
           "type": "FLOAT"
         }
       ]
+    },
+    {
+      "table_name": "XrCpuPlan",
+      "columns": [
+        {
+          "name": "PLANdata",
+          "type": "BYTE"
+        },
+        {
+          "name": "PLANrowStride",
+          "type": "INT"
+        },
+        {
+          "name": "PLANpixelStride",
+          "type": "INT"
+        }
+      ]
+    },
+    {
+      "table_name": "XrCpuImage",
+      "columns": [
+        {
+          "name": "ID",
+          "type": "INT"
+        },
+        {
+          "name": "PLANdatas",
+          "repeated": true,
+          "type": "XRCPUPLAN"
+        }
+      ]
     }
   ]
 }
-

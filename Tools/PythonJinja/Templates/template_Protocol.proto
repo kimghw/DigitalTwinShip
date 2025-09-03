@@ -1,18 +1,28 @@
-syntax = "proto3";
+﻿syntax = "proto3";
 package  {{ package }};
 
 {% for table in tables %}
 message {{ table.table_name }}
 {
 {%- for column in table.columns %}
+    
     {%- if column.type == 'INT' %}
+    {% if column.repeated == true -%} repeated {% endif -%}
     int32 {{ column.name }} = {{ loop.index }};
     {%- elif column.type == 'FLOAT' %}
+    {% if column.repeated == true -%} repeated {% endif -%}
     float {{ column.name }} = {{ loop.index }};
     {%- elif column.type == 'DOUBLE' %}
+    {% if column.repeated == true -%} repeated {% endif -%}
     double {{ column.name }} = {{ loop.index }};
+    {% if column.repeated == true -%} repeated {% endif -%}
     {%- elif column.type == 'NVARCHAR' %}
     string {{ column.name }} = {{ loop.index }};
+    {%- elif column.type == 'BYTE' %}
+    {% if column.repeated == true -%} repeated {% endif -%}
+    bytes {{ column.name }} = {{ loop.index }};
+    {%- else %}
+    repeated {{ column.type }} {{ column.name }} = {{ loop.index }};
     {%- endif %}
 {%- endfor %}
 }

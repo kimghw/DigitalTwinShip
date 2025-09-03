@@ -91,7 +91,7 @@ int main()
 	ServerPacketHandler::Init();
 
 	ClientServiceRef service = MakeShared<ClientService>(
-		NetAddress(L"20.200.230.157", 6340),
+		NetAddress(L"127.0.0.1", 6340),
 		MakeShared<IocpCore>(),
 		MakeShared<ServerSession>, // TODO : SessionManager 등
 		1);

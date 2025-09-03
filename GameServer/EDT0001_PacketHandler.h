@@ -4,11 +4,8 @@
 #include "DBConnectionPool.h"
 #include "Protocol.pb.h"
 #include "enum.pb.h"
-#include "MessageSubjectManager.h"
 
 
-
-// this has protobuf variables
 class EDT0001_PacketHandler
 {
 public:
@@ -76,7 +73,7 @@ public:
 	void Insert_Network_ToDb(EDT0001::Network network);
 	void Insert_SaveAsBytes_ToDb(EDT0001::SaveAsBytes saveasbytes);
 	
-	
+
 
 
 private:

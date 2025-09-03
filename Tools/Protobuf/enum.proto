@@ -22,5 +22,7 @@ enum EDT0001Enum {
 enum MRSchemaEnum {
   default_1 = 0;
   C_Position = 2001;
+  XrCpuPlan = 2002;
+  XrCpuImage = 2003;
 }
 

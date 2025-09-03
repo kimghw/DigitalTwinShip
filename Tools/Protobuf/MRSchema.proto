@@ -1,4 +1,4 @@
-syntax = "proto3";
+﻿syntax = "proto3";
 package  MRSchema;
 
 
@@ -8,4 +8,17 @@ message C_Position
     float XPOS = 2;
     float YPOS = 3;
     float ZPOS = 4;
+}
+
+message XrCpuPlan
+{
+    bytes PLANdata = 1;
+    int32 PLANrowStride = 2;
+    int32 PLANpixelStride = 3;
+}
+
+message XrCpuImage
+{
+    int32 ID = 1;
+    repeated XRCPUPLAN PLANdatas = 2;
 }

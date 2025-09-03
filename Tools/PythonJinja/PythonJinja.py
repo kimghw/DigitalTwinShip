@@ -1,4 +1,5 @@
 ﻿import json
+import re
 import os
 from jinja2 import Environment, FileSystemLoader
 
@@ -28,12 +29,12 @@ def save_rendered_file(file_path, content):
 env = Environment(loader=FileSystemLoader('.'))
 
 # 템플릿 로드
-Template_Json_packetHandler = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.cpp')
-Template_Json_packetHandler_h = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.h')
-Template_message_protocol = env.get_template('./templates/template_protocol.proto')
-Template_enum_protocol = env.get_template('./templates/template_Enum.proto')
-Template_packetHandler_h= env.get_template('./templates/template_PacketHandler.h')
-Template_packetHandler_cs = env.get_template('./templates/template_ClientPacketManager.cs')
+#Template_Json_packetHandler = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.cpp')
+#Template_Json_packetHandler_h = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.h')
+#Template_message_protocol = env.get_template('./templates/template_protocol.proto')
+#Template_enum_protocol = env.get_template('./templates/template_Enum.proto')
+#Template_packetHandler_h= env.get_template('./templates/template_PacketHandler.h')
+#Template_packetHandler_cs = env.get_template('./templates/template_ClientPacketManager.cs')
 
 # Load the Json files which contains the data structure
 file_path_DbSchema = os.path.join(pparent_dir, "GameServer", "DbSchema.json")
@@ -46,19 +47,19 @@ data_MRSchema = read_json_file(file_path_MRSchema)
 ## Old version
 data_DBSchema_table_names = [table['table_name'] for table in data_DBSchema['tables']]
 data_MRSchema_table_names = [table['table_name'] for table in data_MRSchema['tables']]
-combined_enum1 = [data_DBSchema['enum'], data_DBSchema['package'], data_DBSchema_table_names]
-combined_enum2 = [data_MRSchema['enum'], data_MRSchema['package'], data_MRSchema_table_names]
+combined_enum1            = [data_DBSchema['enum'], data_DBSchema['package'], data_DBSchema_table_names]
+combined_enum2            = [data_MRSchema['enum'], data_MRSchema['package'], data_MRSchema_table_names]
 combined = list(zip(combined_enum1, combined_enum2))
 ## latest version
 combined_list_data= [data_DBSchema, data_MRSchema]
 
 # 함수 템플릿 갖어오기
-Template_Json_packetHandler = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.cpp')
+Template_Json_packetHandler   = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.cpp')
 Template_Json_packetHandler_h = env.get_template('./templates/template_EDT0001_PacketHandler_OOP.h')
-Template_message_protocol = env.get_template('./templates/template_protocol.proto')
-Template_enum_protocol = env.get_template('./templates/template_Enum.proto')
-Template_packetHandler_h= env.get_template('./templates/template_PacketHandler.h')
-Template_packetHandler_cs = env.get_template('./templates/template_ClientPacketManager.cs')
+Template_message_protocol     = env.get_template('./templates/template_Protocol.proto')
+Template_enum_protocol        = env.get_template('./templates/template_Enum.proto')
+Template_packetHandler_h      = env.get_template('./templates/template_PacketHandler.h')
+Template_packetHandler_cs     = env.get_template('./templates/template_ClientPacketManager.cs')
 
 # 렌더링 하고 저장하기
 # EDT는 동일 namespace를 갖게 해줄려고 공통적으로 넣어줌
@@ -71,7 +72,7 @@ save_rendered_file(os.path.join(pparent_dir, "GameServer", f'{data_DBSchema["pac
 Render_DbSchema_messasge_Protocol = Template_message_protocol.render(package = data_DBSchema['package'], tables = data_DBSchema['tables'])
 save_rendered_file(os.path.join(parent_dir, "Protobuf", f'{data_DBSchema["package"]}.proto'), Render_DbSchema_messasge_Protocol)
 
-Render_MRScheme_message_Protocol = Template_message_protocol.render(package = data_MRSchema['package'], tables = data_MRSchema['tables'])
+Render_MRScheme_message_Protocol = Template_message_protocol.render(package = 'MRSchema', tables = data_MRSchema['tables'])
 save_rendered_file(os.path.join(parent_dir, "Protobuf", f'{data_MRSchema["package"]}.proto'), Render_MRScheme_message_Protocol)
 
 Render_enum_protocol = Template_enum_protocol.render(package = 'EDT', combined = combined)

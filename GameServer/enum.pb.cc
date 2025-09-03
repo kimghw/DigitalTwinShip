@@ -35,12 +35,13 @@ const char descriptor_table_protodef_enum_2eproto[] PROTOBUF_SECTION_VARIABLE(pr
   "\021\n\014BAT_MODULE_2\020\356\007\022\021\n\014BAT_MODULE_3\020\357\007\022\020\n"
   "\013Environment\020\360\007\022\010\n\003AIS\020\361\007\022\020\n\013System_Time"
   "\020\362\007\022\n\n\005MOTOR\020\363\007\022\r\n\010INVERTER\020\364\007\022\014\n\007Networ"
-  "k\020\365\007\022\020\n\013SaveAsBytes\020\366\007*.\n\014MRSchemaEnum\022\r"
-  "\n\tdefault_1\020\000\022\017\n\nC_Position\020\321\017b\006proto3"
+  "k\020\365\007\022\020\n\013SaveAsBytes\020\366\007*O\n\014MRSchemaEnum\022\r"
+  "\n\tdefault_1\020\000\022\017\n\nC_Position\020\321\017\022\016\n\tXRCPUP"
+  "LAN\020\322\017\022\017\n\nXRCPUIMAGE\020\323\017b\006proto3"
   ;
 static ::_pbi::once_flag descriptor_table_enum_2eproto_once;
 const ::_pbi::DescriptorTable descriptor_table_enum_2eproto = {
-    false, false, 318, descriptor_table_protodef_enum_2eproto,
+    false, false, 351, descriptor_table_protodef_enum_2eproto,
     "enum.proto",
     &descriptor_table_enum_2eproto_once, nullptr, 0, 0,
     schemas, file_default_instances, TableStruct_enum_2eproto::offsets,
@@ -88,6 +89,8 @@ bool MRSchemaEnum_IsValid(int value) {
   switch (value) {
     case 0:
     case 2001:
+    case 2002:
+    case 2003:
       return true;
     default:
       return false;

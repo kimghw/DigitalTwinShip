@@ -3,8 +3,6 @@
 #include "JsonPacketHandler.h"
 #include "EDT0001.pb.h"
 #include "EDT0001_PacketHandler.h"
-#include "Tools.h"
-
 
 const int EDT0001_PacketHandler::DEFAULT_INT = 0;
 const float EDT0001_PacketHandler::DEFAULT_FLOAT = 0.0f;
@@ -14,7 +12,7 @@ const std::string EDT0001_PacketHandler::DEFAULT_STRING = "0";
 EDT0001_PacketHandler::EDT0001_PacketHandler(BYTE* buffer, int32 len) : _str(buffer, buffer + len)
 {
     SanitizeAndFormatAsJSON(_str);
- }
+}
 
 EDT0001_PacketHandler::~EDT0001_PacketHandler()
 {
@@ -139,7 +137,6 @@ void EDT0001_PacketHandler::ValidateJson(const std::string& key, const T& defaul
 void EDT0001_PacketHandler::Assign_JsonToPbALL()
 { 
   Assign_JsonToPb_Battery(_battery);
-  MessageSubjectManager::GetInstance().SetMessageUpdate(_battery, EDT::Battery);
   Assign_JsonToPb_Battery_Pack(_battery_pack);
   Assign_JsonToPb_BAT_MODULE_0(_bat_module_0);
   Assign_JsonToPb_BAT_MODULE_1(_bat_module_1);
@@ -457,18 +454,16 @@ void EDT0001_PacketHandler::Assign_JsonToPb_Environment(EDT0001::Environment& en
 void EDT0001_PacketHandler::Assign_JsonToPb_AIS(EDT0001::AIS& ais)
 {
         
-     ValidateJson<int32>("SHIPID", DEFAULT_INT);
+    ValidateJson<int32>("SHIPID", DEFAULT_INT);
     int32 value_SHIPID = _EdtJson.at("SHIPID");
     ais.set_shipid(value_SHIPID);
         
     ValidateJson<float>("latitude", DEFAULT_FLOAT);
     float value_latitude = _EdtJson.at("latitude");
-    //float value_latitude = _EdtJson.at("latitude"));
     ais.set_latitude(value_latitude);
         
     ValidateJson<float>("longitude", DEFAULT_FLOAT);
     float value_longitude = _EdtJson.at("longitude");
-    //float value_longitude = dmsStrToDd(_EdtJson.at("longitude"));
     ais.set_longitude(value_longitude);
         
     ValidateJson<string>("System_time", DEFAULT_STRING);
@@ -1007,7 +1002,6 @@ void EDT0001_PacketHandler::Insert_AIS_ToDb(EDT0001::AIS ais)
     int32 SHIPID = static_cast<int32>(ais.shipid());
     dbBind.BindParam(count++, SHIPID);
     
-   
     float latitude = static_cast<float>(ais.latitude());
     dbBind.BindParam(count++, latitude);
     

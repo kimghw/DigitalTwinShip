@@ -1,16 +1,31 @@
+﻿{# Jinja2 템플릿 코드 #}
+{# 함수 정의: snake_case를 camelCase로 변환하는 필터 #}
+{% macro snake_to_camel(value) %}
+        {%- set parts = value.split('_') -%}
+        {%- if parts | length > 1 -%}
+            {{ parts[0] | capitalize }}
+            {%- for part in parts[1:] -%}
+                {{ part | capitalize }}
+            {%- endfor -%}
+        {%- else -%}
+            {{ value }}
+        {%- endif -%}
+{%- endmacro -%}
+
+
 using ServerCore;
 using System;
 using System.Collections.Generic;
 using Google.Protobuf;
 
-class PacketManager
+class ClientPacketManager
 {
     #region Singleton
-    static PacketManager _instance = new PacketManager();
-    public static PacketManager Instance { get { return _instance; } }
+    static ClientPacketManager _instance = new ClientPacketManager();
+    public static ClientPacketManager Instance { get { return _instance; } }
     #endregion
 
-    PacketManager()
+    ClientPacketManager()
     {
         Register();
     }
@@ -23,22 +38,22 @@ class PacketManager
 
         {%- for idx in range(combined[1] | length) %}
         {%- for key in combined[2][idx] %}
-        _makeFunc.Add((ushort){{package}}.{{combined[1][idx]}}Enum.{{key}}, MakePacket<{{ combined[1][idx]}}.{{key}}>);
+        _makeFunc.Add((ushort){{package}}.{{combined[1][idx]}}Enum.{{ snake_to_camel(key)}}, MakePacket<{{ combined[1][idx]}}.{{key}}>);
         {%- endfor %}
         {%- endfor %}
 
         {% for idx in range(combined[1] | length) %}
         {%- for key in combined[2][idx] %}
-        _handler.Add((ushort){{package}}.{{ combined[1][idx]}}Enum.{{key}}, PacketHandler.{{key}}>);
+        _handler.Add((ushort){{package}}.{{ combined[1][idx]}}Enum.{{snake_to_camel(key)}}, PacketHandler.{{key}}>);
         {%- endfor %}
         {%- endfor %}
 
         {% for package in packages %}
         {% for table in package['tables'] %}
-        _makeFunc.Add((ushort){ { package['package']} }.{ { package['package']} }
-        Enum.{ { table['table_name']} }, MakePacket <{ { package['package']} }.{ { table['table_name']} });
-        _handler.Add((ushort){ { package['package']} }.{ { package['package']} }
-        Enum.{ { table['table_name']} }, PacketHandler.S_{ { table['table_name']} });
+        _makeFunc.Add((ushort){{ package['package']}}.{{package['package']}}
+        Enum.{{table['table_name']}}, MakePacket <{{package['package']}}.{{ table['table_name']}});
+        _handler.Add((ushort){{ package['package']}}.{{package['package']}}
+        Enum.{{table['table_name']}}, PacketHandler.S_{{table['table_name']}});
         {% endfor %}
         {% endfor %}
     }

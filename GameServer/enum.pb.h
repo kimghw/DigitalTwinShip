@@ -87,12 +87,14 @@ inline bool EDT0001Enum_Parse(
 enum MRSchemaEnum : int {
   default_1 = 0,
   C_Position = 2001,
+  XRCPUPLAN = 2002,
+  XRCPUIMAGE = 2003,
   MRSchemaEnum_INT_MIN_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::min(),
   MRSchemaEnum_INT_MAX_SENTINEL_DO_NOT_USE_ = std::numeric_limits<int32_t>::max()
 };
 bool MRSchemaEnum_IsValid(int value);
 constexpr MRSchemaEnum MRSchemaEnum_MIN = default_1;
-constexpr MRSchemaEnum MRSchemaEnum_MAX = C_Position;
+constexpr MRSchemaEnum MRSchemaEnum_MAX = XRCPUIMAGE;
 constexpr int MRSchemaEnum_ARRAYSIZE = MRSchemaEnum_MAX + 1;
 
 const ::PROTOBUF_NAMESPACE_ID::EnumDescriptor* MRSchemaEnum_descriptor();

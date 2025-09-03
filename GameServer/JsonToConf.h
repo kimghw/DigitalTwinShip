@@ -41,6 +41,9 @@ public:
 		return ws;
 	}
 
+	// both external file including ip address 
+	// and port and initial ip address and port go into the function as arguments.
+
 	static void Init(const string& jsonFileName, ServerIpInfo& conf) {
 
 		try {

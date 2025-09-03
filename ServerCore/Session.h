@@ -41,6 +41,8 @@ public:
 	SOCKET				GetSocket() { return _socket; }
 	bool				IsConnected() { return _connected; }
 	SessionRef			GetSessionRef() { return static_pointer_cast<Session>(shared_from_this()); }
+	int16				GetMemoryUsage() { return _recvBuffer.Memory_UsageInPercent(); };
+	int16				GetMaxMemoryUsage() { return _recvBuffer.Memory_UsageMax(); }
 
 private:
 						/* ÀÎÅÍÆäÀÌ½º ±¸Çö */
@@ -76,6 +78,7 @@ private:
 	NetAddress			_netAddress = {};
 	Atomic<bool>		_connected = false;
 
+
 private:
 	USE_LOCK;
 
@@ -100,8 +103,8 @@ private:
 
 struct PacketHeader
 {
-	uint16 id; // ÇÁ·ÎÅäÄÝID (ex. 1=·Î±×ÀÎ, 2=ÀÌµ¿¿äÃ»)
-	uint16 size;
+	int32 id; // ÇÁ·ÎÅäÄÝID (ex. 1=·Î±×ÀÎ, 2=ÀÌµ¿¿äÃ»)
+	int32 size;
 };
 
 class PacketSession : public Session

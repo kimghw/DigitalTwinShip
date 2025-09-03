@@ -29,9 +29,9 @@ namespace EDT {
             "T0RVTEVfMBDsBxIRCgxCQVRfTU9EVUxFXzEQ7QcSEQoMQkFUX01PRFVMRV8y",
             "EO4HEhEKDEJBVF9NT0RVTEVfMxDvBxIQCgtFbnZpcm9ubWVudBDwBxIICgNB",
             "SVMQ8QcSEAoLU3lzdGVtX1RpbWUQ8gcSCgoFTU9UT1IQ8wcSDQoISU5WRVJU",
-            "RVIQ9AcSDAoHTmV0d29yaxD1BxIQCgtTYXZlQXNCeXRlcxD2ByouCgxNUlNj",
-            "aGVtYUVudW0SDQoJZGVmYXVsdF8xEAASDwoKQ19Qb3NpdGlvbhDRD2IGcHJv",
-            "dG8z"));
+            "RVIQ9AcSDAoHTmV0d29yaxD1BxIQCgtTYXZlQXNCeXRlcxD2BypPCgxNUlNj",
+            "aGVtYUVudW0SDQoJZGVmYXVsdF8xEAASDwoKQ19Qb3NpdGlvbhDRDxIOCglY",
+            "UkNQVVBMQU4Q0g8SDwoKWFJDUFVJTUFHRRDTD2IGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::EDT.EDT0001Enum), typeof(global::EDT.MRSchemaEnum), }, null, null));
@@ -60,6 +60,8 @@ namespace EDT {
   public enum MRSchemaEnum {
     [pbr::OriginalName("default_1")] Default1 = 0,
     [pbr::OriginalName("C_Position")] CPosition = 2001,
+    [pbr::OriginalName("XRCPUPLAN")] Xrcpuplan = 2002,
+    [pbr::OriginalName("XRCPUIMAGE")] Xrcpuimage = 2003,
   }
 
   #endregion

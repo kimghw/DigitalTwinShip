@@ -3,6 +3,10 @@
 #include "SocketUtils.h"
 #include "Service.h"
 
+
+#include <chrono>
+#include <ctime>
+
 void PacketHeaderByteSwap(BYTE* byte);
 
 /*--------------
@@ -233,30 +237,16 @@ void Session::ProcessDisconnect()
 	GetService()->ReleaseSession(GetSessionRef());
 }
 
-// 문제생길 시 락걸면 될듯
 void Session::ProcessRecv(int32 numOfBytes)
 {
+
+	// These are for the the debug
+	// std::cout << "the number of bytes reveived :" << numOfBytes << endl;
+
+
+
+
 	_recvEvent.owner = nullptr; // RELEASE_REF
-	int32 unprocessedData = 0;
-	BYTE* pinitBuffer = nullptr;
-	static int16 initHeaderSize = 0; //
-	static bool accum = false;
-
-	if (accum == false)
-	{
-
-		//PacketHeaderByteSwap(_recvBuffer.WritePos());
-		PacketHeader* header = reinterpret_cast<PacketHeader*>(_recvBuffer.WritePos());
-
-		pinitBuffer    = _recvBuffer.WritePos();
-		initHeaderSize = header->size;
-	}
-	else if (accum == true)
-	{
-		unprocessedData = _recvBuffer.DataSize();
-		_recvBuffer.OnWrite(numOfBytes);
-	}
-
 
 	if (numOfBytes == 0)
 	{
@@ -264,74 +254,42 @@ void Session::ProcessRecv(int32 numOfBytes)
 		return;
 	}
 
-	if (numOfBytes == initHeaderSize && accum == false)
+	if (_recvBuffer.OnWrite(numOfBytes) == false)
 	{
-		//accum = false;
-		_recvBuffer.OnWrite(numOfBytes);
+		Disconnect(L"OnWrite Overflow");
+		return;
 	}
-	else if (numOfBytes != initHeaderSize && accum == false)
-	{
-		// 보낸 사이즈보다 들어온 사이즈가
-		// first partial data comming
-		/*	const char* partialBuf = reinterpret_cast<const char*>(_recvBuffer.WritePos());
-		int32 length = strlen(partialBuf);
 
-		if (length > numOfBytes)
-		{
-			numOfBytes = initHeaderSize;
-		}*/
-		
-		if (_recvBuffer.OnWrite(numOfBytes) == false)
-		{
-			Disconnect(L"OnWrite Overflow");
-			return;
-		}
+	// 데이터 처리 시작
+	while (true) {
 
-		if (_recvBuffer.DataSize() < initHeaderSize)
-		{
-			accum = true;
+		// 버퍼에 충분한 데이터가 없는 경우 추가 데이터 수신 대기
+		if (_recvBuffer.DataSize() < sizeof(PacketHeader)) {
 			RegisterRecv();
+			break;
+		}
+
+		// 현재 버퍼에서 패킷 헤더 읽기
+		PacketHeader* header = reinterpret_cast<PacketHeader*>(_recvBuffer.ReadPos());
+		// Check the data is enough to process
+
+		int32 dataSize = _recvBuffer.DataSize();
+		if (dataSize < header->size) {
+			RegisterRecv();
+			break;
+		}
+		int32 processLen = OnRecv(_recvBuffer.ReadPos(), dataSize);
+
+		if (processLen < 0 || dataSize < processLen || _recvBuffer.OnRead(processLen) == false)
+		{
+			Disconnect(L"OnRead Overflow");
 			return;
 		}
-		//numOfBytes = initHeaderSize;
-	}
-	else if (_recvBuffer.DataSize() == initHeaderSize && accum == true)
-	{
-		// 누적된 패킷사이즈가 헤더의 사이즈랑 같음
-		accum = false;
 
-	}
-	else if (_recvBuffer.DataSize() > initHeaderSize && accum == true)
-	{
-		// 누적된 패킷사이즈가 헤더의 사이즈랑 같음
-		accum = true;
-
-	}
-	else if (_recvBuffer.DataSize() < initHeaderSize && accum == true)
-	{
-		accum = true;
+		_recvBuffer.Clean();
 		RegisterRecv();
-		return;
+		break;
 	}
-	
-	int32 dataSize = _recvBuffer.DataSize();
-	int32 processLen = OnRecv(_recvBuffer.ReadPos(), dataSize);
-	if (processLen < 0 || dataSize<processLen || _recvBuffer.OnRead(processLen) == false)
-	{
-		Disconnect(L"OnRead Overflow");
-		return;
-	}
-
-	if ( processLen < dataSize )
-	{
-		accum = true;
-	}
-
-	_recvBuffer.Clean();
-
-	// ¼ö½Å µî·Ï
-	RegisterRecv();
-
 }
 
 void Session::ProcessSend(int32 numOfBytes)

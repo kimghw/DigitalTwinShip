@@ -140,7 +140,21 @@ bool Handle_SaveAsBytes(PacketSessionRef& session, EDT0001::SaveAsBytes& pkt)
 
 bool Handle_C_Position(PacketSessionRef& session, MRSchema::C_Position& pkt)
 {
+	//std::cout << "C_Position is incomming" << std::endl;
+	
+    	std::cout << "Log :" << pkt.id() <<":" << pkt.xpos() << std::endl;
+
+	//SendBufferRef sendBuffer = ClientPacketHandler::MakeSendBuffer(pkt);
+	//GSessionManager.Broadcast(sendBuffer);
+
 	return false;
+}
+
+bool Handle_XRCPUIMAGE(PacketSessionRef& session, MRSchema::XRCPUIMAGE& pkt)
+{	
+	std::cout << "XRCPUIMAGE is incomming" << std::endl;
+
+	return true;
 }
 
 //std::mutex cout_mutex;

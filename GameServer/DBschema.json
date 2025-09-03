@@ -6,6 +6,7 @@
   "tables": [
     {
       "table_name": "Battery",
+      "is_Array": false,
       "columns": [
         {
           "name": "Battery_PK",
@@ -48,6 +49,7 @@
     },
     {
       "table_name": "Battery_Pack",
+      "is_Array": false,
       "columns": [
         {
           "name": "Battery_PK",
@@ -120,6 +122,7 @@
     },
     {
       "table_name": "BAT_MODULE_0",
+      "is_Array": false,
       "columns": [
         {
           "name": "BatteryMd_PK",
@@ -197,6 +200,7 @@
     },
     {
       "table_name": "BAT_MODULE_1",
+      "is_Array": false,
       "columns": [
         {
           "name": "BatteryMd_1_PK",
@@ -274,6 +278,7 @@
     },
     {
       "table_name": "BAT_MODULE_2",
+      "is_Array": false,
       "columns": [
         {
           "name": "BatteryMd_2_PK",
@@ -351,6 +356,7 @@
     },
     {
       "table_name": "BAT_MODULE_3",
+      "is_Array": false,
       "columns": [
         {
           "name": "BatteryMd_3_PK",
@@ -392,6 +398,7 @@
     },
     {
       "table_name": "Environment",
+      "is_Array": false,
       "columns": [
         {
           "name": "Env",
@@ -419,6 +426,7 @@
     },
     {
       "table_name": "AIS",
+      "is_Array": false,
       "columns": [
         {
           "name": "AIS_PK",
@@ -451,6 +459,7 @@
     },
     {
       "table_name": "System_Time",
+      "is_Array": false,
       "columns": [
         {
           "name": "Times_PK",
@@ -468,6 +477,7 @@
     },
     {
       "table_name": "MOTOR",
+      "is_Array": false,
       "columns": [
         {
           "name": "MOTOR_PK",
@@ -500,6 +510,7 @@
     },
     {
       "table_name": "INVERTER",
+      "is_Array": false,
       "columns": [
         {
           "name": "INVERTER_PK",
@@ -572,6 +583,7 @@
     },
     {
       "table_name": "Network",
+      "is_Array": false,
       "columns": [
         {
           "name": "NetWork_PK",
@@ -594,6 +606,7 @@
     },
     {
       "table_name": "SaveAsBytes",
+      "is_Array": false,
       "columns": [
         {
           "name": "SaveAsBytes_PK",

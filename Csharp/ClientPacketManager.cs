@@ -1,16 +1,18 @@
+﻿
+
 using ServerCore;
 using System;
 using System.Collections.Generic;
 using Google.Protobuf;
 
-class PacketManager
+class ClientPacketManager
 {
     #region Singleton
-    static PacketManager _instance = new PacketManager();
-    public static PacketManager Instance { get { return _instance; } }
+    static ClientPacketManager _instance = new ClientPacketManager();
+    public static ClientPacketManager Instance { get { return _instance; } }
     #endregion
 
-    PacketManager()
+    ClientPacketManager()
     {
         Register();
     }
@@ -21,35 +23,41 @@ class PacketManager
     public void Register()
     {
         _makeFunc.Add((ushort)EDT.EDT0001Enum.Battery, MakePacket<EDT0001.Battery>);
-        _makeFunc.Add((ushort)EDT.EDT0001Enum.Battery_Pack, MakePacket<EDT0001.Battery_Pack>);
-        _makeFunc.Add((ushort)EDT.EDT0001Enum.BAT_MODULE_0, MakePacket<EDT0001.BAT_MODULE_0>);
-        _makeFunc.Add((ushort)EDT.EDT0001Enum.BAT_MODULE_1, MakePacket<EDT0001.BAT_MODULE_1>);
-        _makeFunc.Add((ushort)EDT.EDT0001Enum.BAT_MODULE_2, MakePacket<EDT0001.BAT_MODULE_2>);
-        _makeFunc.Add((ushort)EDT.EDT0001Enum.BAT_MODULE_3, MakePacket<EDT0001.BAT_MODULE_3>);
+        _makeFunc.Add((ushort)EDT.EDT0001Enum.BatteryPack, MakePacket<EDT0001.Battery_Pack>);
+        _makeFunc.Add((ushort)EDT.EDT0001Enum.BatModule0, MakePacket<EDT0001.BAT_MODULE_0>);
+        _makeFunc.Add((ushort)EDT.EDT0001Enum.BatModule1, MakePacket<EDT0001.BAT_MODULE_1>);
+        _makeFunc.Add((ushort)EDT.EDT0001Enum.BatModule2, MakePacket<EDT0001.BAT_MODULE_2>);
+        _makeFunc.Add((ushort)EDT.EDT0001Enum.BatModule3, MakePacket<EDT0001.BAT_MODULE_3>);
         _makeFunc.Add((ushort)EDT.EDT0001Enum.Environment, MakePacket<EDT0001.Environment>);
         _makeFunc.Add((ushort)EDT.EDT0001Enum.AIS, MakePacket<EDT0001.AIS>);
-        _makeFunc.Add((ushort)EDT.EDT0001Enum.System_Time, MakePacket<EDT0001.System_Time>);
+        _makeFunc.Add((ushort)EDT.EDT0001Enum.SystemTime, MakePacket<EDT0001.System_Time>);
         _makeFunc.Add((ushort)EDT.EDT0001Enum.MOTOR, MakePacket<EDT0001.MOTOR>);
         _makeFunc.Add((ushort)EDT.EDT0001Enum.INVERTER, MakePacket<EDT0001.INVERTER>);
         _makeFunc.Add((ushort)EDT.EDT0001Enum.Network, MakePacket<EDT0001.Network>);
         _makeFunc.Add((ushort)EDT.EDT0001Enum.SaveAsBytes, MakePacket<EDT0001.SaveAsBytes>);
-        _makeFunc.Add((ushort)EDT.MRSchemaEnum.C_Position, MakePacket<MRSchema.C_Position>);
+        _makeFunc.Add((ushort)EDT.MRSchemaEnum.CPosition, MakePacket<MRSchema.C_Position>);
+        _makeFunc.Add((ushort)EDT.MRSchemaEnum.XrCpuPlan, MakePacket<MRSchema.XrCpuPlan>);
+
+
+        _makeFunc.Add((ushort)EDT.MRSchemaEnum.XrCpuImage, MakePacket<MRSchema.XrCpuImage>);
 
         
         _handler.Add((ushort)EDT.EDT0001Enum.Battery, PacketHandler.Battery>);
-        _handler.Add((ushort)EDT.EDT0001Enum.Battery_Pack, PacketHandler.Battery_Pack>);
-        _handler.Add((ushort)EDT.EDT0001Enum.BAT_MODULE_0, PacketHandler.BAT_MODULE_0>);
-        _handler.Add((ushort)EDT.EDT0001Enum.BAT_MODULE_1, PacketHandler.BAT_MODULE_1>);
-        _handler.Add((ushort)EDT.EDT0001Enum.BAT_MODULE_2, PacketHandler.BAT_MODULE_2>);
-        _handler.Add((ushort)EDT.EDT0001Enum.BAT_MODULE_3, PacketHandler.BAT_MODULE_3>);
+        _handler.Add((ushort)EDT.EDT0001Enum.BatteryPack, PacketHandler.Battery_Pack>);
+        _handler.Add((ushort)EDT.EDT0001Enum.BatModule0, PacketHandler.BAT_MODULE_0>);
+        _handler.Add((ushort)EDT.EDT0001Enum.BatModule1, PacketHandler.BAT_MODULE_1>);
+        _handler.Add((ushort)EDT.EDT0001Enum.BatModule2, PacketHandler.BAT_MODULE_2>);
+        _handler.Add((ushort)EDT.EDT0001Enum.BatModule3, PacketHandler.BAT_MODULE_3>);
         _handler.Add((ushort)EDT.EDT0001Enum.Environment, PacketHandler.Environment>);
         _handler.Add((ushort)EDT.EDT0001Enum.AIS, PacketHandler.AIS>);
-        _handler.Add((ushort)EDT.EDT0001Enum.System_Time, PacketHandler.System_Time>);
+        _handler.Add((ushort)EDT.EDT0001Enum.SystemTime, PacketHandler.System_Time>);
         _handler.Add((ushort)EDT.EDT0001Enum.MOTOR, PacketHandler.MOTOR>);
         _handler.Add((ushort)EDT.EDT0001Enum.INVERTER, PacketHandler.INVERTER>);
         _handler.Add((ushort)EDT.EDT0001Enum.Network, PacketHandler.Network>);
         _handler.Add((ushort)EDT.EDT0001Enum.SaveAsBytes, PacketHandler.SaveAsBytes>);
-        _handler.Add((ushort)EDT.MRSchemaEnum.C_Position, PacketHandler.C_Position>);
+        _handler.Add((ushort)EDT.MRSchemaEnum.CPosition, PacketHandler.C_Position>);
+        _handler.Add((ushort)EDT.MRSchemaEnum.XrCpuPlan, PacketHandler.XrCpuPlan>);
+        _handler.Add((ushort)EDT.MRSchemaEnum.XrCpuImage, PacketHandler.XrCpuImage>);
 
         
     }

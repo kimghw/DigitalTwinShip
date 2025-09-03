@@ -48,9 +48,17 @@ namespace MRSchema {
 class C_Position;
 struct C_PositionDefaultTypeInternal;
 extern C_PositionDefaultTypeInternal _C_Position_default_instance_;
+class XRCPUIMAGE;
+struct XRCPUIMAGEDefaultTypeInternal;
+extern XRCPUIMAGEDefaultTypeInternal _XRCPUIMAGE_default_instance_;
+class XRCPUPLAN;
+struct XRCPUPLANDefaultTypeInternal;
+extern XRCPUPLANDefaultTypeInternal _XRCPUPLAN_default_instance_;
 }  // namespace MRSchema
 PROTOBUF_NAMESPACE_OPEN
 template<> ::MRSchema::C_Position* Arena::CreateMaybeMessage<::MRSchema::C_Position>(Arena*);
+template<> ::MRSchema::XRCPUIMAGE* Arena::CreateMaybeMessage<::MRSchema::XRCPUIMAGE>(Arena*);
+template<> ::MRSchema::XRCPUPLAN* Arena::CreateMaybeMessage<::MRSchema::XRCPUPLAN>(Arena*);
 PROTOBUF_NAMESPACE_CLOSE
 namespace MRSchema {
 
@@ -240,6 +248,349 @@ class C_Position final :
   union { Impl_ _impl_; };
   friend struct ::TableStruct_MRSchema_2eproto;
 };
+// -------------------------------------------------------------------
+
+class XRCPUPLAN final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:MRSchema.XRCPUPLAN) */ {
+ public:
+  inline XRCPUPLAN() : XRCPUPLAN(nullptr) {}
+  ~XRCPUPLAN() override;
+  explicit PROTOBUF_CONSTEXPR XRCPUPLAN(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  XRCPUPLAN(const XRCPUPLAN& from);
+  XRCPUPLAN(XRCPUPLAN&& from) noexcept
+    : XRCPUPLAN() {
+    *this = ::std::move(from);
+  }
+
+  inline XRCPUPLAN& operator=(const XRCPUPLAN& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline XRCPUPLAN& operator=(XRCPUPLAN&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const XRCPUPLAN& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const XRCPUPLAN* internal_default_instance() {
+    return reinterpret_cast<const XRCPUPLAN*>(
+               &_XRCPUPLAN_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    1;
+
+  friend void swap(XRCPUPLAN& a, XRCPUPLAN& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(XRCPUPLAN* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(XRCPUPLAN* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  XRCPUPLAN* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<XRCPUPLAN>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const XRCPUPLAN& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const XRCPUPLAN& from) {
+    XRCPUPLAN::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(XRCPUPLAN* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "MRSchema.XRCPUPLAN";
+  }
+  protected:
+  explicit XRCPUPLAN(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPLANdataFieldNumber = 1,
+    kPLANrowStrideFieldNumber = 2,
+    kPLANpixelStrideFieldNumber = 3,
+  };
+  // bytes PLANdata = 1;
+  void clear_plandata();
+  const std::string& plandata() const;
+  template <typename ArgT0 = const std::string&, typename... ArgT>
+  void set_plandata(ArgT0&& arg0, ArgT... args);
+  std::string* mutable_plandata();
+  PROTOBUF_NODISCARD std::string* release_plandata();
+  void set_allocated_plandata(std::string* plandata);
+  private:
+  const std::string& _internal_plandata() const;
+  inline PROTOBUF_ALWAYS_INLINE void _internal_set_plandata(const std::string& value);
+  std::string* _internal_mutable_plandata();
+  public:
+
+  // int32 PLANrowStride = 2;
+  void clear_planrowstride();
+  int32_t planrowstride() const;
+  void set_planrowstride(int32_t value);
+  private:
+  int32_t _internal_planrowstride() const;
+  void _internal_set_planrowstride(int32_t value);
+  public:
+
+  // int32 PLANpixelStride = 3;
+  void clear_planpixelstride();
+  int32_t planpixelstride() const;
+  void set_planpixelstride(int32_t value);
+  private:
+  int32_t _internal_planpixelstride() const;
+  void _internal_set_planpixelstride(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:MRSchema.XRCPUPLAN)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::internal::ArenaStringPtr plandata_;
+    int32_t planrowstride_;
+    int32_t planpixelstride_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_MRSchema_2eproto;
+};
+// -------------------------------------------------------------------
+
+class XRCPUIMAGE final :
+    public ::PROTOBUF_NAMESPACE_ID::Message /* @@protoc_insertion_point(class_definition:MRSchema.XRCPUIMAGE) */ {
+ public:
+  inline XRCPUIMAGE() : XRCPUIMAGE(nullptr) {}
+  ~XRCPUIMAGE() override;
+  explicit PROTOBUF_CONSTEXPR XRCPUIMAGE(::PROTOBUF_NAMESPACE_ID::internal::ConstantInitialized);
+
+  XRCPUIMAGE(const XRCPUIMAGE& from);
+  XRCPUIMAGE(XRCPUIMAGE&& from) noexcept
+    : XRCPUIMAGE() {
+    *this = ::std::move(from);
+  }
+
+  inline XRCPUIMAGE& operator=(const XRCPUIMAGE& from) {
+    CopyFrom(from);
+    return *this;
+  }
+  inline XRCPUIMAGE& operator=(XRCPUIMAGE&& from) noexcept {
+    if (this == &from) return *this;
+    if (GetOwningArena() == from.GetOwningArena()
+  #ifdef PROTOBUF_FORCE_COPY_IN_MOVE
+        && GetOwningArena() != nullptr
+  #endif  // !PROTOBUF_FORCE_COPY_IN_MOVE
+    ) {
+      InternalSwap(&from);
+    } else {
+      CopyFrom(from);
+    }
+    return *this;
+  }
+
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* descriptor() {
+    return GetDescriptor();
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Descriptor* GetDescriptor() {
+    return default_instance().GetMetadata().descriptor;
+  }
+  static const ::PROTOBUF_NAMESPACE_ID::Reflection* GetReflection() {
+    return default_instance().GetMetadata().reflection;
+  }
+  static const XRCPUIMAGE& default_instance() {
+    return *internal_default_instance();
+  }
+  static inline const XRCPUIMAGE* internal_default_instance() {
+    return reinterpret_cast<const XRCPUIMAGE*>(
+               &_XRCPUIMAGE_default_instance_);
+  }
+  static constexpr int kIndexInFileMessages =
+    2;
+
+  friend void swap(XRCPUIMAGE& a, XRCPUIMAGE& b) {
+    a.Swap(&b);
+  }
+  inline void Swap(XRCPUIMAGE* other) {
+    if (other == this) return;
+  #ifdef PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() != nullptr &&
+        GetOwningArena() == other->GetOwningArena()) {
+   #else  // PROTOBUF_FORCE_COPY_IN_SWAP
+    if (GetOwningArena() == other->GetOwningArena()) {
+  #endif  // !PROTOBUF_FORCE_COPY_IN_SWAP
+      InternalSwap(other);
+    } else {
+      ::PROTOBUF_NAMESPACE_ID::internal::GenericSwap(this, other);
+    }
+  }
+  void UnsafeArenaSwap(XRCPUIMAGE* other) {
+    if (other == this) return;
+    GOOGLE_DCHECK(GetOwningArena() == other->GetOwningArena());
+    InternalSwap(other);
+  }
+
+  // implements Message ----------------------------------------------
+
+  XRCPUIMAGE* New(::PROTOBUF_NAMESPACE_ID::Arena* arena = nullptr) const final {
+    return CreateMaybeMessage<XRCPUIMAGE>(arena);
+  }
+  using ::PROTOBUF_NAMESPACE_ID::Message::CopyFrom;
+  void CopyFrom(const XRCPUIMAGE& from);
+  using ::PROTOBUF_NAMESPACE_ID::Message::MergeFrom;
+  void MergeFrom( const XRCPUIMAGE& from) {
+    XRCPUIMAGE::MergeImpl(*this, from);
+  }
+  private:
+  static void MergeImpl(::PROTOBUF_NAMESPACE_ID::Message& to_msg, const ::PROTOBUF_NAMESPACE_ID::Message& from_msg);
+  public:
+  PROTOBUF_ATTRIBUTE_REINITIALIZES void Clear() final;
+  bool IsInitialized() const final;
+
+  size_t ByteSizeLong() const final;
+  const char* _InternalParse(const char* ptr, ::PROTOBUF_NAMESPACE_ID::internal::ParseContext* ctx) final;
+  uint8_t* _InternalSerialize(
+      uint8_t* target, ::PROTOBUF_NAMESPACE_ID::io::EpsCopyOutputStream* stream) const final;
+  int GetCachedSize() const final { return _impl_._cached_size_.Get(); }
+
+  private:
+  void SharedCtor(::PROTOBUF_NAMESPACE_ID::Arena* arena, bool is_message_owned);
+  void SharedDtor();
+  void SetCachedSize(int size) const final;
+  void InternalSwap(XRCPUIMAGE* other);
+
+  private:
+  friend class ::PROTOBUF_NAMESPACE_ID::internal::AnyMetadata;
+  static ::PROTOBUF_NAMESPACE_ID::StringPiece FullMessageName() {
+    return "MRSchema.XRCPUIMAGE";
+  }
+  protected:
+  explicit XRCPUIMAGE(::PROTOBUF_NAMESPACE_ID::Arena* arena,
+                       bool is_message_owned = false);
+  public:
+
+  static const ClassData _class_data_;
+  const ::PROTOBUF_NAMESPACE_ID::Message::ClassData*GetClassData() const final;
+
+  ::PROTOBUF_NAMESPACE_ID::Metadata GetMetadata() const final;
+
+  // nested types ----------------------------------------------------
+
+  // accessors -------------------------------------------------------
+
+  enum : int {
+    kPLANdatasFieldNumber = 2,
+    kIDFieldNumber = 1,
+  };
+  // repeated .MRSchema.XRCPUPLAN PLANdatas = 2;
+  int plandatas_size() const;
+  private:
+  int _internal_plandatas_size() const;
+  public:
+  void clear_plandatas();
+  ::MRSchema::XRCPUPLAN* mutable_plandatas(int index);
+  ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MRSchema::XRCPUPLAN >*
+      mutable_plandatas();
+  private:
+  const ::MRSchema::XRCPUPLAN& _internal_plandatas(int index) const;
+  ::MRSchema::XRCPUPLAN* _internal_add_plandatas();
+  public:
+  const ::MRSchema::XRCPUPLAN& plandatas(int index) const;
+  ::MRSchema::XRCPUPLAN* add_plandatas();
+  const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MRSchema::XRCPUPLAN >&
+      plandatas() const;
+
+  // int32 ID = 1;
+  void clear_id();
+  int32_t id() const;
+  void set_id(int32_t value);
+  private:
+  int32_t _internal_id() const;
+  void _internal_set_id(int32_t value);
+  public:
+
+  // @@protoc_insertion_point(class_scope:MRSchema.XRCPUIMAGE)
+ private:
+  class _Internal;
+
+  template <typename T> friend class ::PROTOBUF_NAMESPACE_ID::Arena::InternalHelper;
+  typedef void InternalArenaConstructable_;
+  typedef void DestructorSkippable_;
+  struct Impl_ {
+    ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MRSchema::XRCPUPLAN > plandatas_;
+    int32_t id_;
+    mutable ::PROTOBUF_NAMESPACE_ID::internal::CachedSize _cached_size_;
+  };
+  union { Impl_ _impl_; };
+  friend struct ::TableStruct_MRSchema_2eproto;
+};
 // ===================================================================
 
 
@@ -361,9 +712,171 @@ inline void C_Position::set_zpos(float value) {
   // @@protoc_insertion_point(field_set:MRSchema.C_Position.ZPOS)
 }
 
+// -------------------------------------------------------------------
+
+// XRCPUPLAN
+
+// bytes PLANdata = 1;
+inline void XRCPUPLAN::clear_plandata() {
+  _impl_.plandata_.ClearToEmpty();
+}
+inline const std::string& XRCPUPLAN::plandata() const {
+  // @@protoc_insertion_point(field_get:MRSchema.XRCPUPLAN.PLANdata)
+  return _internal_plandata();
+}
+template <typename ArgT0, typename... ArgT>
+inline PROTOBUF_ALWAYS_INLINE
+void XRCPUPLAN::set_plandata(ArgT0&& arg0, ArgT... args) {
+ 
+ _impl_.plandata_.SetBytes(static_cast<ArgT0 &&>(arg0), args..., GetArenaForAllocation());
+  // @@protoc_insertion_point(field_set:MRSchema.XRCPUPLAN.PLANdata)
+}
+inline std::string* XRCPUPLAN::mutable_plandata() {
+  std::string* _s = _internal_mutable_plandata();
+  // @@protoc_insertion_point(field_mutable:MRSchema.XRCPUPLAN.PLANdata)
+  return _s;
+}
+inline const std::string& XRCPUPLAN::_internal_plandata() const {
+  return _impl_.plandata_.Get();
+}
+inline void XRCPUPLAN::_internal_set_plandata(const std::string& value) {
+  
+  _impl_.plandata_.Set(value, GetArenaForAllocation());
+}
+inline std::string* XRCPUPLAN::_internal_mutable_plandata() {
+  
+  return _impl_.plandata_.Mutable(GetArenaForAllocation());
+}
+inline std::string* XRCPUPLAN::release_plandata() {
+  // @@protoc_insertion_point(field_release:MRSchema.XRCPUPLAN.PLANdata)
+  return _impl_.plandata_.Release();
+}
+inline void XRCPUPLAN::set_allocated_plandata(std::string* plandata) {
+  if (plandata != nullptr) {
+    
+  } else {
+    
+  }
+  _impl_.plandata_.SetAllocated(plandata, GetArenaForAllocation());
+#ifdef PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  if (_impl_.plandata_.IsDefault()) {
+    _impl_.plandata_.Set("", GetArenaForAllocation());
+  }
+#endif // PROTOBUF_FORCE_COPY_DEFAULT_STRING
+  // @@protoc_insertion_point(field_set_allocated:MRSchema.XRCPUPLAN.PLANdata)
+}
+
+// int32 PLANrowStride = 2;
+inline void XRCPUPLAN::clear_planrowstride() {
+  _impl_.planrowstride_ = 0;
+}
+inline int32_t XRCPUPLAN::_internal_planrowstride() const {
+  return _impl_.planrowstride_;
+}
+inline int32_t XRCPUPLAN::planrowstride() const {
+  // @@protoc_insertion_point(field_get:MRSchema.XRCPUPLAN.PLANrowStride)
+  return _internal_planrowstride();
+}
+inline void XRCPUPLAN::_internal_set_planrowstride(int32_t value) {
+  
+  _impl_.planrowstride_ = value;
+}
+inline void XRCPUPLAN::set_planrowstride(int32_t value) {
+  _internal_set_planrowstride(value);
+  // @@protoc_insertion_point(field_set:MRSchema.XRCPUPLAN.PLANrowStride)
+}
+
+// int32 PLANpixelStride = 3;
+inline void XRCPUPLAN::clear_planpixelstride() {
+  _impl_.planpixelstride_ = 0;
+}
+inline int32_t XRCPUPLAN::_internal_planpixelstride() const {
+  return _impl_.planpixelstride_;
+}
+inline int32_t XRCPUPLAN::planpixelstride() const {
+  // @@protoc_insertion_point(field_get:MRSchema.XRCPUPLAN.PLANpixelStride)
+  return _internal_planpixelstride();
+}
+inline void XRCPUPLAN::_internal_set_planpixelstride(int32_t value) {
+  
+  _impl_.planpixelstride_ = value;
+}
+inline void XRCPUPLAN::set_planpixelstride(int32_t value) {
+  _internal_set_planpixelstride(value);
+  // @@protoc_insertion_point(field_set:MRSchema.XRCPUPLAN.PLANpixelStride)
+}
+
+// -------------------------------------------------------------------
+
+// XRCPUIMAGE
+
+// int32 ID = 1;
+inline void XRCPUIMAGE::clear_id() {
+  _impl_.id_ = 0;
+}
+inline int32_t XRCPUIMAGE::_internal_id() const {
+  return _impl_.id_;
+}
+inline int32_t XRCPUIMAGE::id() const {
+  // @@protoc_insertion_point(field_get:MRSchema.XRCPUIMAGE.ID)
+  return _internal_id();
+}
+inline void XRCPUIMAGE::_internal_set_id(int32_t value) {
+  
+  _impl_.id_ = value;
+}
+inline void XRCPUIMAGE::set_id(int32_t value) {
+  _internal_set_id(value);
+  // @@protoc_insertion_point(field_set:MRSchema.XRCPUIMAGE.ID)
+}
+
+// repeated .MRSchema.XRCPUPLAN PLANdatas = 2;
+inline int XRCPUIMAGE::_internal_plandatas_size() const {
+  return _impl_.plandatas_.size();
+}
+inline int XRCPUIMAGE::plandatas_size() const {
+  return _internal_plandatas_size();
+}
+inline void XRCPUIMAGE::clear_plandatas() {
+  _impl_.plandatas_.Clear();
+}
+inline ::MRSchema::XRCPUPLAN* XRCPUIMAGE::mutable_plandatas(int index) {
+  // @@protoc_insertion_point(field_mutable:MRSchema.XRCPUIMAGE.PLANdatas)
+  return _impl_.plandatas_.Mutable(index);
+}
+inline ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MRSchema::XRCPUPLAN >*
+XRCPUIMAGE::mutable_plandatas() {
+  // @@protoc_insertion_point(field_mutable_list:MRSchema.XRCPUIMAGE.PLANdatas)
+  return &_impl_.plandatas_;
+}
+inline const ::MRSchema::XRCPUPLAN& XRCPUIMAGE::_internal_plandatas(int index) const {
+  return _impl_.plandatas_.Get(index);
+}
+inline const ::MRSchema::XRCPUPLAN& XRCPUIMAGE::plandatas(int index) const {
+  // @@protoc_insertion_point(field_get:MRSchema.XRCPUIMAGE.PLANdatas)
+  return _internal_plandatas(index);
+}
+inline ::MRSchema::XRCPUPLAN* XRCPUIMAGE::_internal_add_plandatas() {
+  return _impl_.plandatas_.Add();
+}
+inline ::MRSchema::XRCPUPLAN* XRCPUIMAGE::add_plandatas() {
+  ::MRSchema::XRCPUPLAN* _add = _internal_add_plandatas();
+  // @@protoc_insertion_point(field_add:MRSchema.XRCPUIMAGE.PLANdatas)
+  return _add;
+}
+inline const ::PROTOBUF_NAMESPACE_ID::RepeatedPtrField< ::MRSchema::XRCPUPLAN >&
+XRCPUIMAGE::plandatas() const {
+  // @@protoc_insertion_point(field_list:MRSchema.XRCPUIMAGE.PLANdatas)
+  return _impl_.plandatas_;
+}
+
 #ifdef __GNUC__
   #pragma GCC diagnostic pop
 #endif  // __GNUC__
+// -------------------------------------------------------------------
+
+// -------------------------------------------------------------------
+
 
 // @@protoc_insertion_point(namespace_scope)
 

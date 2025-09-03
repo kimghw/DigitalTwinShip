@@ -43,15 +43,22 @@ void DataSession::OnDisconnected()
 
 void DataSession::OnRecvPacket(BYTE* buffer, int32 len)
 {
-
+	
 	PacketHeader* packetHeader = reinterpret_cast<PacketHeader*>(buffer);
 	cout << " data is comming :"<< packetHeader->id << endl;
 	cout << " The number of datas :" << len << endl;
 	//std::string str(buffer, buffer + len);
 	//cout << str << endl;
 
+
+
 	PacketSessionRef session = GetPacketSessionRef();
+	//Memory Usage
+	cout << "Memory Usage :" << session->GetMemoryUsage() << "%" << endl;
+
+	GPacketHandler[packetHeader->id](session, buffer, len);
 	ClientPacketHandler::HandleBuffer(session, buffer, len);
+
 }
 
 void DataSession::OnSend(int32 len)

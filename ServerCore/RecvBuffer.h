@@ -6,7 +6,7 @@
 
 class RecvBuffer
 {
-	enum { BUFFER_COUNT = 10 };
+	enum { BUFFER_COUNT = 500 };
 
 public:
 	RecvBuffer(int32 bufferSize);
@@ -20,8 +20,13 @@ public:
 	BYTE*			WritePos() { return &_buffer[_writePos]; }
 	int32			DataSize() { return _writePos - _readPos; }
 	int32			FreeSize() { return _capacity - _writePos; }
+	int16			Memory_UsageInPercent() { return round((_writePos / _capacity) *100); }
+	int16			Memory_UsageMax() { if (Memory_UsageInPercent() > _memoryMax) return _memoryMax = Memory_UsageInPercent(); }
+
+
 
 private:
+	int16		    _memoryMax = 0;
 	int32			_capacity = 0;
 	int32			_bufferSize = 0;
 	int32			_readPos = 0;
