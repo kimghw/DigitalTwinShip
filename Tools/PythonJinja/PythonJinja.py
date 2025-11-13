@@ -59,7 +59,7 @@ Template_Json_packetHandler_h = env.get_template('./templates/template_EDT0001_P
 Template_message_protocol     = env.get_template('./templates/template_Protocol.proto')
 Template_enum_protocol        = env.get_template('./templates/template_Enum.proto')
 Template_packetHandler_h      = env.get_template('./templates/template_PacketHandler.h')
-Template_packetHandler_cs     = env.get_template('./templates/template_ClientPacketManager.cs')
+# Template_packetHandler_cs     = env.get_template('./templates/template_ClientPacketManager.cs')
 
 # 렌더링 하고 저장하기
 # EDT는 동일 namespace를 갖게 해줄려고 공통적으로 넣어줌
@@ -84,6 +84,6 @@ save_rendered_file(os.path.join(pparent_dir, "GameServer", "ClientPacketHandler.
 Render_Server_packetHandler_h = Template_packetHandler_h.render(type = 'Server', packages = combined_list_data)
 save_rendered_file(os.path.join(pparent_dir, "DummyClient", "ServerPacketHandler.h"), Render_Server_packetHandler_h)
 
-Render_packetHandler_cs = Template_packetHandler_cs.render(package = 'EDT', combined = combined)
-save_rendered_file(os.path.join(pparent_dir, "Csharp", 'ClientPacketManager.cs'), Render_packetHandler_cs)
+#Render_packetHandler_cs = Template_packetHandler_cs.render(package = 'EDT', combined = combined)
+#save_rendered_file(os.path.join(pparent_dir, "Csharp", 'ClientPacketManager.cs'), Render_packetHandler_cs)
 
